@@ -16,14 +16,14 @@ class Character : public QObject
 public:
     QString m_Name;       // 名字
     QString m_League;     // 赛区名
-    quint8  m_LeagueId;   // 赛区Id
-    quint8  m_Unknown1;   // ??
-    quint8  m_Level;      // 等级
+    int     m_LeagueId;   // 赛区Id
+    int     m_Unknown1;   // ??
+    int     m_Level;      // 等级
     quint32 m_Experience; // 经验
-    quint8  m_ClassId;    // 职业Id
+    int     m_ClassId;    // 职业Id
     quint16 m_Unknown2;   // ??
-    quint8  m_Unknown3;   // ??
-    quint8  m_Unknown4;   // ??
+    int     m_Unknown3;   // ??
+    int     m_Unknown4;   // ??
 
 public:
     enum ClassType
@@ -51,7 +51,7 @@ public:
         return Helper::toJson(this);
     }
 
-    static QString GetClassTypeById(quint8 classId)
+    static QString GetClassTypeById(int classId)
     {
         QMetaEnum MetaEnum = QMetaEnum::fromType<Character::ClassType>();
         return MetaEnum.valueToKey(classId);

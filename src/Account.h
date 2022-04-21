@@ -1,5 +1,6 @@
 #pragma once
 #include "ExileClient.h"
+#include <QJSEngine>
 #include <QThread>
 
 class Account : public QThread
@@ -19,6 +20,7 @@ public:
 
     QString m_BackendError;
 
+    QJSEngine   *m_JSEngine;
     ExileClient *m_ExileClient;
 
 public:
@@ -29,5 +31,5 @@ protected:
     void run() override;
 
 public:
-    void on_BackendError(quint16 result);
+    void on_BackendError(int result);
 };

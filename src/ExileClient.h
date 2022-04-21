@@ -81,6 +81,6 @@ public slots:
     void RecvLeagueList();
 
 signals:
-    void signal_BackendError(quint16 result);
+    void signal_BackendError(int result);
     void signal_LoginSuccess();
 };
