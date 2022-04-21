@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Data/BackendErrors.json</file>
+    </qresource>
+</RCC>
