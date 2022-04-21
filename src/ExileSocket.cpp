@@ -4,6 +4,8 @@ ExileSocket::ExileSocket(QObject *parent)
     : QTcpSocket(parent)
     , isCrypto(false)
 {
+    connect(this, &QTcpSocket::disconnected, this, [this]()
+            { this->DisableCrypto(); });
 }
 
 ExileSocket::~ExileSocket() {}

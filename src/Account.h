@@ -2,6 +2,7 @@
 #include "ExileClient.h"
 #include <QJSEngine>
 #include <QThread>
+#include <QTimer>
 
 class Account : public QThread
 {
@@ -20,8 +21,10 @@ public:
 
     QString m_BackendError;
 
-    QJSEngine   *m_JSEngine;
     ExileClient *m_ExileClient;
+
+    QJSEngine *m_JSEngine;
+    QTimer    *m_Tick;
 
 public:
     explicit Account(QObject *parent = nullptr);
@@ -30,6 +33,7 @@ public:
 protected:
     void run() override;
 
-public:
+protected slots:
+    void Tick();
     void on_BackendError(int result);
 };
