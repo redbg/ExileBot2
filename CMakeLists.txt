@@ -38,6 +38,10 @@ add_executable(ExileBot2
     src/Account.cpp
     src/Account.h
 
+    # AccountModel
+    src/AccountModel.cpp
+    src/AccountModel.h
+
     # ExileSocket
     src/ExileSocket.cpp
     src/ExileSocket.h

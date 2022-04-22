@@ -25,11 +25,20 @@ namespace Helper
 
             for (int i = 1; i < obj->metaObject()->propertyCount(); i++)
             {
-                const char *name = obj->metaObject()->property(i).name();
-                JsonObject.insert(name, QJsonValue::fromVariant(obj->property(name)));
+                const char *key = obj->metaObject()->property(i).name();
+                JsonObject.insert(key, QJsonValue::fromVariant(obj->property(key)));
             }
 
             return JsonObject;
+        }
+
+        void fromJsonObject(QObject *obj, const QJsonObject &jsonObject)
+        {
+            for (int i = 0; i < obj->metaObject()->propertyCount(); i++)
+            {
+                const char *key = obj->metaObject()->property(i).name();
+                obj->setProperty(key, jsonObject.value(key));
+            }
         }
 
     } // namespace Json
@@ -40,9 +49,18 @@ namespace Helper
         {
             QFile file(fileName);
             bool  isOpen = file.open(QFile::ReadOnly);
-            Q_ASSERT_X(isOpen, "Helper::File::ReadAll", fileName.toLatin1().data());
+            // Q_ASSERT_X(isOpen, "Helper::File::ReadAll", fileName.toLatin1().data());
             return file.readAll();
         }
+
+        qint64 Write(QString fileName, const QByteArray &data)
+        {
+            QFile file(fileName);
+            bool  isOpen = file.open(QFile::WriteOnly);
+            // Q_ASSERT_X(isOpen, "Helper::File::Write", fileName.toLatin1().data());
+            return file.write(data);
+        }
+
     } // namespace File
 
     namespace Data

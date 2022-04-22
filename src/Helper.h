@@ -16,12 +16,13 @@ namespace Helper
     namespace Json
     {
         QJsonObject toJsonObject(QObject *obj);
+        void        fromJsonObject(QObject *obj, const QJsonObject &jsonObject);
     } // namespace Json
 
     namespace File
     {
         QByteArray ReadAll(QString fileName);
-
+        qint64     Write(QString fileName, const QByteArray &data);
     } // namespace File
 
     namespace Data

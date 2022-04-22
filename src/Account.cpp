@@ -15,6 +15,8 @@ Account::~Account()
 
 void Account::run()
 {
+    m_BackendError.clear();
+
     // Init m_ExileClient
     m_ExileClient = new ExileClient(m_Email, m_Password);
     connect(this, &Account::finished, m_ExileClient, &ExileClient::deleteLater);

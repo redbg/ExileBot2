@@ -21,7 +21,6 @@
  */
 
 function Tick() {
-
     if (Client.SocketState == ExileClient.UnconnectedState) {
         Client.connectToHost("sjc01.login.pathofexile.com", 20481);
     } else if (Client.SocketState == ExileClient.ConnectedState) {
