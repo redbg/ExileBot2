@@ -16,21 +16,6 @@ namespace Helper
     namespace Json
     {
         QJsonObject toJsonObject(QObject *obj);
-
-        template <typename T>
-        static QJsonArray toJsonArray(const QList<T *> &list)
-        {
-            QJsonArray JsonArray;
-
-            for (int i = 0; i < list.size(); i++)
-            {
-                JsonArray.append(list.at(i)->toJsonObject());
-            }
-
-            return JsonArray;
-        }
-
-        QJSValue toJSValue(QJSEngine *engine, const QJsonValue &val);
     } // namespace Json
 
     namespace File

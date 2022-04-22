@@ -16,16 +16,21 @@ Account::~Account()
 void Account::run()
 {
     // Init m_ExileClient
-    m_ExileClient = new ExileClient;
+    m_ExileClient = new ExileClient(m_Email, m_Password);
     connect(this, &Account::finished, m_ExileClient, &ExileClient::deleteLater);
     connect(m_ExileClient, &ExileClient::signal_BackendError, this, &Account::on_BackendError, Qt::DirectConnection);
 
     // Init QJSEngine
     m_JSEngine = new QJSEngine;
     m_JSEngine->installExtensions(QJSEngine::AllExtensions);
+    m_JSEngine->globalObject().setProperty("ExileClient", m_JSEngine->newQMetaObject(&ExileClient::staticMetaObject));
     m_JSEngine->globalObject().setProperty("Client", m_JSEngine->newQObject(m_ExileClient));
     m_JSEngine->evaluate(Helper::File::ReadAll("scripts/script.js"), "scripts/script.js");
     connect(this, &Account::finished, m_JSEngine, &QJSEngine::deleteLater);
+    connect(m_ExileClient, &ExileClient::signal_LoginSuccess, this, [this]()
+            { this->m_JSEngine->globalObject().property("OnClientLoginSuccess").call(); });
+    connect(m_ExileClient, &ExileClient::signal_CharacterList, this, [this]()
+            { this->m_JSEngine->globalObject().property("OnClientCharacterList").call(); });
 
     // Init m_Tick
     m_Tick = new QTimer;
@@ -39,15 +44,7 @@ void Account::run()
 
 void Account::Tick()
 {
-    if (m_ExileClient->state() == ExileClient::UnconnectedState)
-    {
-        m_ExileClient->connectToHost(m_Email, m_Password);
-    }
-
-    if (m_ExileClient->state() == ExileClient::ConnectedState)
-    {
-        m_JSEngine->globalObject().property("Tick").call();
-    }
+    m_JSEngine->globalObject().property("Tick").call();
 }
 
 void Account::on_BackendError(int result)

@@ -6,6 +6,7 @@
 class ExileSocket : public QTcpSocket
 {
     Q_OBJECT
+    Q_PROPERTY(SocketState SocketState READ state)
 
 private:
     CryptoPP::Salsa20::Encryption m_Encryption;

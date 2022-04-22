@@ -43,19 +43,10 @@ public:
         : QObject(parent)
     {
     }
+
     virtual ~Character() {}
 
 public:
-    QJsonObject toJsonObject()
-    {
-        return Helper::Json::toJsonObject(this);
-    }
-
-    QString toJson()
-    {
-        return QJsonDocument(this->toJsonObject()).toJson();
-    }
-
     static QString GetClassTypeById(int classId)
     {
         QMetaEnum MetaEnum = QMetaEnum::fromType<Character::ClassType>();

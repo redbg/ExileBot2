@@ -32,44 +32,6 @@ namespace Helper
             return JsonObject;
         }
 
-        QJSValue toJSValue(QJSEngine *engine, const QJsonValue &val)
-        {
-            switch (val.type())
-            {
-            case QJsonValue::Null:
-                return QJSValue(QJSValue::NullValue);
-            case QJsonValue::Bool:
-                return QJSValue(val.toBool());
-            case QJsonValue::Double:
-                return QJSValue(val.toDouble());
-            case QJsonValue::String:
-                return QJSValue(val.toString());
-            case QJsonValue::Array:
-            {
-                QJsonArray arr    = val.toArray();
-                QJSValue   newArr = engine->newArray(arr.size());
-                for (int i = 0; i < arr.size(); i++)
-                {
-                    newArr.setProperty(i, toJSValue(engine, arr[i]));
-                }
-                return newArr;
-            }
-            case QJsonValue::Object:
-            {
-                QJsonObject obj    = val.toObject();
-                QJSValue    newObj = engine->newObject();
-                for (auto itor = obj.begin(); itor != obj.end(); ++itor)
-                {
-                    newObj.setProperty(itor.key(), toJSValue(engine, itor.value()));
-                }
-                return newObj;
-            }
-            case QJsonValue::Undefined:
-                return QJSValue(QJSValue::UndefinedValue);
-            default:
-                return QJSValue(QJSValue::UndefinedValue);
-            }
-        }
     } // namespace Json
 
     namespace File

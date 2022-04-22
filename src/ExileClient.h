@@ -10,6 +10,10 @@
 class ExileClient : public ExileSocket
 {
     Q_OBJECT
+    Q_PROPERTY(QString Email MEMBER m_Email)
+    Q_PROPERTY(QString Password MEMBER m_Password)
+    Q_PROPERTY(QString AccountName MEMBER m_AccountName)
+    Q_PROPERTY(QList<Character *> CharacterList MEMBER m_CharacterList)
 
 private:
     QString m_Email;
@@ -45,31 +49,21 @@ public:
     Q_ENUM(RECV)
 
 public:
-    explicit ExileClient(QObject *parent = nullptr);
+    explicit ExileClient(const QString &email, const QString &password);
     virtual ~ExileClient();
 
-public:
-    void connectToHost(const QString &email, const QString &password)
-    {
-        this->m_Email    = email;
-        this->m_Password = password;
-        ExileSocket::connectToHost("sjc01.login.pathofexile.com", 20481);
-    }
-
-    QJsonObject toJsonObject()
-    {
-        QJsonObject JsonObject = Helper::Json::toJsonObject(this);
-        JsonObject.insert("CharacterList", Helper::Json::toJsonArray<Character>(m_CharacterList));
-        return JsonObject;
-    }
-
 public slots:
+    void connectToHost(const QString &hostName, quint16 port)
+    {
+        // sjc01.login.pathofexile.com:20481
+        qDebug() << QString("connectToHost(%1, %2)").arg(hostName).arg(port);
+        ExileSocket::connectToHost(hostName, port);
+    }
+
     void on_client_connected();
     void on_client_disconnected();
     void on_client_errorOccurred(QAbstractSocket::SocketError socketError);
     void on_client_readyRead();
-
-public slots:
 
     // Send
     void SendClientPublicKey();
@@ -90,4 +84,5 @@ public slots:
 signals:
     void signal_BackendError(int result);
     void signal_LoginSuccess();
+    void signal_CharacterList();
 };

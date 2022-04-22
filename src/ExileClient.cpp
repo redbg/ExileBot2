@@ -1,7 +1,8 @@
 #include "ExileClient.h"
 
-ExileClient::ExileClient(QObject *parent)
-    : ExileSocket(parent)
+ExileClient::ExileClient(const QString &email, const QString &password)
+    : m_Email(email)
+    , m_Password(password)
 {
     connect(this, &ExileSocket::connected, this, &ExileClient::on_client_connected);
     connect(this, &ExileSocket::disconnected, this, &ExileClient::on_client_disconnected);
@@ -42,8 +43,7 @@ void ExileClient::on_client_readyRead()
         case RECV::LoginResult:
             if (this->RecvLoginResult())
             {
-                // 登录成功,获取赛区列表
-                // SendGetLeagueList();
+                emit this->signal_LoginSuccess();
             }
             break;
         case RECV::CreateCharacterResult:
@@ -54,16 +54,7 @@ void ExileClient::on_client_readyRead()
             break;
         case RECV::CharacterList:
             this->RecvCharacterList();
-            if (this->m_CharacterList.size())
-            {
-                // 有角色,选择角色进入游戏
-                SendSelectCharacter();
-            }
-            else
-            {
-                // 没有角色,创建角色
-                SendCreateCharacter(Helper::GetRandomString(20), "Archnemesis", Character::Int);
-            }
+            emit this->signal_CharacterList();
             break;
         case RECV::CloseSocket:
             this->RecvCloseSocket();
@@ -107,7 +98,7 @@ void ExileClient::SendClientPublicKey()
  */
 void ExileClient::SendLogin(const QString &email, const QString &password)
 {
-    qDebug() << QString("SendLogin(%1, %2);").arg(email).arg(password);
+    qDebug() << QString("SendLogin(%1, %2)").arg(email).arg(password);
 
     // PasswordHash
     QByteArray PasswordHash = QCryptographicHash::hash(
@@ -219,7 +210,6 @@ bool ExileClient::RecvLoginResult()
 
     qDebug() << QString("登录成功! AccountName:%1").arg(m_AccountName);
 
-    emit this->signal_LoginSuccess();
     return true;
 }
 
@@ -284,8 +274,6 @@ void ExileClient::RecvCharacterList()
         character->m_Unknown4   = this->read<quint8>();  // ??
 
         m_CharacterList.append(character);
-
-        qDebug() << "[" << i << "]" << character->toJsonObject();
     }
 
     this->read<quint32>(); // LastSelectIndex
