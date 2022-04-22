@@ -46,9 +46,14 @@ public:
     virtual ~Character() {}
 
 public:
-    QJsonObject toJson()
+    QJsonObject toJsonObject()
     {
-        return Helper::toJson(this);
+        return Helper::Json::toJsonObject(this);
+    }
+
+    QString toJson()
+    {
+        return QJsonDocument(this->toJsonObject()).toJson();
     }
 
     static QString GetClassTypeById(int classId)

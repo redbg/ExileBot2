@@ -33,7 +33,7 @@ public:
 protected:
     void run() override;
 
-protected slots:
+private slots:
     void Tick();
     void on_BackendError(int result);
 };

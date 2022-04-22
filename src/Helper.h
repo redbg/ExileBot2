@@ -1,5 +1,7 @@
 #pragma once
 #include <QFile>
+#include <QJSEngine>
+#include <QJSValue>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -9,8 +11,27 @@
 
 namespace Helper
 {
-    QJsonObject toJson(QObject *obj);          // QObject to QJsonObject
-    QString     GetRandomString(int len = 10); // 获取随机字符串
+    QString GetRandomString(int len = 10); // 获取随机字符串
+
+    namespace Json
+    {
+        QJsonObject toJsonObject(QObject *obj);
+
+        template <typename T>
+        static QJsonArray toJsonArray(const QList<T *> &list)
+        {
+            QJsonArray JsonArray;
+
+            for (int i = 0; i < list.size(); i++)
+            {
+                JsonArray.append(list.at(i)->toJsonObject());
+            }
+
+            return JsonArray;
+        }
+
+        QJSValue toJSValue(QJSEngine *engine, const QJsonValue &val);
+    } // namespace Json
 
     namespace File
     {

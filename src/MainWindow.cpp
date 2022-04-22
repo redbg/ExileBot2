@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     Account *a    = new Account(this);
-    a->m_Email    = "gy7a50@gmailfsjs.com";
+    a->m_Email    = "sj2uaw@gmailfsjs.com";
     a->m_Password = "As686366Dg.";
     a->start();
 }

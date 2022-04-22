@@ -56,6 +56,13 @@ public:
         ExileSocket::connectToHost("sjc01.login.pathofexile.com", 20481);
     }
 
+    QJsonObject toJsonObject()
+    {
+        QJsonObject JsonObject = Helper::Json::toJsonObject(this);
+        JsonObject.insert("CharacterList", Helper::Json::toJsonArray<Character>(m_CharacterList));
+        return JsonObject;
+    }
+
 public slots:
     void on_client_connected();
     void on_client_disconnected();

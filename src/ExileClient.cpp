@@ -285,7 +285,7 @@ void ExileClient::RecvCharacterList()
 
         m_CharacterList.append(character);
 
-        qDebug() << "[" << i << "]" << character->toJson();
+        qDebug() << "[" << i << "]" << character->toJsonObject();
     }
 
     this->read<quint32>(); // LastSelectIndex
