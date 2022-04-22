@@ -34,6 +34,7 @@ protected:
     void run() override;
 
 private slots:
-    void Tick();
-    void on_BackendError(int result);
+    QJSValue CallFunction(const QString &name);
+    QJSValue Tick();
+    void     on_BackendError(int result);
 };

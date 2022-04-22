@@ -23,14 +23,19 @@ void Account::run()
     // Init QJSEngine
     m_JSEngine = new QJSEngine;
     m_JSEngine->installExtensions(QJSEngine::AllExtensions);
+    m_JSEngine->globalObject().setProperty("Character", m_JSEngine->newQMetaObject(&Character::staticMetaObject));
     m_JSEngine->globalObject().setProperty("ExileClient", m_JSEngine->newQMetaObject(&ExileClient::staticMetaObject));
     m_JSEngine->globalObject().setProperty("Client", m_JSEngine->newQObject(m_ExileClient));
     m_JSEngine->evaluate(Helper::File::ReadAll("scripts/script.js"), "scripts/script.js");
     connect(this, &Account::finished, m_JSEngine, &QJSEngine::deleteLater);
-    connect(m_ExileClient, &ExileClient::signal_LoginSuccess, this, [this]()
-            { this->m_JSEngine->globalObject().property("OnClientLoginSuccess").call(); });
-    connect(m_ExileClient, &ExileClient::signal_CharacterList, this, [this]()
-            { this->m_JSEngine->globalObject().property("OnClientCharacterList").call(); });
+    connect(
+        m_ExileClient, &ExileClient::signal_LoginSuccess, this, [this]()
+        { this->CallFunction("OnClientLoginSuccess"); },
+        Qt::DirectConnection);
+    connect(
+        m_ExileClient, &ExileClient::signal_CharacterList, this, [this]()
+        { this->CallFunction("OnClientCharacterList"); },
+        Qt::DirectConnection);
 
     // Init m_Tick
     m_Tick = new QTimer;
@@ -42,9 +47,22 @@ void Account::run()
     this->exec();
 }
 
-void Account::Tick()
+QJSValue Account::CallFunction(const QString &name)
 {
-    m_JSEngine->globalObject().property("Tick").call();
+    QJSValue result = m_JSEngine->globalObject().property(name).call();
+
+    if (result.isError())
+    {
+        qDebug() << result.toString();
+    }
+
+    return result;
+}
+
+QJSValue Account::Tick()
+{
+    QJSValue result = CallFunction("Tick");
+    return result;
 }
 
 void Account::on_BackendError(int result)

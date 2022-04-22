@@ -144,20 +144,20 @@ void ExileClient::SendSelectCharacter(quint32 index)
  */
 void ExileClient::SendCreateCharacter(QString name, QString league, Character::ClassType classType)
 {
-    QString ClassTypeString = Character::GetClassTypeById(classType);
+    QString ClassTypeString = Character::GetClassTypeById(classType) + "Default";
 
     qDebug() << QString("创建角色 name:%1 league:%2 classType:%3")
                     .arg(name)
                     .arg(league)
                     .arg(ClassTypeString);
 
-    this->writeId((quint16)SEND::CreateCharacter);  // PacketId
-    this->writeString(name);                        // 角色名
-    this->writeString(league);                      // 赛区名
-    this->write<quint32>(0);                        // ??
-    this->write<quint32>(0);                        // ??
-    this->writeString(ClassTypeString + "Default"); // 职业
-    this->write(QByteArray(0x20, 0));               // ??
+    this->writeId((quint16)SEND::CreateCharacter); // PacketId
+    this->writeString(name);                       // 角色名
+    this->writeString(league);                     // 赛区名
+    this->write<quint32>(0);                       // ??
+    this->write<quint32>(0);                       // ??
+    this->writeString(ClassTypeString);            // 职业
+    this->write(QByteArray(0x20, 0));              // ??
 }
 
 /**
@@ -208,19 +208,26 @@ bool ExileClient::RecvLoginResult()
     this->read<quint8>();               // ??
     m_AccountName = this->readString(); // AccountName
 
-    qDebug() << QString("登录成功! AccountName:%1").arg(m_AccountName);
-
     return true;
 }
 
-void ExileClient::RecvCreateCharacterResult()
+bool ExileClient::RecvCreateCharacterResult()
 {
+    quint16 Result = this->read<quint16>();
+    this->read<quint8>();
+
+    if (Result != 0)
+    {
+        emit signal_BackendError(Result);
+        return false;
+    }
+
+    qDebug() << "创建角色成功";
+    return true;
 }
 
 void ExileClient::RecvSelectCharacterResult()
 {
-    qDebug() << "收到选择角色结果,正在进入游戏...";
-
     quint32 Ticket          = this->read<quint32>();
     quint32 WorldAreaHASH16 = this->read<quint32>();
     quint32 WorldInstance   = this->read<quint32>();
@@ -251,8 +258,6 @@ void ExileClient::RecvSelectCharacterResult()
 
 void ExileClient::RecvCharacterList()
 {
-    qDebug() << "角色列表";
-
     qDeleteAll(m_CharacterList);
     m_CharacterList.clear();
 

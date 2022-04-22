@@ -75,7 +75,7 @@ public slots:
     // Recv
     void RecvServerPublicKey();
     bool RecvLoginResult();
-    void RecvCreateCharacterResult();
+    bool RecvCreateCharacterResult();
     void RecvSelectCharacterResult();
     void RecvCharacterList();
     void RecvCloseSocket();
