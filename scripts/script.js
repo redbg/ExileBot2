@@ -1,29 +1,30 @@
-/** ExileClient.SocketState
- * 
- * UnconnectedState
- * HostLookupState
- * ConnectingState
- * ConnectedState
- * BoundState
- * ListeningState
- * ClosingState
- */
 
-/** Character.ClassType
- * 
- * StrDexInt // 貴族
- * Str       // 野蠻人    特性：力量，近戰
- * Dex       // 遊俠      特性：敏捷，遠距離
- * Int       // 女巫      特性：智慧，法術
- * StrDex    // 決鬥者
- * StrInt    // 聖堂武僧
- * DexInt    // 暗影刺客
- */
+const SocketState = {
+    Unconnected: 0,
+    HostLookup: 1,
+    Connecting: 2,
+    Connected: 3,
+    Bound: 4,
+    Listening: 5,
+    Closing: 6,
+}
+
+const CharacterClassType = {
+    StrDexInt: 0,
+    Str: 1,
+    Dex: 2,
+    Int: 3,
+    StrDex: 4,
+    StrInt: 5,
+    DexInt: 6,
+}
 
 function Tick() {
-    if (Client.SocketState == ExileClient.UnconnectedState) {
+    if (Client.SocketState == SocketState.Unconnected && Game.SocketState == SocketState.Unconnected) {
         Client.connectToHost("sjc01.login.pathofexile.com", 20481);
-    } else if (Client.SocketState == ExileClient.ConnectedState) {
+    }
+
+    if (Game.SocketState == SocketState.Connected) {
 
     }
 }
@@ -50,7 +51,7 @@ function OnClientCharacterList() {
     }
     else {
         // 创建角色
-        Client.SendCreateCharacter(randomString(Math.floor(Math.random() * 8) + 8), "Archnemesis", Character.Int);
+        Client.SendCreateCharacter(randomString(Math.floor(Math.random() * 8) + 8), "Archnemesis", CharacterClassType.Int);
     }
 }
 

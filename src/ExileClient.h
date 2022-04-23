@@ -14,13 +14,15 @@ class ExileClient : public ExileSocket
     Q_PROPERTY(QString Password MEMBER m_Password)
     Q_PROPERTY(QString AccountName MEMBER m_AccountName)
     Q_PROPERTY(QList<Character *> CharacterList MEMBER m_CharacterList)
+    Q_PROPERTY(quint32 m_LastSelectIndex MEMBER m_LastSelectIndex)
 
-private:
+public:
     QString m_Email;
     QString m_Password;
     QString m_AccountName;
 
     QList<Character *> m_CharacterList;
+    quint32            m_LastSelectIndex;
 
     CryptoPP::byte m_PrivateKey[0x80];
     CryptoPP::byte m_PublicKey[0x80];
@@ -49,16 +51,11 @@ public:
     Q_ENUM(RECV)
 
 public:
-    explicit ExileClient(const QString &email, const QString &password);
+    explicit ExileClient(const QString &email, const QString &password, QObject *parent = nullptr);
     virtual ~ExileClient();
 
 public slots:
-    void connectToHost(const QString &hostName, quint16 port)
-    {
-        // sjc01.login.pathofexile.com:20481
-        qDebug() << QString("connectToHost(%1, %2)").arg(hostName).arg(port);
-        ExileSocket::connectToHost(hostName, port);
-    }
+    void connectToHost(const QString &hostName, quint16 port);
 
     void on_client_connected();
     void on_client_disconnected();
@@ -85,4 +82,5 @@ signals:
     void signal_BackendError(int result);
     void signal_LoginSuccess();
     void signal_CharacterList();
+    void signal_EnterGame(quint32 Address, quint16 Port, quint32 Ticket, quint32 WorldAreaHASH16, quint32 WorldInstance);
 };

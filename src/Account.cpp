@@ -22,12 +22,16 @@ void Account::run()
     connect(this, &Account::finished, m_ExileClient, &ExileClient::deleteLater);
     connect(m_ExileClient, &ExileClient::signal_BackendError, this, &Account::on_BackendError, Qt::DirectConnection);
 
+    // Init m_ExileGame
+    m_ExileGame = new ExileGame(m_ExileClient);
+    connect(this, &Account::finished, m_ExileGame, &ExileGame::deleteLater);
+    connect(m_ExileClient, &ExileClient::signal_EnterGame, m_ExileGame, &ExileGame::connectToHost, Qt::DirectConnection); // EnterGame
+
     // Init QJSEngine
     m_JSEngine = new QJSEngine;
     m_JSEngine->installExtensions(QJSEngine::AllExtensions);
-    m_JSEngine->globalObject().setProperty("Character", m_JSEngine->newQMetaObject(&Character::staticMetaObject));
-    m_JSEngine->globalObject().setProperty("ExileClient", m_JSEngine->newQMetaObject(&ExileClient::staticMetaObject));
     m_JSEngine->globalObject().setProperty("Client", m_JSEngine->newQObject(m_ExileClient));
+    m_JSEngine->globalObject().setProperty("Game", m_JSEngine->newQObject(m_ExileGame));
     m_JSEngine->evaluate(Helper::File::ReadAll("scripts/script.js"), "scripts/script.js");
     connect(this, &Account::finished, m_JSEngine, &QJSEngine::deleteLater);
     connect(
@@ -44,6 +48,7 @@ void Account::run()
     m_Tick->setInterval(100);
     connect(this, &Account::finished, m_Tick, &QTimer::deleteLater);
     connect(m_Tick, &QTimer::timeout, this, &Account::Tick, Qt::DirectConnection);
+
     m_Tick->start();
 
     this->exec();
@@ -63,8 +68,7 @@ QJSValue Account::CallFunction(const QString &name)
 
 QJSValue Account::Tick()
 {
-    QJSValue result = CallFunction("Tick");
-    return result;
+    return CallFunction("Tick");
 }
 
 void Account::on_BackendError(int result)

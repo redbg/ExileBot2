@@ -1,5 +1,6 @@
 #pragma once
 #include "ExileClient.h"
+#include "ExileGame.h"
 #include <QJSEngine>
 #include <QThread>
 #include <QTimer>
@@ -22,6 +23,7 @@ public:
     QString m_BackendError;
 
     ExileClient *m_ExileClient;
+    ExileGame   *m_ExileGame;
 
     QJSEngine *m_JSEngine;
     QTimer    *m_Tick;

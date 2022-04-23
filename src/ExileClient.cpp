@@ -1,8 +1,9 @@
 #include "ExileClient.h"
 
-ExileClient::ExileClient(const QString &email, const QString &password)
+ExileClient::ExileClient(const QString &email, const QString &password, QObject *parent)
     : m_Email(email)
     , m_Password(password)
+    , ExileSocket(parent)
 {
     connect(this, &ExileSocket::connected, this, &ExileClient::on_client_connected);
     connect(this, &ExileSocket::disconnected, this, &ExileClient::on_client_disconnected);
@@ -11,6 +12,13 @@ ExileClient::ExileClient(const QString &email, const QString &password)
 }
 
 ExileClient::~ExileClient() {}
+
+void ExileClient::connectToHost(const QString &hostName, quint16 port)
+{
+    // sjc01.login.pathofexile.com:20481
+    qDebug() << QString("connectToHost(%1, %2)").arg(hostName).arg(port);
+    ExileSocket::connectToHost(hostName, port);
+}
 
 void ExileClient::on_client_connected()
 {
@@ -133,6 +141,8 @@ void ExileClient::SendSelectCharacter(quint32 index)
     this->writeId((quint16)SEND::SelectCharacter); // PacketId
     this->write<quint8>(0);                        // 语言
     this->write<quint32>(index);                   // 角色下标
+
+    m_LastSelectIndex = index;
 }
 
 /**
@@ -247,13 +257,7 @@ void ExileClient::RecvSelectCharacterResult()
 
     QByteArray Key = this->read(0x40);
 
-    // 连接游戏服务器
-    qDebug() << QString("收到游戏服务器连接地址:[%1:%2] Ticket:[%3] WorldAreaHASH16:[%4] WorldInstance:[%5]")
-                    .arg(QHostAddress(Address).toString())
-                    .arg(Port)
-                    .arg(Ticket)
-                    .arg(WorldAreaHASH16)
-                    .arg(WorldInstance);
+    emit signal_EnterGame(Address, Port, Ticket, WorldAreaHASH16, WorldInstance);
 }
 
 void ExileClient::RecvCharacterList()
@@ -281,8 +285,8 @@ void ExileClient::RecvCharacterList()
         m_CharacterList.append(character);
     }
 
-    this->read<quint32>(); // LastSelectIndex
-    this->read<quint8>();  // ??
+    m_LastSelectIndex = this->read<quint32>(); // LastSelectIndex
+    this->read<quint8>();                      // ??
 }
 
 void ExileClient::RecvCloseSocket()

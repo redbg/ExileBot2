@@ -49,10 +49,13 @@ add_executable(ExileBot2
     # ExileClient
     src/ExileClient.cpp
     src/ExileClient.h
+
+    # ExileGame
+    src/ExileGame.cpp
+    src/ExileGame.h
     
     # Character
     src/Character.h
-    
 )
 
 target_link_libraries(ExileBot2 PRIVATE Qt6::Widgets)
