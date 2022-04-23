@@ -17,40 +17,38 @@ void Account::run()
 {
     m_BackendError.clear();
 
-    // Init m_ExileClient
+    m_JSEngine    = new QJSEngine;
+    m_Tick        = new QTimer;
     m_ExileClient = new ExileClient(m_Email, m_Password);
-    connect(this, &Account::finished, m_ExileClient, &ExileClient::deleteLater);
-    connect(m_ExileClient, &ExileClient::signal_BackendError, this, &Account::on_BackendError, Qt::DirectConnection);
-
-    // Init m_ExileGame
-    m_ExileGame = new ExileGame(m_ExileClient);
-    connect(this, &Account::finished, m_ExileGame, &ExileGame::deleteLater);
-    connect(m_ExileClient, &ExileClient::signal_EnterGame, m_ExileGame, &ExileGame::connectToHost, Qt::DirectConnection); // EnterGame
+    m_ExileGame   = new ExileGame(m_ExileClient);
 
     // Init QJSEngine
-    m_JSEngine = new QJSEngine;
     m_JSEngine->installExtensions(QJSEngine::AllExtensions);
     m_JSEngine->globalObject().setProperty("Client", m_JSEngine->newQObject(m_ExileClient));
     m_JSEngine->globalObject().setProperty("Game", m_JSEngine->newQObject(m_ExileGame));
     m_JSEngine->evaluate(Helper::File::ReadAll("scripts/script.js"), "scripts/script.js");
     connect(this, &Account::finished, m_JSEngine, &QJSEngine::deleteLater);
-    connect(
-        m_ExileClient, &ExileClient::signal_LoginSuccess, this, [this]()
-        { this->CallFunction("OnClientLoginSuccess"); },
-        Qt::DirectConnection);
-    connect(
-        m_ExileClient, &ExileClient::signal_CharacterList, this, [this]()
-        { this->CallFunction("OnClientCharacterList"); },
-        Qt::DirectConnection);
 
     // Init m_Tick
-    m_Tick = new QTimer;
-    m_Tick->setInterval(100);
     connect(this, &Account::finished, m_Tick, &QTimer::deleteLater);
     connect(m_Tick, &QTimer::timeout, this, &Account::Tick, Qt::DirectConnection);
 
-    m_Tick->start();
+    // Init m_ExileClient
+    connect(this, &Account::finished, m_ExileClient, &ExileClient::deleteLater);
+    connect(m_ExileClient, &ExileClient::signal_BackendError, this, &Account::on_BackendError, Qt::DirectConnection);
+    connect(
+        m_ExileClient, &ExileClient::signal_LoginSuccess, [this]()
+        { this->m_AccountName = m_ExileClient->m_AccountName; this->CallFunction("OnClientLoginSuccess"); });
+    connect(
+        m_ExileClient, &ExileClient::signal_CharacterList, [this]()
+        { this->CallFunction("OnClientCharacterList"); });
 
+    // Init m_ExileGame
+    connect(this, &Account::finished, m_ExileGame, &ExileGame::deleteLater);
+    connect(m_ExileClient, &ExileClient::signal_EnterGame, m_ExileGame, &ExileGame::connectToHost, Qt::DirectConnection); // EnterGame
+
+    // Start
+    m_Tick->start(100);
     this->exec();
 }
 

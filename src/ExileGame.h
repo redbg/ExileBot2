@@ -1,6 +1,7 @@
 #pragma once
 #include "ExileClient.h"
 #include "ExileSocket.h"
+#include <QNetworkAccessManager>
 
 class ExileGame : public ExileSocket
 {
@@ -13,6 +14,8 @@ private:
     quint32 m_WorldInstance;
     QString m_League;
     quint32 m_Seed;
+
+    QNetworkAccessManager *m_NetworkAccessManager;
 
 public:
     explicit ExileGame(ExileClient *client);
@@ -27,6 +30,8 @@ public slots:
     void on_game_readyRead();
 
     void SendTicket();
+
+    void RecvInitWorld();
 
 signals:
     void signal_BackendError(int result);

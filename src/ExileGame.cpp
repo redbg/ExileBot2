@@ -2,6 +2,7 @@
 
 ExileGame::ExileGame(ExileClient *client)
     : m_ExileClient(client)
+    , m_NetworkAccessManager(new QNetworkAccessManager(this))
 {
     connect(this, &ExileSocket::connected, this, &ExileGame::on_game_connected);
     connect(this, &ExileSocket::disconnected, this, &ExileGame::on_game_disconnected);
@@ -111,11 +112,8 @@ void ExileGame::on_game_readyRead()
         }
         case 0x10:
         {
-            // 收到地图信息
-            m_WorldAreaHASH16 = this->read<quint16>();
-            m_League          = this->readString();
-            m_Seed            = this->read<quint32>();
-            this->readAll();
+            // 地图信息
+            this->RecvInitWorld();
             break;
         }
         case 0x13:
@@ -593,4 +591,12 @@ void ExileGame::SendTicket()
     this->write<quint8>(0x00);
     this->write<quint8>(0x00);
     this->write<quint8>(0x01);
+}
+
+void ExileGame::RecvInitWorld()
+{
+    m_WorldAreaHASH16 = this->read<quint16>();
+    m_League          = this->readString();
+    m_Seed            = this->read<quint32>();
+    this->readAll();
 }
