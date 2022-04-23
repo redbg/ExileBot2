@@ -82,5 +82,5 @@ signals:
     void signal_BackendError(int result);
     void signal_LoginSuccess();
     void signal_CharacterList();
-    void signal_EnterGame(quint32 Address, quint16 Port, quint32 Ticket, quint32 WorldAreaHASH16, quint32 WorldInstance);
+    void signal_EnterGame(quint32 Address, quint16 Port, quint32 Ticket, quint32 WorldAreaHASH16, quint32 WorldInstance, QByteArray Key);
 };

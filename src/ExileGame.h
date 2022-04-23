@@ -11,13 +11,15 @@ private:
     quint32 m_Ticket;
     quint32 m_WorldAreaHASH16;
     quint32 m_WorldInstance;
+    QString m_League;
+    quint32 m_Seed;
 
 public:
     explicit ExileGame(ExileClient *client);
     virtual ~ExileGame();
 
 public slots:
-    void connectToHost(quint32 Address, quint16 Port, quint32 Ticket, quint32 WorldAreaHASH16, quint32 WorldInstance);
+    void connectToHost(quint32 Address, quint16 Port, quint32 Ticket, quint32 WorldAreaHASH16, quint32 WorldInstance, QByteArray Key);
 
     void on_game_connected();
     void on_game_disconnected();
@@ -25,4 +27,7 @@ public slots:
     void on_game_readyRead();
 
     void SendTicket();
+
+signals:
+    void signal_BackendError(int result);
 };

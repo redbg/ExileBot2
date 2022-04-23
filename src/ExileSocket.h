@@ -40,6 +40,8 @@ public:
     QByteArray readAll();
     QString    readString();
     quint16    readId();
+    quint32    ReadVarint();
+    qint32     ReadVarint1();
 
     // write
     template <typename T>

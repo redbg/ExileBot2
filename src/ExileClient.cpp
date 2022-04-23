@@ -257,7 +257,7 @@ void ExileClient::RecvSelectCharacterResult()
 
     QByteArray Key = this->read(0x40);
 
-    emit signal_EnterGame(Address, Port, Ticket, WorldAreaHASH16, WorldInstance);
+    emit signal_EnterGame(Address, Port, Ticket, WorldAreaHASH16, WorldInstance, Key);
 }
 
 void ExileClient::RecvCharacterList()
