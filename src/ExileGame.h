@@ -4,6 +4,7 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QNetworkRequest>
+#include "Object/ItemObject.h"
 
 class ExileGame : public ExileSocket
 {
@@ -45,6 +46,7 @@ public slots:
     void RecvInitWorld();
     void RecvChat();
     void RecvBackendError();
+    void RecvInventory();
 
 signals:
     void signal_BackendError(int result);

@@ -272,47 +272,8 @@ void ExileGame::on_game_readyRead()
         }
         case 0x85:
         {
-            // inventory 库存
-            this->read<quint8>();
-            quint32 inventoryId = this->read<quint32>();
-
-            {
-                // sub_15F00C0
-                this->read<quint8>();
-                this->read<quint8>();
-                this->read<quint8>();
-                this->read<quint8>();
-                quint8 v16 = this->read<quint8>();
-                if ((v16 & 0x8) != 0)
-                {
-                    this->read<quint64>();
-                }
-
-                if ((v16 & 0x10) != 0)
-                {
-                    this->read<quint32>();
-                    this->read<quint32>();
-                    this->read<quint32>();
-                    this->read<quint32>();
-                }
-
-                {
-                    quint32 size = this->read<quint32>();
-
-                    for (quint32 i = 0; i < size; i++)
-                    {
-                        this->read<quint32>();
-                        quint8 y = this->read<quint8>();
-                        quint8 x = this->read<quint8>();
-
-                        // item info
-                        QByteArray itemData = this->read(this->read<quint16>());
-                    }
-                }
-            }
-
-            this->read<quint8>();
-            this->read<quint8>();
+            // 库存信息
+            this->RecvInventory();
             break;
         }
         case 0x8e:
@@ -637,4 +598,53 @@ void ExileGame::RecvBackendError()
     quint16 BackendError = this->read<quint16>(); // error Id
     this->readString();                           // ??
     emit signal_BackendError(BackendError);
+}
+
+void ExileGame::RecvInventory()
+{
+    // 库存信息
+    this->read<quint8>();
+    quint32 inventoryId = this->read<quint32>();
+
+    {
+        // sub_15F00C0
+        this->read<quint8>();
+        this->read<quint8>();
+        this->read<quint8>(); // Width
+        this->read<quint8>(); // Height
+        quint8 v16 = this->read<quint8>();
+        if ((v16 & 0x8) != 0)
+        {
+            this->read<quint64>();
+        }
+
+        if ((v16 & 0x10) != 0)
+        {
+            this->read<quint32>();
+            this->read<quint32>();
+            this->read<quint32>();
+            this->read<quint32>();
+        }
+
+        {
+            // 物品数量
+            quint32 size = this->read<quint32>();
+
+            for (quint32 i = 0; i < size; i++)
+            {
+                quint32 index = this->read<quint32>();
+                quint8  y     = this->read<quint8>();
+                quint8  x     = this->read<quint8>();
+
+                // item info
+                QByteArray itemData = this->read(this->read<quint16>());
+
+                QDataStream dataStream(itemData);
+                ItemObject  item(&dataStream);
+            }
+        }
+    }
+
+    this->read<quint8>();
+    this->read<quint8>();
 }

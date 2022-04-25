@@ -28,7 +28,11 @@ namespace Helper
     namespace Data
     {
         QJsonArray  GetDataArray(QString fileName);
-        QJsonObject GetBackendError(quint16 index);
+        QJsonObject GetDataObject(QString fileName);
+        QJsonObject GetBackendError(int index);
+        QJsonObject GetBaseItemType(int hash);
+
+        QJsonArray GetItemComponentNames(QString name);
 
     } // namespace Data
 

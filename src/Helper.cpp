@@ -72,11 +72,41 @@ namespace Helper
             return JsonDocument.array();
         }
 
-        QJsonObject GetBackendError(quint16 index)
+        QJsonObject GetDataObject(QString fileName)
         {
-            static QJsonArray JsonArray = GetDataArray(":Data/BackendErrors.json");
+            QJsonDocument JsonDocument = QJsonDocument::fromJson(Helper::File::ReadAll(fileName));
+            Q_ASSERT_X(JsonDocument.isObject(), "Helper::Data::GetDataObject", fileName.toLatin1().data());
+            return JsonDocument.object();
+        }
+
+        QJsonObject GetBackendError(int index)
+        {
+            static QJsonArray JsonArray = GetDataArray(":/Data/BackendErrors.json");
             return JsonArray.at(index).toObject();
         }
+
+        QJsonObject GetBaseItemType(int hash)
+        {
+            static QJsonArray JsonArray = GetDataArray(":/Data/BaseItemTypes.json");
+
+            for (int i = 0; i < JsonArray.size(); i++)
+            {
+                if (JsonArray.at(i).toObject().value("HASH").toInt() == hash)
+                {
+                    return JsonArray.at(i).toObject();
+                }
+            }
+
+            return QJsonObject();
+        }
+
+        QJsonArray GetItemComponentNames(QString name)
+        {
+            static QJsonObject JsonArray = GetDataObject(":/Data/ItemCompenentNames.json");
+
+            return JsonArray.value(name).toArray();
+        }
+
     } // namespace Data
 
 } // namespace Helper

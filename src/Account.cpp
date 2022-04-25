@@ -22,19 +22,21 @@ void Account::run()
     m_ExileClient = new ExileClient(m_Email, m_Password);
     m_ExileGame   = new ExileGame(m_ExileClient);
 
+    connect(this, &Account::finished, m_JSEngine, &QJSEngine::deleteLater);
+    connect(this, &Account::finished, m_Tick, &QTimer::deleteLater);
+    connect(this, &Account::finished, m_ExileClient, &ExileClient::deleteLater);
+    connect(this, &Account::finished, m_ExileGame, &ExileGame::deleteLater);
+
     // Init QJSEngine
     m_JSEngine->installExtensions(QJSEngine::AllExtensions);
+    m_JSEngine->evaluate(Helper::File::ReadAll("scripts/script.js"), "scripts/script.js");
     m_JSEngine->globalObject().setProperty("Client", m_JSEngine->newQObject(m_ExileClient));
     m_JSEngine->globalObject().setProperty("Game", m_JSEngine->newQObject(m_ExileGame));
-    m_JSEngine->evaluate(Helper::File::ReadAll("scripts/script.js"), "scripts/script.js");
-    connect(this, &Account::finished, m_JSEngine, &QJSEngine::deleteLater);
 
     // Init m_Tick
-    connect(this, &Account::finished, m_Tick, &QTimer::deleteLater);
     connect(m_Tick, &QTimer::timeout, this, &Account::Tick, Qt::DirectConnection);
 
     // Init m_ExileClient
-    connect(this, &Account::finished, m_ExileClient, &ExileClient::deleteLater);
     connect(m_ExileClient, &ExileClient::signal_BackendError, this, &Account::on_BackendError, Qt::DirectConnection);
     connect(m_ExileClient, &ExileClient::signal_LoginSuccess, [this]()
             {
@@ -46,9 +48,11 @@ void Account::run()
                 this->CallFunction("OnClientCharacterList");
             });
 
+    // EnterGame
+    connect(m_ExileClient, &ExileClient::signal_EnterGame, m_ExileGame, &ExileGame::connectToHost, Qt::DirectConnection);
+
     // Init m_ExileGame
-    connect(this, &Account::finished, m_ExileGame, &ExileGame::deleteLater);
-    connect(m_ExileClient, &ExileClient::signal_EnterGame, m_ExileGame, &ExileGame::connectToHost, Qt::DirectConnection); // EnterGame
+    connect(m_ExileGame, &ExileGame::signal_BackendError, this, &Account::on_BackendError, Qt::DirectConnection);
 
     // Start
     m_Tick->start(100);

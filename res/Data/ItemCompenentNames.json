@@ -1,0 +1,412 @@
+{
+    "Metadata/Items/Amulets/AbstractAmulet": [
+        "Base",
+        "LocalStats",
+        "Mods"
+    ],
+    "Metadata/Items/Archnemesis/ArchnemesisMod": [
+        "Base",
+        "ArchnemesisMod"
+    ],
+    "Metadata/Items/Armours/BodyArmours/AbstractBodyArmour": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "AttributeRequirements",
+        "Quality",
+        "Armour",
+        "Sockets"
+    ],
+    "Metadata/Items/Armours/Boots/AbstractBoots": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "AttributeRequirements",
+        "Quality",
+        "Armour",
+        "Sockets"
+    ],
+    "Metadata/Items/Armours/Gloves/AbstractGloves": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "AttributeRequirements",
+        "Quality",
+        "Armour",
+        "Sockets"
+    ],
+    "Metadata/Items/Armours/Helmets/AbstractHelmet": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "AttributeRequirements",
+        "Quality",
+        "Armour",
+        "Sockets"
+    ],
+    "Metadata/Items/Armours/Shields/AbstractShield": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "AttributeRequirements",
+        "Quality",
+        "Armour",
+        "Sockets",
+        "Shield"
+    ],
+    "Metadata/Items/AtlasUpgrades/AtlasRegionUpgrade": [
+        "Base",
+        "LocalStats",
+        "Mods"
+    ],
+    "Metadata/Items/Belts/AbstractBelt": [
+        "Base",
+        "LocalStats",
+        "Mods"
+    ],
+    "Metadata/Items/Classic/Leaguestone": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "Charges"
+    ],
+    "Metadata/Items/Currency/AbstractCurrency": [
+        "Base",
+        "Usable"
+    ],
+    "Metadata/Items/Currency/AbstractMicrotransaction": [
+        "Base",
+        "Usable",
+        "Stack"
+    ],
+    "Metadata/Items/Currency/StackableCurrency": [
+        "Base",
+        "Usable",
+        "Stack"
+    ],
+    "Metadata/Items/Delve/DelveSocketableCurrency": [
+        "Base",
+        "Sockets",
+        "Usable",
+        "AttributeRequirements"
+    ],
+    "Metadata/Items/Delve/DelveStackableSocketableCurrency": [
+        "Base",
+        "Stack",
+        "Sockets",
+        "Usable",
+        "AttributeRequirements"
+    ],
+    "Metadata/Items/DivinationCards/AbstractDivinationCard": [
+        "Base",
+        "Stack"
+    ],
+    "Metadata/Items/Expedition/ExpeditionSaga": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "ExpeditionSaga"
+    ],
+    "Metadata/Items/Flasks/AbstractHybridFlask": [
+        "Base",
+        "Quality",
+        "LocalStats",
+        "Charges",
+        "Mods",
+        "Usable",
+        "Flask"
+    ],
+    "Metadata/Items/Flasks/AbstractLifeFlask": [
+        "Base",
+        "Quality",
+        "LocalStats",
+        "Charges",
+        "Mods",
+        "Usable",
+        "Flask"
+    ],
+    "Metadata/Items/Flasks/AbstractManaFlask": [
+        "Base",
+        "Quality",
+        "LocalStats",
+        "Charges",
+        "Mods",
+        "Usable",
+        "Flask"
+    ],
+    "Metadata/Items/Flasks/AbstractUtilityFlask": [
+        "Base",
+        "Quality",
+        "LocalStats",
+        "Charges",
+        "Mods",
+        "Usable",
+        "Flask"
+    ],
+    "Metadata/Items/Gems/ActiveSkillGem": [
+        "Base",
+        "SkillGem",
+        "Quality"
+    ],
+    "Metadata/Items/Gems/SupportSkillGem": [
+        "Base",
+        "SkillGem",
+        "Quality"
+    ],
+    "Metadata/Items/Heist/AbstractHeistEquipment": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "HeistEquipment"
+    ],
+    "Metadata/Items/Heist/HeistBlueprint": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "HeistBlueprint"
+    ],
+    "Metadata/Items/Heist/HeistContract": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "HeistContract"
+    ],
+    "Metadata/Items/Heist/HeistObjective": [
+        "Base",
+        "HeistObjective"
+    ],
+    "Metadata/Items/HideoutDoodads/AbstractHideoutDoodad": [
+        "Base",
+        "Usable",
+        "Stack"
+    ],
+    "Metadata/Items/Item": [
+        "Base"
+    ],
+    "Metadata/Items/Jewels/AbstractAbyssJewel": [
+        "Base",
+        "LocalStats",
+        "Mods"
+    ],
+    "Metadata/Items/Jewels/AbstractJewel": [
+        "Base",
+        "LocalStats",
+        "Mods"
+    ],
+    "Metadata/Items/Labyrinth/AbstractLabyrinthItem": [
+        "Base",
+        "Stack"
+    ],
+    "Metadata/Items/Labyrinth/LabyrinthTrinket": [
+        "Base",
+        "Stack"
+    ],
+    "Metadata/Items/Labyrinth/OfferingToTheGoddess": [
+        "Base",
+        "LocalStats",
+        "Mods"
+    ],
+    "Metadata/Items/Legion/Incubator": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "Usable"
+    ],
+    "Metadata/Items/Legion/IncubatorStackable": [
+        "Base",
+        "Stack",
+        "Usable"
+    ],
+    "Metadata/Items/MapFragments/AbstractMapFragment": [
+        "Base",
+        "Stack",
+        "Usable"
+    ],
+    "Metadata/Items/MapFragments/AbstractMiscMapItem": [
+        "Base"
+    ],
+    "Metadata/Items/Maps/AbstractMap": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "Quality",
+        "Map"
+    ],
+    "Metadata/Items/Metamorphosis/MetamorphosisDNA": [
+        "Base",
+        "CapturedMonster",
+        "LocalStats",
+        "Mods"
+    ],
+    "Metadata/Items/PantheonSouls/AbstactPantheonSoul": [
+        "Base"
+    ],
+    "Metadata/Items/QuestItems/AbstractQuestItem": [
+        "Base",
+        "Quest"
+    ],
+    "Metadata/Items/Quivers/AbstractQuiver": [
+        "Base",
+        "LocalStats",
+        "Mods"
+    ],
+    "Metadata/Items/Rings/AbstractRing": [
+        "Base",
+        "LocalStats",
+        "Mods"
+    ],
+    "Metadata/Items/Trinkets/AbstractTrinket": [
+        "Base",
+        "LocalStats",
+        "Mods"
+    ],
+    "Metadata/Items/UniqueFragments/AbstractUniqueFragment": [
+        "Base",
+        "LocalStats",
+        "Mods"
+    ],
+    "Metadata/Items/Weapons/OneHandWeapons/Claws/AbstractClaw": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "AttributeRequirements",
+        "Weapon",
+        "Quality",
+        "Sockets"
+    ],
+    "Metadata/Items/Weapons/OneHandWeapons/Daggers/AbstractDagger": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "AttributeRequirements",
+        "Weapon",
+        "Quality",
+        "Sockets"
+    ],
+    "Metadata/Items/Weapons/OneHandWeapons/Daggers/AbstractRuneDagger": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "AttributeRequirements",
+        "Weapon",
+        "Quality",
+        "Sockets"
+    ],
+    "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/AbstractOneHandAxe": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "AttributeRequirements",
+        "Weapon",
+        "Quality",
+        "Sockets"
+    ],
+    "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/AbstractOneHandMace": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "AttributeRequirements",
+        "Weapon",
+        "Quality",
+        "Sockets"
+    ],
+    "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/AbstractSceptre": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "AttributeRequirements",
+        "Weapon",
+        "Quality",
+        "Sockets"
+    ],
+    "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/AbstractOneHandSword": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "AttributeRequirements",
+        "Weapon",
+        "Quality",
+        "Sockets"
+    ],
+    "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/AbstractOneHandSwordThrusting": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "AttributeRequirements",
+        "Weapon",
+        "Quality",
+        "Sockets"
+    ],
+    "Metadata/Items/Weapons/OneHandWeapons/Wands/AbstractWand": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "AttributeRequirements",
+        "Weapon",
+        "Quality",
+        "Sockets"
+    ],
+    "Metadata/Items/Weapons/TwoHandWeapons/Bows/AbstractBow": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "AttributeRequirements",
+        "Weapon",
+        "Quality",
+        "Sockets"
+    ],
+    "Metadata/Items/Weapons/TwoHandWeapons/FishingRods/AbstractFishingRod": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "AttributeRequirements",
+        "Weapon",
+        "Quality",
+        "Sockets"
+    ],
+    "Metadata/Items/Weapons/TwoHandWeapons/Staves/AbstractStaff": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "AttributeRequirements",
+        "Weapon",
+        "Quality",
+        "Sockets"
+    ],
+    "Metadata/Items/Weapons/TwoHandWeapons/Staves/AbstractWarstaff": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "AttributeRequirements",
+        "Weapon",
+        "Quality",
+        "Sockets"
+    ],
+    "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/AbstractTwoHandAxe": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "AttributeRequirements",
+        "Weapon",
+        "Quality",
+        "Sockets"
+    ],
+    "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/AbstractTwoHandMace": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "AttributeRequirements",
+        "Weapon",
+        "Quality",
+        "Sockets"
+    ],
+    "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/AbstractTwoHandSword": [
+        "Base",
+        "LocalStats",
+        "Mods",
+        "AttributeRequirements",
+        "Weapon",
+        "Quality",
+        "Sockets"
+    ]
+}

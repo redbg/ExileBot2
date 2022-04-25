@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>Data/BackendErrors.json</file>
+        <file>Data/BaseItemTypes.json</file>
+        <file>Data/ItemCompenentNames.json</file>
     </qresource>
 </RCC>
