@@ -2,6 +2,8 @@
 #include "ExileClient.h"
 #include "ExileSocket.h"
 #include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QNetworkRequest>
 
 class ExileGame : public ExileSocket
 {
@@ -15,7 +17,15 @@ private:
     QString m_League;
     quint32 m_Seed;
 
-    QNetworkAccessManager *m_NetworkAccessManager;
+    quint32    m_TileHash;
+    quint32    m_DoodadHash;
+    quint32    m_TerrainWidth;
+    quint32    m_TerrainHeight;
+    QByteArray m_Terrain;
+
+    QString     m_WorldAreaId;
+    QString     m_WorldAreaName;
+    QJsonObject m_RadarInfo;
 
 public:
     explicit ExileGame(ExileClient *client);
@@ -30,8 +40,11 @@ public slots:
     void on_game_readyRead();
 
     void SendTicket();
+    void SendTileHash(quint32 tileHash, quint32 doodadHash);
 
     void RecvInitWorld();
+    void RecvChat();
+    void RecvBackendError();
 
 signals:
     void signal_BackendError(int result);

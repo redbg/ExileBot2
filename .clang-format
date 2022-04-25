@@ -26,3 +26,6 @@ AlignTrailingComments: true
 BreakBeforeBraces: Allman
 # 构造函数初始化列表换行风格
 BreakConstructorInitializers: BeforeComma
+
+# Lambda
+AllowShortLambdasOnASingleLine: Empty

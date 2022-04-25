@@ -36,12 +36,15 @@ void Account::run()
     // Init m_ExileClient
     connect(this, &Account::finished, m_ExileClient, &ExileClient::deleteLater);
     connect(m_ExileClient, &ExileClient::signal_BackendError, this, &Account::on_BackendError, Qt::DirectConnection);
-    connect(
-        m_ExileClient, &ExileClient::signal_LoginSuccess, [this]()
-        { this->m_AccountName = m_ExileClient->m_AccountName; this->CallFunction("OnClientLoginSuccess"); });
-    connect(
-        m_ExileClient, &ExileClient::signal_CharacterList, [this]()
-        { this->CallFunction("OnClientCharacterList"); });
+    connect(m_ExileClient, &ExileClient::signal_LoginSuccess, [this]()
+            {
+                this->m_AccountName = m_ExileClient->m_AccountName;
+                this->CallFunction("OnClientLoginSuccess");
+            });
+    connect(m_ExileClient, &ExileClient::signal_CharacterList, [this]()
+            {
+                this->CallFunction("OnClientCharacterList");
+            });
 
     // Init m_ExileGame
     connect(this, &Account::finished, m_ExileGame, &ExileGame::deleteLater);

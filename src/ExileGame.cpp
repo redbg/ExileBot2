@@ -2,7 +2,6 @@
 
 ExileGame::ExileGame(ExileClient *client)
     : m_ExileClient(client)
-    , m_NetworkAccessManager(new QNetworkAccessManager(this))
 {
     connect(this, &ExileSocket::connected, this, &ExileGame::on_game_connected);
     connect(this, &ExileSocket::disconnected, this, &ExileGame::on_game_disconnected);
@@ -53,7 +52,7 @@ void ExileGame::on_game_readyRead()
     {
         quint16 PacketId = this->readId();
 
-        qDebug() << QString("PacketId:[0x%1]").arg(QString::number(PacketId, 16));
+        // qDebug() << QString("PacketId:[0x%1]").arg(QString::number(PacketId, 16));
 
         switch (PacketId)
         {
@@ -66,25 +65,7 @@ void ExileGame::on_game_readyRead()
         case 0xa:
         {
             // 聊天信息
-            QString name = readString();
-            QString text = readString();
-            readString();
-
-            qDebug() << name << text;
-
-            read<quint16>();
-            read<quint8>();
-            read<quint8>();
-
-            quint8 itemCount = read<quint8>();
-
-            for (int i = 0; i < itemCount; i++)
-            {
-                quint32 index = read<quint32>();
-
-                quint16    size     = read<quint16>();
-                QByteArray itemData = read(size);
-            }
+            this->RecvChat();
             break;
         }
         case 0xb:
@@ -171,10 +152,8 @@ void ExileGame::on_game_readyRead()
         }
         case 0x19:
         {
-            // 游戏服务器错误
-            quint16 BackendError = this->read<quint16>(); // error Id
-            this->readString();                           // ??
-            emit signal_BackendError(BackendError);
+            // 收到错误信息
+            this->RecvBackendError();
             break;
         }
         case 0x24:
@@ -534,8 +513,7 @@ void ExileGame::on_game_readyRead()
         }
         case 0x21a:
         {
-            // 服务器心跳.
-            qDebug() << "服务器心跳";
+            // 服务器心跳
             break;
         }
         case 0x21e:
@@ -593,10 +571,70 @@ void ExileGame::SendTicket()
     this->write<quint8>(0x01);
 }
 
+void ExileGame::SendTileHash(quint32 tileHash, quint32 doodadHash)
+{
+    qDebug() << QString("SendTileHash(%1, %2)").arg(tileHash).arg(doodadHash);
+    this->writeId(0x53);
+    this->write(tileHash);
+    this->write(doodadHash);
+}
+
 void ExileGame::RecvInitWorld()
 {
     m_WorldAreaHASH16 = this->read<quint16>();
     m_League          = this->readString();
     m_Seed            = this->read<quint32>();
     this->readAll();
+
+    QNetworkAccessManager *mgr = new QNetworkAccessManager;
+    QNetworkRequest        req(QUrl(QString("http://127.0.0.1:6112/world?hash16=%1&seed=%2").arg(m_WorldAreaHASH16).arg(m_Seed)));
+    mgr->get(req);
+
+    connect(mgr, &QNetworkAccessManager::finished, [=](QNetworkReply *reply)
+            {
+                m_TileHash      = reply->rawHeader("TileHash").toUInt();
+                m_DoodadHash    = reply->rawHeader("DoodadHash").toUInt();
+                m_TerrainWidth  = reply->rawHeader("TerrainWidth").toUInt();
+                m_TerrainHeight = reply->rawHeader("TerrainHeight").toUInt();
+                m_WorldAreaId   = reply->rawHeader("WorldAreaId");
+                m_WorldAreaName = reply->rawHeader("WorldAreaName");
+                m_RadarInfo     = QJsonDocument::fromJson(reply->rawHeader("RadarInfo")).object();
+                m_Terrain       = reply->readAll();
+
+                this->SendTileHash(m_TileHash, m_DoodadHash);
+                reply->deleteLater();
+                mgr->deleteLater();
+            });
+}
+
+void ExileGame::RecvChat()
+{
+    // 聊天信息
+    QString name = readString();
+    QString text = readString();
+    readString();
+
+    qDebug() << name << text;
+
+    read<quint16>();
+    read<quint8>();
+    read<quint8>();
+
+    quint8 itemCount = read<quint8>();
+
+    for (int i = 0; i < itemCount; i++)
+    {
+        quint32 index = read<quint32>();
+
+        quint16    size     = read<quint16>();
+        QByteArray itemData = read(size);
+    }
+}
+
+void ExileGame::RecvBackendError()
+{
+    // 错误信息
+    quint16 BackendError = this->read<quint16>(); // error Id
+    this->readString();                           // ??
+    emit signal_BackendError(BackendError);
 }
