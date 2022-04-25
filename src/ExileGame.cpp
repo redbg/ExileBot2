@@ -635,7 +635,7 @@ void ExileGame::RecvInventory()
                 QByteArray itemData = this->read(this->read<quint16>());
 
                 QDataStream dataStream(itemData);
-                new ItemObject(&dataStream, this);
+                m_ItemList.append(new ItemObject(&dataStream, this));
             }
         }
     }
@@ -654,5 +654,5 @@ void ExileGame::RecvGameObject()
     QByteArray ComponentsData = this->read(this->read<quint16>()); // Components Data
 
     QDataStream dataStream(ComponentsData);
-    new GameObject(GameObjectHash, &dataStream, this);
+    m_GameObjectList.append(new GameObject(GameObjectHash, &dataStream, this));
 }

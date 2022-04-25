@@ -29,6 +29,9 @@ private:
     QString     m_WorldAreaName;
     QJsonObject m_RadarInfo;
 
+    QList<ItemObject *> m_ItemList;
+    QList<GameObject *> m_GameObjectList;
+
 public:
     explicit ExileGame(ExileClient *client);
     virtual ~ExileGame();
