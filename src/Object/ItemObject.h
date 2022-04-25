@@ -12,7 +12,4 @@ private:
 public:
     explicit ItemObject(QDataStream *dataStream, QObject *parent = nullptr);
     virtual ~ItemObject();
-
-    virtual QJsonArray GetComponentNames();
-    virtual void       ProcessDataStream() {}
 };

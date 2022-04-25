@@ -8,12 +8,7 @@ ItemObject::ItemObject(QDataStream *dataStream, QObject *parent)
 
     m_BaseItemType = Helper::Data::GetBaseItemType(hash);
 
-    qDebug() << this->GetComponentNames();
+    this->ProcessDataStream(Helper::Data::GetItemComponentNames(m_BaseItemType.value("InheritsFrom").toString()));
 }
 
 ItemObject::~ItemObject() {}
-
-QJsonArray ItemObject::GetComponentNames()
-{
-    return Helper::Data::GetItemComponentNames(m_BaseItemType.value("InheritsFrom").toString());
-}

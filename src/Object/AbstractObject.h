@@ -1,4 +1,5 @@
 #pragma once
+#include "src/Helper.h"
 #include <QObject>
 
 class AbstractObject : public QObject
@@ -12,8 +13,16 @@ public:
     explicit AbstractObject(QDataStream *dataStream, QObject *parent = nullptr);
     virtual ~AbstractObject();
 
-    virtual QJsonArray GetComponentNames() = 0; // 获取组件名称顺序数组
-    virtual void       ProcessDataStream() = 0; // 处理数据流
+    // 处理数据流
+    virtual void ProcessDataStream(QJsonArray componentNames)
+    {
+        for (int i = 0; i < componentNames.size(); i++)
+        {
+            QString name = componentNames.at(i).toString();
+
+            this->metaObject()->invokeMethod(this, name.toLatin1().data());
+        }
+    }
 
     template <typename T>
     T readData()

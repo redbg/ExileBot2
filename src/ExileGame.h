@@ -1,10 +1,11 @@
 #pragma once
 #include "ExileClient.h"
 #include "ExileSocket.h"
+#include "Object/GameObject.h"
+#include "Object/ItemObject.h"
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QNetworkRequest>
-#include "Object/ItemObject.h"
 
 class ExileGame : public ExileSocket
 {
@@ -47,6 +48,7 @@ public slots:
     void RecvChat();
     void RecvBackendError();
     void RecvInventory();
+    void RecvGameObject();
 
 signals:
     void signal_BackendError(int result);
