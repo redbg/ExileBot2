@@ -1,0 +1,5567 @@
+[
+  {
+    "_rid": 0,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStr1",
+    "ReqStr": 11,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 1,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStr2",
+    "ReqStr": 20,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 2,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStr3",
+    "ReqStr": 33,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 3,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStr4",
+    "ReqStr": 47,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 4,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStr5",
+    "ReqStr": 62,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 5,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStr6",
+    "ReqStr": 76,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 6,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStr7",
+    "ReqStr": 87,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 7,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStr8",
+    "ReqStr": 96,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 8,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStr9",
+    "ReqStr": 105,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 9,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStr10",
+    "ReqStr": 114,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 10,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStr11",
+    "ReqStr": 123,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 11,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStr12",
+    "ReqStr": 132,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 12,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStr13",
+    "ReqStr": 139,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 13,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStr14",
+    "ReqStr": 159,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 14,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStr15",
+    "ReqStr": 159,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 15,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStr16",
+    "ReqStr": 159,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 16,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStr17",
+    "ReqStr": 159,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 17,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrE1",
+    "ReqStr": 76,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 18,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrE2",
+    "ReqStr": 121,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 19,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrE3",
+    "ReqStr": 159,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 20,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDex1",
+    "ReqStr": 0,
+    "ReqDex": 13,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 21,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDex2",
+    "ReqStr": 0,
+    "ReqDex": 26,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 22,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDex3",
+    "ReqStr": 0,
+    "ReqDex": 44,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 23,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDex4",
+    "ReqStr": 0,
+    "ReqDex": 60,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 24,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDex5",
+    "ReqStr": 0,
+    "ReqDex": 74,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 25,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDex6",
+    "ReqStr": 0,
+    "ReqDex": 85,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 26,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDex7",
+    "ReqStr": 0,
+    "ReqDex": 94,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 27,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDex8",
+    "ReqStr": 0,
+    "ReqDex": 103,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 28,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDex9",
+    "ReqStr": 0,
+    "ReqDex": 112,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 29,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDex10",
+    "ReqStr": 0,
+    "ReqDex": 121,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 30,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDex11",
+    "ReqStr": 0,
+    "ReqDex": 130,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 31,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDex12",
+    "ReqStr": 0,
+    "ReqDex": 137,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 32,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDex13",
+    "ReqStr": 0,
+    "ReqDex": 154,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 33,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDex14",
+    "ReqStr": 0,
+    "ReqDex": 159,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 34,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDex15",
+    "ReqStr": 0,
+    "ReqDex": 159,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 35,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDex16",
+    "ReqStr": 0,
+    "ReqDex": 159,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 36,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDexE1",
+    "ReqStr": 0,
+    "ReqDex": 76,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 37,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDexE2",
+    "ReqStr": 0,
+    "ReqDex": 121,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 38,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDexE3",
+    "ReqStr": 0,
+    "ReqDex": 159,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 39,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldInt1",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 15
+  },
+  {
+    "_rid": 40,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldInt2",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 29
+  },
+  {
+    "_rid": 41,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldInt3",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 42
+  },
+  {
+    "_rid": 42,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldInt4",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 60
+  },
+  {
+    "_rid": 43,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldInt5",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 71
+  },
+  {
+    "_rid": 44,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldInt6",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 83
+  },
+  {
+    "_rid": 45,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldInt7",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 92
+  },
+  {
+    "_rid": 46,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldInt8",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 101
+  },
+  {
+    "_rid": 47,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldInt9",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 110
+  },
+  {
+    "_rid": 48,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldInt10",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 119
+  },
+  {
+    "_rid": 49,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldInt11",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 128
+  },
+  {
+    "_rid": 50,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldInt12",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 134
+  },
+  {
+    "_rid": 51,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldInt13",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 141
+  },
+  {
+    "_rid": 52,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldInt14",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 159
+  },
+  {
+    "_rid": 53,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldInt15",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 159
+  },
+  {
+    "_rid": 54,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldInt16",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 159
+  },
+  {
+    "_rid": 55,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldIntE1",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 76
+  },
+  {
+    "_rid": 56,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldIntE2",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 121
+  },
+  {
+    "_rid": 57,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldIntE3",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 159
+  },
+  {
+    "_rid": 58,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrDex1",
+    "ReqStr": 11,
+    "ReqDex": 11,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 59,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrDex2",
+    "ReqStr": 19,
+    "ReqDex": 19,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 60,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrDex3",
+    "ReqStr": 29,
+    "ReqDex": 29,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 61,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrDex4",
+    "ReqStr": 37,
+    "ReqDex": 37,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 62,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrDex5",
+    "ReqStr": 44,
+    "ReqDex": 44,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 63,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrDex6",
+    "ReqStr": 52,
+    "ReqDex": 52,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 64,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrDex7",
+    "ReqStr": 59,
+    "ReqDex": 59,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 65,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrDex8",
+    "ReqStr": 64,
+    "ReqDex": 64,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 66,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrDex9",
+    "ReqStr": 70,
+    "ReqDex": 70,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 67,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrDex10",
+    "ReqStr": 74,
+    "ReqDex": 74,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 68,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrDex11",
+    "ReqStr": 85,
+    "ReqDex": 85,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 69,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrDex12",
+    "ReqStr": 85,
+    "ReqDex": 85,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 70,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrDex13",
+    "ReqStr": 85,
+    "ReqDex": 85,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 71,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrInt1",
+    "ReqStr": 13,
+    "ReqDex": 0,
+    "ReqInt": 13
+  },
+  {
+    "_rid": 72,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrInt2",
+    "ReqStr": 20,
+    "ReqDex": 0,
+    "ReqInt": 20
+  },
+  {
+    "_rid": 73,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrInt3",
+    "ReqStr": 29,
+    "ReqDex": 0,
+    "ReqInt": 29
+  },
+  {
+    "_rid": 74,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrInt4",
+    "ReqStr": 37,
+    "ReqDex": 0,
+    "ReqInt": 37
+  },
+  {
+    "_rid": 75,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrInt5",
+    "ReqStr": 46,
+    "ReqDex": 0,
+    "ReqInt": 46
+  },
+  {
+    "_rid": 76,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrInt6",
+    "ReqStr": 53,
+    "ReqDex": 0,
+    "ReqInt": 53
+  },
+  {
+    "_rid": 77,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrInt7",
+    "ReqStr": 60,
+    "ReqDex": 0,
+    "ReqInt": 60
+  },
+  {
+    "_rid": 78,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrInt8",
+    "ReqStr": 65,
+    "ReqDex": 0,
+    "ReqInt": 65
+  },
+  {
+    "_rid": 79,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrInt9",
+    "ReqStr": 71,
+    "ReqDex": 0,
+    "ReqInt": 71
+  },
+  {
+    "_rid": 80,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrInt10",
+    "ReqStr": 76,
+    "ReqDex": 0,
+    "ReqInt": 76
+  },
+  {
+    "_rid": 81,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrInt11",
+    "ReqStr": 85,
+    "ReqDex": 0,
+    "ReqInt": 85
+  },
+  {
+    "_rid": 82,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrInt12",
+    "ReqStr": 85,
+    "ReqDex": 0,
+    "ReqInt": 85
+  },
+  {
+    "_rid": 83,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldStrInt13",
+    "ReqStr": 85,
+    "ReqDex": 0,
+    "ReqInt": 85
+  },
+  {
+    "_rid": 84,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDexInt1",
+    "ReqStr": 0,
+    "ReqDex": 11,
+    "ReqInt": 11
+  },
+  {
+    "_rid": 85,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDexInt2",
+    "ReqStr": 0,
+    "ReqDex": 19,
+    "ReqInt": 19
+  },
+  {
+    "_rid": 86,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDexInt3",
+    "ReqStr": 0,
+    "ReqDex": 29,
+    "ReqInt": 29
+  },
+  {
+    "_rid": 87,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDexInt4",
+    "ReqStr": 0,
+    "ReqDex": 37,
+    "ReqInt": 37
+  },
+  {
+    "_rid": 88,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDexInt5",
+    "ReqStr": 0,
+    "ReqDex": 44,
+    "ReqInt": 44
+  },
+  {
+    "_rid": 89,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDexInt6",
+    "ReqStr": 0,
+    "ReqDex": 52,
+    "ReqInt": 52
+  },
+  {
+    "_rid": 90,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDexInt7",
+    "ReqStr": 0,
+    "ReqDex": 59,
+    "ReqInt": 59
+  },
+  {
+    "_rid": 91,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDexInt8",
+    "ReqStr": 0,
+    "ReqDex": 64,
+    "ReqInt": 64
+  },
+  {
+    "_rid": 92,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDexInt9",
+    "ReqStr": 0,
+    "ReqDex": 70,
+    "ReqInt": 70
+  },
+  {
+    "_rid": 93,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDexInt10",
+    "ReqStr": 0,
+    "ReqDex": 74,
+    "ReqInt": 74
+  },
+  {
+    "_rid": 94,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDexInt11",
+    "ReqStr": 0,
+    "ReqDex": 85,
+    "ReqInt": 85
+  },
+  {
+    "_rid": 95,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDexInt12",
+    "ReqStr": 0,
+    "ReqDex": 85,
+    "ReqInt": 85
+  },
+  {
+    "_rid": 96,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDexInt13",
+    "ReqStr": 0,
+    "ReqDex": 85,
+    "ReqInt": 85
+  },
+  {
+    "_rid": 97,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Shields/ShieldDemigods",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 98,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStr1",
+    "ReqStr": 9,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 99,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStr2",
+    "ReqStr": 21,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 100,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStr3",
+    "ReqStr": 42,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 101,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStr4",
+    "ReqStr": 58,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 102,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStr5",
+    "ReqStr": 75,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 103,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStr6",
+    "ReqStr": 85,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 104,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStr7",
+    "ReqStr": 101,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 105,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStr8",
+    "ReqStr": 114,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 106,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStr9",
+    "ReqStr": 138,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 107,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStr10",
+    "ReqStr": 148,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 108,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStr11",
+    "ReqStr": 138,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 109,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDex1",
+    "ReqStr": 0,
+    "ReqDex": 13,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 110,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDex2",
+    "ReqStr": 0,
+    "ReqDex": 27,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 111,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDex3",
+    "ReqStr": 0,
+    "ReqDex": 46,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 112,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDex4",
+    "ReqStr": 0,
+    "ReqDex": 66,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 113,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDex5",
+    "ReqStr": 0,
+    "ReqDex": 87,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 114,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDex6",
+    "ReqStr": 0,
+    "ReqDex": 99,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 115,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDex7",
+    "ReqStr": 0,
+    "ReqDex": 114,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 116,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDex8",
+    "ReqStr": 0,
+    "ReqDex": 138,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 117,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDex9",
+    "ReqStr": 0,
+    "ReqDex": 138,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 118,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDex10",
+    "ReqStr": 0,
+    "ReqDex": 150,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 119,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetInt1",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 13
+  },
+  {
+    "_rid": 120,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetInt2",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 23
+  },
+  {
+    "_rid": 121,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetInt3",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 40
+  },
+  {
+    "_rid": 122,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetInt4",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 58
+  },
+  {
+    "_rid": 123,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetInt5",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 73
+  },
+  {
+    "_rid": 124,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetInt6",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 83
+  },
+  {
+    "_rid": 125,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetInt7",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 101
+  },
+  {
+    "_rid": 126,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetInt8",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 112
+  },
+  {
+    "_rid": 127,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetInt9",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 122
+  },
+  {
+    "_rid": 128,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetInt10",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 138
+  },
+  {
+    "_rid": 129,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetInt11",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 154
+  },
+  {
+    "_rid": 130,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrDex1",
+    "ReqStr": 8,
+    "ReqDex": 8,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 131,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrDex2",
+    "ReqStr": 18,
+    "ReqDex": 18,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 132,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrDex3",
+    "ReqStr": 28,
+    "ReqDex": 28,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 133,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrDex4",
+    "ReqStr": 38,
+    "ReqDex": 38,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 134,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrDex5",
+    "ReqStr": 42,
+    "ReqDex": 42,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 135,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrDex6",
+    "ReqStr": 49,
+    "ReqDex": 49,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 136,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrDex7",
+    "ReqStr": 57,
+    "ReqDex": 57,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 137,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrDex8",
+    "ReqStr": 64,
+    "ReqDex": 64,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 138,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrDex9",
+    "ReqStr": 85,
+    "ReqDex": 62,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 139,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrDex10",
+    "ReqStr": 62,
+    "ReqDex": 85,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 140,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrDexRitual1",
+    "ReqStr": 20,
+    "ReqDex": 20,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 141,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrDexRitual2",
+    "ReqStr": 51,
+    "ReqDex": 51,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 142,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrDexRitual3",
+    "ReqStr": 79,
+    "ReqDex": 79,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 143,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrInt1",
+    "ReqStr": 9,
+    "ReqDex": 0,
+    "ReqInt": 9
+  },
+  {
+    "_rid": 144,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrInt2",
+    "ReqStr": 16,
+    "ReqDex": 0,
+    "ReqInt": 16
+  },
+  {
+    "_rid": 145,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrInt3",
+    "ReqStr": 27,
+    "ReqDex": 0,
+    "ReqInt": 27
+  },
+  {
+    "_rid": 146,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrInt4",
+    "ReqStr": 36,
+    "ReqDex": 0,
+    "ReqInt": 36
+  },
+  {
+    "_rid": 147,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrInt5",
+    "ReqStr": 42,
+    "ReqDex": 0,
+    "ReqInt": 42
+  },
+  {
+    "_rid": 148,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrInt6",
+    "ReqStr": 50,
+    "ReqDex": 0,
+    "ReqInt": 50
+  },
+  {
+    "_rid": 149,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrInt7",
+    "ReqStr": 59,
+    "ReqDex": 0,
+    "ReqInt": 59
+  },
+  {
+    "_rid": 150,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrInt8",
+    "ReqStr": 64,
+    "ReqDex": 0,
+    "ReqInt": 64
+  },
+  {
+    "_rid": 151,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrInt9",
+    "ReqStr": 85,
+    "ReqDex": 0,
+    "ReqInt": 62
+  },
+  {
+    "_rid": 152,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrInt10",
+    "ReqStr": 62,
+    "ReqDex": 0,
+    "ReqInt": 91
+  },
+  {
+    "_rid": 153,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrIntRitual1",
+    "ReqStr": 20,
+    "ReqDex": 0,
+    "ReqInt": 20
+  },
+  {
+    "_rid": 154,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrIntRitual2",
+    "ReqStr": 51,
+    "ReqDex": 0,
+    "ReqInt": 51
+  },
+  {
+    "_rid": 155,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetStrIntRitual3",
+    "ReqStr": 79,
+    "ReqDex": 0,
+    "ReqInt": 79
+  },
+  {
+    "_rid": 156,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDexInt1",
+    "ReqStr": 0,
+    "ReqDex": 8,
+    "ReqInt": 8
+  },
+  {
+    "_rid": 157,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDexInt2",
+    "ReqStr": 0,
+    "ReqDex": 14,
+    "ReqInt": 14
+  },
+  {
+    "_rid": 158,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDexInt3",
+    "ReqStr": 0,
+    "ReqDex": 21,
+    "ReqInt": 21
+  },
+  {
+    "_rid": 159,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDexInt4",
+    "ReqStr": 0,
+    "ReqDex": 33,
+    "ReqInt": 33
+  },
+  {
+    "_rid": 160,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDexInt5",
+    "ReqStr": 0,
+    "ReqDex": 40,
+    "ReqInt": 40
+  },
+  {
+    "_rid": 161,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDexInt6",
+    "ReqStr": 0,
+    "ReqDex": 44,
+    "ReqInt": 44
+  },
+  {
+    "_rid": 162,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDexInt7",
+    "ReqStr": 0,
+    "ReqDex": 51,
+    "ReqInt": 51
+  },
+  {
+    "_rid": 163,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDexInt8",
+    "ReqStr": 0,
+    "ReqDex": 58,
+    "ReqInt": 58
+  },
+  {
+    "_rid": 164,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDexInt9",
+    "ReqStr": 0,
+    "ReqDex": 64,
+    "ReqInt": 64
+  },
+  {
+    "_rid": 165,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDexInt10",
+    "ReqStr": 0,
+    "ReqDex": 79,
+    "ReqInt": 72
+  },
+  {
+    "_rid": 166,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDexInt11",
+    "ReqStr": 0,
+    "ReqDex": 73,
+    "ReqInt": 88
+  },
+  {
+    "_rid": 167,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDexIntRitual1",
+    "ReqStr": 0,
+    "ReqDex": 20,
+    "ReqInt": 20
+  },
+  {
+    "_rid": 168,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDexIntRitual2",
+    "ReqStr": 0,
+    "ReqDex": 51,
+    "ReqInt": 51
+  },
+  {
+    "_rid": 169,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDexIntRitual3",
+    "ReqStr": 0,
+    "ReqDex": 79,
+    "ReqInt": 79
+  },
+  {
+    "_rid": 170,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetWreath1",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 171,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetDemigods1",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 172,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetAtlas1",
+    "ReqStr": 76,
+    "ReqDex": 0,
+    "ReqInt": 76
+  },
+  {
+    "_rid": 173,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetExpedition1",
+    "ReqStr": 30,
+    "ReqDex": 30,
+    "ReqInt": 30
+  },
+  {
+    "_rid": 174,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetExpedition2",
+    "ReqStr": 55,
+    "ReqDex": 55,
+    "ReqInt": 55
+  },
+  {
+    "_rid": 175,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Helmets/HelmetExpedition3",
+    "ReqStr": 66,
+    "ReqDex": 66,
+    "ReqInt": 66
+  },
+  {
+    "_rid": 176,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStr1",
+    "ReqStr": 12,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 177,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStr2",
+    "ReqStr": 25,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 178,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStr3",
+    "ReqStr": 53,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 179,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStr4",
+    "ReqStr": 63,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 180,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStr5",
+    "ReqStr": 81,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 181,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStr6",
+    "ReqStr": 91,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 182,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStr7",
+    "ReqStr": 99,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 183,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStr8",
+    "ReqStr": 104,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 184,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStr9",
+    "ReqStr": 114,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 185,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStr10",
+    "ReqStr": 124,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 186,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStr11",
+    "ReqStr": 134,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 187,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStr12",
+    "ReqStr": 145,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 188,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStr13",
+    "ReqStr": 152,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 189,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStr14",
+    "ReqStr": 160,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 190,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStr15",
+    "ReqStr": 180,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 191,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStr16",
+    "ReqStr": 177,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 192,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStr17",
+    "ReqStr": 191,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 193,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrTemp",
+    "ReqStr": 14,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 194,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDex1",
+    "ReqStr": 0,
+    "ReqDex": 14,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 195,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDex2",
+    "ReqStr": 0,
+    "ReqDex": 32,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 196,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDex3",
+    "ReqStr": 0,
+    "ReqDex": 53,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 197,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDex4",
+    "ReqStr": 0,
+    "ReqDex": 73,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 198,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDex5",
+    "ReqStr": 0,
+    "ReqDex": 81,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 199,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDex6",
+    "ReqStr": 0,
+    "ReqDex": 91,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 200,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDex7",
+    "ReqStr": 0,
+    "ReqDex": 99,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 201,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDex8",
+    "ReqStr": 0,
+    "ReqDex": 104,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 202,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDex9",
+    "ReqStr": 0,
+    "ReqDex": 114,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 203,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDex10",
+    "ReqStr": 0,
+    "ReqDex": 124,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 204,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDex11",
+    "ReqStr": 0,
+    "ReqDex": 134,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 205,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDex12",
+    "ReqStr": 0,
+    "ReqDex": 145,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 206,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDex13",
+    "ReqStr": 0,
+    "ReqDex": 152,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 207,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDex14",
+    "ReqStr": 0,
+    "ReqDex": 160,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 208,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDex15",
+    "ReqStr": 0,
+    "ReqDex": 170,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 209,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDex16",
+    "ReqStr": 0,
+    "ReqDex": 197,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 210,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDex17",
+    "ReqStr": 0,
+    "ReqDex": 183,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 211,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyInt1",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 17
+  },
+  {
+    "_rid": 212,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyInt2",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 37
+  },
+  {
+    "_rid": 213,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyInt3",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 55
+  },
+  {
+    "_rid": 214,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyInt4",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 73
+  },
+  {
+    "_rid": 215,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyInt5",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 81
+  },
+  {
+    "_rid": 216,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyInt6",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 91
+  },
+  {
+    "_rid": 217,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyInt7",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 99
+  },
+  {
+    "_rid": 218,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyInt8",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 104
+  },
+  {
+    "_rid": 219,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyInt9",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 114
+  },
+  {
+    "_rid": 220,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyInt10",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 124
+  },
+  {
+    "_rid": 221,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyInt11",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 134
+  },
+  {
+    "_rid": 222,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyInt12",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 145
+  },
+  {
+    "_rid": 223,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyInt13",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 152
+  },
+  {
+    "_rid": 224,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyInt14",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 160
+  },
+  {
+    "_rid": 225,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyInt15",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 180
+  },
+  {
+    "_rid": 226,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyInt16",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 187
+  },
+  {
+    "_rid": 227,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyInt17",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 194
+  },
+  {
+    "_rid": 228,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrDex1",
+    "ReqStr": 10,
+    "ReqDex": 10,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 229,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrDex2",
+    "ReqStr": 16,
+    "ReqDex": 16,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 230,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrDex3",
+    "ReqStr": 28,
+    "ReqDex": 28,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 231,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrDex4",
+    "ReqStr": 34,
+    "ReqDex": 34,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 232,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrDex5",
+    "ReqStr": 43,
+    "ReqDex": 43,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 233,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrDex6",
+    "ReqStr": 48,
+    "ReqDex": 48,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 234,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrDex7",
+    "ReqStr": 53,
+    "ReqDex": 53,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 235,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrDex8",
+    "ReqStr": 57,
+    "ReqDex": 57,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 236,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrDex9",
+    "ReqStr": 62,
+    "ReqDex": 62,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 237,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrDex10",
+    "ReqStr": 68,
+    "ReqDex": 68,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 238,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrDex11",
+    "ReqStr": 73,
+    "ReqDex": 73,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 239,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrDex12",
+    "ReqStr": 79,
+    "ReqDex": 79,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 240,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrDex13",
+    "ReqStr": 83,
+    "ReqDex": 83,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 241,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrDex14",
+    "ReqStr": 96,
+    "ReqDex": 96,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 242,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrDex15",
+    "ReqStr": 115,
+    "ReqDex": 94,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 243,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrDex16",
+    "ReqStr": 103,
+    "ReqDex": 103,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 244,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrDex17",
+    "ReqStr": 95,
+    "ReqDex": 116,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 245,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrInt1",
+    "ReqStr": 10,
+    "ReqDex": 0,
+    "ReqInt": 10
+  },
+  {
+    "_rid": 246,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrInt2",
+    "ReqStr": 16,
+    "ReqDex": 0,
+    "ReqInt": 16
+  },
+  {
+    "_rid": 247,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrInt3",
+    "ReqStr": 28,
+    "ReqDex": 0,
+    "ReqInt": 28
+  },
+  {
+    "_rid": 248,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrInt4",
+    "ReqStr": 34,
+    "ReqDex": 0,
+    "ReqInt": 34
+  },
+  {
+    "_rid": 249,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrInt5",
+    "ReqStr": 43,
+    "ReqDex": 0,
+    "ReqInt": 43
+  },
+  {
+    "_rid": 250,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrInt6",
+    "ReqStr": 48,
+    "ReqDex": 0,
+    "ReqInt": 48
+  },
+  {
+    "_rid": 251,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrInt7",
+    "ReqStr": 53,
+    "ReqDex": 0,
+    "ReqInt": 53
+  },
+  {
+    "_rid": 252,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrInt8",
+    "ReqStr": 59,
+    "ReqDex": 0,
+    "ReqInt": 59
+  },
+  {
+    "_rid": 253,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrInt9",
+    "ReqStr": 64,
+    "ReqDex": 0,
+    "ReqInt": 64
+  },
+  {
+    "_rid": 254,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrInt10",
+    "ReqStr": 69,
+    "ReqDex": 0,
+    "ReqInt": 69
+  },
+  {
+    "_rid": 255,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrInt11",
+    "ReqStr": 75,
+    "ReqDex": 0,
+    "ReqInt": 75
+  },
+  {
+    "_rid": 256,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrInt12",
+    "ReqStr": 80,
+    "ReqDex": 0,
+    "ReqInt": 80
+  },
+  {
+    "_rid": 257,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrInt13",
+    "ReqStr": 84,
+    "ReqDex": 0,
+    "ReqInt": 84
+  },
+  {
+    "_rid": 258,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrInt14",
+    "ReqStr": 96,
+    "ReqDex": 0,
+    "ReqInt": 96
+  },
+  {
+    "_rid": 259,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrInt15",
+    "ReqStr": 90,
+    "ReqDex": 0,
+    "ReqInt": 105
+  },
+  {
+    "_rid": 260,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrInt16",
+    "ReqStr": 109,
+    "ReqDex": 0,
+    "ReqInt": 94
+  },
+  {
+    "_rid": 261,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrInt17",
+    "ReqStr": 99,
+    "ReqDex": 0,
+    "ReqInt": 115
+  },
+  {
+    "_rid": 262,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDexInt1",
+    "ReqStr": 0,
+    "ReqDex": 10,
+    "ReqInt": 10
+  },
+  {
+    "_rid": 263,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDexInt2",
+    "ReqStr": 0,
+    "ReqDex": 17,
+    "ReqInt": 17
+  },
+  {
+    "_rid": 264,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDexInt3",
+    "ReqStr": 0,
+    "ReqDex": 30,
+    "ReqInt": 30
+  },
+  {
+    "_rid": 265,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDexInt4",
+    "ReqStr": 0,
+    "ReqDex": 35,
+    "ReqInt": 35
+  },
+  {
+    "_rid": 266,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDexInt5",
+    "ReqStr": 0,
+    "ReqDex": 43,
+    "ReqInt": 43
+  },
+  {
+    "_rid": 267,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDexInt6",
+    "ReqStr": 0,
+    "ReqDex": 48,
+    "ReqInt": 48
+  },
+  {
+    "_rid": 268,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDexInt7",
+    "ReqStr": 0,
+    "ReqDex": 53,
+    "ReqInt": 53
+  },
+  {
+    "_rid": 269,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDexInt8",
+    "ReqStr": 0,
+    "ReqDex": 60,
+    "ReqInt": 60
+  },
+  {
+    "_rid": 270,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDexInt9",
+    "ReqStr": 0,
+    "ReqDex": 65,
+    "ReqInt": 65
+  },
+  {
+    "_rid": 271,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDexInt10",
+    "ReqStr": 0,
+    "ReqDex": 71,
+    "ReqInt": 71
+  },
+  {
+    "_rid": 272,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDexInt11",
+    "ReqStr": 0,
+    "ReqDex": 76,
+    "ReqInt": 76
+  },
+  {
+    "_rid": 273,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDexInt12",
+    "ReqStr": 0,
+    "ReqDex": 82,
+    "ReqInt": 82
+  },
+  {
+    "_rid": 274,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDexInt13",
+    "ReqStr": 0,
+    "ReqDex": 86,
+    "ReqInt": 86
+  },
+  {
+    "_rid": 275,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDexInt14",
+    "ReqStr": 0,
+    "ReqDex": 96,
+    "ReqInt": 96
+  },
+  {
+    "_rid": 276,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDexInt15",
+    "ReqStr": 0,
+    "ReqDex": 107,
+    "ReqInt": 90
+  },
+  {
+    "_rid": 277,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDexInt16",
+    "ReqStr": 0,
+    "ReqDex": 103,
+    "ReqInt": 109
+  },
+  {
+    "_rid": 278,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDexInt17",
+    "ReqStr": 0,
+    "ReqDex": 88,
+    "ReqInt": 122
+  },
+  {
+    "_rid": 279,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrDexInt1",
+    "ReqStr": 66,
+    "ReqDex": 66,
+    "ReqInt": 66
+  },
+  {
+    "_rid": 280,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyDemigods1",
+    "ReqStr": 8,
+    "ReqDex": 8,
+    "ReqInt": 8
+  },
+  {
+    "_rid": 281,
+    "BaseItemTypesKey": "Metadata/Items/Armours/BodyArmours/BodyStrDexInt2",
+    "ReqStr": 60,
+    "ReqDex": 60,
+    "ReqInt": 60
+  },
+  {
+    "_rid": 282,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStr1",
+    "ReqStr": 8,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 283,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStr2",
+    "ReqStr": 21,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 284,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStr3",
+    "ReqStr": 44,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 285,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStr4",
+    "ReqStr": 61,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 286,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStr5",
+    "ReqStr": 67,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 287,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStr6",
+    "ReqStr": 82,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 288,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStr7",
+    "ReqStr": 95,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 289,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStr8",
+    "ReqStr": 117,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 290,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStr9",
+    "ReqStr": 120,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 291,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStrRitual1",
+    "ReqStr": 39,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 292,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStrRitual2",
+    "ReqStr": 89,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 293,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStrRitual3",
+    "ReqStr": 124,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 294,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStrTemp",
+    "ReqStr": 9,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 295,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDex1",
+    "ReqStr": 0,
+    "ReqDex": 11,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 296,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDex2",
+    "ReqStr": 0,
+    "ReqDex": 26,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 297,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDex3",
+    "ReqStr": 0,
+    "ReqDex": 42,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 298,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDex4",
+    "ReqStr": 0,
+    "ReqDex": 62,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 299,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDex5",
+    "ReqStr": 0,
+    "ReqDex": 70,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 300,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDex6",
+    "ReqStr": 0,
+    "ReqDex": 79,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 301,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDex7",
+    "ReqStr": 0,
+    "ReqDex": 97,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 302,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDex8",
+    "ReqStr": 0,
+    "ReqDex": 117,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 303,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDex9",
+    "ReqStr": 0,
+    "ReqDex": 120,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 304,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDexRitual1",
+    "ReqStr": 0,
+    "ReqDex": 39,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 305,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDexRitual2",
+    "ReqStr": 0,
+    "ReqDex": 89,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 306,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDexRitual3",
+    "ReqStr": 0,
+    "ReqDex": 124,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 307,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsInt1",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 11
+  },
+  {
+    "_rid": 308,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsInt2",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 21
+  },
+  {
+    "_rid": 309,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsInt3",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 42
+  },
+  {
+    "_rid": 310,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsInt4",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 59
+  },
+  {
+    "_rid": 311,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsInt5",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 69
+  },
+  {
+    "_rid": 312,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsInt6",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 79
+  },
+  {
+    "_rid": 313,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsInt7",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 94
+  },
+  {
+    "_rid": 314,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsInt8",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 119
+  },
+  {
+    "_rid": 315,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsInt9",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 123
+  },
+  {
+    "_rid": 316,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsIntRitual1",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 39
+  },
+  {
+    "_rid": 317,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsIntRitual2",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 89
+  },
+  {
+    "_rid": 318,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsIntRitual3",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 124
+  },
+  {
+    "_rid": 319,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStrDex1",
+    "ReqStr": 9,
+    "ReqDex": 9,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 320,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStrDex2",
+    "ReqStr": 19,
+    "ReqDex": 19,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 321,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStrDex3",
+    "ReqStr": 30,
+    "ReqDex": 30,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 322,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStrDex4",
+    "ReqStr": 35,
+    "ReqDex": 35,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 323,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStrDex5",
+    "ReqStr": 40,
+    "ReqDex": 40,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 324,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStrDex6",
+    "ReqStr": 48,
+    "ReqDex": 48,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 325,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStrDex7",
+    "ReqStr": 56,
+    "ReqDex": 56,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 326,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStrDex8",
+    "ReqStr": 62,
+    "ReqDex": 62,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 327,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStrInt1",
+    "ReqStr": 8,
+    "ReqDex": 0,
+    "ReqInt": 8
+  },
+  {
+    "_rid": 328,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStrInt2",
+    "ReqStr": 15,
+    "ReqDex": 0,
+    "ReqInt": 15
+  },
+  {
+    "_rid": 329,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStrInt3",
+    "ReqStr": 28,
+    "ReqDex": 0,
+    "ReqInt": 28
+  },
+  {
+    "_rid": 330,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStrInt4",
+    "ReqStr": 35,
+    "ReqDex": 0,
+    "ReqInt": 35
+  },
+  {
+    "_rid": 331,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStrInt5",
+    "ReqStr": 39,
+    "ReqDex": 0,
+    "ReqInt": 39
+  },
+  {
+    "_rid": 332,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStrInt6",
+    "ReqStr": 47,
+    "ReqDex": 0,
+    "ReqInt": 47
+  },
+  {
+    "_rid": 333,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStrInt7",
+    "ReqStr": 54,
+    "ReqDex": 0,
+    "ReqInt": 54
+  },
+  {
+    "_rid": 334,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsStrInt8",
+    "ReqStr": 62,
+    "ReqDex": 0,
+    "ReqInt": 62
+  },
+  {
+    "_rid": 335,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDexInt1",
+    "ReqStr": 0,
+    "ReqDex": 9,
+    "ReqInt": 9
+  },
+  {
+    "_rid": 336,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDexInt2",
+    "ReqStr": 0,
+    "ReqDex": 18,
+    "ReqInt": 18
+  },
+  {
+    "_rid": 337,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDexInt3",
+    "ReqStr": 0,
+    "ReqDex": 27,
+    "ReqInt": 27
+  },
+  {
+    "_rid": 338,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDexInt4",
+    "ReqStr": 0,
+    "ReqDex": 34,
+    "ReqInt": 34
+  },
+  {
+    "_rid": 339,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDexInt5",
+    "ReqStr": 0,
+    "ReqDex": 40,
+    "ReqInt": 40
+  },
+  {
+    "_rid": 340,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDexInt6",
+    "ReqStr": 0,
+    "ReqDex": 45,
+    "ReqInt": 45
+  },
+  {
+    "_rid": 341,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDexInt7",
+    "ReqStr": 0,
+    "ReqDex": 52,
+    "ReqInt": 52
+  },
+  {
+    "_rid": 342,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDexInt8",
+    "ReqStr": 0,
+    "ReqDex": 62,
+    "ReqInt": 62
+  },
+  {
+    "_rid": 343,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDexInt9",
+    "ReqStr": 0,
+    "ReqDex": 82,
+    "ReqInt": 42
+  },
+  {
+    "_rid": 344,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDemigods1",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 345,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsDescent1",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 346,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsAtlas1",
+    "ReqStr": 0,
+    "ReqDex": 62,
+    "ReqInt": 62
+  },
+  {
+    "_rid": 347,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsAtlas2",
+    "ReqStr": 62,
+    "ReqDex": 62,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 348,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsAtlas3",
+    "ReqStr": 62,
+    "ReqDex": 0,
+    "ReqInt": 62
+  },
+  {
+    "_rid": 349,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsAtlas4",
+    "ReqStr": 0,
+    "ReqDex": 56,
+    "ReqInt": 76
+  },
+  {
+    "_rid": 350,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsExpedition1",
+    "ReqStr": 20,
+    "ReqDex": 20,
+    "ReqInt": 20
+  },
+  {
+    "_rid": 351,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsExpedition2",
+    "ReqStr": 37,
+    "ReqDex": 37,
+    "ReqInt": 37
+  },
+  {
+    "_rid": 352,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Boots/BootsExpedition3",
+    "ReqStr": 46,
+    "ReqDex": 46,
+    "ReqInt": 46
+  },
+  {
+    "_rid": 353,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStr1",
+    "ReqStr": 6,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 354,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStr2",
+    "ReqStr": 20,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 355,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStr3",
+    "ReqStr": 36,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 356,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStr4",
+    "ReqStr": 52,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 357,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStr5",
+    "ReqStr": 58,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 358,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStr6",
+    "ReqStr": 68,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 359,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStr7",
+    "ReqStr": 77,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 360,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStr8",
+    "ReqStr": 100,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 361,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStr9",
+    "ReqStr": 98,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 362,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStrRitual1",
+    "ReqStr": 18,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 363,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStrRitual2",
+    "ReqStr": 59,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 364,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStrRitual3",
+    "ReqStr": 101,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 365,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesDex1",
+    "ReqStr": 0,
+    "ReqDex": 9,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 366,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesDex2",
+    "ReqStr": 0,
+    "ReqDex": 17,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 367,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesDex3",
+    "ReqStr": 0,
+    "ReqDex": 33,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 368,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesDex4",
+    "ReqStr": 0,
+    "ReqDex": 50,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 369,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesDex5",
+    "ReqStr": 0,
+    "ReqDex": 56,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 370,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesDex6",
+    "ReqStr": 0,
+    "ReqDex": 66,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 371,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesDex7",
+    "ReqStr": 0,
+    "ReqDex": 78,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 372,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesDex8",
+    "ReqStr": 0,
+    "ReqDex": 97,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 373,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesDex9",
+    "ReqStr": 0,
+    "ReqDex": 95,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 374,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesDexRitual1",
+    "ReqStr": 0,
+    "ReqDex": 18,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 375,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesDexRitual2",
+    "ReqStr": 0,
+    "ReqDex": 59,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 376,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesDexRitual3",
+    "ReqStr": 0,
+    "ReqDex": 101,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 377,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesInt1",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 9
+  },
+  {
+    "_rid": 378,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesInt2",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 21
+  },
+  {
+    "_rid": 379,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesInt3",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 39
+  },
+  {
+    "_rid": 380,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesInt4",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 54
+  },
+  {
+    "_rid": 381,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesInt5",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 60
+  },
+  {
+    "_rid": 382,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesInt6",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 68
+  },
+  {
+    "_rid": 383,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesInt7",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 79
+  },
+  {
+    "_rid": 384,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesInt8",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 95
+  },
+  {
+    "_rid": 385,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesInt9",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 97
+  },
+  {
+    "_rid": 386,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesIntRitual1",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 18
+  },
+  {
+    "_rid": 387,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesIntRitual2",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 59
+  },
+  {
+    "_rid": 388,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesIntRitual3",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 101
+  },
+  {
+    "_rid": 389,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStrDex1",
+    "ReqStr": 5,
+    "ReqDex": 5,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 390,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStrDex2",
+    "ReqStr": 14,
+    "ReqDex": 14,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 391,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStrDex3",
+    "ReqStr": 22,
+    "ReqDex": 22,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 392,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStrDex4",
+    "ReqStr": 29,
+    "ReqDex": 29,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 393,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStrDex5",
+    "ReqStr": 34,
+    "ReqDex": 34,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 394,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStrDex6",
+    "ReqStr": 38,
+    "ReqDex": 38,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 395,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStrDex7",
+    "ReqStr": 45,
+    "ReqDex": 45,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 396,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStrDex8",
+    "ReqStr": 51,
+    "ReqDex": 51,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 397,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStrInt1",
+    "ReqStr": 8,
+    "ReqDex": 0,
+    "ReqInt": 8
+  },
+  {
+    "_rid": 398,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStrInt2",
+    "ReqStr": 16,
+    "ReqDex": 0,
+    "ReqInt": 16
+  },
+  {
+    "_rid": 399,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStrInt3",
+    "ReqStr": 26,
+    "ReqDex": 0,
+    "ReqInt": 26
+  },
+  {
+    "_rid": 400,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStrInt4",
+    "ReqStr": 29,
+    "ReqDex": 0,
+    "ReqInt": 29
+  },
+  {
+    "_rid": 401,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStrInt5",
+    "ReqStr": 34,
+    "ReqDex": 0,
+    "ReqInt": 34
+  },
+  {
+    "_rid": 402,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStrInt6",
+    "ReqStr": 40,
+    "ReqDex": 0,
+    "ReqInt": 40
+  },
+  {
+    "_rid": 403,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStrInt7",
+    "ReqStr": 44,
+    "ReqDex": 0,
+    "ReqInt": 44
+  },
+  {
+    "_rid": 404,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesStrInt8",
+    "ReqStr": 51,
+    "ReqDex": 0,
+    "ReqInt": 51
+  },
+  {
+    "_rid": 405,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesDexInt1",
+    "ReqStr": 0,
+    "ReqDex": 6,
+    "ReqInt": 6
+  },
+  {
+    "_rid": 406,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesDexInt2",
+    "ReqStr": 0,
+    "ReqDex": 14,
+    "ReqInt": 14
+  },
+  {
+    "_rid": 407,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesDexInt3",
+    "ReqStr": 0,
+    "ReqDex": 25,
+    "ReqInt": 25
+  },
+  {
+    "_rid": 408,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesDexInt4",
+    "ReqStr": 0,
+    "ReqDex": 29,
+    "ReqInt": 29
+  },
+  {
+    "_rid": 409,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesDexInt5",
+    "ReqStr": 0,
+    "ReqDex": 35,
+    "ReqInt": 35
+  },
+  {
+    "_rid": 410,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesDexInt6",
+    "ReqStr": 0,
+    "ReqDex": 39,
+    "ReqInt": 39
+  },
+  {
+    "_rid": 411,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesDexInt7",
+    "ReqStr": 0,
+    "ReqDex": 45,
+    "ReqInt": 45
+  },
+  {
+    "_rid": 412,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesDexInt8",
+    "ReqStr": 0,
+    "ReqDex": 51,
+    "ReqInt": 51
+  },
+  {
+    "_rid": 413,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesDemigods1",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 414,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesAtlasStr",
+    "ReqStr": 95,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 415,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesAtlasDex",
+    "ReqStr": 0,
+    "ReqDex": 95,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 416,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesAtlasInt",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 95
+  },
+  {
+    "_rid": 417,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesAtlasStrInt",
+    "ReqStr": 46,
+    "ReqDex": 0,
+    "ReqInt": 59
+  },
+  {
+    "_rid": 418,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesExpedition1",
+    "ReqStr": 16,
+    "ReqDex": 16,
+    "ReqInt": 16
+  },
+  {
+    "_rid": 419,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesExpedition2",
+    "ReqStr": 31,
+    "ReqDex": 31,
+    "ReqInt": 31
+  },
+  {
+    "_rid": 420,
+    "BaseItemTypesKey": "Metadata/Items/Armours/Gloves/GlovesExpedition3",
+    "ReqStr": 38,
+    "ReqDex": 38,
+    "ReqInt": 38
+  },
+  {
+    "_rid": 421,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSwordDev",
+    "ReqStr": 8,
+    "ReqDex": 8,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 422,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapon/Bows/Bow0",
+    "ReqStr": 0,
+    "ReqDex": 14,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 423,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand0",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 424,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand1",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 14
+  },
+  {
+    "_rid": 425,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand2",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 29
+  },
+  {
+    "_rid": 426,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand3",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 47
+  },
+  {
+    "_rid": 427,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand4",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 65
+  },
+  {
+    "_rid": 428,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand5",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 83
+  },
+  {
+    "_rid": 429,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand6",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 119
+  },
+  {
+    "_rid": 430,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/WandM1",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 118
+  },
+  {
+    "_rid": 431,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand7",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 116
+  },
+  {
+    "_rid": 432,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand8",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 131
+  },
+  {
+    "_rid": 433,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand9",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 146
+  },
+  {
+    "_rid": 434,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand10",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 158
+  },
+  {
+    "_rid": 435,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand11",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 200
+  },
+  {
+    "_rid": 436,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/WandM2",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 184
+  },
+  {
+    "_rid": 437,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand12",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 179
+  },
+  {
+    "_rid": 438,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand13",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 188
+  },
+  {
+    "_rid": 439,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand14",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 212
+  },
+  {
+    "_rid": 440,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand15",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 212
+  },
+  {
+    "_rid": 441,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand16",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 245
+  },
+  {
+    "_rid": 442,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/WandM3",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 237
+  },
+  {
+    "_rid": 443,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/WandE1",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 101
+  },
+  {
+    "_rid": 444,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/WandE2",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 168
+  },
+  {
+    "_rid": 445,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/WandE3",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 237
+  },
+  {
+    "_rid": 446,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/WandAtlas1",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 242
+  },
+  {
+    "_rid": 447,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand1Royale",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 14
+  },
+  {
+    "_rid": 448,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger1",
+    "ReqStr": 0,
+    "ReqDex": 9,
+    "ReqInt": 6
+  },
+  {
+    "_rid": 449,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger2",
+    "ReqStr": 0,
+    "ReqDex": 16,
+    "ReqInt": 11
+  },
+  {
+    "_rid": 450,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger3",
+    "ReqStr": 0,
+    "ReqDex": 18,
+    "ReqInt": 26
+  },
+  {
+    "_rid": 451,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger4",
+    "ReqStr": 0,
+    "ReqDex": 30,
+    "ReqInt": 30
+  },
+  {
+    "_rid": 452,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger5",
+    "ReqStr": 0,
+    "ReqDex": 31,
+    "ReqInt": 45
+  },
+  {
+    "_rid": 453,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger6",
+    "ReqStr": 0,
+    "ReqDex": 28,
+    "ReqInt": 60
+  },
+  {
+    "_rid": 454,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger7",
+    "ReqStr": 0,
+    "ReqDex": 42,
+    "ReqInt": 60
+  },
+  {
+    "_rid": 455,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger8",
+    "ReqStr": 0,
+    "ReqDex": 36,
+    "ReqInt": 78
+  },
+  {
+    "_rid": 456,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/DaggerM1",
+    "ReqStr": 0,
+    "ReqDex": 55,
+    "ReqInt": 77
+  },
+  {
+    "_rid": 457,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger9",
+    "ReqStr": 0,
+    "ReqDex": 64,
+    "ReqInt": 44
+  },
+  {
+    "_rid": 458,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger10",
+    "ReqStr": 0,
+    "ReqDex": 55,
+    "ReqInt": 79
+  },
+  {
+    "_rid": 459,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger11",
+    "ReqStr": 0,
+    "ReqDex": 72,
+    "ReqInt": 72
+  },
+  {
+    "_rid": 460,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger12",
+    "ReqStr": 0,
+    "ReqDex": 63,
+    "ReqInt": 90
+  },
+  {
+    "_rid": 461,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger13",
+    "ReqStr": 0,
+    "ReqDex": 51,
+    "ReqInt": 110
+  },
+  {
+    "_rid": 462,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger14",
+    "ReqStr": 0,
+    "ReqDex": 71,
+    "ReqInt": 102
+  },
+  {
+    "_rid": 463,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger15",
+    "ReqStr": 0,
+    "ReqDex": 58,
+    "ReqInt": 123
+  },
+  {
+    "_rid": 464,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/DaggerM2",
+    "ReqStr": 0,
+    "ReqDex": 83,
+    "ReqInt": 99
+  },
+  {
+    "_rid": 465,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger16",
+    "ReqStr": 0,
+    "ReqDex": 113,
+    "ReqInt": 78
+  },
+  {
+    "_rid": 466,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger17",
+    "ReqStr": 0,
+    "ReqDex": 81,
+    "ReqInt": 117
+  },
+  {
+    "_rid": 467,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger18",
+    "ReqStr": 0,
+    "ReqDex": 113,
+    "ReqInt": 113
+  },
+  {
+    "_rid": 468,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger19",
+    "ReqStr": 0,
+    "ReqDex": 95,
+    "ReqInt": 131
+  },
+  {
+    "_rid": 469,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger20",
+    "ReqStr": 0,
+    "ReqDex": 76,
+    "ReqInt": 149
+  },
+  {
+    "_rid": 470,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger21",
+    "ReqStr": 0,
+    "ReqDex": 95,
+    "ReqInt": 131
+  },
+  {
+    "_rid": 471,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger22",
+    "ReqStr": 0,
+    "ReqDex": 76,
+    "ReqInt": 149
+  },
+  {
+    "_rid": 472,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/DaggerM3",
+    "ReqStr": 0,
+    "ReqDex": 121,
+    "ReqInt": 121
+  },
+  {
+    "_rid": 473,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/DaggerE1",
+    "ReqStr": 0,
+    "ReqDex": 54,
+    "ReqInt": 54
+  },
+  {
+    "_rid": 474,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/DaggerE2",
+    "ReqStr": 0,
+    "ReqDex": 86,
+    "ReqInt": 86
+  },
+  {
+    "_rid": 475,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/DaggerE3",
+    "ReqStr": 0,
+    "ReqDex": 121,
+    "ReqInt": 121
+  },
+  {
+    "_rid": 476,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/RuneDaggerE1",
+    "ReqStr": 0,
+    "ReqDex": 54,
+    "ReqInt": 54
+  },
+  {
+    "_rid": 477,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/RuneDaggerE2",
+    "ReqStr": 0,
+    "ReqDex": 86,
+    "ReqInt": 86
+  },
+  {
+    "_rid": 478,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/RuneDaggerE3",
+    "ReqStr": 0,
+    "ReqDex": 121,
+    "ReqInt": 121
+  },
+  {
+    "_rid": 479,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw1",
+    "ReqStr": 0,
+    "ReqDex": 11,
+    "ReqInt": 11
+  },
+  {
+    "_rid": 480,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw2",
+    "ReqStr": 0,
+    "ReqDex": 14,
+    "ReqInt": 20
+  },
+  {
+    "_rid": 481,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw3",
+    "ReqStr": 0,
+    "ReqDex": 25,
+    "ReqInt": 25
+  },
+  {
+    "_rid": 482,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw4",
+    "ReqStr": 0,
+    "ReqDex": 39,
+    "ReqInt": 27
+  },
+  {
+    "_rid": 483,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw5",
+    "ReqStr": 0,
+    "ReqDex": 41,
+    "ReqInt": 41
+  },
+  {
+    "_rid": 484,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw6",
+    "ReqStr": 0,
+    "ReqDex": 39,
+    "ReqInt": 56
+  },
+  {
+    "_rid": 485,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw7",
+    "ReqStr": 0,
+    "ReqDex": 64,
+    "ReqInt": 44
+  },
+  {
+    "_rid": 486,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw8",
+    "ReqStr": 0,
+    "ReqDex": 61,
+    "ReqInt": 61
+  },
+  {
+    "_rid": 487,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/ClawM1",
+    "ReqStr": 0,
+    "ReqDex": 67,
+    "ReqInt": 67
+  },
+  {
+    "_rid": 488,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw9",
+    "ReqStr": 0,
+    "ReqDex": 53,
+    "ReqInt": 77
+  },
+  {
+    "_rid": 489,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw10",
+    "ReqStr": 0,
+    "ReqDex": 70,
+    "ReqInt": 70
+  },
+  {
+    "_rid": 490,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw11",
+    "ReqStr": 0,
+    "ReqDex": 88,
+    "ReqInt": 61
+  },
+  {
+    "_rid": 491,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw12",
+    "ReqStr": 0,
+    "ReqDex": 80,
+    "ReqInt": 80
+  },
+  {
+    "_rid": 492,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw13",
+    "ReqStr": 0,
+    "ReqDex": 69,
+    "ReqInt": 100
+  },
+  {
+    "_rid": 493,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw14",
+    "ReqStr": 0,
+    "ReqDex": 105,
+    "ReqInt": 73
+  },
+  {
+    "_rid": 494,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw15",
+    "ReqStr": 0,
+    "ReqDex": 94,
+    "ReqInt": 94
+  },
+  {
+    "_rid": 495,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/ClawM2",
+    "ReqStr": 0,
+    "ReqDex": 103,
+    "ReqInt": 103
+  },
+  {
+    "_rid": 496,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw16",
+    "ReqStr": 0,
+    "ReqDex": 81,
+    "ReqInt": 117
+  },
+  {
+    "_rid": 497,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw17",
+    "ReqStr": 0,
+    "ReqDex": 113,
+    "ReqInt": 113
+  },
+  {
+    "_rid": 498,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw18",
+    "ReqStr": 0,
+    "ReqDex": 131,
+    "ReqInt": 95
+  },
+  {
+    "_rid": 499,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw19",
+    "ReqStr": 0,
+    "ReqDex": 113,
+    "ReqInt": 113
+  },
+  {
+    "_rid": 500,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw20",
+    "ReqStr": 0,
+    "ReqDex": 95,
+    "ReqInt": 131
+  },
+  {
+    "_rid": 501,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw21",
+    "ReqStr": 0,
+    "ReqDex": 131,
+    "ReqInt": 95
+  },
+  {
+    "_rid": 502,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw22",
+    "ReqStr": 0,
+    "ReqDex": 113,
+    "ReqInt": 113
+  },
+  {
+    "_rid": 503,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/ClawM3",
+    "ReqStr": 0,
+    "ReqDex": 121,
+    "ReqInt": 121
+  },
+  {
+    "_rid": 504,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/ClawE1",
+    "ReqStr": 0,
+    "ReqDex": 54,
+    "ReqInt": 54
+  },
+  {
+    "_rid": 505,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/ClawE2",
+    "ReqStr": 0,
+    "ReqDex": 86,
+    "ReqInt": 86
+  },
+  {
+    "_rid": 506,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Claws/ClawE3",
+    "ReqStr": 0,
+    "ReqDex": 113,
+    "ReqInt": 113
+  },
+  {
+    "_rid": 507,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe1",
+    "ReqStr": 12,
+    "ReqDex": 6,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 508,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe2",
+    "ReqStr": 21,
+    "ReqDex": 10,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 509,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe3",
+    "ReqStr": 28,
+    "ReqDex": 19,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 510,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe4",
+    "ReqStr": 48,
+    "ReqDex": 14,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 511,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe5",
+    "ReqStr": 54,
+    "ReqDex": 25,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 512,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe6",
+    "ReqStr": 58,
+    "ReqDex": 33,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 513,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe7",
+    "ReqStr": 80,
+    "ReqDex": 23,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 514,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe8",
+    "ReqStr": 85,
+    "ReqDex": 37,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 515,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxeM1",
+    "ReqStr": 93,
+    "ReqDex": 43,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 516,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe9",
+    "ReqStr": 86,
+    "ReqDex": 40,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 517,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe10",
+    "ReqStr": 81,
+    "ReqDex": 56,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 518,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe11",
+    "ReqStr": 112,
+    "ReqDex": 32,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 519,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe12",
+    "ReqStr": 106,
+    "ReqDex": 49,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 520,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe13",
+    "ReqStr": 105,
+    "ReqDex": 60,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 521,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe14",
+    "ReqStr": 134,
+    "ReqDex": 39,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 522,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe15",
+    "ReqStr": 134,
+    "ReqDex": 59,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 523,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxeM2",
+    "ReqStr": 143,
+    "ReqDex": 66,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 524,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe16",
+    "ReqStr": 132,
+    "ReqDex": 62,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 525,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe17",
+    "ReqStr": 119,
+    "ReqDex": 82,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 526,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe18",
+    "ReqStr": 167,
+    "ReqDex": 57,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 527,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe19",
+    "ReqStr": 149,
+    "ReqDex": 76,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 528,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe20",
+    "ReqStr": 140,
+    "ReqDex": 86,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 529,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe21",
+    "ReqStr": 167,
+    "ReqDex": 57,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 530,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe22",
+    "ReqStr": 158,
+    "ReqDex": 76,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 531,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxeM3",
+    "ReqStr": 163,
+    "ReqDex": 82,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 532,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxeE1",
+    "ReqStr": 78,
+    "ReqDex": 34,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 533,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxeE2",
+    "ReqStr": 124,
+    "ReqDex": 54,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 534,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxeE3",
+    "ReqStr": 163,
+    "ReqDex": 84,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 535,
+    "BaseItemTypesKey": "Metadata/items/Weapons/OneHandWeapons/OneHandSwords/OneHandSwordC",
+    "ReqStr": 9,
+    "ReqDex": 9,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 536,
+    "BaseItemTypesKey": "Metadata/items/Weapons/OneHandWeapons/OneHandSwords/OneHandSwordDemigods1",
+    "ReqStr": 8,
+    "ReqDex": 8,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 537,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword1",
+    "ReqStr": 8,
+    "ReqDex": 8,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 538,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword2",
+    "ReqStr": 14,
+    "ReqDex": 14,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 539,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword3",
+    "ReqStr": 18,
+    "ReqDex": 26,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 540,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword4",
+    "ReqStr": 30,
+    "ReqDex": 30,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 541,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword5",
+    "ReqStr": 41,
+    "ReqDex": 35,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 542,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword6",
+    "ReqStr": 44,
+    "ReqDex": 44,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 543,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword7",
+    "ReqStr": 46,
+    "ReqDex": 55,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 544,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword8",
+    "ReqStr": 57,
+    "ReqDex": 57,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 545,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSwordM1",
+    "ReqStr": 64,
+    "ReqDex": 64,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 546,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword9",
+    "ReqStr": 62,
+    "ReqDex": 62,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 547,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword10",
+    "ReqStr": 55,
+    "ReqDex": 79,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 548,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword11",
+    "ReqStr": 72,
+    "ReqDex": 72,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 549,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword12",
+    "ReqStr": 83,
+    "ReqDex": 70,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 550,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword13",
+    "ReqStr": 81,
+    "ReqDex": 81,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 551,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword14",
+    "ReqStr": 78,
+    "ReqDex": 94,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 552,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword15",
+    "ReqStr": 91,
+    "ReqDex": 91,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 553,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSwordM2",
+    "ReqStr": 99,
+    "ReqDex": 99,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 554,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword16",
+    "ReqStr": 96,
+    "ReqDex": 96,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 555,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword17",
+    "ReqStr": 81,
+    "ReqDex": 117,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 556,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword18",
+    "ReqStr": 113,
+    "ReqDex": 113,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 557,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword19",
+    "ReqStr": 122,
+    "ReqDex": 104,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 558,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword20",
+    "ReqStr": 113,
+    "ReqDex": 113,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 559,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword21",
+    "ReqStr": 104,
+    "ReqDex": 122,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 560,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword22",
+    "ReqStr": 113,
+    "ReqDex": 113,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 561,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSwordM3",
+    "ReqStr": 119,
+    "ReqDex": 119,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 562,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSwordE1",
+    "ReqStr": 54,
+    "ReqDex": 54,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 563,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSwordE2",
+    "ReqStr": 94,
+    "ReqDex": 94,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 564,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSwordE3",
+    "ReqStr": 121,
+    "ReqDex": 121,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 565,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier0",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 566,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier1",
+    "ReqStr": 0,
+    "ReqDex": 20,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 567,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier2",
+    "ReqStr": 0,
+    "ReqDex": 32,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 568,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier3",
+    "ReqStr": 0,
+    "ReqDex": 47,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 569,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier4",
+    "ReqStr": 0,
+    "ReqDex": 62,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 570,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier5",
+    "ReqStr": 0,
+    "ReqDex": 77,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 571,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier6",
+    "ReqStr": 0,
+    "ReqDex": 89,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 572,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier7",
+    "ReqStr": 0,
+    "ReqDex": 101,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 573,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier8",
+    "ReqStr": 0,
+    "ReqDex": 113,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 574,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/RapierM1",
+    "ReqStr": 0,
+    "ReqDex": 124,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 575,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier9",
+    "ReqStr": 0,
+    "ReqDex": 122,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 576,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier10",
+    "ReqStr": 0,
+    "ReqDex": 131,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 577,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier11",
+    "ReqStr": 0,
+    "ReqDex": 140,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 578,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier12",
+    "ReqStr": 0,
+    "ReqDex": 149,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 579,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier13",
+    "ReqStr": 0,
+    "ReqDex": 158,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 580,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier14",
+    "ReqStr": 0,
+    "ReqDex": 167,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 581,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier15",
+    "ReqStr": 0,
+    "ReqDex": 176,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 582,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/RapierM2",
+    "ReqStr": 0,
+    "ReqDex": 190,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 583,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier16",
+    "ReqStr": 0,
+    "ReqDex": 185,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 584,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier17",
+    "ReqStr": 0,
+    "ReqDex": 212,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 585,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier18",
+    "ReqStr": 0,
+    "ReqDex": 212,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 586,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier19",
+    "ReqStr": 0,
+    "ReqDex": 212,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 587,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier20",
+    "ReqStr": 0,
+    "ReqDex": 212,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 588,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier21",
+    "ReqStr": 0,
+    "ReqDex": 212,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 589,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier22",
+    "ReqStr": 0,
+    "ReqDex": 212,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 590,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/RapierM3",
+    "ReqStr": 0,
+    "ReqDex": 220,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 591,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace1",
+    "ReqStr": 14,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 592,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace2",
+    "ReqStr": 26,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 593,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace3",
+    "ReqStr": 41,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 594,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace4",
+    "ReqStr": 56,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 595,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace5",
+    "ReqStr": 71,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 596,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace6",
+    "ReqStr": 83,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 597,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace7",
+    "ReqStr": 95,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 598,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace8",
+    "ReqStr": 107,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 599,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMaceM1",
+    "ReqStr": 118,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 600,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace9",
+    "ReqStr": 116,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 601,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace10",
+    "ReqStr": 125,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 602,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace11",
+    "ReqStr": 134,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 603,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace12",
+    "ReqStr": 143,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 604,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace13",
+    "ReqStr": 152,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 605,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace14",
+    "ReqStr": 161,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 606,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace15",
+    "ReqStr": 170,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 607,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMaceM2",
+    "ReqStr": 184,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 608,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace16",
+    "ReqStr": 179,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 609,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace17",
+    "ReqStr": 185,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 610,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace18",
+    "ReqStr": 212,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 611,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace19",
+    "ReqStr": 212,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 612,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace20",
+    "ReqStr": 212,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 613,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace21",
+    "ReqStr": 212,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 614,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace22",
+    "ReqStr": 212,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 615,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMaceM3",
+    "ReqStr": 220,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 616,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMaceE1",
+    "ReqStr": 101,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 617,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMaceE2",
+    "ReqStr": 161,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 618,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMaceE3",
+    "ReqStr": 218,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 619,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre1",
+    "ReqStr": 8,
+    "ReqDex": 0,
+    "ReqInt": 8
+  },
+  {
+    "_rid": 620,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre2",
+    "ReqStr": 14,
+    "ReqDex": 0,
+    "ReqInt": 14
+  },
+  {
+    "_rid": 621,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre3",
+    "ReqStr": 22,
+    "ReqDex": 0,
+    "ReqInt": 22
+  },
+  {
+    "_rid": 622,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre4",
+    "ReqStr": 25,
+    "ReqDex": 0,
+    "ReqInt": 35
+  },
+  {
+    "_rid": 623,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre5",
+    "ReqStr": 38,
+    "ReqDex": 0,
+    "ReqInt": 38
+  },
+  {
+    "_rid": 624,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre6",
+    "ReqStr": 44,
+    "ReqDex": 0,
+    "ReqInt": 44
+  },
+  {
+    "_rid": 625,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre7",
+    "ReqStr": 51,
+    "ReqDex": 0,
+    "ReqInt": 51
+  },
+  {
+    "_rid": 626,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre8",
+    "ReqStr": 52,
+    "ReqDex": 0,
+    "ReqInt": 62
+  },
+  {
+    "_rid": 627,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/SceptreM1",
+    "ReqStr": 66,
+    "ReqDex": 0,
+    "ReqInt": 66
+  },
+  {
+    "_rid": 628,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre9",
+    "ReqStr": 62,
+    "ReqDex": 0,
+    "ReqInt": 62
+  },
+  {
+    "_rid": 629,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre10",
+    "ReqStr": 67,
+    "ReqDex": 0,
+    "ReqInt": 67
+  },
+  {
+    "_rid": 630,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre11",
+    "ReqStr": 59,
+    "ReqDex": 0,
+    "ReqInt": 85
+  },
+  {
+    "_rid": 631,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre12",
+    "ReqStr": 77,
+    "ReqDex": 0,
+    "ReqInt": 77
+  },
+  {
+    "_rid": 632,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre13",
+    "ReqStr": 81,
+    "ReqDex": 0,
+    "ReqInt": 81
+  },
+  {
+    "_rid": 633,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre14",
+    "ReqStr": 86,
+    "ReqDex": 0,
+    "ReqInt": 86
+  },
+  {
+    "_rid": 634,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre15",
+    "ReqStr": 83,
+    "ReqDex": 0,
+    "ReqInt": 99
+  },
+  {
+    "_rid": 635,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/SceptreM2",
+    "ReqStr": 98,
+    "ReqDex": 0,
+    "ReqInt": 98
+  },
+  {
+    "_rid": 636,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre16",
+    "ReqStr": 96,
+    "ReqDex": 0,
+    "ReqInt": 96
+  },
+  {
+    "_rid": 637,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre17",
+    "ReqStr": 99,
+    "ReqDex": 0,
+    "ReqInt": 99
+  },
+  {
+    "_rid": 638,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre18",
+    "ReqStr": 95,
+    "ReqDex": 0,
+    "ReqInt": 131
+  },
+  {
+    "_rid": 639,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre19",
+    "ReqStr": 113,
+    "ReqDex": 0,
+    "ReqInt": 113
+  },
+  {
+    "_rid": 640,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre20",
+    "ReqStr": 113,
+    "ReqDex": 0,
+    "ReqInt": 113
+  },
+  {
+    "_rid": 641,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre21",
+    "ReqStr": 113,
+    "ReqDex": 0,
+    "ReqInt": 113
+  },
+  {
+    "_rid": 642,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre22",
+    "ReqStr": 104,
+    "ReqDex": 0,
+    "ReqInt": 122
+  },
+  {
+    "_rid": 643,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/SceptreM3",
+    "ReqStr": 121,
+    "ReqDex": 0,
+    "ReqInt": 113
+  },
+  {
+    "_rid": 644,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/SceptreE1",
+    "ReqStr": 44,
+    "ReqDex": 0,
+    "ReqInt": 64
+  },
+  {
+    "_rid": 645,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/SceptreE2",
+    "ReqStr": 71,
+    "ReqDex": 0,
+    "ReqInt": 102
+  },
+  {
+    "_rid": 646,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/SceptreE3",
+    "ReqStr": 95,
+    "ReqDex": 0,
+    "ReqInt": 131
+  },
+  {
+    "_rid": 647,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow1",
+    "ReqStr": 0,
+    "ReqDex": 14,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 648,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow2",
+    "ReqStr": 0,
+    "ReqDex": 26,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 649,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow3",
+    "ReqStr": 0,
+    "ReqDex": 38,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 650,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow4",
+    "ReqStr": 0,
+    "ReqDex": 53,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 651,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow5",
+    "ReqStr": 0,
+    "ReqDex": 65,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 652,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow6",
+    "ReqStr": 0,
+    "ReqDex": 80,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 653,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow7",
+    "ReqStr": 0,
+    "ReqDex": 95,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 654,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow8",
+    "ReqStr": 0,
+    "ReqDex": 107,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 655,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/BowM1",
+    "ReqStr": 0,
+    "ReqDex": 124,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 656,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow9",
+    "ReqStr": 0,
+    "ReqDex": 116,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 657,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow10",
+    "ReqStr": 0,
+    "ReqDex": 125,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 658,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow11",
+    "ReqStr": 0,
+    "ReqDex": 134,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 659,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow12",
+    "ReqStr": 0,
+    "ReqDex": 143,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 660,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow13",
+    "ReqStr": 0,
+    "ReqDex": 152,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 661,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow14",
+    "ReqStr": 0,
+    "ReqDex": 161,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 662,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow15",
+    "ReqStr": 0,
+    "ReqDex": 170,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 663,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/BowM2",
+    "ReqStr": 0,
+    "ReqDex": 190,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 664,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow16",
+    "ReqStr": 0,
+    "ReqDex": 179,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 665,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow17",
+    "ReqStr": 0,
+    "ReqDex": 185,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 666,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow18",
+    "ReqStr": 0,
+    "ReqDex": 212,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 667,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow19",
+    "ReqStr": 0,
+    "ReqDex": 212,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 668,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow20",
+    "ReqStr": 0,
+    "ReqDex": 212,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 669,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow21",
+    "ReqStr": 0,
+    "ReqDex": 212,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 670,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow22",
+    "ReqStr": 0,
+    "ReqDex": 212,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 671,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/BowM3",
+    "ReqStr": 0,
+    "ReqDex": 222,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 672,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/BowE1",
+    "ReqStr": 0,
+    "ReqDex": 101,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 673,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/BowE2",
+    "ReqStr": 0,
+    "ReqDex": 161,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 674,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/BowE3",
+    "ReqStr": 0,
+    "ReqDex": 212,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 675,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow1Royale",
+    "ReqStr": 0,
+    "ReqDex": 14,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 676,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff1",
+    "ReqStr": 12,
+    "ReqDex": 0,
+    "ReqInt": 12
+  },
+  {
+    "_rid": 677,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff2",
+    "ReqStr": 20,
+    "ReqDex": 0,
+    "ReqInt": 20
+  },
+  {
+    "_rid": 678,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff3",
+    "ReqStr": 35,
+    "ReqDex": 0,
+    "ReqInt": 35
+  },
+  {
+    "_rid": 679,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff4",
+    "ReqStr": 27,
+    "ReqDex": 0,
+    "ReqInt": 27
+  },
+  {
+    "_rid": 680,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff5",
+    "ReqStr": 43,
+    "ReqDex": 0,
+    "ReqInt": 43
+  },
+  {
+    "_rid": 681,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff6",
+    "ReqStr": 51,
+    "ReqDex": 0,
+    "ReqInt": 51
+  },
+  {
+    "_rid": 682,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff7",
+    "ReqStr": 59,
+    "ReqDex": 0,
+    "ReqInt": 59
+  },
+  {
+    "_rid": 683,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/StaffM1",
+    "ReqStr": 66,
+    "ReqDex": 0,
+    "ReqInt": 66
+  },
+  {
+    "_rid": 684,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff8",
+    "ReqStr": 65,
+    "ReqDex": 0,
+    "ReqInt": 65
+  },
+  {
+    "_rid": 685,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff9",
+    "ReqStr": 78,
+    "ReqDex": 0,
+    "ReqInt": 78
+  },
+  {
+    "_rid": 686,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff10",
+    "ReqStr": 72,
+    "ReqDex": 0,
+    "ReqInt": 72
+  },
+  {
+    "_rid": 687,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff11",
+    "ReqStr": 85,
+    "ReqDex": 0,
+    "ReqInt": 85
+  },
+  {
+    "_rid": 688,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff12",
+    "ReqStr": 89,
+    "ReqDex": 0,
+    "ReqInt": 89
+  },
+  {
+    "_rid": 689,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff13",
+    "ReqStr": 94,
+    "ReqDex": 0,
+    "ReqInt": 94
+  },
+  {
+    "_rid": 690,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/StaffM2",
+    "ReqStr": 101,
+    "ReqDex": 0,
+    "ReqInt": 101
+  },
+  {
+    "_rid": 691,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff14",
+    "ReqStr": 99,
+    "ReqDex": 0,
+    "ReqInt": 99
+  },
+  {
+    "_rid": 692,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff15",
+    "ReqStr": 113,
+    "ReqDex": 0,
+    "ReqInt": 113
+  },
+  {
+    "_rid": 693,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff16",
+    "ReqStr": 113,
+    "ReqDex": 0,
+    "ReqInt": 113
+  },
+  {
+    "_rid": 694,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff17",
+    "ReqStr": 113,
+    "ReqDex": 0,
+    "ReqInt": 113
+  },
+  {
+    "_rid": 695,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff18",
+    "ReqStr": 113,
+    "ReqDex": 0,
+    "ReqInt": 113
+  },
+  {
+    "_rid": 696,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff19",
+    "ReqStr": 113,
+    "ReqDex": 0,
+    "ReqInt": 113
+  },
+  {
+    "_rid": 697,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/StaffM3",
+    "ReqStr": 117,
+    "ReqDex": 0,
+    "ReqInt": 117
+  },
+  {
+    "_rid": 698,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/StaffE1",
+    "ReqStr": 54,
+    "ReqDex": 0,
+    "ReqInt": 54
+  },
+  {
+    "_rid": 699,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/StaffE2",
+    "ReqStr": 86,
+    "ReqDex": 0,
+    "ReqInt": 86
+  },
+  {
+    "_rid": 700,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/StaffE3",
+    "ReqStr": 117,
+    "ReqDex": 0,
+    "ReqInt": 117
+  },
+  {
+    "_rid": 701,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/WarstaffE1",
+    "ReqStr": 54,
+    "ReqDex": 0,
+    "ReqInt": 54
+  },
+  {
+    "_rid": 702,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/WarstaffE2",
+    "ReqStr": 86,
+    "ReqDex": 0,
+    "ReqInt": 86
+  },
+  {
+    "_rid": 703,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/Staves/WarstaffE3",
+    "ReqStr": 117,
+    "ReqDex": 0,
+    "ReqInt": 117
+  },
+  {
+    "_rid": 704,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe1",
+    "ReqStr": 17,
+    "ReqDex": 8,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 705,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe2",
+    "ReqStr": 31,
+    "ReqDex": 9,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 706,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe3",
+    "ReqStr": 36,
+    "ReqDex": 17,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 707,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe4",
+    "ReqStr": 44,
+    "ReqDex": 25,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 708,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe5",
+    "ReqStr": 62,
+    "ReqDex": 27,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 709,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe6",
+    "ReqStr": 64,
+    "ReqDex": 37,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 710,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe7",
+    "ReqStr": 80,
+    "ReqDex": 37,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 711,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe8",
+    "ReqStr": 100,
+    "ReqDex": 29,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 712,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxeM1",
+    "ReqStr": 89,
+    "ReqDex": 43,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 713,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe9",
+    "ReqStr": 97,
+    "ReqDex": 45,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 714,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe10",
+    "ReqStr": 99,
+    "ReqDex": 57,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 715,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe11",
+    "ReqStr": 122,
+    "ReqDex": 53,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 716,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe12",
+    "ReqStr": 113,
+    "ReqDex": 65,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 717,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe13",
+    "ReqStr": 128,
+    "ReqDex": 60,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 718,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxeM2",
+    "ReqStr": 140,
+    "ReqDex": 67,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 719,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe14",
+    "ReqStr": 151,
+    "ReqDex": 43,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 720,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe15",
+    "ReqStr": 149,
+    "ReqDex": 76,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 721,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe16",
+    "ReqStr": 140,
+    "ReqDex": 86,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 722,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe17",
+    "ReqStr": 158,
+    "ReqDex": 76,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 723,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe18",
+    "ReqStr": 140,
+    "ReqDex": 86,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 724,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe19",
+    "ReqStr": 149,
+    "ReqDex": 76,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 725,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxeM3",
+    "ReqStr": 156,
+    "ReqDex": 84,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 726,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxeE1",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 727,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxeE2",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 728,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxeE3",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 729,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword1",
+    "ReqStr": 11,
+    "ReqDex": 11,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 730,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword2",
+    "ReqStr": 20,
+    "ReqDex": 17,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 731,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword3",
+    "ReqStr": 21,
+    "ReqDex": 30,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 732,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword4",
+    "ReqStr": 33,
+    "ReqDex": 33,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 733,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword5",
+    "ReqStr": 45,
+    "ReqDex": 38,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 734,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword6",
+    "ReqStr": 45,
+    "ReqDex": 54,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 735,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword7",
+    "ReqStr": 57,
+    "ReqDex": 57,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 736,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSwordM1",
+    "ReqStr": 62,
+    "ReqDex": 73,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 737,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword8",
+    "ReqStr": 69,
+    "ReqDex": 58,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 738,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword9",
+    "ReqStr": 57,
+    "ReqDex": 83,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 739,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword10",
+    "ReqStr": 77,
+    "ReqDex": 77,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 740,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword11",
+    "ReqStr": 91,
+    "ReqDex": 76,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 741,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword12",
+    "ReqStr": 80,
+    "ReqDex": 96,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 742,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword13",
+    "ReqStr": 93,
+    "ReqDex": 93,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 743,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSwordM2",
+    "ReqStr": 96,
+    "ReqDex": 113,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 744,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword14",
+    "ReqStr": 106,
+    "ReqDex": 89,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 745,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword15",
+    "ReqStr": 82,
+    "ReqDex": 119,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 746,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword16",
+    "ReqStr": 113,
+    "ReqDex": 113,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 747,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword17",
+    "ReqStr": 122,
+    "ReqDex": 104,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 748,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword18",
+    "ReqStr": 104,
+    "ReqDex": 122,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 749,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword19",
+    "ReqStr": 113,
+    "ReqDex": 113,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 750,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSwordM3",
+    "ReqStr": 119,
+    "ReqDex": 131,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 751,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSwordE1",
+    "ReqStr": 54,
+    "ReqDex": 54,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 752,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSwordE2",
+    "ReqStr": 86,
+    "ReqDex": 86,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 753,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSwordE3",
+    "ReqStr": 130,
+    "ReqDex": 130,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 754,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace0",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 755,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace1",
+    "ReqStr": 20,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 756,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace2",
+    "ReqStr": 35,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 757,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace3",
+    "ReqStr": 47,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 758,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace4",
+    "ReqStr": 62,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 759,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace5",
+    "ReqStr": 77,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 760,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace6",
+    "ReqStr": 92,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 761,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace7",
+    "ReqStr": 107,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 762,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMaceM1",
+    "ReqStr": 118,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 763,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace8",
+    "ReqStr": 119,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 764,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace9",
+    "ReqStr": 131,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 765,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace10",
+    "ReqStr": 143,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 766,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace11",
+    "ReqStr": 155,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 767,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace12",
+    "ReqStr": 164,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 768,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace13",
+    "ReqStr": 173,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 769,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMaceM2",
+    "ReqStr": 187,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 770,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace14",
+    "ReqStr": 182,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 771,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace15",
+    "ReqStr": 188,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 772,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace16",
+    "ReqStr": 212,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 773,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace17",
+    "ReqStr": 212,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 774,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace18",
+    "ReqStr": 212,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 775,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace19",
+    "ReqStr": 212,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 776,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMaceM3",
+    "ReqStr": 220,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 777,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMaceE1",
+    "ReqStr": 101,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 778,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMaceE2",
+    "ReqStr": 161,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 779,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMaceE3",
+    "ReqStr": 220,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 780,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapon/FishingRods/FishingRod1",
+    "ReqStr": 8,
+    "ReqDex": 8,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 781,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/Daggers/EtherealBlade1",
+    "ReqStr": 0,
+    "ReqDex": 9,
+    "ReqInt": 6
+  },
+  {
+    "_rid": 782,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/StormBladeOneHand",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 783,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/StormBladeTwoHand",
+    "ReqStr": 0,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 784,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/test/1hdaggereffect",
+    "ReqStr": 2,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 785,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/test/1haxeeffect",
+    "ReqStr": 2,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 786,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/test/1hswordeffect",
+    "ReqStr": 2,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 787,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/OneHandWeapons/test/1hwandeffect",
+    "ReqStr": 2,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 788,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/tests/2hmauleffect",
+    "ReqStr": 2,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 789,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/tests/2hstaffeffect",
+    "ReqStr": 2,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 790,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/tests/2hswordeffect",
+    "ReqStr": 2,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 791,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/tests/2haxeeffect",
+    "ReqStr": 2,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 792,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/tests/1hmaceeffect",
+    "ReqStr": 2,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 793,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/tests/1hclaweffect",
+    "ReqStr": 2,
+    "ReqDex": 0,
+    "ReqInt": 0
+  },
+  {
+    "_rid": 794,
+    "BaseItemTypesKey": "Metadata/Items/Weapons/TwoHandWeapons/tests/2hboweffect",
+    "ReqStr": 2,
+    "ReqDex": 0,
+    "ReqInt": 0
+  }
+]

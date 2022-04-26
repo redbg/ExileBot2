@@ -1,0 +1,3592 @@
+[
+  {
+    "_rid": 0,
+    "BaseItemTypesKey": 4137,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 1,
+    "DamageMax": 1,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 1,
+    "BaseItemTypesKey": 4138,
+    "Critical": 700,
+    "Speed": 714,
+    "DamageMin": 5,
+    "DamageMax": 9,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 2,
+    "BaseItemTypesKey": 4139,
+    "Critical": 700,
+    "Speed": 833,
+    "DamageMin": 9,
+    "DamageMax": 16,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 3,
+    "BaseItemTypesKey": 4140,
+    "Critical": 700,
+    "Speed": 667,
+    "DamageMin": 9,
+    "DamageMax": 17,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 4,
+    "BaseItemTypesKey": 4141,
+    "Critical": 700,
+    "Speed": 769,
+    "DamageMin": 14,
+    "DamageMax": 27,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 5,
+    "BaseItemTypesKey": 4142,
+    "Critical": 700,
+    "Speed": 769,
+    "DamageMin": 12,
+    "DamageMax": 37,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 6,
+    "BaseItemTypesKey": 4143,
+    "Critical": 800,
+    "Speed": 833,
+    "DamageMin": 23,
+    "DamageMax": 42,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 7,
+    "BaseItemTypesKey": 4144,
+    "Critical": 700,
+    "Speed": 741,
+    "DamageMin": 22,
+    "DamageMax": 40,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 8,
+    "BaseItemTypesKey": 4145,
+    "Critical": 700,
+    "Speed": 833,
+    "DamageMin": 26,
+    "DamageMax": 48,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 9,
+    "BaseItemTypesKey": 4146,
+    "Critical": 700,
+    "Speed": 667,
+    "DamageMin": 21,
+    "DamageMax": 38,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 10,
+    "BaseItemTypesKey": 4147,
+    "Critical": 700,
+    "Speed": 769,
+    "DamageMin": 28,
+    "DamageMax": 52,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 11,
+    "BaseItemTypesKey": 4148,
+    "Critical": 700,
+    "Speed": 769,
+    "DamageMin": 21,
+    "DamageMax": 64,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 12,
+    "BaseItemTypesKey": 4149,
+    "Critical": 800,
+    "Speed": 833,
+    "DamageMin": 33,
+    "DamageMax": 61,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 13,
+    "BaseItemTypesKey": 4150,
+    "Critical": 700,
+    "Speed": 741,
+    "DamageMin": 31,
+    "DamageMax": 57,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 14,
+    "BaseItemTypesKey": 4151,
+    "Critical": 700,
+    "Speed": 833,
+    "DamageMin": 38,
+    "DamageMax": 71,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 15,
+    "BaseItemTypesKey": 4152,
+    "Critical": 700,
+    "Speed": 667,
+    "DamageMin": 29,
+    "DamageMax": 53,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 16,
+    "BaseItemTypesKey": 4153,
+    "Critical": 700,
+    "Speed": 769,
+    "DamageMin": 35,
+    "DamageMax": 65,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 17,
+    "BaseItemTypesKey": 4154,
+    "Critical": 700,
+    "Speed": 769,
+    "DamageMin": 25,
+    "DamageMax": 75,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 18,
+    "BaseItemTypesKey": 4155,
+    "Critical": 800,
+    "Speed": 833,
+    "DamageMin": 35,
+    "DamageMax": 64,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 19,
+    "BaseItemTypesKey": 4156,
+    "Critical": 700,
+    "Speed": 741,
+    "DamageMin": 33,
+    "DamageMax": 61,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 20,
+    "BaseItemTypesKey": 4157,
+    "Critical": 750,
+    "Speed": 714,
+    "DamageMin": 16,
+    "DamageMax": 30,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 21,
+    "BaseItemTypesKey": 4158,
+    "Critical": 750,
+    "Speed": 714,
+    "DamageMin": 25,
+    "DamageMax": 46,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 22,
+    "BaseItemTypesKey": 4159,
+    "Critical": 750,
+    "Speed": 714,
+    "DamageMin": 29,
+    "DamageMax": 54,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 23,
+    "BaseItemTypesKey": 4160,
+    "Critical": 700,
+    "Speed": 714,
+    "DamageMin": 30,
+    "DamageMax": 55,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 24,
+    "BaseItemTypesKey": 4161,
+    "Critical": 700,
+    "Speed": 800,
+    "DamageMin": 5,
+    "DamageMax": 9,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 25,
+    "BaseItemTypesKey": 4162,
+    "Critical": 600,
+    "Speed": 667,
+    "DamageMin": 6,
+    "DamageMax": 10,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 26,
+    "BaseItemTypesKey": 4163,
+    "Critical": 600,
+    "Speed": 690,
+    "DamageMin": 4,
+    "DamageMax": 17,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 27,
+    "BaseItemTypesKey": 4164,
+    "Critical": 630,
+    "Speed": 690,
+    "DamageMin": 3,
+    "DamageMax": 26,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 28,
+    "BaseItemTypesKey": 4165,
+    "Critical": 610,
+    "Speed": 667,
+    "DamageMin": 7,
+    "DamageMax": 27,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 29,
+    "BaseItemTypesKey": 4166,
+    "Critical": 630,
+    "Speed": 690,
+    "DamageMin": 8,
+    "DamageMax": 34,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 30,
+    "BaseItemTypesKey": 4167,
+    "Critical": 650,
+    "Speed": 769,
+    "DamageMin": 10,
+    "DamageMax": 41,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 31,
+    "BaseItemTypesKey": 4168,
+    "Critical": 630,
+    "Speed": 690,
+    "DamageMin": 11,
+    "DamageMax": 43,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 32,
+    "BaseItemTypesKey": 4169,
+    "Critical": 650,
+    "Speed": 833,
+    "DamageMin": 15,
+    "DamageMax": 59,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 33,
+    "BaseItemTypesKey": 4170,
+    "Critical": 620,
+    "Speed": 741,
+    "DamageMin": 14,
+    "DamageMax": 54,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 34,
+    "BaseItemTypesKey": 4171,
+    "Critical": 600,
+    "Speed": 714,
+    "DamageMin": 11,
+    "DamageMax": 45,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 35,
+    "BaseItemTypesKey": 4172,
+    "Critical": 630,
+    "Speed": 714,
+    "DamageMin": 7,
+    "DamageMax": 62,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 36,
+    "BaseItemTypesKey": 4173,
+    "Critical": 610,
+    "Speed": 667,
+    "DamageMin": 13,
+    "DamageMax": 52,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 37,
+    "BaseItemTypesKey": 4174,
+    "Critical": 630,
+    "Speed": 714,
+    "DamageMin": 15,
+    "DamageMax": 59,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 38,
+    "BaseItemTypesKey": 4175,
+    "Critical": 650,
+    "Speed": 833,
+    "DamageMin": 19,
+    "DamageMax": 75,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 39,
+    "BaseItemTypesKey": 4176,
+    "Critical": 630,
+    "Speed": 690,
+    "DamageMin": 16,
+    "DamageMax": 64,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 40,
+    "BaseItemTypesKey": 4177,
+    "Critical": 650,
+    "Speed": 833,
+    "DamageMin": 22,
+    "DamageMax": 87,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 41,
+    "BaseItemTypesKey": 4178,
+    "Critical": 650,
+    "Speed": 741,
+    "DamageMin": 19,
+    "DamageMax": 74,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 42,
+    "BaseItemTypesKey": 4179,
+    "Critical": 650,
+    "Speed": 714,
+    "DamageMin": 19,
+    "DamageMax": 76,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 43,
+    "BaseItemTypesKey": 4180,
+    "Critical": 630,
+    "Speed": 714,
+    "DamageMin": 10,
+    "DamageMax": 86,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 44,
+    "BaseItemTypesKey": 4181,
+    "Critical": 610,
+    "Speed": 667,
+    "DamageMin": 19,
+    "DamageMax": 74,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 45,
+    "BaseItemTypesKey": 4182,
+    "Critical": 630,
+    "Speed": 714,
+    "DamageMin": 20,
+    "DamageMax": 79,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 46,
+    "BaseItemTypesKey": 4183,
+    "Critical": 650,
+    "Speed": 833,
+    "DamageMin": 24,
+    "DamageMax": 95,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 47,
+    "BaseItemTypesKey": 4184,
+    "Critical": 630,
+    "Speed": 667,
+    "DamageMin": 18,
+    "DamageMax": 73,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 48,
+    "BaseItemTypesKey": 4185,
+    "Critical": 650,
+    "Speed": 833,
+    "DamageMin": 24,
+    "DamageMax": 97,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 49,
+    "BaseItemTypesKey": 4186,
+    "Critical": 620,
+    "Speed": 741,
+    "DamageMin": 22,
+    "DamageMax": 88,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 50,
+    "BaseItemTypesKey": 4187,
+    "Critical": 630,
+    "Speed": 714,
+    "DamageMin": 12,
+    "DamageMax": 46,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 51,
+    "BaseItemTypesKey": 4188,
+    "Critical": 630,
+    "Speed": 714,
+    "DamageMin": 18,
+    "DamageMax": 71,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 52,
+    "BaseItemTypesKey": 4189,
+    "Critical": 630,
+    "Speed": 714,
+    "DamageMin": 20,
+    "DamageMax": 79,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 53,
+    "BaseItemTypesKey": 4190,
+    "Critical": 630,
+    "Speed": 690,
+    "DamageMin": 12,
+    "DamageMax": 47,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 54,
+    "BaseItemTypesKey": 4191,
+    "Critical": 630,
+    "Speed": 690,
+    "DamageMin": 18,
+    "DamageMax": 73,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 55,
+    "BaseItemTypesKey": 4192,
+    "Critical": 630,
+    "Speed": 690,
+    "DamageMin": 21,
+    "DamageMax": 85,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 56,
+    "BaseItemTypesKey": 4193,
+    "Critical": 620,
+    "Speed": 625,
+    "DamageMin": 4,
+    "DamageMax": 11,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 57,
+    "BaseItemTypesKey": 4194,
+    "Critical": 650,
+    "Speed": 667,
+    "DamageMin": 6,
+    "DamageMax": 17,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 58,
+    "BaseItemTypesKey": 4195,
+    "Critical": 630,
+    "Speed": 645,
+    "DamageMin": 7,
+    "DamageMax": 23,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 59,
+    "BaseItemTypesKey": 4196,
+    "Critical": 600,
+    "Speed": 625,
+    "DamageMin": 12,
+    "DamageMax": 22,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 60,
+    "BaseItemTypesKey": 4197,
+    "Critical": 630,
+    "Speed": 645,
+    "DamageMin": 12,
+    "DamageMax": 31,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 61,
+    "BaseItemTypesKey": 4198,
+    "Critical": 650,
+    "Speed": 769,
+    "DamageMin": 16,
+    "DamageMax": 43,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 62,
+    "BaseItemTypesKey": 4199,
+    "Critical": 600,
+    "Speed": 625,
+    "DamageMin": 14,
+    "DamageMax": 38,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 63,
+    "BaseItemTypesKey": 4200,
+    "Critical": 630,
+    "Speed": 667,
+    "DamageMin": 12,
+    "DamageMax": 46,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 64,
+    "BaseItemTypesKey": 4201,
+    "Critical": 630,
+    "Speed": 667,
+    "DamageMin": 15,
+    "DamageMax": 44,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 65,
+    "BaseItemTypesKey": 4202,
+    "Critical": 650,
+    "Speed": 769,
+    "DamageMin": 20,
+    "DamageMax": 53,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 66,
+    "BaseItemTypesKey": 4203,
+    "Critical": 630,
+    "Speed": 667,
+    "DamageMin": 15,
+    "DamageMax": 51,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 67,
+    "BaseItemTypesKey": 4204,
+    "Critical": 600,
+    "Speed": 625,
+    "DamageMin": 23,
+    "DamageMax": 43,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 68,
+    "BaseItemTypesKey": 4205,
+    "Critical": 630,
+    "Speed": 667,
+    "DamageMin": 20,
+    "DamageMax": 53,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 69,
+    "BaseItemTypesKey": 4206,
+    "Critical": 650,
+    "Speed": 769,
+    "DamageMin": 26,
+    "DamageMax": 68,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 70,
+    "BaseItemTypesKey": 4207,
+    "Critical": 600,
+    "Speed": 625,
+    "DamageMin": 21,
+    "DamageMax": 56,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 71,
+    "BaseItemTypesKey": 4208,
+    "Critical": 630,
+    "Speed": 667,
+    "DamageMin": 17,
+    "DamageMax": 69,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 72,
+    "BaseItemTypesKey": 4209,
+    "Critical": 630,
+    "Speed": 667,
+    "DamageMin": 21,
+    "DamageMax": 64,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 73,
+    "BaseItemTypesKey": 4210,
+    "Critical": 650,
+    "Speed": 769,
+    "DamageMin": 30,
+    "DamageMax": 78,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 74,
+    "BaseItemTypesKey": 4211,
+    "Critical": 630,
+    "Speed": 667,
+    "DamageMin": 21,
+    "DamageMax": 73,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 75,
+    "BaseItemTypesKey": 4212,
+    "Critical": 600,
+    "Speed": 625,
+    "DamageMin": 29,
+    "DamageMax": 55,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 76,
+    "BaseItemTypesKey": 4213,
+    "Critical": 630,
+    "Speed": 667,
+    "DamageMin": 26,
+    "DamageMax": 68,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 77,
+    "BaseItemTypesKey": 4214,
+    "Critical": 650,
+    "Speed": 769,
+    "DamageMin": 29,
+    "DamageMax": 76,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 78,
+    "BaseItemTypesKey": 4215,
+    "Critical": 600,
+    "Speed": 625,
+    "DamageMin": 25,
+    "DamageMax": 65,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 79,
+    "BaseItemTypesKey": 4216,
+    "Critical": 630,
+    "Speed": 667,
+    "DamageMin": 18,
+    "DamageMax": 71,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 80,
+    "BaseItemTypesKey": 4217,
+    "Critical": 630,
+    "Speed": 667,
+    "DamageMin": 23,
+    "DamageMax": 68,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 81,
+    "BaseItemTypesKey": 4218,
+    "Critical": 600,
+    "Speed": 625,
+    "DamageMin": 13,
+    "DamageMax": 24,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 82,
+    "BaseItemTypesKey": 4219,
+    "Critical": 600,
+    "Speed": 625,
+    "DamageMin": 20,
+    "DamageMax": 37,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 83,
+    "BaseItemTypesKey": 4220,
+    "Critical": 600,
+    "Speed": 625,
+    "DamageMin": 22,
+    "DamageMax": 41,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 84,
+    "BaseItemTypesKey": 4221,
+    "Critical": 500,
+    "Speed": 667,
+    "DamageMin": 6,
+    "DamageMax": 11,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 85,
+    "BaseItemTypesKey": 4222,
+    "Critical": 500,
+    "Speed": 690,
+    "DamageMin": 10,
+    "DamageMax": 15,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 86,
+    "BaseItemTypesKey": 4223,
+    "Critical": 500,
+    "Speed": 667,
+    "DamageMin": 11,
+    "DamageMax": 21,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 87,
+    "BaseItemTypesKey": 4224,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 12,
+    "DamageMax": 35,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 88,
+    "BaseItemTypesKey": 4225,
+    "Critical": 500,
+    "Speed": 741,
+    "DamageMin": 19,
+    "DamageMax": 34,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 89,
+    "BaseItemTypesKey": 4226,
+    "Critical": 500,
+    "Speed": 714,
+    "DamageMin": 14,
+    "DamageMax": 42,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 90,
+    "BaseItemTypesKey": 4227,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 27,
+    "DamageMax": 50,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 91,
+    "BaseItemTypesKey": 4228,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 29,
+    "DamageMax": 48,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 92,
+    "BaseItemTypesKey": 4229,
+    "Critical": 500,
+    "Speed": 741,
+    "DamageMin": 26,
+    "DamageMax": 46,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 93,
+    "BaseItemTypesKey": 4230,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 32,
+    "DamageMax": 50,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 94,
+    "BaseItemTypesKey": 4231,
+    "Critical": 500,
+    "Speed": 667,
+    "DamageMin": 25,
+    "DamageMax": 46,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 95,
+    "BaseItemTypesKey": 4232,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 26,
+    "DamageMax": 79,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 96,
+    "BaseItemTypesKey": 4233,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 35,
+    "DamageMax": 65,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 97,
+    "BaseItemTypesKey": 4234,
+    "Critical": 500,
+    "Speed": 714,
+    "DamageMin": 24,
+    "DamageMax": 71,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 98,
+    "BaseItemTypesKey": 4235,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 45,
+    "DamageMax": 83,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 99,
+    "BaseItemTypesKey": 4236,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 45,
+    "DamageMax": 75,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 100,
+    "BaseItemTypesKey": 4237,
+    "Critical": 500,
+    "Speed": 741,
+    "DamageMin": 40,
+    "DamageMax": 71,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 101,
+    "BaseItemTypesKey": 4238,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 49,
+    "DamageMax": 77,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 102,
+    "BaseItemTypesKey": 4239,
+    "Critical": 500,
+    "Speed": 667,
+    "DamageMin": 38,
+    "DamageMax": 70,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 103,
+    "BaseItemTypesKey": 4240,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 38,
+    "DamageMax": 114,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 104,
+    "BaseItemTypesKey": 4241,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 47,
+    "DamageMax": 87,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 105,
+    "BaseItemTypesKey": 4242,
+    "Critical": 500,
+    "Speed": 714,
+    "DamageMin": 30,
+    "DamageMax": 90,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 106,
+    "BaseItemTypesKey": 4243,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 54,
+    "DamageMax": 100,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 107,
+    "BaseItemTypesKey": 4244,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 51,
+    "DamageMax": 85,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 108,
+    "BaseItemTypesKey": 4245,
+    "Critical": 500,
+    "Speed": 741,
+    "DamageMin": 44,
+    "DamageMax": 79,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 109,
+    "BaseItemTypesKey": 4246,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 21,
+    "DamageMax": 44,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 110,
+    "BaseItemTypesKey": 4247,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 32,
+    "DamageMax": 67,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 111,
+    "BaseItemTypesKey": 4248,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 38,
+    "DamageMax": 79,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 112,
+    "BaseItemTypesKey": 4249,
+    "Critical": 500,
+    "Speed": 690,
+    "DamageMin": 5,
+    "DamageMax": 11,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 113,
+    "BaseItemTypesKey": 4250,
+    "Critical": 500,
+    "Speed": 909,
+    "DamageMin": 3,
+    "DamageMax": 23,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 114,
+    "BaseItemTypesKey": 4251,
+    "Critical": 500,
+    "Speed": 645,
+    "DamageMin": 4,
+    "DamageMax": 9,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 115,
+    "BaseItemTypesKey": 4252,
+    "Critical": 500,
+    "Speed": 667,
+    "DamageMin": 6,
+    "DamageMax": 14,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 116,
+    "BaseItemTypesKey": 4253,
+    "Critical": 500,
+    "Speed": 645,
+    "DamageMin": 5,
+    "DamageMax": 22,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 117,
+    "BaseItemTypesKey": 4254,
+    "Critical": 500,
+    "Speed": 690,
+    "DamageMin": 15,
+    "DamageMax": 21,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 118,
+    "BaseItemTypesKey": 4255,
+    "Critical": 500,
+    "Speed": 714,
+    "DamageMin": 16,
+    "DamageMax": 30,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 119,
+    "BaseItemTypesKey": 4256,
+    "Critical": 500,
+    "Speed": 690,
+    "DamageMin": 18,
+    "DamageMax": 33,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 120,
+    "BaseItemTypesKey": 4257,
+    "Critical": 500,
+    "Speed": 667,
+    "DamageMin": 20,
+    "DamageMax": 33,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 121,
+    "BaseItemTypesKey": 4258,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 19,
+    "DamageMax": 54,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 122,
+    "BaseItemTypesKey": 4259,
+    "Critical": 500,
+    "Speed": 870,
+    "DamageMin": 28,
+    "DamageMax": 60,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 123,
+    "BaseItemTypesKey": 4260,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 25,
+    "DamageMax": 53,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 124,
+    "BaseItemTypesKey": 4261,
+    "Critical": 500,
+    "Speed": 645,
+    "DamageMin": 13,
+    "DamageMax": 53,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 125,
+    "BaseItemTypesKey": 4262,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 37,
+    "DamageMax": 53,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 126,
+    "BaseItemTypesKey": 4263,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 38,
+    "DamageMax": 70,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 127,
+    "BaseItemTypesKey": 4264,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 36,
+    "DamageMax": 66,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 128,
+    "BaseItemTypesKey": 4265,
+    "Critical": 500,
+    "Speed": 667,
+    "DamageMin": 34,
+    "DamageMax": 55,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 129,
+    "BaseItemTypesKey": 4266,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 30,
+    "DamageMax": 86,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 130,
+    "BaseItemTypesKey": 4267,
+    "Critical": 500,
+    "Speed": 870,
+    "DamageMin": 44,
+    "DamageMax": 94,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 131,
+    "BaseItemTypesKey": 4268,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 39,
+    "DamageMax": 83,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 132,
+    "BaseItemTypesKey": 4269,
+    "Critical": 500,
+    "Speed": 645,
+    "DamageMin": 20,
+    "DamageMax": 80,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 133,
+    "BaseItemTypesKey": 4270,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 54,
+    "DamageMax": 78,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 134,
+    "BaseItemTypesKey": 4271,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 53,
+    "DamageMax": 98,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 135,
+    "BaseItemTypesKey": 4272,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 46,
+    "DamageMax": 86,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 136,
+    "BaseItemTypesKey": 4273,
+    "Critical": 500,
+    "Speed": 667,
+    "DamageMin": 41,
+    "DamageMax": 68,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 137,
+    "BaseItemTypesKey": 4274,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 35,
+    "DamageMax": 99,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 138,
+    "BaseItemTypesKey": 4275,
+    "Critical": 500,
+    "Speed": 714,
+    "DamageMin": 37,
+    "DamageMax": 80,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 139,
+    "BaseItemTypesKey": 4276,
+    "Critical": 600,
+    "Speed": 625,
+    "DamageMin": 18,
+    "DamageMax": 33,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 140,
+    "BaseItemTypesKey": 4277,
+    "Critical": 600,
+    "Speed": 625,
+    "DamageMin": 27,
+    "DamageMax": 51,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 141,
+    "BaseItemTypesKey": 4278,
+    "Critical": 600,
+    "Speed": 625,
+    "DamageMin": 34,
+    "DamageMax": 63,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 142,
+    "BaseItemTypesKey": 4279,
+    "Critical": 550,
+    "Speed": 645,
+    "DamageMin": 5,
+    "DamageMax": 11,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 143,
+    "BaseItemTypesKey": 4280,
+    "Critical": 550,
+    "Speed": 625,
+    "DamageMin": 4,
+    "DamageMax": 17,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 144,
+    "BaseItemTypesKey": 4281,
+    "Critical": 600,
+    "Speed": 667,
+    "DamageMin": 11,
+    "DamageMax": 20,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 145,
+    "BaseItemTypesKey": 4282,
+    "Critical": 550,
+    "Speed": 645,
+    "DamageMin": 11,
+    "DamageMax": 25,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 146,
+    "BaseItemTypesKey": 4283,
+    "Critical": 550,
+    "Speed": 625,
+    "DamageMin": 12,
+    "DamageMax": 29,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 147,
+    "BaseItemTypesKey": 4284,
+    "Critical": 650,
+    "Speed": 769,
+    "DamageMin": 12,
+    "DamageMax": 46,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 148,
+    "BaseItemTypesKey": 4285,
+    "Critical": 550,
+    "Speed": 625,
+    "DamageMin": 18,
+    "DamageMax": 33,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 149,
+    "BaseItemTypesKey": 4286,
+    "Critical": 570,
+    "Speed": 714,
+    "DamageMin": 19,
+    "DamageMax": 44,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 150,
+    "BaseItemTypesKey": 4287,
+    "Critical": 600,
+    "Speed": 645,
+    "DamageMin": 19,
+    "DamageMax": 40,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 151,
+    "BaseItemTypesKey": 4288,
+    "Critical": 550,
+    "Speed": 667,
+    "DamageMin": 13,
+    "DamageMax": 51,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 152,
+    "BaseItemTypesKey": 4289,
+    "Critical": 600,
+    "Speed": 714,
+    "DamageMin": 25,
+    "DamageMax": 46,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 153,
+    "BaseItemTypesKey": 4290,
+    "Critical": 550,
+    "Speed": 667,
+    "DamageMin": 21,
+    "DamageMax": 50,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 154,
+    "BaseItemTypesKey": 4291,
+    "Critical": 550,
+    "Speed": 625,
+    "DamageMin": 21,
+    "DamageMax": 49,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 155,
+    "BaseItemTypesKey": 4292,
+    "Critical": 650,
+    "Speed": 769,
+    "DamageMin": 18,
+    "DamageMax": 73,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 156,
+    "BaseItemTypesKey": 4293,
+    "Critical": 550,
+    "Speed": 625,
+    "DamageMin": 28,
+    "DamageMax": 51,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 157,
+    "BaseItemTypesKey": 4294,
+    "Critical": 570,
+    "Speed": 714,
+    "DamageMin": 29,
+    "DamageMax": 67,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 158,
+    "BaseItemTypesKey": 4295,
+    "Critical": 600,
+    "Speed": 645,
+    "DamageMin": 29,
+    "DamageMax": 60,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 159,
+    "BaseItemTypesKey": 4296,
+    "Critical": 550,
+    "Speed": 667,
+    "DamageMin": 19,
+    "DamageMax": 75,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 160,
+    "BaseItemTypesKey": 4297,
+    "Critical": 600,
+    "Speed": 714,
+    "DamageMin": 35,
+    "DamageMax": 65,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 161,
+    "BaseItemTypesKey": 4298,
+    "Critical": 550,
+    "Speed": 667,
+    "DamageMin": 29,
+    "DamageMax": 69,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 162,
+    "BaseItemTypesKey": 4299,
+    "Critical": 550,
+    "Speed": 625,
+    "DamageMin": 27,
+    "DamageMax": 64,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 163,
+    "BaseItemTypesKey": 4300,
+    "Critical": 650,
+    "Speed": 769,
+    "DamageMin": 22,
+    "DamageMax": 87,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 164,
+    "BaseItemTypesKey": 4301,
+    "Critical": 550,
+    "Speed": 625,
+    "DamageMin": 32,
+    "DamageMax": 60,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 165,
+    "BaseItemTypesKey": 4302,
+    "Critical": 570,
+    "Speed": 714,
+    "DamageMin": 31,
+    "DamageMax": 72,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 166,
+    "BaseItemTypesKey": 4303,
+    "Critical": 600,
+    "Speed": 667,
+    "DamageMin": 32,
+    "DamageMax": 66,
+    "RangeMax": 14,
+    "Null6": 0
+  },
+  {
+    "_rid": 167,
+    "BaseItemTypesKey": 4304,
+    "Critical": 500,
+    "Speed": 690,
+    "DamageMin": 6,
+    "DamageMax": 8,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 168,
+    "BaseItemTypesKey": 4305,
+    "Critical": 500,
+    "Speed": 714,
+    "DamageMin": 8,
+    "DamageMax": 13,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 169,
+    "BaseItemTypesKey": 4306,
+    "Critical": 500,
+    "Speed": 690,
+    "DamageMin": 13,
+    "DamageMax": 16,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 170,
+    "BaseItemTypesKey": 4307,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 15,
+    "DamageMax": 27,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 171,
+    "BaseItemTypesKey": 4308,
+    "Critical": 500,
+    "Speed": 690,
+    "DamageMin": 13,
+    "DamageMax": 31,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 172,
+    "BaseItemTypesKey": 4309,
+    "Critical": 500,
+    "Speed": 714,
+    "DamageMin": 19,
+    "DamageMax": 32,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 173,
+    "BaseItemTypesKey": 4310,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 32,
+    "DamageMax": 40,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 174,
+    "BaseItemTypesKey": 4311,
+    "Critical": 500,
+    "Speed": 714,
+    "DamageMin": 21,
+    "DamageMax": 43,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 175,
+    "BaseItemTypesKey": 4312,
+    "Critical": 500,
+    "Speed": 741,
+    "DamageMin": 28,
+    "DamageMax": 42,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 176,
+    "BaseItemTypesKey": 4313,
+    "Critical": 500,
+    "Speed": 800,
+    "DamageMin": 31,
+    "DamageMax": 51,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 177,
+    "BaseItemTypesKey": 4314,
+    "Critical": 500,
+    "Speed": 714,
+    "DamageMin": 33,
+    "DamageMax": 42,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 178,
+    "BaseItemTypesKey": 4315,
+    "Critical": 500,
+    "Speed": 870,
+    "DamageMin": 37,
+    "DamageMax": 69,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 179,
+    "BaseItemTypesKey": 4316,
+    "Critical": 500,
+    "Speed": 714,
+    "DamageMin": 25,
+    "DamageMax": 59,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 180,
+    "BaseItemTypesKey": 4317,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 38,
+    "DamageMax": 63,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 181,
+    "BaseItemTypesKey": 4318,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 53,
+    "DamageMax": 67,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 182,
+    "BaseItemTypesKey": 4319,
+    "Critical": 500,
+    "Speed": 714,
+    "DamageMin": 33,
+    "DamageMax": 69,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 183,
+    "BaseItemTypesKey": 4320,
+    "Critical": 500,
+    "Speed": 741,
+    "DamageMin": 44,
+    "DamageMax": 66,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 184,
+    "BaseItemTypesKey": 4321,
+    "Critical": 500,
+    "Speed": 800,
+    "DamageMin": 48,
+    "DamageMax": 80,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 185,
+    "BaseItemTypesKey": 4322,
+    "Critical": 500,
+    "Speed": 714,
+    "DamageMin": 49,
+    "DamageMax": 62,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 186,
+    "BaseItemTypesKey": 4323,
+    "Critical": 500,
+    "Speed": 870,
+    "DamageMin": 54,
+    "DamageMax": 101,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 187,
+    "BaseItemTypesKey": 4324,
+    "Critical": 500,
+    "Speed": 714,
+    "DamageMin": 35,
+    "DamageMax": 81,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 188,
+    "BaseItemTypesKey": 4325,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 49,
+    "DamageMax": 82,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 189,
+    "BaseItemTypesKey": 4326,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 65,
+    "DamageMax": 82,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 190,
+    "BaseItemTypesKey": 4327,
+    "Critical": 500,
+    "Speed": 714,
+    "DamageMin": 38,
+    "DamageMax": 80,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 191,
+    "BaseItemTypesKey": 4328,
+    "Critical": 500,
+    "Speed": 741,
+    "DamageMin": 49,
+    "DamageMax": 74,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 192,
+    "BaseItemTypesKey": 4329,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 20,
+    "DamageMax": 41,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 193,
+    "BaseItemTypesKey": 4330,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 31,
+    "DamageMax": 64,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 194,
+    "BaseItemTypesKey": 4331,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 39,
+    "DamageMax": 81,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 195,
+    "BaseItemTypesKey": 4332,
+    "Critical": 600,
+    "Speed": 645,
+    "DamageMin": 5,
+    "DamageMax": 8,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 196,
+    "BaseItemTypesKey": 4333,
+    "Critical": 600,
+    "Speed": 667,
+    "DamageMin": 8,
+    "DamageMax": 12,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 197,
+    "BaseItemTypesKey": 4334,
+    "Critical": 600,
+    "Speed": 714,
+    "DamageMin": 10,
+    "DamageMax": 19,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 198,
+    "BaseItemTypesKey": 4335,
+    "Critical": 650,
+    "Speed": 714,
+    "DamageMin": 14,
+    "DamageMax": 22,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 199,
+    "BaseItemTypesKey": 4336,
+    "Critical": 600,
+    "Speed": 714,
+    "DamageMin": 18,
+    "DamageMax": 27,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 200,
+    "BaseItemTypesKey": 4337,
+    "Critical": 600,
+    "Speed": 690,
+    "DamageMin": 17,
+    "DamageMax": 31,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 201,
+    "BaseItemTypesKey": 4338,
+    "Critical": 600,
+    "Speed": 833,
+    "DamageMin": 21,
+    "DamageMax": 50,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 202,
+    "BaseItemTypesKey": 4339,
+    "Critical": 620,
+    "Speed": 800,
+    "DamageMin": 29,
+    "DamageMax": 44,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 203,
+    "BaseItemTypesKey": 4340,
+    "Critical": 600,
+    "Speed": 769,
+    "DamageMin": 27,
+    "DamageMax": 50,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 204,
+    "BaseItemTypesKey": 4341,
+    "Critical": 600,
+    "Speed": 667,
+    "DamageMin": 24,
+    "DamageMax": 36,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 205,
+    "BaseItemTypesKey": 4342,
+    "Critical": 600,
+    "Speed": 800,
+    "DamageMin": 30,
+    "DamageMax": 55,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 206,
+    "BaseItemTypesKey": 4343,
+    "Critical": 650,
+    "Speed": 800,
+    "DamageMin": 35,
+    "DamageMax": 52,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 207,
+    "BaseItemTypesKey": 4344,
+    "Critical": 600,
+    "Speed": 800,
+    "DamageMin": 38,
+    "DamageMax": 57,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 208,
+    "BaseItemTypesKey": 4345,
+    "Critical": 600,
+    "Speed": 714,
+    "DamageMin": 30,
+    "DamageMax": 55,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 209,
+    "BaseItemTypesKey": 4346,
+    "Critical": 600,
+    "Speed": 833,
+    "DamageMin": 34,
+    "DamageMax": 80,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 210,
+    "BaseItemTypesKey": 4347,
+    "Critical": 620,
+    "Speed": 800,
+    "DamageMin": 45,
+    "DamageMax": 67,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 211,
+    "BaseItemTypesKey": 4348,
+    "Critical": 600,
+    "Speed": 769,
+    "DamageMin": 39,
+    "DamageMax": 72,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 212,
+    "BaseItemTypesKey": 4349,
+    "Critical": 600,
+    "Speed": 667,
+    "DamageMin": 37,
+    "DamageMax": 55,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 213,
+    "BaseItemTypesKey": 4350,
+    "Critical": 600,
+    "Speed": 800,
+    "DamageMin": 43,
+    "DamageMax": 80,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 214,
+    "BaseItemTypesKey": 4351,
+    "Critical": 650,
+    "Speed": 800,
+    "DamageMin": 49,
+    "DamageMax": 73,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 215,
+    "BaseItemTypesKey": 4352,
+    "Critical": 600,
+    "Speed": 800,
+    "DamageMin": 51,
+    "DamageMax": 76,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 216,
+    "BaseItemTypesKey": 4353,
+    "Critical": 600,
+    "Speed": 714,
+    "DamageMin": 37,
+    "DamageMax": 70,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 217,
+    "BaseItemTypesKey": 4354,
+    "Critical": 600,
+    "Speed": 833,
+    "DamageMin": 41,
+    "DamageMax": 95,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 218,
+    "BaseItemTypesKey": 4355,
+    "Critical": 620,
+    "Speed": 800,
+    "DamageMin": 50,
+    "DamageMax": 76,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 219,
+    "BaseItemTypesKey": 4356,
+    "Critical": 600,
+    "Speed": 769,
+    "DamageMin": 42,
+    "DamageMax": 78,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 220,
+    "BaseItemTypesKey": 4357,
+    "Critical": 630,
+    "Speed": 690,
+    "DamageMin": 23,
+    "DamageMax": 34,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 221,
+    "BaseItemTypesKey": 4358,
+    "Critical": 630,
+    "Speed": 690,
+    "DamageMin": 35,
+    "DamageMax": 52,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 222,
+    "BaseItemTypesKey": 4359,
+    "Critical": 630,
+    "Speed": 690,
+    "DamageMin": 41,
+    "DamageMax": 61,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 223,
+    "BaseItemTypesKey": 4360,
+    "Critical": 500,
+    "Speed": 714,
+    "DamageMin": 5,
+    "DamageMax": 13,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 224,
+    "BaseItemTypesKey": 4361,
+    "Critical": 500,
+    "Speed": 667,
+    "DamageMin": 6,
+    "DamageMax": 16,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 225,
+    "BaseItemTypesKey": 4362,
+    "Critical": 600,
+    "Speed": 769,
+    "DamageMin": 8,
+    "DamageMax": 33,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 226,
+    "BaseItemTypesKey": 4363,
+    "Critical": 600,
+    "Speed": 769,
+    "DamageMin": 16,
+    "DamageMax": 34,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 227,
+    "BaseItemTypesKey": 4364,
+    "Critical": 670,
+    "Speed": 800,
+    "DamageMin": 15,
+    "DamageMax": 45,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 228,
+    "BaseItemTypesKey": 4365,
+    "Critical": 650,
+    "Speed": 714,
+    "DamageMin": 15,
+    "DamageMax": 45,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 229,
+    "BaseItemTypesKey": 4366,
+    "Critical": 500,
+    "Speed": 690,
+    "DamageMin": 14,
+    "DamageMax": 56,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 230,
+    "BaseItemTypesKey": 4367,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 28,
+    "DamageMax": 73,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 231,
+    "BaseItemTypesKey": 4368,
+    "Critical": 550,
+    "Speed": 714,
+    "DamageMin": 37,
+    "DamageMax": 56,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 232,
+    "BaseItemTypesKey": 4369,
+    "Critical": 500,
+    "Speed": 667,
+    "DamageMin": 20,
+    "DamageMax": 61,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 233,
+    "BaseItemTypesKey": 4370,
+    "Critical": 600,
+    "Speed": 800,
+    "DamageMin": 24,
+    "DamageMax": 96,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 234,
+    "BaseItemTypesKey": 4371,
+    "Critical": 600,
+    "Speed": 769,
+    "DamageMin": 37,
+    "DamageMax": 76,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 235,
+    "BaseItemTypesKey": 4372,
+    "Critical": 670,
+    "Speed": 800,
+    "DamageMin": 32,
+    "DamageMax": 96,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 236,
+    "BaseItemTypesKey": 4373,
+    "Critical": 650,
+    "Speed": 714,
+    "DamageMin": 29,
+    "DamageMax": 86,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 237,
+    "BaseItemTypesKey": 4374,
+    "Critical": 500,
+    "Speed": 690,
+    "DamageMin": 24,
+    "DamageMax": 94,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 238,
+    "BaseItemTypesKey": 4375,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 44,
+    "DamageMax": 116,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 239,
+    "BaseItemTypesKey": 4376,
+    "Critical": 550,
+    "Speed": 714,
+    "DamageMin": 58,
+    "DamageMax": 86,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 240,
+    "BaseItemTypesKey": 4377,
+    "Critical": 500,
+    "Speed": 667,
+    "DamageMin": 32,
+    "DamageMax": 96,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 241,
+    "BaseItemTypesKey": 4378,
+    "Critical": 600,
+    "Speed": 800,
+    "DamageMin": 36,
+    "DamageMax": 144,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 242,
+    "BaseItemTypesKey": 4379,
+    "Critical": 600,
+    "Speed": 769,
+    "DamageMin": 56,
+    "DamageMax": 117,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 243,
+    "BaseItemTypesKey": 4380,
+    "Critical": 670,
+    "Speed": 800,
+    "DamageMin": 43,
+    "DamageMax": 130,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 244,
+    "BaseItemTypesKey": 4381,
+    "Critical": 650,
+    "Speed": 714,
+    "DamageMin": 38,
+    "DamageMax": 115,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 245,
+    "BaseItemTypesKey": 4382,
+    "Critical": 500,
+    "Speed": 690,
+    "DamageMin": 29,
+    "DamageMax": 117,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 246,
+    "BaseItemTypesKey": 4383,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 50,
+    "DamageMax": 133,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 247,
+    "BaseItemTypesKey": 4384,
+    "Critical": 550,
+    "Speed": 714,
+    "DamageMin": 61,
+    "DamageMax": 92,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 248,
+    "BaseItemTypesKey": 4385,
+    "Critical": 550,
+    "Speed": 769,
+    "DamageMin": 9,
+    "DamageMax": 13,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 249,
+    "BaseItemTypesKey": 4386,
+    "Critical": 550,
+    "Speed": 769,
+    "DamageMin": 13,
+    "DamageMax": 20,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 250,
+    "BaseItemTypesKey": 4387,
+    "Critical": 550,
+    "Speed": 769,
+    "DamageMin": 16,
+    "DamageMax": 24,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 251,
+    "BaseItemTypesKey": 4388,
+    "Critical": 500,
+    "Speed": 741,
+    "DamageMin": 4,
+    "DamageMax": 10,
+    "RangeMax": 120,
+    "Null6": 0
+  },
+  {
+    "_rid": 252,
+    "BaseItemTypesKey": 4389,
+    "Critical": 600,
+    "Speed": 769,
+    "DamageMin": 9,
+    "DamageMax": 19,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 253,
+    "BaseItemTypesKey": 4390,
+    "Critical": 620,
+    "Speed": 769,
+    "DamageMin": 10,
+    "DamageMax": 31,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 254,
+    "BaseItemTypesKey": 4391,
+    "Critical": 600,
+    "Speed": 769,
+    "DamageMin": 24,
+    "DamageMax": 41,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 255,
+    "BaseItemTypesKey": 4392,
+    "Critical": 640,
+    "Speed": 769,
+    "DamageMin": 14,
+    "DamageMax": 42,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 256,
+    "BaseItemTypesKey": 4393,
+    "Critical": 620,
+    "Speed": 769,
+    "DamageMin": 27,
+    "DamageMax": 57,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 257,
+    "BaseItemTypesKey": 4394,
+    "Critical": 650,
+    "Speed": 870,
+    "DamageMin": 27,
+    "DamageMax": 81,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 258,
+    "BaseItemTypesKey": 4395,
+    "Critical": 610,
+    "Speed": 769,
+    "DamageMin": 41,
+    "DamageMax": 76,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 259,
+    "BaseItemTypesKey": 4396,
+    "Critical": 600,
+    "Speed": 833,
+    "DamageMin": 41,
+    "DamageMax": 85,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 260,
+    "BaseItemTypesKey": 4397,
+    "Critical": 620,
+    "Speed": 870,
+    "DamageMin": 34,
+    "DamageMax": 102,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 261,
+    "BaseItemTypesKey": 4398,
+    "Critical": 600,
+    "Speed": 769,
+    "DamageMin": 51,
+    "DamageMax": 86,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 262,
+    "BaseItemTypesKey": 4399,
+    "Critical": 660,
+    "Speed": 800,
+    "DamageMin": 38,
+    "DamageMax": 114,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 263,
+    "BaseItemTypesKey": 4400,
+    "Critical": 630,
+    "Speed": 800,
+    "DamageMin": 56,
+    "DamageMax": 117,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 264,
+    "BaseItemTypesKey": 4401,
+    "Critical": 650,
+    "Speed": 870,
+    "DamageMin": 48,
+    "DamageMax": 145,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 265,
+    "BaseItemTypesKey": 4402,
+    "Critical": 610,
+    "Speed": 769,
+    "DamageMin": 65,
+    "DamageMax": 121,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 266,
+    "BaseItemTypesKey": 4403,
+    "Critical": 600,
+    "Speed": 833,
+    "DamageMin": 66,
+    "DamageMax": 138,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 267,
+    "BaseItemTypesKey": 4404,
+    "Critical": 620,
+    "Speed": 870,
+    "DamageMin": 55,
+    "DamageMax": 165,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 268,
+    "BaseItemTypesKey": 4405,
+    "Critical": 600,
+    "Speed": 769,
+    "DamageMin": 72,
+    "DamageMax": 120,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 269,
+    "BaseItemTypesKey": 4406,
+    "Critical": 730,
+    "Speed": 800,
+    "DamageMin": 53,
+    "DamageMax": 160,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 270,
+    "BaseItemTypesKey": 4407,
+    "Critical": 680,
+    "Speed": 800,
+    "DamageMin": 71,
+    "DamageMax": 147,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 271,
+    "BaseItemTypesKey": 4408,
+    "Critical": 700,
+    "Speed": 870,
+    "DamageMin": 57,
+    "DamageMax": 171,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 272,
+    "BaseItemTypesKey": 4409,
+    "Critical": 650,
+    "Speed": 769,
+    "DamageMin": 73,
+    "DamageMax": 136,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 273,
+    "BaseItemTypesKey": 4410,
+    "Critical": 600,
+    "Speed": 833,
+    "DamageMin": 70,
+    "DamageMax": 145,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 274,
+    "BaseItemTypesKey": 4411,
+    "Critical": 600,
+    "Speed": 800,
+    "DamageMin": 36,
+    "DamageMax": 66,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 275,
+    "BaseItemTypesKey": 4412,
+    "Critical": 600,
+    "Speed": 800,
+    "DamageMin": 55,
+    "DamageMax": 102,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 276,
+    "BaseItemTypesKey": 4413,
+    "Critical": 600,
+    "Speed": 800,
+    "DamageMin": 65,
+    "DamageMax": 120,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 277,
+    "BaseItemTypesKey": 4414,
+    "Critical": 700,
+    "Speed": 800,
+    "DamageMin": 39,
+    "DamageMax": 73,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 278,
+    "BaseItemTypesKey": 4415,
+    "Critical": 700,
+    "Speed": 800,
+    "DamageMin": 61,
+    "DamageMax": 113,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 279,
+    "BaseItemTypesKey": 4416,
+    "Critical": 700,
+    "Speed": 800,
+    "DamageMin": 78,
+    "DamageMax": 144,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 280,
+    "BaseItemTypesKey": 4417,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 12,
+    "DamageMax": 20,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 281,
+    "BaseItemTypesKey": 4418,
+    "Critical": 500,
+    "Speed": 800,
+    "DamageMin": 19,
+    "DamageMax": 30,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 282,
+    "BaseItemTypesKey": 4419,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 19,
+    "DamageMax": 39,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 283,
+    "BaseItemTypesKey": 4420,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 29,
+    "DamageMax": 43,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 284,
+    "BaseItemTypesKey": 4421,
+    "Critical": 500,
+    "Speed": 800,
+    "DamageMin": 36,
+    "DamageMax": 60,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 285,
+    "BaseItemTypesKey": 4422,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 43,
+    "DamageMax": 58,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 286,
+    "BaseItemTypesKey": 4423,
+    "Critical": 500,
+    "Speed": 800,
+    "DamageMin": 49,
+    "DamageMax": 73,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 287,
+    "BaseItemTypesKey": 4425,
+    "Critical": 500,
+    "Speed": 870,
+    "DamageMin": 58,
+    "DamageMax": 91,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 288,
+    "BaseItemTypesKey": 4424,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 53,
+    "DamageMax": 83,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 289,
+    "BaseItemTypesKey": 4426,
+    "Critical": 500,
+    "Speed": 800,
+    "DamageMin": 48,
+    "DamageMax": 99,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 290,
+    "BaseItemTypesKey": 4427,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 61,
+    "DamageMax": 92,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 291,
+    "BaseItemTypesKey": 4428,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 74,
+    "DamageMax": 123,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 292,
+    "BaseItemTypesKey": 4429,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 76,
+    "DamageMax": 103,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 293,
+    "BaseItemTypesKey": 4430,
+    "Critical": 500,
+    "Speed": 800,
+    "DamageMin": 81,
+    "DamageMax": 121,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 294,
+    "BaseItemTypesKey": 4431,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 88,
+    "DamageMax": 138,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 295,
+    "BaseItemTypesKey": 4432,
+    "Critical": 500,
+    "Speed": 952,
+    "DamageMin": 121,
+    "DamageMax": 189,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 296,
+    "BaseItemTypesKey": 4433,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 74,
+    "DamageMax": 155,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 297,
+    "BaseItemTypesKey": 4434,
+    "Critical": 570,
+    "Speed": 741,
+    "DamageMin": 87,
+    "DamageMax": 131,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 298,
+    "BaseItemTypesKey": 4435,
+    "Critical": 500,
+    "Speed": 870,
+    "DamageMin": 104,
+    "DamageMax": 174,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 299,
+    "BaseItemTypesKey": 4436,
+    "Critical": 500,
+    "Speed": 714,
+    "DamageMin": 90,
+    "DamageMax": 122,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 300,
+    "BaseItemTypesKey": 4437,
+    "Critical": 600,
+    "Speed": 800,
+    "DamageMin": 96,
+    "DamageMax": 144,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 301,
+    "BaseItemTypesKey": 4438,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 97,
+    "DamageMax": 152,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 302,
+    "BaseItemTypesKey": 4439,
+    "Critical": 500,
+    "Speed": 741,
+    "DamageMin": 36,
+    "DamageMax": 56,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 303,
+    "BaseItemTypesKey": 4440,
+    "Critical": 500,
+    "Speed": 741,
+    "DamageMin": 55,
+    "DamageMax": 86,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 304,
+    "BaseItemTypesKey": 4441,
+    "Critical": 500,
+    "Speed": 741,
+    "DamageMin": 65,
+    "DamageMax": 101,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 305,
+    "BaseItemTypesKey": 4442,
+    "Critical": 500,
+    "Speed": 690,
+    "DamageMin": 8,
+    "DamageMax": 16,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 306,
+    "BaseItemTypesKey": 4443,
+    "Critical": 500,
+    "Speed": 714,
+    "DamageMin": 11,
+    "DamageMax": 26,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 307,
+    "BaseItemTypesKey": 4444,
+    "Critical": 500,
+    "Speed": 690,
+    "DamageMin": 17,
+    "DamageMax": 29,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 308,
+    "BaseItemTypesKey": 4445,
+    "Critical": 500,
+    "Speed": 714,
+    "DamageMin": 20,
+    "DamageMax": 38,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 309,
+    "BaseItemTypesKey": 4446,
+    "Critical": 500,
+    "Speed": 714,
+    "DamageMin": 23,
+    "DamageMax": 48,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 310,
+    "BaseItemTypesKey": 4447,
+    "Critical": 500,
+    "Speed": 714,
+    "DamageMin": 30,
+    "DamageMax": 50,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 311,
+    "BaseItemTypesKey": 4448,
+    "Critical": 500,
+    "Speed": 741,
+    "DamageMin": 31,
+    "DamageMax": 65,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 312,
+    "BaseItemTypesKey": 4449,
+    "Critical": 600,
+    "Speed": 741,
+    "DamageMin": 41,
+    "DamageMax": 68,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 313,
+    "BaseItemTypesKey": 4450,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 34,
+    "DamageMax": 79,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 314,
+    "BaseItemTypesKey": 4451,
+    "Critical": 500,
+    "Speed": 690,
+    "DamageMin": 39,
+    "DamageMax": 65,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 315,
+    "BaseItemTypesKey": 4452,
+    "Critical": 500,
+    "Speed": 741,
+    "DamageMin": 45,
+    "DamageMax": 84,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 316,
+    "BaseItemTypesKey": 4453,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 49,
+    "DamageMax": 102,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 317,
+    "BaseItemTypesKey": 4454,
+    "Critical": 500,
+    "Speed": 714,
+    "DamageMin": 54,
+    "DamageMax": 89,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 318,
+    "BaseItemTypesKey": 4455,
+    "Critical": 500,
+    "Speed": 741,
+    "DamageMin": 52,
+    "DamageMax": 109,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 319,
+    "BaseItemTypesKey": 4456,
+    "Critical": 600,
+    "Speed": 741,
+    "DamageMin": 63,
+    "DamageMax": 104,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 320,
+    "BaseItemTypesKey": 4457,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 55,
+    "DamageMax": 128,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 321,
+    "BaseItemTypesKey": 4458,
+    "Critical": 500,
+    "Speed": 667,
+    "DamageMin": 62,
+    "DamageMax": 104,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 322,
+    "BaseItemTypesKey": 4459,
+    "Critical": 650,
+    "Speed": 714,
+    "DamageMin": 62,
+    "DamageMax": 115,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 323,
+    "BaseItemTypesKey": 4460,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 68,
+    "DamageMax": 142,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 324,
+    "BaseItemTypesKey": 4461,
+    "Critical": 500,
+    "Speed": 690,
+    "DamageMin": 69,
+    "DamageMax": 115,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 325,
+    "BaseItemTypesKey": 4462,
+    "Critical": 500,
+    "Speed": 741,
+    "DamageMin": 62,
+    "DamageMax": 129,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 326,
+    "BaseItemTypesKey": 4463,
+    "Critical": 570,
+    "Speed": 741,
+    "DamageMin": 67,
+    "DamageMax": 112,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 327,
+    "BaseItemTypesKey": 4464,
+    "Critical": 600,
+    "Speed": 769,
+    "DamageMin": 34,
+    "DamageMax": 63,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 328,
+    "BaseItemTypesKey": 4465,
+    "Critical": 600,
+    "Speed": 769,
+    "DamageMin": 52,
+    "DamageMax": 97,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 329,
+    "BaseItemTypesKey": 4466,
+    "Critical": 600,
+    "Speed": 769,
+    "DamageMin": 61,
+    "DamageMax": 114,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 330,
+    "BaseItemTypesKey": 4467,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 10,
+    "DamageMax": 16,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 331,
+    "BaseItemTypesKey": 4468,
+    "Critical": 500,
+    "Speed": 800,
+    "DamageMin": 17,
+    "DamageMax": 25,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 332,
+    "BaseItemTypesKey": 4469,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 16,
+    "DamageMax": 33,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 333,
+    "BaseItemTypesKey": 4470,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 25,
+    "DamageMax": 38,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 334,
+    "BaseItemTypesKey": 4471,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 27,
+    "DamageMax": 49,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 335,
+    "BaseItemTypesKey": 4472,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 40,
+    "DamageMax": 60,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 336,
+    "BaseItemTypesKey": 4473,
+    "Critical": 500,
+    "Speed": 800,
+    "DamageMin": 46,
+    "DamageMax": 62,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 337,
+    "BaseItemTypesKey": 4474,
+    "Critical": 500,
+    "Speed": 800,
+    "DamageMin": 45,
+    "DamageMax": 68,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 338,
+    "BaseItemTypesKey": 4475,
+    "Critical": 500,
+    "Speed": 909,
+    "DamageMin": 57,
+    "DamageMax": 85,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 339,
+    "BaseItemTypesKey": 4476,
+    "Critical": 500,
+    "Speed": 800,
+    "DamageMin": 43,
+    "DamageMax": 88,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 340,
+    "BaseItemTypesKey": 4477,
+    "Critical": 500,
+    "Speed": 769,
+    "DamageMin": 54,
+    "DamageMax": 81,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 341,
+    "BaseItemTypesKey": 4478,
+    "Critical": 500,
+    "Speed": 800,
+    "DamageMin": 55,
+    "DamageMax": 103,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 342,
+    "BaseItemTypesKey": 4479,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 72,
+    "DamageMax": 108,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 343,
+    "BaseItemTypesKey": 4480,
+    "Critical": 500,
+    "Speed": 800,
+    "DamageMin": 77,
+    "DamageMax": 104,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 344,
+    "BaseItemTypesKey": 4481,
+    "Critical": 500,
+    "Speed": 800,
+    "DamageMin": 75,
+    "DamageMax": 113,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 345,
+    "BaseItemTypesKey": 4482,
+    "Critical": 500,
+    "Speed": 1000,
+    "DamageMin": 112,
+    "DamageMax": 168,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 346,
+    "BaseItemTypesKey": 4483,
+    "Critical": 550,
+    "Speed": 769,
+    "DamageMin": 65,
+    "DamageMax": 135,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 347,
+    "BaseItemTypesKey": 4484,
+    "Critical": 500,
+    "Speed": 741,
+    "DamageMin": 77,
+    "DamageMax": 115,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 348,
+    "BaseItemTypesKey": 4485,
+    "Critical": 500,
+    "Speed": 800,
+    "DamageMin": 74,
+    "DamageMax": 138,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 349,
+    "BaseItemTypesKey": 4486,
+    "Critical": 500,
+    "Speed": 909,
+    "DamageMin": 102,
+    "DamageMax": 153,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 350,
+    "BaseItemTypesKey": 4487,
+    "Critical": 600,
+    "Speed": 870,
+    "DamageMin": 101,
+    "DamageMax": 137,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 351,
+    "BaseItemTypesKey": 4488,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 91,
+    "DamageMax": 136,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 352,
+    "BaseItemTypesKey": 4489,
+    "Critical": 500,
+    "Speed": 870,
+    "DamageMin": 39,
+    "DamageMax": 64,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 353,
+    "BaseItemTypesKey": 4490,
+    "Critical": 500,
+    "Speed": 870,
+    "DamageMin": 62,
+    "DamageMax": 103,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 354,
+    "BaseItemTypesKey": 4491,
+    "Critical": 500,
+    "Speed": 870,
+    "DamageMin": 81,
+    "DamageMax": 135,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 355,
+    "BaseItemTypesKey": 4492,
+    "Critical": 500,
+    "Speed": 833,
+    "DamageMin": 8,
+    "DamageMax": 15,
+    "RangeMax": 13,
+    "Null6": 0
+  },
+  {
+    "_rid": 356,
+    "BaseItemTypesKey": 8494,
+    "Critical": 600,
+    "Speed": 667,
+    "DamageMin": 4,
+    "DamageMax": 8,
+    "RangeMax": 10,
+    "Null6": 0
+  },
+  {
+    "_rid": 357,
+    "BaseItemTypesKey": 8810,
+    "Critical": 700,
+    "Speed": 588,
+    "DamageMin": 0,
+    "DamageMax": 0,
+    "RangeMax": 11,
+    "Null6": 0
+  },
+  {
+    "_rid": 358,
+    "BaseItemTypesKey": 8811,
+    "Critical": 700,
+    "Speed": 625,
+    "DamageMin": 0,
+    "DamageMax": 0,
+    "RangeMax": 13,
+    "Null6": 0
+  }
+]

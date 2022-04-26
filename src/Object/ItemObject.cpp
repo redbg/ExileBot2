@@ -88,7 +88,15 @@ void ItemObject::Base()
 
 void ItemObject::Mods()
 {
-    quint8 level = readData<quint8>();
+    QJsonObject JsonObject;
+
+    QJsonArray implicitMods;
+    QJsonArray explicitMods;
+    QJsonArray enchantMods;
+    QJsonArray craftedMods;
+
+    JsonObject.insert("level", readData<quint8>());
+
     readData<quint8>();
     quint8 v15 = readData<quint8>();
     if ((v15 & 0x20) != 0)
@@ -104,10 +112,12 @@ void ItemObject::Mods()
         readData<quint8>();
 
         // 是否已鉴定
-        quint8 identified = v8 & 0b1000;
+        bool identified = v8 & 0b1000;
+        JsonObject.insert("identified", identified);
 
         // 装备颜色
         quint8 frameType = v8 & 0b0111;
+        JsonObject.insert("frameType", frameType);
 
         if (v8 & 0x200)
         {
@@ -122,7 +132,7 @@ void ItemObject::Mods()
 
             for (int i = 0; i < size; i++)
             {
-                fs_ItemTypeRegister_Mods();
+                implicitMods.append(fs_ItemTypeRegister_Mods());
             }
         }
 
@@ -133,7 +143,7 @@ void ItemObject::Mods()
 
             for (int i = 0; i < size; i++)
             {
-                fs_ItemTypeRegister_Mods();
+                enchantMods.append(fs_ItemTypeRegister_Mods());
             }
         }
 
@@ -144,7 +154,7 @@ void ItemObject::Mods()
 
             for (int i = 0; i < size; i++)
             {
-                fs_ItemTypeRegister_Mods();
+                craftedMods.append(fs_ItemTypeRegister_Mods());
             }
         }
 
@@ -175,63 +185,77 @@ void ItemObject::Mods()
 
                 for (int i = 0; i < size; i++)
                 {
-                    fs_ItemTypeRegister_Mods();
+                    explicitMods.append(fs_ItemTypeRegister_Mods());
                 }
             }
         }
     }
+
+    JsonObject.insert("implicitMods", implicitMods);
+    JsonObject.insert("explicitMods", explicitMods);
+    JsonObject.insert("enchantMods", enchantMods);
+    JsonObject.insert("craftedMods", craftedMods);
+    m_Components.insert("Mods", JsonObject);
 }
 
-void ItemObject::fs_ItemTypeRegister_Mods()
+QJsonObject ItemObject::fs_ItemTypeRegister_Mods()
 {
     quint16     hash16 = readData<quint16>();
     QJsonObject mod    = Helper::Data::GetMods(hash16);
 
+    QJsonObject MyMod;
+    QJsonObject stats;
+
     if (!mod["StatsKey1"].isNull())
     {
         QJsonObject stat = Helper::Data::GetStats(mod.value("StatsKey1").toInt());
-        this->ReadVarint1();
+        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
     }
     if (!mod["StatsKey2"].isNull())
     {
         QJsonObject stat = Helper::Data::GetStats(mod.value("StatsKey2").toInt());
-        this->ReadVarint1();
+        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
     }
     if (!mod["StatsKey3"].isNull())
     {
         QJsonObject stat = Helper::Data::GetStats(mod.value("StatsKey3").toInt());
-        this->ReadVarint1();
+        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
     }
     if (!mod["StatsKey4"].isNull())
     {
         QJsonObject stat = Helper::Data::GetStats(mod.value("StatsKey4").toInt());
-        this->ReadVarint1();
+        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
     }
     if (!mod["StatsKey5"].isNull())
     {
         QJsonObject stat = Helper::Data::GetStats(mod.value("StatsKey5").toInt());
-        this->ReadVarint1();
+        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
     }
     if (!mod["StatsKey6"].isNull())
     {
         QJsonObject stat = Helper::Data::GetStats(mod.value("StatsKey6").toInt());
-        this->ReadVarint1();
+        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
     }
     if (!mod["Heist_StatsKey0"].isNull())
     {
         QJsonObject stat = Helper::Data::GetStats(mod.value("Heist_StatsKey0").toInt());
-        this->ReadVarint1();
+        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
     }
     if (!mod["Heist_StatsKey1"].isNull())
     {
         QJsonObject stat = Helper::Data::GetStats(mod.value("Heist_StatsKey1").toInt());
-        this->ReadVarint1();
+        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
     }
+
+    MyMod.insert(mod.value("Id").toString(), stats);
+
+    return MyMod;
 }
 
 void ItemObject::Stack()
 {
-    quint16 size = readData<quint16>();
+    // 物品数量
+    m_Components.insert("Stack", readData<quint16>());
 }
 
 void ItemObject::HeistContract()
@@ -293,20 +317,27 @@ void ItemObject::HeistBlueprint()
 
 void ItemObject::Quality()
 {
-    quint8 Quality = readData<quint8>();
+    m_Components.insert("Quality", readData<quint8>());
 }
 
 void ItemObject::Armour()
 {
-    quint8 Quality = readData<quint8>();
+    QJsonObject JsonObject = Helper::Data::GetArmourType(m_BaseItemType["_rid"].toInt());
+
+    // 防具品质
+    JsonObject.insert("Quality", readData<quint8>());
+
+    m_Components.insert("Armour", JsonObject);
 }
 
 void ItemObject::Weapon()
 {
+    m_Components.insert("Weapon", Helper::Data::GetWeaponType(m_BaseItemType["_rid"].toInt()));
 }
 
 void ItemObject::AttributeRequirements()
 {
+    m_Components.insert("AttributeRequirements", Helper::Data::GetComponentAttributeRequirements(m_BaseItemType["Id"].toString()));
 }
 
 void ItemObject::Charges()
@@ -318,36 +349,42 @@ void ItemObject::Sockets()
 {
     quint8 v31 = readData<quint8>();
 
+    QJsonObject Sockets;
+
     if ((v31 & 1) == 0 && (v31 & 2) == 0)
     {
         //  插槽数量
-        quint8 socketNumber = (v31 >> 2) & 7;
-        quint8 v35          = v31 >> 5;
+        quint8 socketSize     = (v31 >> 2) & 7;
+        quint8 socketLinkSize = v31 >> 5;
 
-        QJsonArray sockets;
-        QJsonArray socketItems;
-        QJsonArray socketLinks;
-        QJsonArray socketColors;
+        QJsonArray SocketsArray;
+        QJsonArray socketsGroup;
 
-        for (size_t i = 0; i < socketNumber; i++)
+        for (size_t i = 0; i < socketSize; i++)
         {
             quint8 socketInfo = readData<quint8>();
-            quint8 isItem     = socketInfo & 1;
+            quint8 isItem     = socketInfo & 1;  // 插槽里是否有宝石
             quint8 color      = socketInfo >> 1; // 1 = 红色, 2 = 绿色, 3 = 蓝色, 4 = 白色
-            socketColors.append(color);
 
-            sockets.append(socketInfo);
+            QJsonObject socket;
+            socket.insert("color", color);
 
-            if (socketInfo & 1)
+            if (isItem)
             {
-                ItemObject(this->m_DataStream);
+                socket.insert("item", ItemObject(this->m_DataStream).m_BaseItemType.value("Name").toString());
             }
+
+            SocketsArray.append(socket);
         }
 
-        for (size_t i = 0; i < v35; i++)
+        for (size_t i = 0; i < socketLinkSize; i++)
         {
-            socketLinks.append(readData<quint8>());
+            socketsGroup.append(readData<quint8>());
         }
+
+        Sockets.insert("SocketsArray", SocketsArray);
+        Sockets.insert("socketsGroup", socketsGroup);
+        m_Components.insert("Sockets", Sockets);
     }
 }
 

@@ -17,6 +17,8 @@ void AbstractObject::ProcessDataStream(QJsonArray componentNames)
         qDebug() << "----" << name;
         this->metaObject()->invokeMethod(this, name.toLatin1().data());
     }
+
+    qDebug() << m_Components;
 }
 
 QByteArray AbstractObject::readData(int size)

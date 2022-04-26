@@ -5,5 +5,8 @@
         <file>Data/ItemCompenentNames.json</file>
         <file>Data/Mods.json</file>
         <file>Data/Stats.json</file>
+        <file>Data/ArmourTypes.json</file>
+        <file>Data/WeaponTypes.json</file>
+        <file>Data/ComponentAttributeRequirements.json</file>
     </qresource>
 </RCC>

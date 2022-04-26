@@ -33,6 +33,9 @@ namespace Helper
         QJsonObject GetBaseItemType(int hash);
         QJsonObject GetMods(int hash16);
         QJsonObject GetStats(int _rid);
+        QJsonObject GetArmourType(quint64 BaseItemTypesKey);
+        QJsonObject GetWeaponType(quint64 BaseItemTypesKey);
+        QJsonObject GetComponentAttributeRequirements(QString BaseItemTypesKey);
 
         QJsonArray GetItemComponentNames(QString name);
 

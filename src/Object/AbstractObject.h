@@ -8,6 +8,7 @@ class AbstractObject : public QObject
 
 protected:
     QDataStream *m_DataStream;
+    QJsonObject  m_Components;
 
 public:
     explicit AbstractObject(QDataStream *dataStream, QObject *parent = nullptr);

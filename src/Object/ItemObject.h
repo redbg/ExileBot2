@@ -35,5 +35,5 @@ public slots:
     void Quest() {}
 
 public:
-    void fs_ItemTypeRegister_Mods();
+    QJsonObject fs_ItemTypeRegister_Mods();
 };

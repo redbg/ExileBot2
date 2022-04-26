@@ -129,6 +129,45 @@ namespace Helper
             return JsonArray.value(name).toArray();
         }
 
+        QJsonObject GetArmourType(quint64 BaseItemTypesKey)
+        {
+            static QJsonArray JsonArray = GetDataArray(":/Data/ArmourTypes.json");
+            for (int i = 0; i < JsonArray.size(); i++)
+            {
+                if (JsonArray.at(i).toObject().value("BaseItemTypesKey").toInt() == BaseItemTypesKey)
+                {
+                    return JsonArray.at(i).toObject();
+                }
+            }
+            return QJsonObject();
+        }
+
+        QJsonObject GetWeaponType(quint64 BaseItemTypesKey)
+        {
+            static QJsonArray JsonArray = GetDataArray(":/Data/WeaponTypes.json");
+            for (int i = 0; i < JsonArray.size(); i++)
+            {
+                if (JsonArray.at(i).toObject().value("BaseItemTypesKey").toInt() == BaseItemTypesKey)
+                {
+                    return JsonArray.at(i).toObject();
+                }
+            }
+            return QJsonObject();
+        }
+
+        QJsonObject GetComponentAttributeRequirements(QString BaseItemTypesKey)
+        {
+            static QJsonArray JsonArray = GetDataArray(":/Data/ComponentAttributeRequirements.json");
+            for (int i = 0; i < JsonArray.size(); i++)
+            {
+                if (JsonArray.at(i).toObject().value("BaseItemTypesKey").toString() == BaseItemTypesKey)
+                {
+                    return JsonArray.at(i).toObject();
+                }
+            }
+            return QJsonObject();
+        }
+
     } // namespace Data
 
 } // namespace Helper
