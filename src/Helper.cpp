@@ -100,6 +100,28 @@ namespace Helper
             return QJsonObject();
         }
 
+        QJsonObject GetMods(int hash16)
+        {
+            static QJsonArray JsonArray = GetDataArray(":/Data/Mods.json");
+
+            for (int i = 0; i < JsonArray.size(); i++)
+            {
+                if (JsonArray.at(i).toObject().value("HASH16").toInt() == hash16)
+                {
+                    return JsonArray.at(i).toObject();
+                }
+            }
+
+            return QJsonObject();
+        }
+
+        QJsonObject GetStats(int _rid)
+        {
+            static QJsonArray JsonArray = GetDataArray(":/Data/Stats.json");
+
+            return JsonArray.at(_rid).toObject();
+        }
+
         QJsonArray GetItemComponentNames(QString name)
         {
             static QJsonObject JsonArray = GetDataObject(":/Data/ItemCompenentNames.json");

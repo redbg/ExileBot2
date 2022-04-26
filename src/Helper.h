@@ -31,6 +31,8 @@ namespace Helper
         QJsonObject GetDataObject(QString fileName);
         QJsonObject GetBackendError(int index);
         QJsonObject GetBaseItemType(int hash);
+        QJsonObject GetMods(int hash16);
+        QJsonObject GetStats(int _rid);
 
         QJsonArray GetItemComponentNames(QString name);
 

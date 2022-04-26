@@ -634,6 +634,9 @@ void ExileGame::RecvInventory()
                 // item info
                 QByteArray itemData = this->read(this->read<quint16>());
 
+                qDebug() << "";
+                qDebug() << itemData.toHex(' ');
+
                 QDataStream dataStream(itemData);
                 m_ItemList.append(new ItemObject(&dataStream, this));
             }
