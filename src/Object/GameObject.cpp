@@ -10,9 +10,13 @@ GameObject::GameObject(quint32 hash, QDataStream *dataStream, QObject *parent)
 
     connect(mgr, &QNetworkAccessManager::finished, [=](QNetworkReply *reply)
             {
+                qDebug() << "==================================================";
+
                 QJsonObject JsonObject = QJsonDocument::fromJson(reply->readAll()).object();
 
                 this->m_MetadataId = JsonObject.begin().key();
+
+                qDebug() << this->m_MetadataId;
 
                 this->ProcessDataStream(JsonObject.begin().value().toArray());
 

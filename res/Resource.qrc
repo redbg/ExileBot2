@@ -3,5 +3,7 @@
         <file>Data/BackendErrors.json</file>
         <file>Data/BaseItemTypes.json</file>
         <file>Data/ItemCompenentNames.json</file>
+        <file>Data/Mods.json</file>
+        <file>Data/Stats.json</file>
     </qresource>
 </RCC>

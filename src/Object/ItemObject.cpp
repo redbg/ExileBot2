@@ -5,12 +5,17 @@
 ItemObject::ItemObject(QDataStream *dataStream, QObject *parent)
     : AbstractObject(dataStream, parent)
 {
+    qDebug() << "==================================================";
+
     int hash = readData<int>();
     readData<quint8>();
 
     m_BaseItemType = Helper::Data::GetBaseItemType(hash);
 
-    this->ProcessDataStream(Helper::Data::GetItemComponentNames(m_BaseItemType.value("InheritsFrom").toString()));
+    QString InheritsFrom = m_BaseItemType.value("InheritsFrom").toString();
+    qDebug() << m_BaseItemType.value("Name").toString() << InheritsFrom;
+
+    this->ProcessDataStream(Helper::Data::GetItemComponentNames(InheritsFrom));
 }
 
 ItemObject::~ItemObject() {}
@@ -83,6 +88,7 @@ void ItemObject::Base()
 
 void ItemObject::Mods()
 {
+    quint8 level = readData<quint8>();
     readData<quint8>();
     quint8 v15 = readData<quint8>();
     if ((v15 & 0x20) != 0)
