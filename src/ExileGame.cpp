@@ -653,6 +653,6 @@ void ExileGame::RecvGameObject()
     quint32    GameObjectHash = this->read<quint32>();             // GameObject Hash
     QByteArray ComponentsData = this->read(this->read<quint16>()); // Components Data
 
-    QDataStream dataStream(ComponentsData);
-    m_GameObjectList.append(new GameObject(GameObjectHash, &dataStream, this));
+    auto s = new QDataStream(ComponentsData);
+    m_GameObjectList.append(new GameObject(GameObjectHash, s, this));
 }

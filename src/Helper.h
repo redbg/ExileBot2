@@ -36,6 +36,7 @@ namespace Helper
         QJsonObject GetArmourType(quint64 BaseItemTypesKey);
         QJsonObject GetWeaponType(quint64 BaseItemTypesKey);
         QJsonObject GetComponentAttributeRequirements(QString BaseItemTypesKey);
+        QJsonObject GetBuffDefinitions(quint16 id);
 
         QJsonArray GetItemComponentNames(QString name);
 

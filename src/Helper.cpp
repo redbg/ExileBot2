@@ -155,6 +155,12 @@ namespace Helper
             return QJsonObject();
         }
 
+        QJsonObject GetBuffDefinitions(quint16 id)
+        {
+            static QJsonArray JsonArray = GetDataArray(":/Data/BuffDefinitions.json");
+            return JsonArray.at(id).toObject();
+        }
+
         QJsonObject GetComponentAttributeRequirements(QString BaseItemTypesKey)
         {
             static QJsonArray JsonArray = GetDataArray(":/Data/ComponentAttributeRequirements.json");

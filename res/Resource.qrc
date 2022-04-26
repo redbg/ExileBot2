@@ -8,5 +8,6 @@
         <file>Data/ArmourTypes.json</file>
         <file>Data/WeaponTypes.json</file>
         <file>Data/ComponentAttributeRequirements.json</file>
+        <file>Data/BuffDefinitions.json</file>
     </qresource>
 </RCC>
