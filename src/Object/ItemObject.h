@@ -13,6 +13,8 @@ public:
     explicit ItemObject(QDataStream *dataStream, QObject *parent = nullptr);
     virtual ~ItemObject();
 
+    QJsonObject toJsonObject();
+
 public slots:
     void Base();
     void Mods();

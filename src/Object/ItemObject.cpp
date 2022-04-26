@@ -20,6 +20,14 @@ ItemObject::ItemObject(QDataStream *dataStream, QObject *parent)
 
 ItemObject::~ItemObject() {}
 
+QJsonObject ItemObject::toJsonObject()
+{
+    QJsonObject JsonObject;
+    JsonObject.insert("BaseItemType", m_BaseItemType);
+    JsonObject.insert("Components", m_Components);
+    return JsonObject;
+}
+
 void ItemObject::Base()
 {
     readData<quint16>();
@@ -371,7 +379,7 @@ void ItemObject::Sockets()
 
             if (isItem)
             {
-                socket.insert("item", ItemObject(this->m_DataStream).m_BaseItemType.value("Name").toString());
+                socket.insert("item", ItemObject(this->m_DataStream).toJsonObject());
             }
 
             SocketsArray.append(socket);
@@ -390,5 +398,10 @@ void ItemObject::Sockets()
 
 void ItemObject::SkillGem()
 {
-    qint32 Experience = this->readData<qint32>();
+    QJsonObject SkillGem;
+    SkillGem.insert("Experience", this->readData<qint32>());
+    SkillGem.insert("u1", this->readData<qint32>());
+    SkillGem.insert("u2", this->readData<quint8>());
+
+    m_Components.insert("SkillGem", SkillGem);
 }
