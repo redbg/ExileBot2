@@ -35,6 +35,8 @@ QByteArray ExileSocket::readData(qint64 maxlen)
         return data;
     }
 
+    Q_ASSERT_X(!(maxlen > 0x10000), "ExileSocket::readData", "maxlen > 0x10000");
+
     // 读取数据
     do
     {
