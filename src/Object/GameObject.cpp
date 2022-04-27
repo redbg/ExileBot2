@@ -423,7 +423,6 @@ void GameObject::Actor()
     readData<quint32>();
     readData<quint32>();
     fs_ActorA0(ActorJosn);
-    qDebug() << ActorJosn;
     m_Components.insert("Actor", ActorJosn);
 }
 
