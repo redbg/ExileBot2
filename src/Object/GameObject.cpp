@@ -90,9 +90,9 @@ void GameObject::readHead()
 void GameObject::Positioned()
 {
     // Positioned
-    QJsonObject Positioned;
-    Positioned.insert("m_x", this->readData<qint32>());
-    Positioned.insert("m_y", this->readData<qint32>());
+    QJsonObject PositionedJson;
+    PositionedJson.insert("m_x", this->readData<qint32>());
+    PositionedJson.insert("m_y", this->readData<qint32>());
     readData<quint32>();
     readData<quint8>();
     quint16 v16 = readData<quint16>();
@@ -150,19 +150,23 @@ void GameObject::Positioned()
     {
         readData<quint32>();
     }
+
+    m_Components.insert("Positioned", PositionedJson);
 }
 
 void GameObject::Stats()
 {
-    QJsonObject Stats;
-    quint32     v5 = ReadVarint();
+    QJsonArray Stats;
+    quint32    v5 = ReadVarint();
     qDebug() << "数组数量:" << v5;
     for (quint32 i = 0; i < v5; i++)
     {
         QJsonObject statsJson = Helper::Data::GetStats(ReadVarint() - 1);
-        Stats.insert("Text", statsJson.value("Text"));
-        Stats.insert("Id", statsJson.value("Id"));
-        Stats.insert("m_value", ReadVarint1());
+        QJsonObject temp;
+        temp.insert("Text", statsJson.value("Text"));
+        temp.insert("Id", statsJson.value("Id"));
+        temp.insert("m_value", ReadVarint1());
+        Stats.append(temp);
     }
     readData<quint32>();
     readData<quint8>();
@@ -231,15 +235,13 @@ void GameObject::Life()
     readData<quint16>();
     readData<quint32>();
 
-    LifeJson.insert("m_CurrentMana", readData<qint32>());
-
     readData<quint32>();
+    LifeJson.insert("m_CurrentMana", readData<qint32>());
     readData<quint32>();
     readData<qint16>();
 
-    LifeJson.insert("m_CurrentShield", readData<qint32>());
-
     readData<quint32>();
+    LifeJson.insert("m_CurrentShield", readData<qint32>());
     readData<quint32>();
     readData<quint16>();
     readData<quint32>();
