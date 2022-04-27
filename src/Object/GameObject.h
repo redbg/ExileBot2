@@ -43,12 +43,12 @@ public slots:
 
     //
     bool fs_componentPlayerUnknown(unsigned char *buffer, int len, unsigned __int64 a2);
-    void fs_ActorA0();
-    void fs_ActiveSkills();
-    void fs_ActiveSkills1(quint8 size);
-    void fs_ActiveSkills3();
-    void fs_ActiveSkills_0();
-    void fs_GrantedEffectsPerLevel();
+    void fs_ActorA0(QJsonObject& json);
+    void fs_ActiveSkills(QJsonObject& json);
+    void fs_ActiveSkills1(quint8 size , QJsonObject& json);
+    void fs_ActiveSkills3(QJsonObject& json);
+    void fs_ActiveSkills_0(QJsonObject& json);
+    void fs_GrantedEffectsPerLevel(QJsonObject& json);
     void fs_AlternateQualityTypes();
     void fs_Data_Mods();
 };
