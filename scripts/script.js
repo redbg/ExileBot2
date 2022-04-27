@@ -25,7 +25,7 @@ function Tick() {
     }
 
     if (Game.SocketState == SocketState.Connected) {
-
+        console.log(JSON.stringify(Game.EntityList));
     }
 }
 
