@@ -8,11 +8,14 @@
 class GameObject : public AbstractObject
 {
     Q_OBJECT
+    Q_PROPERTY(qint32 x MEMBER m_X)
+    Q_PROPERTY(qint32 y MEMBER m_Y)
 
 private:
     quint32 m_Hash;
-    QString m_MetadataId;
     quint32 m_hp;
+    qint32  m_X;
+    qint32  m_Y;
 
 public:
     explicit GameObject(quint32 hash, QDataStream *dataStream, QObject *parent = nullptr);

@@ -5,6 +5,7 @@
 class ItemObject : public AbstractObject
 {
     Q_OBJECT
+    Q_PROPERTY(QJsonObject BaseItemType MEMBER m_BaseItemType)
 
 private:
     QJsonObject m_BaseItemType;

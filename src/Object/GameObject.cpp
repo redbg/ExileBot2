@@ -4,16 +4,6 @@ GameObject::GameObject(quint32 hash, QDataStream *dataStream, QObject *parent)
     : m_Hash(hash)
     , AbstractObject(dataStream, parent)
 {
-    qDebug() << "GameObject-----------------------------";
-
-    readData<quint8>();
-    readHead();
-    quint8 v17 = readData<quint8>();
-    for (quint8 i = 0; i < v17; i++)
-    {
-        readData<quint16>();
-    }
-
     QNetworkAccessManager *mgr = new QNetworkAccessManager;
     QNetworkRequest        req(QUrl(QString("http://127.0.0.1:6112/ot?hash=%1").arg(hash)));
     mgr->get(req);
@@ -24,10 +14,22 @@ GameObject::GameObject(quint32 hash, QDataStream *dataStream, QObject *parent)
 
                 QJsonObject JsonObject = QJsonDocument::fromJson(reply->readAll()).object();
 
-                this->m_MetadataId = JsonObject.begin().key();
+                this->setObjectName(JsonObject.begin().key());
 
-                qDebug() << this->m_MetadataId;
+                qDebug() << this->objectName();
 
+                // Head
+                {
+                    readData<quint8>();
+                    readHead();
+                    quint8 v17 = readData<quint8>();
+                    for (quint8 i = 0; i < v17; i++)
+                    {
+                        readData<quint16>();
+                    }
+                }
+
+                // ProcessDataStream
                 this->ProcessDataStream(JsonObject.begin().value().toArray());
 
                 reply->deleteLater();
@@ -89,10 +91,10 @@ void GameObject::readHead()
 
 void GameObject::Positioned()
 {
-    // Positioned
-    QJsonObject PositionedJson;
-    PositionedJson.insert("m_x", this->readData<qint32>());
-    PositionedJson.insert("m_y", this->readData<qint32>());
+    // 坐标无需放在组件里
+    m_X = this->readData<qint32>();
+    m_Y = this->readData<qint32>();
+
     readData<quint32>();
     readData<quint8>();
     quint16 v16 = readData<quint16>();
@@ -150,27 +152,25 @@ void GameObject::Positioned()
     {
         readData<quint32>();
     }
-
-    m_Components.insert("Positioned", PositionedJson);
 }
 
 void GameObject::Stats()
 {
-    QJsonArray Stats;
-    quint32    v5 = ReadVarint();
-    qDebug() << "数组数量:" << v5;
+    QJsonObject Stats;
+
+    quint32 v5 = ReadVarint();
+    // qDebug() << "数组数量:" << v5;
     for (quint32 i = 0; i < v5; i++)
     {
         QJsonObject statsJson = Helper::Data::GetStats(ReadVarint() - 1);
-        QJsonObject temp;
-        temp.insert("Text", statsJson.value("Text"));
-        temp.insert("Id", statsJson.value("Id"));
-        temp.insert("m_value", ReadVarint1());
-        Stats.append(temp);
+        Stats.insert("Text", statsJson.value("Text"));
+        Stats.insert("Id", statsJson.value("Id"));
+        Stats.insert("Value", ReadVarint1());
     }
     readData<quint32>();
     readData<quint8>();
     readData<quint8>();
+
     m_Components.insert("Stats", Stats);
 }
 
@@ -182,7 +182,7 @@ Q_INVOKABLE void GameObject::Buffs()
     {
         readData<quint16>();
         readData<quint8>();
-        { //fs_BuffDefinitions
+        { // fs_BuffDefinitions
             quint16 id = readData<quint16>();
 
             readData<quint16>();
@@ -230,18 +230,20 @@ Q_INVOKABLE void GameObject::Buffs()
 void GameObject::Life()
 {
     QJsonObject LifeJson;
-    LifeJson.insert("m_CurrentLife", readData<qint32>());
+    LifeJson.insert("Life", readData<qint32>());
     readData<quint32>();
     readData<quint16>();
     readData<quint32>();
 
+    LifeJson.insert("Mana", readData<qint32>());
+
     readData<quint32>();
-    LifeJson.insert("m_CurrentMana", readData<qint32>());
     readData<quint32>();
     readData<qint16>();
 
+    LifeJson.insert("Shield", readData<qint32>());
+
     readData<quint32>();
-    LifeJson.insert("m_CurrentShield", readData<qint32>());
     readData<quint32>();
     readData<quint16>();
     readData<quint32>();
@@ -249,6 +251,7 @@ void GameObject::Life()
     readData<quint32>();
 
     readData<quint8>();
+
     m_Components.insert("Life", LifeJson);
 }
 
@@ -305,7 +308,7 @@ void GameObject::Animated()
 void GameObject::Player()
 {
     QJsonObject PlayerJson;
-    QByteArray  nameBit = readData(readData<quint32>() * 2); //name
+    QByteArray  nameBit = readData(readData<quint32>() * 2); // name
     PlayerJson.insert("name", QString::fromUtf16((const char16_t *)nameBit.data(), nameBit.size() / 2));
     readData<quint8>();
     readData<quint32>();
@@ -344,8 +347,8 @@ bool __fastcall fs_componentPlayerUnknown1(unsigned __int8 *a1, unsigned __int8 
 }
 bool GameObject::fs_componentPlayerUnknown(unsigned char *buffer, int len, unsigned __int64 a2)
 {
-    unsigned char *  end;   // r8
-    unsigned char *  begin; // rsi
+    unsigned char   *end;   // r8
+    unsigned char   *begin; // rsi
     char             v4;    // r14
     unsigned __int64 v5;    // r15
     unsigned __int64 v7;    // rbx
@@ -385,17 +388,17 @@ void GameObject::Inventories()
     quint8 size = readData<quint8>();
     for (quint8 i = 0; i < size; i++)
     {
-        //fs_ItemVisualIdentity
+        // fs_ItemVisualIdentity
         {
             readData<quint8>(); //位置id
             quint8 v10 = readData<quint8>();
             if (v10 > 0)
             {
-                readData<quint16>(); //ItemVisualIdentity::Unknown5
+                readData<quint16>(); // ItemVisualIdentity::Unknown5
                 readData<quint16>();
                 readData<quint16>();
                 readData<quint16>();
-                readData<quint8>(); //ItemStances_Id
+                readData<quint8>(); // ItemStances_Id
                 readData<quint8>();
             }
         }
@@ -511,7 +514,7 @@ void GameObject::fs_GrantedEffectsPerLevel()
         readData<quint8>();
     }
 
-    readData<quint32>(); //GrantedEffectsPerLevelId "GrantedEffectsPerLevel.GrantedEffectsKey -> GrantedEffects.ActiveSkill -> ActiveSkills"
+    readData<quint32>(); // GrantedEffectsPerLevelId "GrantedEffectsPerLevel.GrantedEffectsKey -> GrantedEffects.ActiveSkill -> ActiveSkills"
 }
 
 void GameObject::ObjectMagicProperties()
