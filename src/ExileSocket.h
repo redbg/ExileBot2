@@ -30,10 +30,10 @@ protected:
 public:
     // read
     template <typename T>
-    T read()
+    T read(bool swap = true)
     {
         T data = *(T *)this->readData(sizeof(T)).data();
-        return qbswap(data);
+        return swap ? qbswap(data) : data;
     }
 
     QByteArray read(qint64 maxlen);
