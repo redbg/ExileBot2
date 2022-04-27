@@ -5,7 +5,9 @@ ExileSocket::ExileSocket(QObject *parent)
     , isCrypto(false)
 {
     connect(this, &QTcpSocket::disconnected, this, [this]()
-            { this->DisableCrypto(); });
+            {
+                this->DisableCrypto();
+            });
 }
 
 ExileSocket::~ExileSocket() {}
@@ -32,6 +34,8 @@ QByteArray ExileSocket::readData(qint64 maxlen)
     {
         return data;
     }
+
+    Q_ASSERT_X(!(maxlen > 0x10000), "ExileSocket::readData", "maxlen > 0x10000");
 
     // 读取数据
     do
@@ -83,10 +87,32 @@ QByteArray ExileSocket::readAll()
 
 QString ExileSocket::readString()
 {
-    quint16    size = this->read<quint16>();
-    QByteArray data = this->readData(size);
+    quint16 size = this->read<quint16>();
+    QString data;
+    data.reserve(size); // 提前申请内存,优化性能
 
-    return QString(data);
+    for (int i = 0; i < size; i++)
+    {
+        unsigned char c = this->read<unsigned char>();
+
+        if (c >= 0x80)
+        {
+            if (c == 0x80)
+            {
+                data.append(QChar(this->read<char16_t>(false)));
+            }
+            else
+            {
+                Q_ASSERT_X(false, "ExileSocket::readString()", "读字符串意外情况");
+            }
+        }
+        else
+        {
+            data.append(QChar(c));
+        }
+    }
+
+    return data;
 }
 
 quint16 ExileSocket::readId()
