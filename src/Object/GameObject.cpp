@@ -235,9 +235,8 @@ void GameObject::Life()
     readData<quint16>();
     readData<quint32>();
 
-    LifeJson.insert("Mana", readData<qint32>());
-
     readData<quint32>();
+    LifeJson.insert("Mana", readData<qint32>());
     readData<quint32>();
     readData<qint16>();
 
@@ -347,8 +346,8 @@ bool __fastcall fs_componentPlayerUnknown1(unsigned __int8 *a1, unsigned __int8 
 }
 bool GameObject::fs_componentPlayerUnknown(unsigned char *buffer, int len, unsigned __int64 a2)
 {
-    unsigned char   *end;   // r8
-    unsigned char   *begin; // rsi
+    unsigned char *  end;   // r8
+    unsigned char *  begin; // rsi
     char             v4;    // r14
     unsigned __int64 v5;    // r15
     unsigned __int64 v7;    // rbx
@@ -422,7 +421,7 @@ void GameObject::Actor()
     fs_ActorA0(ActorJosn);
 }
 
-void GameObject::fs_ActorA0(QJsonObject& json)
+void GameObject::fs_ActorA0(QJsonObject &json)
 {
     quint16 v6 = readData<quint16>();
     if ((v6 & 0x40) != 0)
@@ -440,10 +439,10 @@ void GameObject::fs_ActorA0(QJsonObject& json)
 }
 
 //主动技能相关
-void GameObject::fs_ActiveSkills(QJsonObject& json)
+void GameObject::fs_ActiveSkills(QJsonObject &json)
 {
     quint8 size = readData<quint8>();
-    fs_ActiveSkills1(size , json);
+    fs_ActiveSkills1(size, json);
     size = readData<quint8>(); //数量
     for (quint8 i = 0; i < size; i++)
     {
@@ -466,7 +465,7 @@ void GameObject::fs_ActiveSkills(QJsonObject& json)
     }
 }
 
-void GameObject::fs_ActiveSkills1(quint8 size , QJsonObject& json)
+void GameObject::fs_ActiveSkills1(quint8 size, QJsonObject &json)
 {
     for (quint8 i = 0; i < size; i++)
     {
@@ -474,10 +473,10 @@ void GameObject::fs_ActiveSkills1(quint8 size , QJsonObject& json)
     }
 }
 
-void GameObject::fs_ActiveSkills3(QJsonObject& json)
+void GameObject::fs_ActiveSkills3(QJsonObject &json)
 {
     QJsonObject ActiveSkillsJson;
-    ActiveSkillsJson.insert("ID" ,  readData<quint16>());
+    ActiveSkillsJson.insert("ID", readData<quint16>());
 
     fs_GrantedEffectsPerLevel(json);
     quint8 v89 = readData<quint8>();
@@ -503,11 +502,11 @@ void GameObject::fs_ActiveSkills3(QJsonObject& json)
     }
 }
 
-void GameObject::fs_ActiveSkills_0(QJsonObject& json)
+void GameObject::fs_ActiveSkills_0(QJsonObject &json)
 {
 }
 
-void GameObject::fs_GrantedEffectsPerLevel(QJsonObject& json)
+void GameObject::fs_GrantedEffectsPerLevel(QJsonObject &json)
 {
     qDebug() << "fs_GrantedEffectsPerLevel:";
     quint8 v8 = readData<quint8>();
