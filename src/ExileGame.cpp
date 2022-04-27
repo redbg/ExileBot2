@@ -147,7 +147,7 @@ void ExileGame::on_game_readyRead()
         }
         case 0x15:
         {
-            quint32 PlayerId = this->read<quint32>();
+            this->RecvPlayerId();
             break;
         }
         case 0x19:
@@ -632,10 +632,9 @@ void ExileGame::RecvInventory()
                 quint8  x     = this->read<quint8>();
 
                 // item info
-                QByteArray itemData = this->read(this->read<quint16>());
+                QByteArray Data = this->read(this->read<quint16>());
 
-                QDataStream dataStream(itemData);
-                m_ItemList.append(new ItemObject(&dataStream, this));
+                m_ItemList.append(new ItemObject(index, QPoint(x, y), Data, this));
             }
         }
     }
@@ -650,9 +649,13 @@ void ExileGame::RecvGameObject()
     this->read<quint32>();
     this->read<quint16>();
 
-    quint32    GameObjectHash = this->read<quint32>();             // GameObject Hash
-    QByteArray ComponentsData = this->read(this->read<quint16>()); // Components Data
+    quint32    Hash = this->read<quint32>();             // GameObject Hash
+    QByteArray Data = this->read(this->read<quint16>()); // Components Data
 
-    auto s = new QDataStream(ComponentsData);
-    m_EntityList.append(new GameObject(GameObjectHash, s, this));
+    m_EntityList.append(new GameObject(id, Hash, Data, this));
+}
+
+void ExileGame::RecvPlayerId()
+{
+    m_PlayerId = this->read<quint32>();
 }

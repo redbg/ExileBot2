@@ -5,14 +5,21 @@
 class ItemObject : public AbstractObject
 {
     Q_OBJECT
+    Q_PROPERTY(quint32 Index MEMBER m_Index)
+    Q_PROPERTY(QPoint Pos MEMBER m_Pos)
     Q_PROPERTY(QJsonObject BaseItemType MEMBER m_BaseItemType)
 
 private:
+    quint32     m_Index;
+    QPoint      m_Pos;
     QJsonObject m_BaseItemType;
 
 public:
+    explicit ItemObject(quint32 index, QPoint pos, QByteArray &data, QObject *parent = nullptr);
     explicit ItemObject(QDataStream *dataStream, QObject *parent = nullptr);
     virtual ~ItemObject();
+
+    void Init();
 
     QJsonObject toJsonObject();
 

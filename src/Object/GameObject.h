@@ -8,26 +8,28 @@
 class GameObject : public AbstractObject
 {
     Q_OBJECT
-    Q_PROPERTY(qint32 x MEMBER m_X)
-    Q_PROPERTY(qint32 y MEMBER m_Y)
+    Q_PROPERTY(quint32 Id MEMBER m_Id)
+    Q_PROPERTY(quint32 Hash MEMBER m_Hash)
+    Q_PROPERTY(QPoint Pos MEMBER m_Pos)
 
 private:
+    quint32 m_Id;
     quint32 m_Hash;
+    QPoint  m_Pos;
+
     quint32 m_hp;
-    qint32  m_X;
-    qint32  m_Y;
 
 public:
-    explicit GameObject(quint32 hash, QDataStream *dataStream, QObject *parent = nullptr);
+    explicit GameObject(quint32 id, quint32 hash, QByteArray &data, QObject *parent = nullptr);
     virtual ~GameObject();
 
 public slots:
-    //解析数据段虚函数
+    // 解析数据段虚函数
     void readHead();
     void Positioned();
     void Stats();
-    void Pathfinding(){};
-    void WorldItem(){};
+    void Pathfinding(){/*空*/};
+    void WorldItem(){/*空*/};
     void Buffs();
     void Life();
     void Animated();
@@ -39,7 +41,7 @@ public slots:
     void LimitedLifespan(){/*空*/};
     void Render(){/*空*/};
     void ObjectMagicProperties();
-    void BaseEvents(){};
+    void BaseEvents(){/*空*/};
 
     //
     bool fs_componentPlayerUnknown(unsigned char *buffer, int len, unsigned __int64 a2);

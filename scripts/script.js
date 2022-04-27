@@ -25,7 +25,14 @@ function Tick() {
     }
 
     if (Game.SocketState == SocketState.Connected) {
-        console.log(JSON.stringify(Game.EntityList));
+        // console.log(JSON.stringify(Game.EntityList));
+        // console.log(JSON.stringify(Game.ItemList));
+
+        // 打印坐标
+        // for (let index = 0; index < Game.EntityList.length; index++) {
+        //     const element = Game.EntityList[index];
+        //     console.log(element.Pos);
+        // }
     }
 }
 

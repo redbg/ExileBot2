@@ -1,8 +1,9 @@
 #include "GameObject.h"
 
-GameObject::GameObject(quint32 hash, QDataStream *dataStream, QObject *parent)
-    : m_Hash(hash)
-    , AbstractObject(dataStream, parent)
+GameObject::GameObject(quint32 id, quint32 hash, QByteArray &data, QObject *parent)
+    : m_Id(id)
+    , m_Hash(hash)
+    , AbstractObject(data, parent)
 {
     QNetworkAccessManager *mgr = new QNetworkAccessManager;
     QNetworkRequest        req(QUrl(QString("http://127.0.0.1:6112/ot?hash=%1").arg(hash)));
@@ -37,7 +38,7 @@ GameObject::GameObject(quint32 hash, QDataStream *dataStream, QObject *parent)
             });
 }
 
-GameObject::~GameObject() { delete m_DataStream; }
+GameObject::~GameObject() {}
 
 void GameObject::readHead()
 {
@@ -92,8 +93,8 @@ void GameObject::readHead()
 void GameObject::Positioned()
 {
     // 坐标无需放在组件里
-    m_X = this->readData<qint32>();
-    m_Y = this->readData<qint32>();
+    m_Pos.setX(this->readData<qint32>());
+    m_Pos.setY(this->readData<qint32>());
 
     readData<quint32>();
     readData<quint8>();
@@ -307,8 +308,11 @@ void GameObject::Animated()
 void GameObject::Player()
 {
     QJsonObject PlayerJson;
-    QByteArray  nameBit = readData(readData<quint32>() * 2); // name
-    PlayerJson.insert("name", QString::fromUtf16((const char16_t *)nameBit.data(), nameBit.size() / 2));
+
+    quint32    size = readData<quint32>(); // size
+    QByteArray name = readData(size * 2);  // name
+    PlayerJson.insert("Name", QString::fromUtf16((const char16_t *)name.data(), size));
+
     readData<quint8>();
     readData<quint32>();
     readData<quint32>();
@@ -346,8 +350,8 @@ bool __fastcall fs_componentPlayerUnknown1(unsigned __int8 *a1, unsigned __int8 
 }
 bool GameObject::fs_componentPlayerUnknown(unsigned char *buffer, int len, unsigned __int64 a2)
 {
-    unsigned char *  end;   // r8
-    unsigned char *  begin; // rsi
+    unsigned char   *end;   // r8
+    unsigned char   *begin; // rsi
     char             v4;    // r14
     unsigned __int64 v5;    // r15
     unsigned __int64 v7;    // rbx

@@ -2,8 +2,24 @@
 
 #define HIBYTE(v) (v >> 8) & 0xff
 
+ItemObject::ItemObject(quint32 index, QPoint pos, QByteArray &data, QObject *parent)
+    : m_Index(index)
+    , m_Pos(pos)
+    , AbstractObject(data, parent)
+
+{
+    Init();
+}
+
 ItemObject::ItemObject(QDataStream *dataStream, QObject *parent)
     : AbstractObject(dataStream, parent)
+{
+    Init();
+}
+
+ItemObject::~ItemObject() {}
+
+void ItemObject::Init()
 {
     qDebug() << "==================================================";
 
@@ -13,12 +29,13 @@ ItemObject::ItemObject(QDataStream *dataStream, QObject *parent)
     m_BaseItemType = Helper::Data::GetBaseItemType(hash);
 
     QString InheritsFrom = m_BaseItemType.value("InheritsFrom").toString();
-    qDebug() << m_BaseItemType.value("Name").toString() << InheritsFrom;
+
+    this->setObjectName(m_BaseItemType.value("Id").toString());
+
+    qDebug() << m_BaseItemType.value("Name").toString() << "<-" << this->objectName() << "<-" << InheritsFrom;
 
     this->ProcessDataStream(Helper::Data::GetItemComponentNames(InheritsFrom));
 }
-
-ItemObject::~ItemObject() {}
 
 QJsonObject ItemObject::toJsonObject()
 {
@@ -255,7 +272,7 @@ QJsonObject ItemObject::fs_ItemTypeRegister_Mods()
         stats.insert(stat.value("Text").toString(), this->ReadVarint1());
     }
 
-    MyMod.insert(mod.value("Id").toString(), stats);
+    MyMod.insert(mod.value("CorrectGroup").toString(), stats);
 
     return MyMod;
 }
@@ -379,7 +396,9 @@ void ItemObject::Sockets()
 
             if (isItem)
             {
-                socket.insert("item", ItemObject(this->m_DataStream).toJsonObject());
+                ItemObject item = ItemObject(this->m_DataStream);
+                Index += item.Index;
+                socket.insert("item", item.toJsonObject());
             }
 
             SocketsArray.append(socket);
