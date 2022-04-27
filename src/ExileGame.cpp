@@ -264,19 +264,19 @@ void ExileGame::on_game_readyRead()
         }
         case 0x1a:
         {
-            read<quint32>(); //Ticket1
+            read<quint32>(); // Ticket1
             read<quint32>();
-            read<quint16>(); //WorldAreaId
-            read<quint32>(); //Ticket2
+            read<quint16>(); // WorldAreaId
+            read<quint32>(); // Ticket2
             read<quint8>();
 
-            quint8 size = read<quint8>(); //AddressCount
+            quint8 size = read<quint8>(); // AddressCount
 
             for (quint8 i = 0; i < size; i++)
             {
                 read<quint16>();
-                read<quint16>(); //Port
-                read<quint32>(); //Address
+                read<quint16>(); // Port
+                read<quint32>(); // Address
                 read(0x14);
             }
 
@@ -473,7 +473,7 @@ void ExileGame::on_game_readyRead()
         }
         case 0xde:
         {
-            //DeleteObject
+            // DeleteObject
             read<quint32>();
             read<quint32>();
             read<quint32>();
