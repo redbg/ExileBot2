@@ -174,6 +174,44 @@ namespace Helper
             return QJsonObject();
         }
 
+        QJsonObject GetGrantedEffectsPerLevel(quint16 _rid)
+        {
+            static QJsonArray JsonArray = GetDataArray(":/Data/GrantedEffectsPerLevel.json");
+            for (int i = 0; i < JsonArray.size(); i++)
+            {
+                if (JsonArray.at(i).toObject().value("_rid").toInt() == _rid)
+                {
+                    return JsonArray.at(i).toObject();
+                }
+            }
+            return QJsonObject();
+        }
+
+        QJsonObject GetGrantedEffects(quint16 _rid)
+        {
+            static QJsonArray JsonArray = GetDataArray(":/Data/GrantedEffects.json");
+            for (int i = 0; i < JsonArray.size(); i++)
+            {
+                if (JsonArray.at(i).toObject().value("_rid").toInt() == _rid)
+                {
+                    return JsonArray.at(i).toObject();
+                }
+            }
+            return QJsonObject();
+        }
+        QJsonObject GetActiveSkill(quint16 _rid)
+        {
+            static QJsonArray JsonArray = GetDataArray(":/Data/ActiveSkills.json");
+            for (int i = 0; i < JsonArray.size(); i++)
+            {
+                if (JsonArray.at(i).toObject().value("_rid").toInt() == _rid)
+                {
+                    return JsonArray.at(i).toObject();
+                }
+            }
+            return QJsonObject();
+        }
+
     } // namespace Data
 
 } // namespace Helper

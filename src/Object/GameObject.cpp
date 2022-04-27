@@ -230,18 +230,18 @@ Q_INVOKABLE void GameObject::Buffs()
 void GameObject::Life()
 {
     QJsonObject LifeJson;
-    LifeJson.insert("Life", readData<qint32>());
+    LifeJson.insert("m_Life", readData<qint32>());
     readData<quint32>();
     readData<quint16>();
     readData<quint32>();
 
     readData<quint32>();
-    LifeJson.insert("Mana", readData<qint32>());
+    LifeJson.insert("m_Mana", readData<qint32>());
     readData<quint32>();
     readData<qint16>();
 
     readData<quint32>();
-    LifeJson.insert("Shield", readData<qint32>());
+    LifeJson.insert("m_Shield", readData<qint32>());
 
     readData<quint32>();
     readData<quint16>();
@@ -410,7 +410,7 @@ void GameObject::Actor()
     readData(readData<quint32>() * 2);
     readData<quint16>();
     readData<quint8>();
-    if (m_hp <= 0)
+    if (m_Components.value("Life").toObject().value("m_Life").toInt() <= 0)
     {
         readData<quint8>();
         readData<quint8>();
@@ -419,6 +419,8 @@ void GameObject::Actor()
     readData<quint32>();
     readData<quint32>();
     fs_ActorA0(ActorJosn);
+    qDebug() << ActorJosn;
+    m_Components.insert("Actor", ActorJosn);
 }
 
 void GameObject::fs_ActorA0(QJsonObject &json)
@@ -441,8 +443,9 @@ void GameObject::fs_ActorA0(QJsonObject &json)
 //主动技能相关
 void GameObject::fs_ActiveSkills(QJsonObject &json)
 {
-    quint8 size = readData<quint8>();
-    fs_ActiveSkills1(size, json);
+    QJsonArray ActiveSkills;
+    quint8     size = readData<quint8>();
+    fs_ActiveSkills1(size, ActiveSkills);
     size = readData<quint8>(); //数量
     for (quint8 i = 0; i < size; i++)
     {
@@ -450,7 +453,7 @@ void GameObject::fs_ActiveSkills(QJsonObject &json)
         readData<quint32>();
         readData<quint32>();
     }
-    size = readData<quint8>(); //数量
+    size = readData<quint32>(); //数量
     for (quint8 i = 0; i < size; i++)
     {
         readData<quint16>();
@@ -463,22 +466,24 @@ void GameObject::fs_ActiveSkills(QJsonObject &json)
             readData<quint32>();
         }
     }
+
+    json.insert("ActiveSkills", ActiveSkills);
 }
 
-void GameObject::fs_ActiveSkills1(quint8 size, QJsonObject &json)
+void GameObject::fs_ActiveSkills1(quint8 size, QJsonArray &jsonArray)
 {
     for (quint8 i = 0; i < size; i++)
     {
-        fs_ActiveSkills3(json);
+        fs_ActiveSkills3(jsonArray);
     }
 }
 
-void GameObject::fs_ActiveSkills3(QJsonObject &json)
+void GameObject::fs_ActiveSkills3(QJsonArray &jsonArray)
 {
-    QJsonObject ActiveSkillsJson;
-    ActiveSkillsJson.insert("ID", readData<quint16>());
+    quint16 id = readData<quint16>();
 
-    fs_GrantedEffectsPerLevel(json);
+    QJsonObject ActiveSkillsJson = fs_GrantedEffectsPerLevel();
+    ActiveSkillsJson.insert("id", id);
     quint8 v89 = readData<quint8>();
     if ((v89 & 1) != 0)
     {
@@ -489,7 +494,7 @@ void GameObject::fs_ActiveSkills3(QJsonObject &json)
 
     for (quint8 i = 0; i < v12; i++)
     {
-        fs_GrantedEffectsPerLevel(json);
+        fs_GrantedEffectsPerLevel();
         readData<quint32>();
         readData<quint32>();
     }
@@ -500,22 +505,38 @@ void GameObject::fs_ActiveSkills3(QJsonObject &json)
         ReadVarint();
         ReadVarint1();
     }
+
+    jsonArray.append(ActiveSkillsJson);
 }
 
 void GameObject::fs_ActiveSkills_0(QJsonObject &json)
 {
 }
 
-void GameObject::fs_GrantedEffectsPerLevel(QJsonObject &json)
+//每个级别的授权效果
+QJsonObject GameObject::fs_GrantedEffectsPerLevel()
 {
+    QJsonObject GrantedEffectsPerLevelJson;
     qDebug() << "fs_GrantedEffectsPerLevel:";
+
     quint8 v8 = readData<quint8>();
     if (v8 > 0)
     {
         readData<quint8>();
     }
 
-    readData<quint32>(); // GrantedEffectsPerLevelId "GrantedEffectsPerLevel.GrantedEffectsKey -> GrantedEffects.ActiveSkill -> ActiveSkills"
+    // GrantedEffectsPerLevelId "GrantedEffectsPerLevel.GrantedEffectsKey -> GrantedEffects.ActiveSkill -> ActiveSkills"
+    QJsonObject GrantedEffectsPerLevel = Helper::Data::GetGrantedEffectsPerLevel(readData<quint32>());
+    QJsonObject GrantedEffects         = Helper::Data::GetGrantedEffects(GrantedEffectsPerLevel.value("GrantedEffectsKey").toInt());
+    QJsonObject ActiveSkills           = Helper::Data::GetActiveSkill(GrantedEffects.value("ActiveSkill").toInt());
+    GrantedEffectsPerLevelJson.insert("Level", GrantedEffectsPerLevel.value("Level").toInt());
+    GrantedEffectsPerLevelJson.insert("CastTime", GrantedEffects.value("CastTime").toInt());
+    GrantedEffectsPerLevelJson.insert("DisplayedName", ActiveSkills.value("DisplayedName").toString());
+    GrantedEffectsPerLevelJson.insert("LevelRequirement", GrantedEffectsPerLevel.value("LevelRequirement").toInt());
+    GrantedEffectsPerLevelJson.insert("CriticalStrikeChance", GrantedEffectsPerLevel.value("CriticalStrikeChance").toInt());
+    GrantedEffectsPerLevelJson.insert("GrantedEffectsKey", GrantedEffectsPerLevel.value("GrantedEffectsKey").toInt());
+
+    return GrantedEffectsPerLevelJson;
 }
 
 void GameObject::ObjectMagicProperties()

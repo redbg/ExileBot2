@@ -37,8 +37,10 @@ namespace Helper
         QJsonObject GetWeaponType(quint64 BaseItemTypesKey);
         QJsonObject GetComponentAttributeRequirements(QString BaseItemTypesKey);
         QJsonObject GetBuffDefinitions(quint16 id);
-
-        QJsonArray GetItemComponentNames(QString name);
+        QJsonObject GetGrantedEffectsPerLevel(quint16 _rid);
+        QJsonObject GetGrantedEffects(quint16 _rid);
+        QJsonObject GetActiveSkill(quint16 _rid);
+        QJsonArray  GetItemComponentNames(QString name);
 
     } // namespace Data
 

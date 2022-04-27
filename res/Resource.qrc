@@ -9,5 +9,8 @@
         <file>Data/WeaponTypes.json</file>
         <file>Data/ComponentAttributeRequirements.json</file>
         <file>Data/BuffDefinitions.json</file>
+        <file>Data/ActiveSkills.json</file>
+        <file>Data/GrantedEffects.json</file>
+        <file>Data/GrantedEffectsPerLevel.json</file>
     </qresource>
 </RCC>

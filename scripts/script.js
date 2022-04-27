@@ -47,7 +47,7 @@ function OnClientCharacterList() {
 
     if (array.length > 0) {
         // 选择角色,进入游戏
-        Client.SendSelectCharacter(0);
+        Client.SendSelectCharacter(4);
     }
     else {
         // 创建角色
