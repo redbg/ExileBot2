@@ -1004,7 +1004,7 @@ void ExileGame::Pathfinding(int x, int y)
         m_Path.clear();
         auto path = algorithm.find(param);
 
-        for (auto i = path.rbegin(); i != path.rend(); i++)
+        for (auto i = path.begin(); i != path.end(); i++)
         {
             m_Path.append(QPoint(i->x, i->y));
         }
