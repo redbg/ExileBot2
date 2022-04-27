@@ -112,6 +112,50 @@ void ExileGame::on_game_readyRead()
 
         switch (PacketId)
         {
+        case 0x1:
+        {
+            readString();
+            break;
+        }
+        case 0x3:
+        {
+            quint16 size = read<quint16>();
+
+            for (quint16 i = 0; i < size; i++)
+            {
+                read<quint32>();
+                read<quint32>();
+                readString();
+                read<quint16>();
+
+                qint8  ret1 = read<qint8>();
+                quint8 ret2 = read<quint8>();
+
+                read<quint16>();
+                read<quint8>();
+                read<quint8>();
+
+                read<quint8>();
+
+                if (ret1 < 0)
+                {
+                    read<quint64>();
+                }
+                if ((ret1 & 0x40) != 0)
+                {
+                    read<quint8>();
+                }
+                if ((ret2 & 1) != 0)
+                {
+                    read<quint32>();
+                }
+            }
+
+            readString();
+            read<quint16>();
+            read<quint8>();
+            break;
+        }
         case 0x5:
         {
             // 开启加密
@@ -145,6 +189,12 @@ void ExileGame::on_game_readyRead()
                     this->readString();
                 }
             }
+            break;
+        }
+        case 0xf:
+        {
+            this->read<quint16>();
+            this->read<quint32>();
             break;
         }
         case 0x10:
@@ -212,6 +262,27 @@ void ExileGame::on_game_readyRead()
             this->RecvBackendError();
             break;
         }
+        case 0x1a:
+        {
+            read<quint32>(); //Ticket1
+            read<quint32>();
+            read<quint16>(); //WorldAreaId
+            read<quint32>(); //Ticket2
+            read<quint8>();
+
+            quint8 size = read<quint8>(); //AddressCount
+
+            for (quint8 i = 0; i < size; i++)
+            {
+                read<quint16>();
+                read<quint16>(); //Port
+                read<quint32>(); //Address
+                read(0x14);
+            }
+
+            read(0x40);
+            break;
+        }
         case 0x24:
         {
             this->read<quint16>();
@@ -254,6 +325,46 @@ void ExileGame::on_game_readyRead()
             this->read(0x1a);
             this->read<quint16>();
             this->read<quint16>();
+            break;
+        }
+        case 0xa2:
+        {
+            read<quint8>();
+            break;
+        }
+        case 0xa3:
+        {
+            quint8 size = read<quint8>();
+            for (quint8 i = 0; i < size; i++)
+            {
+                read<quint16>();
+                read<quint8>();
+                read<quint32>();
+            }
+            break;
+        }
+
+        case 0xcb:
+        {
+            quint16 size = read<quint16>();
+            for (quint16 i = 0; i < size; i++)
+            {
+                readString();
+                readString();
+                readString();
+                readString();
+
+                read<quint32>();
+                read<quint16>();
+                read<quint16>();
+                read<quint8>();
+
+                read<quint64>();
+                read<quint64>();
+                read<quint64>();
+                read<quint16>();
+                read<quint16>();
+            }
             break;
         }
         case 0x6e:
@@ -330,6 +441,42 @@ void ExileGame::on_game_readyRead()
         {
             // 库存信息
             this->RecvInventory();
+            break;
+        }
+        case 0xd5:
+        {
+            read<quint8>();
+            read(read<quint16>());
+            break;
+        }
+        case 0xd7:
+        {
+            quint8 size = read<quint8>();
+            for (quint8 i = 0; i < size; i++)
+            {
+                this->read<quint32>();
+                this->read<quint32>();
+                this->read<quint32>();
+            }
+
+            break;
+        }
+        case 0xd9:
+        {
+            read<quint16>();
+            this->readString();
+            read<quint8>();
+            read<quint8>();
+            read<quint8>();
+            read<quint64>();
+            break;
+        }
+        case 0xde:
+        {
+            //DeleteObject
+            read<quint32>();
+            read<quint32>();
+            read<quint32>();
             break;
         }
         case 0x8e:
@@ -485,6 +632,92 @@ void ExileGame::on_game_readyRead()
             this->read<quint8>();
             this->read<quint8>();
             this->read<quint8>();
+            break;
+        }
+        case 0x1ab:
+        {
+            quint8 size = read<quint8>();
+            for (quint8 i = 0; i < size; i++)
+            {
+                read(0xc);
+                quint8 size1 = read<quint8>();
+                for (quint8 i = 0; i < size1; i++)
+                {
+
+                    QJsonObject stats;
+                    QJsonObject mod = Helper::Data::GetMods(read<quint16>());
+
+                    if (!mod["StatsKey1"].isNull())
+                    {
+                        QJsonObject stat = Helper::Data::GetStats(mod.value("StatsKey1").toInt());
+                        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
+                    }
+                    if (!mod["StatsKey2"].isNull())
+                    {
+                        QJsonObject stat = Helper::Data::GetStats(mod.value("StatsKey2").toInt());
+                        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
+                    }
+                    if (!mod["StatsKey3"].isNull())
+                    {
+                        QJsonObject stat = Helper::Data::GetStats(mod.value("StatsKey3").toInt());
+                        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
+                    }
+                    if (!mod["StatsKey4"].isNull())
+                    {
+                        QJsonObject stat = Helper::Data::GetStats(mod.value("StatsKey4").toInt());
+                        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
+                    }
+                    if (!mod["StatsKey5"].isNull())
+                    {
+                        QJsonObject stat = Helper::Data::GetStats(mod.value("StatsKey5").toInt());
+                        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
+                    }
+                    if (!mod["StatsKey6"].isNull())
+                    {
+                        QJsonObject stat = Helper::Data::GetStats(mod.value("StatsKey6").toInt());
+                        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
+                    }
+                    if (!mod["Heist_StatsKey0"].isNull())
+                    {
+                        QJsonObject stat = Helper::Data::GetStats(mod.value("Heist_StatsKey0").toInt());
+                        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
+                    }
+                    if (!mod["Heist_StatsKey1"].isNull())
+                    {
+                        QJsonObject stat = Helper::Data::GetStats(mod.value("Heist_StatsKey1").toInt());
+                        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
+                    }
+                }
+            }
+
+            size = read<quint8>();
+            for (quint8 i = 0; i < size; i++)
+            {
+                read<quint32>();
+            }
+            size = read<quint8>();
+            for (quint8 i = 0; i < size; i++)
+            {
+                read<quint32>();
+            }
+            break;
+        }
+        case 0x1de:
+        {
+            read<quint32>();
+            read<quint32>();
+            read<quint16>();
+            read<quint32>();
+            read<quint32>();
+            read<quint8>();
+            break;
+        }
+        case 0x1e0:
+        {
+            read<quint32>();
+            read<quint32>();
+            read<quint32>();
+            read<quint32>();
             break;
         }
         case 0x1f5:
