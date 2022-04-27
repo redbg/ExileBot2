@@ -2,9 +2,9 @@
 #include "Account.h"
 #include "AccountModel.h"
 #include "ui_MainWindow.h"
+#include <QLabel>
 #include <QMainWindow>
 #include <QSettings>
-#include <QLabel>
 
 class MainWindow : public QMainWindow
 {
