@@ -10,6 +10,9 @@
 class ExileGame : public ExileSocket
 {
     Q_OBJECT
+    Q_PROPERTY(QList<ItemObject *> ItemList MEMBER m_ItemList)
+    Q_PROPERTY(QList<GameObject *> EntityList MEMBER m_EntityList)
+
 private:
     ExileClient *m_ExileClient;
 
@@ -30,7 +33,7 @@ private:
     QJsonObject m_RadarInfo;
 
     QList<ItemObject *> m_ItemList;
-    QList<GameObject *> m_GameObjectList;
+    QList<GameObject *> m_EntityList;
 
 public:
     explicit ExileGame(ExileClient *client);
