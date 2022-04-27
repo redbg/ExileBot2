@@ -13,7 +13,10 @@ ItemObject::ItemObject(QDataStream *dataStream, QObject *parent)
     m_BaseItemType = Helper::Data::GetBaseItemType(hash);
 
     QString InheritsFrom = m_BaseItemType.value("InheritsFrom").toString();
-    qDebug() << m_BaseItemType.value("Name").toString() << InheritsFrom;
+
+    this->setObjectName(m_BaseItemType.value("Id").toString());
+
+    qDebug() << m_BaseItemType.value("Name").toString() << "<-" << this->objectName() << "<-" << InheritsFrom;
 
     this->ProcessDataStream(Helper::Data::GetItemComponentNames(InheritsFrom));
 }
@@ -255,7 +258,7 @@ QJsonObject ItemObject::fs_ItemTypeRegister_Mods()
         stats.insert(stat.value("Text").toString(), this->ReadVarint1());
     }
 
-    MyMod.insert(mod.value("Id").toString(), stats);
+    MyMod.insert(mod.value("CorrectGroup").toString(), stats);
 
     return MyMod;
 }
