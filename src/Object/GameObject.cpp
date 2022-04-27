@@ -240,9 +240,9 @@ void GameObject::Life()
     readData<quint32>();
     readData<qint16>();
 
+    readData<quint32>();
     LifeJson.insert("Shield", readData<qint32>());
 
-    readData<quint32>();
     readData<quint32>();
     readData<quint16>();
     readData<quint32>();
