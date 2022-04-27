@@ -68,6 +68,12 @@ add_executable(ExileBot2
     # GameObject
     src/Object/GameObject.cpp
     src/Object/GameObject.h
+
+    # AStar
+    src/AStar/astar.cpp
+    src/AStar/astar.h
+    src/AStar/blockallocator.cpp
+    src/AStar/astar.h
 )
 
 target_link_libraries(ExileBot2 PRIVATE Qt6::Widgets)

@@ -12,7 +12,7 @@ class GameObject : public AbstractObject
     Q_PROPERTY(quint32 Hash MEMBER m_Hash)
     Q_PROPERTY(QPoint Pos MEMBER m_Pos)
 
-private:
+public:
     quint32 m_Id;
     quint32 m_Hash;
     QPoint  m_Pos;

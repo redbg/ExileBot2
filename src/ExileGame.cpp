@@ -13,6 +13,62 @@ ExileGame::~ExileGame()
 {
 }
 
+QImage ExileGame::Render()
+{
+    QImage   image(m_TerrainWidth, m_TerrainHeight, QImage::Format_RGB32);
+    QPainter painter(&image);
+    painter.setRenderHint(QPainter::Antialiasing); // 抗锯齿
+
+    // Render Terrain
+    for (quint32 y = 0; y < m_TerrainHeight; y++)
+    {
+        for (quint32 x = 0; x < m_TerrainWidth; x++)
+        {
+            image.setPixelColor(x, y, m_TerrainData.at((y * m_TerrainWidth) + x) == '1' ? Qt::white : Qt::black);
+        }
+    }
+
+    // Render Entity
+    painter.setPen(Qt::black);
+    for (int i = 0; i < m_EntityList.size(); i++)
+    {
+        auto obj = m_EntityList.at(i);
+
+        if (obj->m_Id == m_PlayerId)
+        {
+            // 设置玩家颜色
+            painter.setBrush(Qt::green);
+        }
+        else
+        {
+            painter.setBrush(Qt::red);
+        }
+
+        painter.drawEllipse(obj->m_Pos.x(), obj->m_Pos.y(), 10, 10);
+    }
+
+    // Render RadarInfo
+    painter.setPen(Qt::green);
+    painter.setBrush(Qt::green);
+    for (auto i = m_RadarInfo.begin(); i != m_RadarInfo.end(); i++)
+    {
+        QJsonObject posObj = m_RadarInfo.begin().value().toObject();
+        QPoint      pos(posObj.value("x").toInt(), posObj.value("y").toInt());
+
+        painter.drawText(pos.x(), pos.y(), i.key());
+
+        painter.drawEllipse(pos.x(), pos.y(), 10, 10);
+    }
+
+    // Render Path
+    for (int i = 0; i < m_Path.size(); i++)
+    {
+        image.setPixelColor(m_Path[i], Qt::green);
+    }
+
+    return image;
+}
+
 void ExileGame::connectToHost(quint32 Address, quint16 Port, quint32 Ticket, quint32 WorldAreaHASH16, quint32 WorldInstance, QByteArray Key)
 {
     m_Ticket          = Ticket;
@@ -475,6 +531,7 @@ void ExileGame::on_game_readyRead()
         case 0x21a:
         {
             // 服务器心跳
+            this->ServerTick();
             break;
         }
         case 0x21e:
@@ -509,6 +566,8 @@ void ExileGame::on_game_readyRead()
     }
 }
 
+// ====================================================================================================
+
 void ExileGame::SendTicket()
 {
     qDebug() << "SendTicket";
@@ -535,6 +594,8 @@ void ExileGame::SendTileHash(quint32 tileHash, quint32 doodadHash)
     this->write(doodadHash);
 }
 
+// ====================================================================================================
+
 void ExileGame::RecvInitWorld()
 {
     m_WorldAreaHASH16 = this->read<quint16>();
@@ -555,7 +616,7 @@ void ExileGame::RecvInitWorld()
                 m_WorldAreaId   = reply->rawHeader("WorldAreaId");
                 m_WorldAreaName = reply->rawHeader("WorldAreaName");
                 m_RadarInfo     = QJsonDocument::fromJson(reply->rawHeader("RadarInfo")).object();
-                m_Terrain       = reply->readAll();
+                m_TerrainData   = reply->readAll();
 
                 this->SendTileHash(m_TileHash, m_DoodadHash);
                 reply->deleteLater();
@@ -658,4 +719,61 @@ void ExileGame::RecvGameObject()
 void ExileGame::RecvPlayerId()
 {
     m_PlayerId = this->read<quint32>();
+}
+
+// ====================================================================================================
+
+GameObject *ExileGame::FindEntity(int id)
+{
+    for (int i = 0; i < m_EntityList.size(); i++)
+    {
+        if (m_EntityList.at(i)->m_Id == id)
+        {
+            return m_EntityList.at(i);
+        }
+    }
+
+    return nullptr;
+}
+
+void ExileGame::ServerTick()
+{
+    if (m_Path.size())
+    {
+        /* code */
+    }
+}
+
+void ExileGame::Pathfinding(int x, int y)
+{
+    GameObject *obj = FindEntity(m_PlayerId);
+
+    if (obj != nullptr)
+    {
+        qDebug() << QString("Pathfinding(%1, %2)").arg(x).arg(y);
+
+        QPoint start = obj->m_Pos;
+
+        AStar::Params param;
+        param.corner   = true;
+        param.width    = (uint16_t)m_TerrainWidth;
+        param.height   = (uint16_t)m_TerrainHeight;
+        param.start    = AStar::Vec2((uint16_t)start.x(), (uint16_t)start.y());
+        param.end      = AStar::Vec2((uint16_t)x, (uint16_t)y);
+        param.can_pass = [this](const AStar::Vec2 &pos) -> bool
+        {
+            return m_TerrainData.at((pos.y * m_TerrainWidth) + pos.x) > '1';
+        };
+
+        BlockAllocator allocator;
+        AStar          algorithm(&allocator);
+
+        m_Path.clear();
+        auto path = algorithm.find(param);
+
+        for (auto i = path.rbegin(); i != path.rend(); i++)
+        {
+            m_Path.append(QPoint(i->x, i->y));
+        }
+    }
 }

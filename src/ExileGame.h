@@ -1,11 +1,15 @@
 #pragma once
+#include "AStar/astar.h"
+#include "AStar/blockallocator.h"
 #include "ExileClient.h"
 #include "ExileSocket.h"
 #include "Object/GameObject.h"
 #include "Object/ItemObject.h"
+#include <QImage>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QNetworkRequest>
+#include <QPainter>
 
 class ExileGame : public ExileSocket
 {
@@ -27,7 +31,7 @@ private:
     quint32    m_DoodadHash;
     quint32    m_TerrainWidth;
     quint32    m_TerrainHeight;
-    QByteArray m_Terrain;
+    QByteArray m_TerrainData;
 
     QString     m_WorldAreaId;
     QString     m_WorldAreaName;
@@ -37,9 +41,14 @@ private:
     QList<GameObject *> m_EntityList;
     quint32             m_PlayerId;
 
+    QList<QPoint> m_Path;
+
 public:
     explicit ExileGame(ExileClient *client);
     virtual ~ExileGame();
+
+public:
+    QImage Render();
 
 public slots:
     void connectToHost(quint32 Address, quint16 Port, quint32 Ticket, quint32 WorldAreaHASH16, quint32 WorldInstance, QByteArray Key);
@@ -62,7 +71,9 @@ public slots:
     void RecvPlayerId();
 
 public slots:
-    // void Pathfinding(QPoint pos);
+    GameObject *FindEntity(int id);
+    void        ServerTick();
+    void        Pathfinding(int x, int y);
 
 signals:
     void signal_BackendError(int result);

@@ -4,6 +4,7 @@
 #include "ui_MainWindow.h"
 #include <QMainWindow>
 #include <QSettings>
+#include <QLabel>
 
 class MainWindow : public QMainWindow
 {
@@ -26,4 +27,5 @@ private slots:
     void on_actionQuit_triggered();
     void on_actionInsert_triggered();
     void on_actionRemove_triggered();
+    void on_actionRender_triggered();
 };

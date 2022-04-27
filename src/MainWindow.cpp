@@ -89,3 +89,20 @@ void MainWindow::on_actionRemove_triggered()
         m_AccountModel->removeRow(currentIndex.row());
     }
 }
+
+void MainWindow::on_actionRender_triggered()
+{
+    QModelIndex currentIndex = ui->AccountView->currentIndex();
+
+    if (currentIndex.isValid())
+    {
+        Account *account = m_AccountModel->m_Data.at(currentIndex.row());
+
+        if (account->isRunning())
+        {
+            static QLabel *w = new QLabel();
+            w->setPixmap(QPixmap::fromImage(account->m_ExileGame->Render()));
+            w->show();
+        }
+    }
+}

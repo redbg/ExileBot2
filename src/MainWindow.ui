@@ -37,6 +37,7 @@
     <addaction name="actionQuit"/>
     <addaction name="actionInsert"/>
     <addaction name="actionRemove"/>
+    <addaction name="actionRender"/>
    </widget>
    <addaction name="menuAccount"/>
   </widget>
@@ -65,6 +66,11 @@
    </property>
    <property name="shortcut">
     <string>Del</string>
+   </property>
+  </action>
+  <action name="actionRender">
+   <property name="text">
+    <string>Render</string>
    </property>
   </action>
  </widget>
