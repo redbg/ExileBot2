@@ -1,12 +1,28 @@
 #include "AbstractObject.h"
 
+AbstractObject::AbstractObject(QByteArray &data, QObject *parent)
+    : QObject(parent)
+    , m_Data(data)
+    , m_DataStream(new QDataStream(data))
+    , Index(0)
+{
+    Q_ASSERT_X(!data.isEmpty(), "AbstractObject()", "data.isEmpty()");
+}
+
 AbstractObject::AbstractObject(QDataStream *dataStream, QObject *parent)
     : QObject(parent)
     , m_DataStream(dataStream)
+    , Index(0)
 {
 }
 
-AbstractObject::~AbstractObject() {}
+AbstractObject::~AbstractObject()
+{
+    if (!m_Data.isEmpty())
+    {
+        delete m_DataStream;
+    }
+}
 
 // 处理数据流
 void AbstractObject::ProcessDataStream(QJsonArray componentNames)
@@ -14,8 +30,16 @@ void AbstractObject::ProcessDataStream(QJsonArray componentNames)
     for (int i = 0; i < componentNames.size(); i++)
     {
         QString name = componentNames.at(i).toString();
-        qDebug() << "----" << name;
+        qDebug() << "----" << name << "[" << Index << "]";
         this->metaObject()->invokeMethod(this, name.toLatin1().data());
+    }
+
+    if (!m_Data.isEmpty())
+    {
+        if (Index != m_Data.size())
+        {
+            qWarning() << "数据未解析完,剩余字节数:" << m_Data.size() - Index;
+        }
     }
 
     qDebug() << m_Components;
@@ -24,7 +48,12 @@ void AbstractObject::ProcessDataStream(QJsonArray componentNames)
 QByteArray AbstractObject::readData(int size)
 {
     QByteArray data(size, 0);
-    Q_ASSERT_X(m_DataStream->readRawData(data.data(), size) == size, "AbstractObject::readData(int size)", "数据不够");
+    int        readSize = m_DataStream->readRawData(data.data(), size);
+
+    Q_ASSERT_X(readSize == size, "AbstractObject::readData(int size)", "数据不够");
+
+    Index += readSize;
+
     qDebug() << "--------" << data.toHex(' ');
     return data;
 }

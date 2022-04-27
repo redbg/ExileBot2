@@ -12,6 +12,7 @@ class ExileGame : public ExileSocket
     Q_OBJECT
     Q_PROPERTY(QList<ItemObject *> ItemList MEMBER m_ItemList)
     Q_PROPERTY(QList<GameObject *> EntityList MEMBER m_EntityList)
+    Q_PROPERTY(quint32 PlayerId MEMBER m_PlayerId)
 
 private:
     ExileClient *m_ExileClient;
@@ -34,6 +35,7 @@ private:
 
     QList<ItemObject *> m_ItemList;
     QList<GameObject *> m_EntityList;
+    quint32             m_PlayerId;
 
 public:
     explicit ExileGame(ExileClient *client);
@@ -47,14 +49,20 @@ public slots:
     void on_game_errorOccurred(QAbstractSocket::SocketError socketError);
     void on_game_readyRead();
 
+public slots:
     void SendTicket();
     void SendTileHash(quint32 tileHash, quint32 doodadHash);
 
+public slots:
     void RecvInitWorld();
     void RecvChat();
     void RecvBackendError();
     void RecvInventory();
     void RecvGameObject();
+    void RecvPlayerId();
+
+public slots:
+    // void Pathfinding(QPoint pos);
 
 signals:
     void signal_BackendError(int result);

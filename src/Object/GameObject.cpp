@@ -1,8 +1,9 @@
 #include "GameObject.h"
 
-GameObject::GameObject(quint32 hash, QDataStream *dataStream, QObject *parent)
-    : m_Hash(hash)
-    , AbstractObject(dataStream, parent)
+GameObject::GameObject(quint32 id, quint32 hash, QByteArray &data, QObject *parent)
+    : m_Id(id)
+    , m_Hash(hash)
+    , AbstractObject(data, parent)
 {
     QNetworkAccessManager *mgr = new QNetworkAccessManager;
     QNetworkRequest        req(QUrl(QString("http://127.0.0.1:6112/ot?hash=%1").arg(hash)));
@@ -37,7 +38,7 @@ GameObject::GameObject(quint32 hash, QDataStream *dataStream, QObject *parent)
             });
 }
 
-GameObject::~GameObject() { delete m_DataStream; }
+GameObject::~GameObject() {}
 
 void GameObject::readHead()
 {
@@ -92,8 +93,8 @@ void GameObject::readHead()
 void GameObject::Positioned()
 {
     // 坐标无需放在组件里
-    m_X = this->readData<qint32>();
-    m_Y = this->readData<qint32>();
+    m_Pos.setX(this->readData<qint32>());
+    m_Pos.setY(this->readData<qint32>());
 
     readData<quint32>();
     readData<quint8>();
