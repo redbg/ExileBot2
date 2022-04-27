@@ -90,8 +90,9 @@ void GameObject::readHead()
 void GameObject::Positioned()
 {
     // Positioned
-    quint32 x = this->readData<quint32>();
-    quint32 y = this->readData<quint32>();
+    QJsonObject Positioned;
+    Positioned.insert("m_x", this->readData<qint32>());
+    Positioned.insert("m_y", this->readData<qint32>());
     readData<quint32>();
     readData<quint8>();
     quint16 v16 = readData<quint16>();
@@ -153,21 +154,26 @@ void GameObject::Positioned()
 
 void GameObject::Stats()
 {
-    quint32 v5 = ReadVarint();
+    QJsonObject Stats;
+    quint32     v5 = ReadVarint();
     qDebug() << "数组数量:" << v5;
     for (quint32 i = 0; i < v5; i++)
     {
-        qDebug() << ReadVarint();
-        qDebug() << ReadVarint1();
+        QJsonObject statsJson = Helper::Data::GetStats(ReadVarint() - 1);
+        Stats.insert("Text", statsJson.value("Text"));
+        Stats.insert("Id", statsJson.value("Id"));
+        Stats.insert("m_value", ReadVarint1());
     }
-    qDebug() << readData<quint32>();
-    qDebug() << readData<quint8>();
-    qDebug() << readData<quint8>();
+    readData<quint32>();
+    readData<quint8>();
+    readData<quint8>();
+    m_Components.insert("Stats", Stats);
 }
 
 Q_INVOKABLE void GameObject::Buffs()
 {
-    quint16 size = readData<quint16>();
+    QJsonObject Buffs;
+    quint16     size = readData<quint16>();
     for (quint16 i = 0; i < size; i++)
     {
         readData<quint16>();
@@ -176,7 +182,8 @@ Q_INVOKABLE void GameObject::Buffs()
             quint16 id = readData<quint16>();
 
             readData<quint16>();
-            readData<quint32>();
+            Buffs.insert("m_time", readData<float>());
+
             readData<quint32>();
             readData<quint16>();
             readData<quint32>();
@@ -187,16 +194,18 @@ Q_INVOKABLE void GameObject::Buffs()
             readData<quint8>();
 
             QJsonObject buffer = Helper::Data::GetBuffDefinitions(id);
+            Buffs.insert("Name", buffer.value("Name"));
+            Buffs.insert("Description", buffer.value("Description"));
             if (!buffer.isEmpty())
             {
-                if (buffer.value("Unknown43").toInteger() & 16777216 == 16777216)
+                if (buffer.value("Unknown43").toInteger() >> (3 * 8))
                 {
                     readData<quint16>();
                 }
 
                 if (buffer.value("IsRecovery").toBool())
                 {
-                    for (size_t i = 0; i < buffer.value("Unknown41").toArray().size(); i++)
+                    for (int i = 0; i < buffer.value("Unknown41").toArray().size(); i++)
                     {
                         readData<quint32>();
                     }
@@ -210,21 +219,25 @@ Q_INVOKABLE void GameObject::Buffs()
             }
         }
     }
+
+    m_Components.insert("Buffs", Buffs);
 }
 
 void GameObject::Life()
 {
-    m_hp = readData<quint32>(); //hp
+    QJsonObject LifeJson;
+    LifeJson.insert("m_CurrentLife", readData<qint32>());
     readData<quint32>();
     readData<quint16>();
     readData<quint32>();
 
-    readData<quint32>();
+    LifeJson.insert("m_CurrentMana", readData<qint32>());
 
     readData<quint32>();
     readData<quint32>();
     readData<qint16>();
-    readData<quint32>();
+
+    LifeJson.insert("m_CurrentShield", readData<qint32>());
 
     readData<quint32>();
     readData<quint32>();
@@ -234,6 +247,7 @@ void GameObject::Life()
     readData<quint32>();
 
     readData<quint8>();
+    m_Components.insert("Life", LifeJson);
 }
 
 void GameObject::Animated()
@@ -288,20 +302,16 @@ void GameObject::Animated()
 
 void GameObject::Player()
 {
-    QByteArray nameBit = readData(readData<quint32>() * 2); //name
-    QString name = QString::fromUtf16((const char16_t *)nameBit.data(), nameBit.size() / 2);
-    qDebug() << name;
-    if (name == "fdsbaf")
-    {
-        int a = 1;
-    }
+    QJsonObject PlayerJson;
+    QByteArray  nameBit = readData(readData<quint32>() * 2); //name
+    PlayerJson.insert("name", QString::fromUtf16((const char16_t *)nameBit.data(), nameBit.size() / 2));
     readData<quint8>();
     readData<quint32>();
     readData<quint32>();
     readData<quint16>();
     readData<quint8>();
 
-    readData(readData<quint8>() * 9);
+    readData(readData<quint8>() * 9); //任务相关
     QByteArray data = readData(readData<quint8>() * 9);
     readData<quint32>();
     readData<quint16>();
@@ -322,6 +332,7 @@ void GameObject::Player()
     readData<quint8>();
     readData<quint8>();
     readData<quint8>();
+    m_Components.insert("Player", PlayerJson);
 }
 
 bool __fastcall fs_componentPlayerUnknown1(unsigned __int8 *a1, unsigned __int8 a2)
@@ -460,6 +471,7 @@ void GameObject::fs_ActiveSkills1(quint8 size)
 void GameObject::fs_ActiveSkills3()
 {
     readData<quint16>(); //技能id
+
     fs_GrantedEffectsPerLevel();
     quint8 v89 = readData<quint8>();
     if ((v89 & 1) != 0)
@@ -490,7 +502,7 @@ void GameObject::fs_ActiveSkills_0()
 
 void GameObject::fs_GrantedEffectsPerLevel()
 {
-    qDebug() <<  "fs_GrantedEffectsPerLevel:";
+    qDebug() << "fs_GrantedEffectsPerLevel:";
     quint8 v8 = readData<quint8>();
     if (v8 > 0)
     {
