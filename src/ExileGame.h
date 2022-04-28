@@ -10,6 +10,7 @@
 #include <QNetworkReply>
 #include <QNetworkRequest>
 #include <QPainter>
+#include <cmath>
 
 class ExileGame : public ExileSocket
 {
@@ -41,6 +42,8 @@ private:
     QList<GameObject *> m_EntityList;
     quint32             m_PlayerId;
 
+    quint16 m_SendSkillCount;
+
     QList<QPoint> m_Path;
 
 public:
@@ -61,6 +64,7 @@ public slots:
 public slots:
     void SendTicket();
     void SendTileHash(quint32 tileHash, quint32 doodadHash);
+    void SendSkill(qint32 x, qint32 y, quint16 skill, quint16 u);
 
 public slots:
     void RecvInitWorld();
@@ -69,6 +73,7 @@ public slots:
     void RecvInventory();
     void RecvGameObject();
     void RecvPlayerId();
+    void RecvSkill();
 
 public slots:
     GameObject *FindEntity(int id);

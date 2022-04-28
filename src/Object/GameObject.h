@@ -4,6 +4,7 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QNetworkRequest>
+#include <cmath>
 
 class GameObject : public AbstractObject
 {
@@ -17,11 +18,15 @@ public:
     quint32 m_Hash;
     QPoint  m_Pos;
 
-    quint32 m_hp;
-
 public:
     explicit GameObject(quint32 id, quint32 hash, QByteArray &data, QObject *parent = nullptr);
     virtual ~GameObject();
+
+    int size(QPoint target)
+    {
+        QPoint pos = m_Pos - target;
+        return std::sqrt(QPoint::dotProduct(pos, pos));
+    }
 
 public slots:
     // 解析数据段虚函数

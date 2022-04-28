@@ -2,6 +2,7 @@
 
 ExileGame::ExileGame(ExileClient *client)
     : m_ExileClient(client)
+    , m_SendSkillCount(0)
 {
     connect(this, &ExileSocket::connected, this, &ExileGame::on_game_connected);
     connect(this, &ExileSocket::disconnected, this, &ExileGame::on_game_disconnected);
@@ -533,23 +534,7 @@ void ExileGame::on_game_readyRead()
         case 0x148:
         {
             // 释放技能
-            quint32 id = this->read<quint32>(); // GameObjectId
-            this->read<quint32>();
-            this->read<quint16>();
-
-            quint16 v4 = this->read<quint16>();
-            if ((v4 & 0x80) != 0)
-            {
-                this->read<quint32>();
-            }
-
-            qint32 currentX = this->ReadVarint1();
-            qint32 currentY = this->ReadVarint1();
-            qint32 targetX  = this->ReadVarint1();
-            qint32 targetY  = this->ReadVarint1();
-
-            this->read<quint16>();
-            this->read<quint16>();
+            this->RecvSkill();
             break;
         }
         case 0x149:
@@ -827,6 +812,18 @@ void ExileGame::SendTileHash(quint32 tileHash, quint32 doodadHash)
     this->write(doodadHash);
 }
 
+void ExileGame::SendSkill(qint32 x, qint32 y, quint16 skill, quint16 u)
+{
+    this->writeId(0x18);
+
+    this->write<qint32>(x);
+    this->write<qint32>(y);
+
+    this->write<quint16>(skill);
+    this->write<quint16>(m_SendSkillCount);
+    this->write<quint16>(u);
+}
+
 // ====================================================================================================
 
 void ExileGame::RecvInitWorld()
@@ -928,6 +925,7 @@ void ExileGame::RecvInventory()
                 // item info
                 QByteArray Data = this->read(this->read<quint16>());
 
+                // new ItemObject
                 m_ItemList.append(new ItemObject(index, QPoint(x, y), Data, this));
             }
         }
@@ -946,12 +944,42 @@ void ExileGame::RecvGameObject()
     quint32    Hash = this->read<quint32>();             // GameObject Hash
     QByteArray Data = this->read(this->read<quint16>()); // Components Data
 
+    // new GameObject
     m_EntityList.append(new GameObject(id, Hash, Data, this));
 }
 
 void ExileGame::RecvPlayerId()
 {
     m_PlayerId = this->read<quint32>();
+}
+
+void ExileGame::RecvSkill()
+{
+    quint32 id = this->read<quint32>(); // GameObjectId
+    this->read<quint32>();
+    this->read<quint16>();
+
+    quint16 v4 = this->read<quint16>();
+    if ((v4 & 0x80) != 0)
+    {
+        this->read<quint32>();
+    }
+
+    qint32 currentX = this->ReadVarint1();
+    qint32 currentY = this->ReadVarint1();
+    qint32 targetX  = this->ReadVarint1();
+    qint32 targetY  = this->ReadVarint1();
+
+    this->read<quint16>();
+    this->read<quint16>();
+
+    // 更新坐标
+    GameObject *obj = FindEntity(id);
+    if (obj != nullptr)
+    {
+        obj->m_Pos.setX(currentX);
+        obj->m_Pos.setY(currentY);
+    }
 }
 
 // ====================================================================================================
@@ -971,9 +999,28 @@ GameObject *ExileGame::FindEntity(int id)
 
 void ExileGame::ServerTick()
 {
-    if (m_Path.size())
+    GameObject *obj = FindEntity(m_PlayerId);
+
+    // Pathfinding
+    if (m_Path.isEmpty() && !m_RadarInfo.isEmpty())
     {
-        /* code */
+        QJsonObject pos = m_RadarInfo.begin().value().toObject();
+        this->Pathfinding(pos.value("x").toInt(), pos.value("y").toInt());
+    }
+
+    // 更新路径
+    if (m_Path.size() && obj != nullptr)
+    {
+        if (m_Path.size() > 20 && obj->size(m_Path.first()) < 10)
+        {
+            m_Path.remove(0, 20);
+        }
+    }
+
+    // 移动
+    if (!m_Path.isEmpty())
+    {
+        this->SendSkill(m_Path.first().x(), m_Path.first().y(), 0x2909, 0x408);
     }
 }
 

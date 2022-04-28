@@ -13,25 +13,31 @@ GameObject::GameObject(quint32 id, quint32 hash, QByteArray &data, QObject *pare
             {
                 qDebug() << "==================================================";
 
-                QJsonObject JsonObject = QJsonDocument::fromJson(reply->readAll()).object();
-
-                this->setObjectName(JsonObject.begin().key());
-
-                qDebug() << this->objectName();
-
-                // Head
+                if (reply->error() == QNetworkReply::NoError)
                 {
-                    readData<quint8>();
-                    readHead();
-                    quint8 v17 = readData<quint8>();
-                    for (quint8 i = 0; i < v17; i++)
+                    QJsonObject JsonObject = QJsonDocument::fromJson(reply->readAll()).object();
+
+                    if (!JsonObject.isEmpty())
                     {
-                        readData<quint16>();
+                        this->setObjectName(JsonObject.begin().key());
+
+                        qDebug() << this->objectName();
+
+                        // Head
+                        {
+                            readData<quint8>();
+                            readHead();
+                            quint8 v17 = readData<quint8>();
+                            for (quint8 i = 0; i < v17; i++)
+                            {
+                                readData<quint16>();
+                            }
+                        }
+
+                        // ProcessDataStream
+                        this->ProcessDataStream(JsonObject.begin().value().toArray());
                     }
                 }
-
-                // ProcessDataStream
-                this->ProcessDataStream(JsonObject.begin().value().toArray());
 
                 reply->deleteLater();
                 mgr->deleteLater();
