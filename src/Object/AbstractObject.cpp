@@ -34,15 +34,15 @@ void AbstractObject::ProcessDataStream(QJsonArray componentNames)
         this->metaObject()->invokeMethod(this, name.toLatin1().data());
     }
 
+    qDebug() << m_Components;
+
     if (!m_Data.isEmpty())
     {
         if (Index != m_Data.size())
         {
-            qWarning() << "数据未解析完,剩余字节数:" << m_Data.size() - Index;
+            qWarning() << "数据未解析完,剩余字节数:" << m_Data.size() - Index << this->objectName();
         }
     }
-
-    qDebug() << m_Components;
 }
 
 QByteArray AbstractObject::readData(int size)
@@ -50,8 +50,14 @@ QByteArray AbstractObject::readData(int size)
     QByteArray data(size, 0);
     int        readSize = m_DataStream->readRawData(data.data(), size);
 
-    Q_ASSERT_X(readSize == size, "AbstractObject::readData(int size)",
-               QString("数据不够 %1").arg(this->objectName()).toLatin1().data());
+    if (readSize != size)
+    {
+        qWarning() << "数据不够" << this->objectName();
+        qWarning() << m_Components;
+    }
+
+    // Q_ASSERT_X(readSize == size, "AbstractObject::readData(int size)",
+    //            QString("数据不够 %1").arg(this->objectName()).toLatin1().data());
 
     Index += readSize;
 
