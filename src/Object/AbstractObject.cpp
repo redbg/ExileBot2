@@ -50,7 +50,8 @@ QByteArray AbstractObject::readData(int size)
     QByteArray data(size, 0);
     int        readSize = m_DataStream->readRawData(data.data(), size);
 
-    Q_ASSERT_X(readSize == size, "AbstractObject::readData(int size)", "数据不够");
+    Q_ASSERT_X(readSize == size, "AbstractObject::readData(int size)",
+               QString("数据不够 %1").arg(this->objectName()).toLatin1().data());
 
     Index += readSize;
 
