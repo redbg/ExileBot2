@@ -665,10 +665,10 @@ void ExileGame::on_game_readyRead()
                 read<quint16>();
             }
 
-            read<quint32>(); //Val
+            read<quint32>(); // Val
             read<quint32>();
             read<quint8>();
-            read<quint16>(); //ValType: 0 = 血量(Life) 1 = 蓝量(Mana) 2 = 护盾(Shield)
+            read<quint16>(); // ValType: 0 = 血量(Life) 1 = 蓝量(Mana) 2 = 护盾(Shield)
             read<quint8>();
             break;
         }
@@ -751,7 +751,7 @@ void ExileGame::on_game_readyRead()
             read<quint16>();
             quint8 v43 = read<quint8>();
 
-            if ((v43 & 1) != 0) 
+            if ((v43 & 1) != 0)
             {
                 read<quint8>();
                 read<quint32>();
@@ -762,46 +762,45 @@ void ExileGame::on_game_readyRead()
                 read<quint32>();
             }
 
-            if (v43 & 0x80 != 0) 
+            if ((v43 & 0x80) != 0)
             {
-               read<quint32>();
+                read<quint32>();
             }
 
-            if ((v43 & 4) != 0) 
+            if ((v43 & 4) != 0)
             {
-                read<quint16>();
-            }
-
-            if ((v43 & 8) != 0) 
-            {
-                read<quint16>();
                 read<quint16>();
             }
 
-            if ((v43 & 0x10) != 0) 
+            if ((v43 & 8) != 0)
+            {
+                read<quint16>();
+                read<quint16>();
+            }
+
+            if ((v43 & 0x10) != 0)
             {
                 read<quint16>();
             }
 
             //-- LABEL_48:
-            if ((v43 & 0x20) != 0) 
+            if ((v43 & 0x20) != 0)
             {
                 read<quint8>();
             }
 
             QJsonObject type = Helper::Data::GetBuffDefinitions(bufferId);
 
-            if ((type.value("Unknown43").toInt() & 16777216) == 16777216 )
+            if ((type.value("Unknown43").toInt() & 16777216) == 16777216)
             {
                 read<quint16>();
             }
 
-            
             if (type.value("IsRecovery").toBool())
             {
                 for (auto v : type.value("Unknown41").toArray())
                 {
-                     read<quint32>();
+                    read<quint32>();
                 }
             }
             quint32 size = read<quint32>();
@@ -960,7 +959,6 @@ void ExileGame::on_game_readyRead()
         case 0x21a:
         {
             // 服务器心跳
-            this->ServerTick();
             break;
         }
         case 0x21e:
@@ -1208,7 +1206,7 @@ GameObject *ExileGame::FindEntity(int id)
     return nullptr;
 }
 
-void ExileGame::ServerTick()
+void ExileGame::Tick()
 {
     GameObject *obj = FindEntity(m_PlayerId);
 

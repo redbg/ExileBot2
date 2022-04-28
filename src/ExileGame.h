@@ -77,7 +77,7 @@ public slots:
 
 public slots:
     GameObject *FindEntity(int id);
-    void        ServerTick();
+    void        Tick();
     void        Pathfinding(int x, int y);
 
 signals:

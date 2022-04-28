@@ -73,6 +73,11 @@ QJSValue Account::CallFunction(const QString &name)
 
 QJSValue Account::Tick()
 {
+    if (m_ExileGame->state() == QTcpSocket::ConnectedState)
+    {
+        m_ExileGame->Tick();
+    }
+
     return CallFunction("Tick");
 }
 

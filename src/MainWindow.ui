@@ -72,6 +72,9 @@
    <property name="text">
     <string>Render</string>
    </property>
+   <property name="shortcut">
+    <string>Space</string>
+   </property>
   </action>
  </widget>
  <resources/>
