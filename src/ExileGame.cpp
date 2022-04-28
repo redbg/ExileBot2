@@ -16,6 +16,11 @@ ExileGame::~ExileGame()
 
 QImage ExileGame::Render()
 {
+    if (m_TerrainData.isEmpty())
+    {
+        return QImage();
+    }
+
     QImage   image(m_TerrainWidth, m_TerrainHeight, QImage::Format_RGB32);
     QPainter painter(&image);
     painter.setRenderHint(QPainter::Antialiasing); // 抗锯齿
