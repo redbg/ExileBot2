@@ -321,11 +321,90 @@ void ExileGame::on_game_readyRead()
             this->read(0x13);
             break;
         }
+        case 0x3d:
+        {
+            read(0x1a);
+            read<quint16>();
+            break;
+        }
         case 0x3e:
         {
             this->read(0x1a);
             this->read<quint16>();
             this->read<quint16>();
+            break;
+        }
+        case 0x5a:
+        {
+            read<quint32>();
+            read<quint32>();
+            read<quint16>();
+            read<quint8>();
+            break;
+        }
+        case 0x6e:
+        {
+            readString();
+            readString();
+            quint8 v4 = read<quint8>();
+            if (v4 != 0)
+            {
+                readString();
+
+                read<quint8>();
+                read<quint8>();
+                read<quint16>();
+                read<quint16>();
+                read<quint16>();
+                read<quint16>();
+                read<quint8>();
+                readString();
+
+                read<quint8>();
+                read<quint16>();
+                read<quint8>();
+                read<quint8>();
+            }
+            else
+            {
+                read<quint64>();
+            }
+            break;
+        }
+        case 0x7c:
+        {
+            read<quint32>();
+            read<quint32>();
+            read<quint32>();
+            read<quint8>();
+            readString();
+            read<quint32>();
+            break;
+        }
+        case 0x7d:
+        {
+            read<quint32>();
+            read<quint8>();
+            break;
+        }
+        case 0x8b:
+        {
+            read<quint32>();
+            read<quint32>();
+            break;
+        }
+        case 0x8d:
+        {
+            read<quint16>();
+            read<quint32>();
+            read<quint8>();
+            break;
+        }
+        case 0x8e:
+        {
+            read<quint8>();
+            readString();
+            readString();
             break;
         }
         case 0xa2:
@@ -366,39 +445,6 @@ void ExileGame::on_game_readyRead()
                 read<quint16>();
                 read<quint16>();
             }
-            break;
-        }
-        case 0x6e:
-        {
-            this->readString();
-            this->readString();
-
-            quint8 v4 = this->read<quint8>();
-
-            if (v4 != 0)
-            {
-                this->readString();
-
-                this->read<quint8>();
-                this->read<quint8>();
-                this->read<quint16>();
-                this->read<quint16>();
-                this->read<quint16>();
-                this->read<quint16>();
-                this->read<quint8>();
-
-                this->readString();
-
-                this->read<quint8>();
-                this->read<quint16>();
-                this->read<quint8>();
-                this->read<quint8>();
-            }
-            else
-            {
-                this->read<quint64>();
-            }
-
             break;
         }
         case 0x84:
@@ -480,18 +526,32 @@ void ExileGame::on_game_readyRead()
             read<quint32>();
             break;
         }
-        case 0x8e:
-        {
-            this->read<quint8>();
-            this->readString();
-            this->readString();
-            break;
-        }
+
         case 0xe2:
         {
             this->read<quint16>();
             this->read<quint8>();
             this->read<quint8>();
+            break;
+        }
+        case 0x12d:
+        {
+            quint32 size = read<quint32>();
+
+            for (quint32 i = 0; i < size; i++)
+            {
+                readString();
+                readString();
+                readString();
+                readString();
+
+                read(0x8);
+                read(0x8);
+                read(0x8);
+                read<quint16>();
+                read<quint8>();
+                read<quint8>();
+            }
             break;
         }
         case 0x143:
@@ -542,6 +602,74 @@ void ExileGame::on_game_readyRead()
             quint32 id = this->read<quint32>(); // GameObjectId
             this->read<quint32>();
             this->read<quint16>();
+            break;
+        }
+        case 0x14c:
+        {
+            read<quint32>();
+            read<quint32>();
+            read<quint16>();
+
+            {
+                read<quint16>();
+                read<quint8>();
+                read<quint8>();
+                read<quint32>();
+            }
+            quint16 v6 = read<quint16>();
+            quint8  v4 = read<quint8>();
+
+            if (((v4 & 2) != 0))
+            {
+                if ((v6 & 0x400) != 0)
+                {
+                    read<quint16>();
+                }
+                if ((v6 & 0x4000) != 0)
+                {
+                    read<quint8>();
+                }
+                read<quint8>();
+                if ((v4 & 4) != 0)
+                {
+                    read<quint16>();
+                }
+                if ((v4 & 8) != 0)
+                {
+                    read<quint16>();
+                }
+            }
+            break;
+        }
+        case 0x14d:
+        {
+            {
+                read<quint32>();
+                read<quint32>();
+                read<quint16>();
+            }
+            {
+                read<quint16>();
+                read<quint8>();
+                read<quint8>();
+                read<quint32>();
+            }
+            read<quint8>();
+            break;
+        }
+        case 0x14e:
+        {
+            {
+                read<quint32>();
+                read<quint32>();
+                read<quint16>();
+            }
+
+            read<quint32>(); //Val
+            read<quint32>();
+            read<quint8>();
+            read<quint16>(); //ValType: 0 = 血量(Life) 1 = 蓝量(Mana) 2 = 护盾(Shield)
+            read<quint8>();
             break;
         }
         case 0x150:
@@ -598,6 +726,89 @@ void ExileGame::on_game_readyRead()
 
             this->read<quint16>();
 
+            break;
+        }
+        case 0x15a:
+        {
+            {
+                this->read<quint32>();
+                this->read<quint32>();
+                this->read<quint16>();
+            }
+            read<quint8>();
+            break;
+        }
+        case 0x15d:
+        {
+            {
+                read<quint32>();
+                read<quint32>();
+                read<quint16>();
+            }
+            read<quint16>();
+            quint16 bufferId = read<quint16>();
+            read<quint32>();
+            read<quint16>();
+            quint8 v43 = read<quint8>();
+
+            if ((v43 & 1) != 0) 
+            {
+                read<quint8>();
+                read<quint32>();
+                read<quint8>();
+            }
+            if ((v43 & 2) != 0)
+            {
+                read<quint32>();
+            }
+
+            if (v43 & 0x80 != 0) 
+            {
+               read<quint32>();
+            }
+
+            if ((v43 & 4) != 0) 
+            {
+                read<quint16>();
+            }
+
+            if ((v43 & 8) != 0) 
+            {
+                read<quint16>();
+                read<quint16>();
+            }
+
+            if ((v43 & 0x10) != 0) 
+            {
+                read<quint16>();
+            }
+
+            //-- LABEL_48:
+            if ((v43 & 0x20) != 0) 
+            {
+                read<quint8>();
+            }
+
+            QJsonObject type = Helper::Data::GetBuffDefinitions(bufferId);
+
+            if ((type.value("Unknown43").toInt() & 16777216) == 16777216 )
+            {
+                read<quint16>();
+            }
+
+            
+            if (type.value("IsRecovery").toBool())
+            {
+                for (auto v : type.value("Unknown41").toArray())
+                {
+                     read<quint32>();
+                }
+            }
+            quint32 size = read<quint32>();
+            for (quint32 i = 0; i < size; i++)
+            {
+                read<quint32>();
+            }
             break;
         }
         case 0x184:

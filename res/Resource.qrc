@@ -12,5 +12,6 @@
         <file>Data/ActiveSkills.json</file>
         <file>Data/GrantedEffects.json</file>
         <file>Data/GrantedEffectsPerLevel.json</file>
+        <file>Data/BuffDefinitions.json</file>
     </qresource>
 </RCC>

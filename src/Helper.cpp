@@ -155,11 +155,7 @@ namespace Helper
             return QJsonObject();
         }
 
-        QJsonObject GetBuffDefinitions(quint16 id)
-        {
-            static QJsonArray JsonArray = GetDataArray(":/Data/BuffDefinitions.json");
-            return JsonArray.at(id).toObject();
-        }
+
 
         QJsonObject GetComponentAttributeRequirements(QString BaseItemTypesKey)
         {
@@ -211,6 +207,19 @@ namespace Helper
             }
             return QJsonObject();
         }
+      QJsonObject GetBuffDefinitions(quint16 _rid)
+        {
+            static QJsonArray JsonArray = GetDataArray(":/Data/BuffDefinitions.json");
+            for (int i = 0; i < JsonArray.size(); i++)
+            {
+                if (JsonArray.at(i).toObject().value("_rid").toInt() == _rid)
+                {
+                    return JsonArray.at(i).toObject();
+                }
+            }
+            return QJsonObject();
+        }
+        
 
     } // namespace Data
 
