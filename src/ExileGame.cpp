@@ -257,6 +257,11 @@ void ExileGame::on_game_readyRead()
             this->RecvPlayerId();
             break;
         }
+        case 0x16:
+        {
+            read<quint32>();
+            break;
+        }
         case 0x19:
         {
             // 收到错误信息
@@ -808,6 +813,60 @@ void ExileGame::on_game_readyRead()
             {
                 read<quint32>();
             }
+            break;
+        }
+        case 0x15f:
+        {
+            {
+                read<quint32>();
+                read<quint32>();
+                read<quint16>();
+            }
+            read<quint32>();
+            read<quint32>();
+            read<quint32>();
+            read<quint32>();
+            read<quint8>();
+            read<quint8>();
+            break;
+        }
+        case 0x16a:
+        {
+            {
+                read<quint32>();
+                read<quint32>();
+                read<quint16>();
+            }
+            read<quint16>();
+            read<quint16>();
+            quint16 v4 = read<quint16>();
+            if ((v4 & 0x20) != 0)
+            {
+                read<quint32>();
+            }
+
+            if ((v4 & 0x2000) != 0)
+            {
+                ReadVarint1();
+                ReadVarint1();
+            }
+
+            if ((v4 & 0x10) != 0)
+            {
+                read<quint32>();
+                read<quint32>();
+                read<quint32>();
+                read<quint32>();
+                read<quint8>();
+            }
+            ReadVarint1();
+            ReadVarint1();
+            break;
+        }
+
+        case 0x16b:
+        {
+
             break;
         }
         case 0x184:
