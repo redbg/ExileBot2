@@ -13,6 +13,8 @@ GameObject::GameObject(quint32 id, quint32 hash, QByteArray &data, QObject *pare
             {
                 qDebug() << "==================================================";
 
+                qDebug() << m_Data.toHex(' ');
+
                 if (reply->error() == QNetworkReply::NoError)
                 {
                     QJsonObject JsonObject = QJsonDocument::fromJson(reply->readAll()).object();
@@ -356,8 +358,8 @@ bool __fastcall fs_componentPlayerUnknown1(unsigned __int8 *a1, unsigned __int8 
 }
 bool GameObject::fs_componentPlayerUnknown(unsigned char *buffer, int len, unsigned __int64 a2)
 {
-    unsigned char   *end;   // r8
-    unsigned char   *begin; // rsi
+    unsigned char *  end;   // r8
+    unsigned char *  begin; // rsi
     char             v4;    // r14
     unsigned __int64 v5;    // r15
     unsigned __int64 v7;    // rbx
