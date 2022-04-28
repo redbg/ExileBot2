@@ -59,41 +59,43 @@ void GameObject::readHead()
         this->readData<quint32>();
         quint8 v17 = this->readData<quint8>();
         this->readData<quint8>();
-
-        quint8 v21 = this->readData<quint8>();
-
-        switch (v21)
+        if (v17 > 0)
         {
-        case 1:
-        case 4:
-        case 5:
-            for (quint8 i = 0; i < v17; i++)
+            quint8 v21 = this->readData<quint8>();
+
+            switch (v21)
             {
-                this->readData<quint32>();
+            case 1:
+            case 4:
+            case 5:
+                for (quint8 i = 0; i < v17; i++)
+                {
+                    this->readData<quint32>();
+                }
+                break;
+            case 3:
+                for (quint8 i = 0; i < v17; i++)
+                {
+                    this->readData<quint32>();
+                    this->readData<quint32>();
+                }
+                break;
+            case 6:
+                for (quint8 i = 0; i < v17; i++)
+                {
+                    this->readData<quint8>();
+                }
+                break;
+            case 7:
+                for (quint8 i = 0; i < v17; i++)
+                {
+                    quint32 size = this->readData<quint32>();
+                    this->readData(size * 2);
+                }
+                break;
+            default:
+                break;
             }
-            break;
-        case 3:
-            for (quint8 i = 0; i < v17; i++)
-            {
-                this->readData<quint32>();
-                this->readData<quint32>();
-            }
-            break;
-        case 6:
-            for (quint8 i = 0; i < v17; i++)
-            {
-                this->readData<quint8>();
-            }
-            break;
-        case 7:
-            for (quint8 i = 0; i < v17; i++)
-            {
-                quint32 size = this->readData<quint32>();
-                this->readData(size);
-            }
-            break;
-        default:
-            break;
         }
     }
 }
@@ -107,8 +109,8 @@ void GameObject::Positioned()
     readData<quint32>();
     readData<quint8>();
     quint16 v16 = readData<quint16>();
-    quint16 v18 = v16 >> 8;
-    quint16 v84 = v16 >> 8;
+    quint16 v18 = (((v16) >> 8) & 0xFF);
+    quint16 v81 = (((v16) >> 8) & 0xFF);
     if ((v16 & 0x20) != 0)
     {
         readData<quint32>();
@@ -116,7 +118,7 @@ void GameObject::Positioned()
         readData<quint32>();
     }
 
-    if ((v18 & 0x8) != 0)
+    if ((v18 & 0x4) != 0)
     {
         readData<quint32>();
     }
@@ -134,7 +136,7 @@ void GameObject::Positioned()
     }
 
     //::LABEL_33::
-    if ((v84 & 0x1) != 0)
+    if ((v81 & 0x1) != 0)
     {
         readData<quint32>();
         readData<quint32>();
@@ -143,21 +145,17 @@ void GameObject::Positioned()
         readData<quint8>();
     }
 
-    if ((v84 & 0x2) != 0)
+    if ((v81 & 0x2) != 0)
     {
-        readData<quint32>();
+        readData<quint8>();
+        readData<quint8>();
     }
 
-    if ((v84 & 0x4) != 0)
-    {
-        readData<quint8>();
-        readData<quint8>();
-    }
-    if ((v84 & 0x10) != 0)
+    if ((v81 & 0x8) != 0)
     {
         readData<quint8>();
     }
-    if ((v84 & 0x20) != 0)
+    if ((v81 & 0x10) != 0)
     {
         readData<quint32>();
     }
@@ -615,12 +613,17 @@ void GameObject::fs_AlternateQualityTypes()
         }
         else
         {
-            readData(readData<quint32>() * 2);
+
+            readData<quint32>();
         }
 
         if ((v8 & 0x20) != 0)
         {
-            readData<quint8>();
+            size = readData<quint8>();
+            for (quint32 i = 0; i < size; i++)
+            {
+                fs_Data_Mods();
+            }
         }
     }
 }
@@ -630,36 +633,36 @@ void GameObject::fs_Data_Mods()
     quint16     HASH16 = readData<quint16>();
     QJsonObject mod    = Helper::Data::GetMods(HASH16);
     quint32     size   = 0;
-    if (mod.value("StatsKey1").toBool())
+    if (mod.value("StatsKey1").toInt())
     {
         size += 1;
     }
-    if (mod.value("StatsKey2").toBool())
+    if (mod.value("StatsKey2").toInt())
     {
         size += 1;
     }
-    if (mod.value("StatsKey3").toBool())
+    if (mod.value("StatsKey3").toInt())
     {
         size += 1;
     }
-    if (mod.value("StatsKey4").toBool())
+    if (mod.value("StatsKey4").toInt())
     {
         size += 1;
     }
-    if (mod.value("StatsKey5").toBool())
+    if (mod.value("StatsKey5").toInt())
     {
         size += 1;
     }
-    if (mod.value("StatsKey6").toBool())
+    if (mod.value("StatsKey6").toInt())
     {
         size += 1;
     }
 
-    if (mod.value("Heist_StatsKey0").toBool())
+    if (mod.value("Heist_StatsKey0").toInt())
     {
         size += 1;
     }
-    if (mod.value("Heist_StatsKey1").toBool())
+    if (mod.value("Heist_StatsKey1").toInt())
     {
         size += 1;
     }

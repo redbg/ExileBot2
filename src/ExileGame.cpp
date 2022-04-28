@@ -1284,7 +1284,7 @@ void ExileGame::Tick()
     // 更新路径
     if (m_Path.size() && obj != nullptr)
     {
-        if (m_Path.size() > 20 && obj->size(m_Path.first()) < 10)
+        if (m_Path.size() > 20 && obj->size(m_Path.first()) < 20)
         {
             m_Path.remove(0, 20);
         }
@@ -1315,7 +1315,7 @@ void ExileGame::Pathfinding(int x, int y)
         param.end      = AStar::Vec2((uint16_t)x, (uint16_t)y);
         param.can_pass = [this](const AStar::Vec2 &pos) -> bool
         {
-            return m_TerrainData.at((pos.y * m_TerrainWidth) + pos.x) > '1';
+            return m_TerrainData.at((pos.y * m_TerrainWidth) + pos.x) > '3';
         };
 
         BlockAllocator allocator;
