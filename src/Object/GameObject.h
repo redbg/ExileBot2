@@ -17,6 +17,7 @@ public:
     quint32 m_Id;
     quint32 m_Hash;
     QPoint  m_Pos;
+    QPoint  m_TargetPos;
 
 public:
     explicit GameObject(quint32 id, quint32 hash, QByteArray &data, QObject *parent = nullptr);

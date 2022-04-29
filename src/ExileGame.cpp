@@ -44,13 +44,20 @@ QImage ExileGame::Render()
         {
             // 设置玩家颜色
             painter.setBrush(Qt::green);
+            painter.setPen(Qt::green);
         }
         else
         {
             painter.setBrush(Qt::red);
+            painter.setPen(Qt::red);
         }
 
-        painter.drawEllipse(obj->m_Pos.x(), obj->m_Pos.y(), 10, 10);
+        painter.drawEllipse(obj->m_Pos.x() - 3, obj->m_Pos.y() - 3, 6, 6);
+
+        if (!obj->m_TargetPos.isNull())
+        {
+            painter.drawLine(obj->m_Pos.x(), obj->m_Pos.y(), obj->m_TargetPos.x(), obj->m_TargetPos.y());
+        }
     }
 
     // Render RadarInfo
@@ -63,7 +70,7 @@ QImage ExileGame::Render()
 
         painter.drawText(pos.x(), pos.y(), i.key());
 
-        painter.drawEllipse(pos.x(), pos.y(), 10, 10);
+        painter.drawEllipse(pos.x() - 3, pos.y() - 3, 6, 6);
     }
 
     // Render Path
@@ -1087,6 +1094,8 @@ void ExileGame::SendTileHash(quint32 tileHash, quint32 doodadHash)
 
 void ExileGame::SendSkill(qint32 x, qint32 y, quint16 skill, quint16 u)
 {
+    m_SendSkillCount++;
+
     this->writeId(0x18);
 
     this->write<qint32>(x);
@@ -1252,6 +1261,9 @@ void ExileGame::RecvSkill()
     {
         obj->m_Pos.setX(currentX);
         obj->m_Pos.setY(currentY);
+
+        obj->m_TargetPos.setX(targetX);
+        obj->m_TargetPos.setY(targetY);
     }
 }
 
@@ -1284,16 +1296,22 @@ void ExileGame::Tick()
     // 更新路径
     if (m_Path.size() && obj != nullptr)
     {
-        if (m_Path.size() > 20 && obj->size(m_Path.first()) < 20)
+        if (obj->size(m_Path.first()) > 100)
         {
-            m_Path.remove(0, 20);
+            m_Path.clear();
+        }
+
+        if (obj->size(m_Path.first()) < 30)
+        {
+            m_Path.remove(0, m_Path.size() >= 5 ? 5 : m_Path.size());
         }
     }
 
     // 移动
     if (!m_Path.isEmpty())
     {
-        this->SendSkill(m_Path.first().x(), m_Path.first().y(), 0x2909, 0x408);
+        int Random = QRandomGenerator::global()->bounded(-3, 3);
+        this->SendSkill(m_Path.first().x() + Random, m_Path.first().y() + Random, 0x2909, 0x408);
     }
 }
 

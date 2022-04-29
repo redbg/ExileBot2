@@ -11,6 +11,7 @@
 #include <QNetworkRequest>
 #include <QPainter>
 #include <cmath>
+#include <QRandomGenerator>
 
 class ExileGame : public ExileSocket
 {

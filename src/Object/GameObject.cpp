@@ -237,18 +237,18 @@ Q_INVOKABLE void GameObject::Buffs()
 void GameObject::Life()
 {
     QJsonObject LifeJson;
-    LifeJson.insert("m_Life", readData<qint32>());
+    LifeJson.insert("Life", readData<qint32>());
     readData<quint32>();
     readData<quint16>();
     readData<quint32>();
 
     readData<quint32>();
-    LifeJson.insert("m_Mana", readData<qint32>());
+    LifeJson.insert("Mana", readData<qint32>());
     readData<quint32>();
     readData<qint16>();
 
     readData<quint32>();
-    LifeJson.insert("m_Shield", readData<qint32>());
+    LifeJson.insert("Shield", readData<qint32>());
 
     readData<quint32>();
     readData<quint16>();
@@ -356,8 +356,8 @@ bool __fastcall fs_componentPlayerUnknown1(unsigned __int8 *a1, unsigned __int8 
 }
 bool GameObject::fs_componentPlayerUnknown(unsigned char *buffer, int len, unsigned __int64 a2)
 {
-    unsigned char *  end;   // r8
-    unsigned char *  begin; // rsi
+    unsigned char   *end;   // r8
+    unsigned char   *begin; // rsi
     char             v4;    // r14
     unsigned __int64 v5;    // r15
     unsigned __int64 v7;    // rbx
@@ -522,7 +522,7 @@ void GameObject::fs_ActiveSkills_0(QJsonObject &json)
 {
 }
 
-//每个级别的授权效果
+// 每个级别的授权效果
 QJsonObject GameObject::fs_GrantedEffectsPerLevel()
 {
     QJsonObject GrantedEffectsPerLevelJson;
