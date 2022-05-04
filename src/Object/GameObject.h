@@ -48,6 +48,9 @@ public slots:
     void Render(){/*空*/};
     void ObjectMagicProperties();
     void BaseEvents(){/*空*/};
+    void Targetable(){/*空*/};
+    void Monster(){/*空*/};
+    void Transitionable();
 
     //
     bool fs_componentPlayerUnknown(unsigned char *buffer, int len, unsigned __int64 a2);

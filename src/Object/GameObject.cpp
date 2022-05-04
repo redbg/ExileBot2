@@ -13,7 +13,7 @@ GameObject::GameObject(quint32 id, quint32 hash, QByteArray &data, QObject *pare
             {
                 qDebug() << "==================================================";
 
-                qDebug() << m_Data.toHex(' ');
+                qDebug() << m_Data.size() << m_Data.toHex(' ');
 
                 if (reply->error() == QNetworkReply::NoError)
                 {
@@ -416,11 +416,14 @@ void GameObject::Inventories()
 
 void GameObject::Actor()
 {
-    QJsonObject ActorJosn;
-    readData(readData<quint32>() * 2);
+    QJsonObject Actor;
+
+    quint32 size = readData<quint32>();
+    readData(size * 2);
     readData<quint16>();
     readData<quint8>();
-    if (m_Components.value("Life").toObject().value("m_Life").toInt() <= 0)
+
+    if (m_Components.value("Life").toObject().value("m_Life").toInt() <= 0) // 这个判断可能有错误
     {
         readData<quint8>();
         readData<quint8>();
@@ -428,10 +431,22 @@ void GameObject::Actor()
 
     readData<quint32>();
     readData<quint32>();
-    fs_ActorA0(ActorJosn);
-    m_Components.insert("Actor", ActorJosn);
+
+    fs_ActorA0(Actor);
+
+    m_Components.insert("Actor", Actor);
 }
 
+void GameObject::Transitionable()
+{
+    m_Components.insert("Transitionable", readData<quint8>());
+}
+
+/**
+ * @brief 2022年5月4日 此函数未完成,等待完成
+ *
+ * @param json
+ */
 void GameObject::fs_ActorA0(QJsonObject &json)
 {
     quint16 v6 = readData<quint16>();
@@ -449,11 +464,12 @@ void GameObject::fs_ActorA0(QJsonObject &json)
     }
 }
 
-//主动技能相关
+// 主动技能相关
 void GameObject::fs_ActiveSkills(QJsonObject &json)
 {
     QJsonArray ActiveSkills;
-    quint8     size = readData<quint8>();
+
+    quint8 size = readData<quint8>();
     fs_ActiveSkills1(size, ActiveSkills);
     size = readData<quint8>(); //数量
     for (quint8 i = 0; i < size; i++)
