@@ -2,8 +2,8 @@
 
 ExileGame::ExileGame(ExileClient *client)
     : m_ExileClient(client)
-    , m_SendSkillCount(0)
 {
+    this->clear();
     connect(this, &ExileSocket::connected, this, &ExileGame::on_game_connected);
     connect(this, &ExileSocket::disconnected, this, &ExileGame::on_game_disconnected);
     connect(this, &ExileSocket::errorOccurred, this, &ExileGame::on_game_errorOccurred);
@@ -84,6 +84,8 @@ QImage ExileGame::Render()
 
 void ExileGame::connectToHost(quint32 Address, quint16 Port, quint32 Ticket, quint32 WorldAreaHASH16, quint32 WorldInstance, QByteArray Key)
 {
+    this->clear();
+
     m_Ticket          = Ticket;
     m_WorldAreaHASH16 = WorldAreaHASH16;
     m_WorldInstance   = WorldInstance;
@@ -97,6 +99,32 @@ void ExileGame::connectToHost(quint32 Address, quint16 Port, quint32 Ticket, qui
                     .arg(Ticket)
                     .arg(WorldAreaHASH16)
                     .arg(WorldInstance);
+}
+
+void ExileGame::clear()
+{
+    m_Ticket          = 0;
+    m_WorldAreaHASH16 = 0;
+    m_WorldInstance   = 0;
+    m_League.clear();
+    m_Seed = 0;
+
+    m_TileHash      = 0;
+    m_DoodadHash    = 0;
+    m_TerrainWidth  = 0;
+    m_TerrainHeight = 0;
+    m_TerrainData.clear();
+
+    m_WorldAreaId.clear();
+    m_WorldAreaName.clear();
+    m_RadarInfo = QJsonObject();
+
+    m_PlayerId = 0;
+    qDeleteAll(m_ItemList);
+    qDeleteAll(m_EntityList);
+
+    m_SendSkillCount = 0;
+    m_Path.clear();
 }
 
 void ExileGame::on_game_connected()
@@ -1286,11 +1314,11 @@ void ExileGame::Tick()
 {
     GameObject *obj = FindEntity(m_PlayerId);
 
-    // Pathfinding
+    // MoveTo
     if (m_Path.isEmpty() && !m_RadarInfo.isEmpty())
     {
         QJsonObject pos = m_RadarInfo.begin().value().toObject();
-        this->Pathfinding(pos.value("x").toInt(), pos.value("y").toInt());
+        this->MoveTo(pos.value("x").toInt(), pos.value("y").toInt());
     }
 
     // 更新路径
@@ -1315,13 +1343,13 @@ void ExileGame::Tick()
     }
 }
 
-void ExileGame::Pathfinding(int x, int y)
+void ExileGame::MoveTo(int x, int y)
 {
     GameObject *obj = FindEntity(m_PlayerId);
 
     if (obj != nullptr)
     {
-        qDebug() << QString("Pathfinding(%1, %2)").arg(x).arg(y);
+        qDebug() << QString("MoveTo(%1, %2)").arg(x).arg(y);
 
         QPoint start = obj->m_Pos;
 

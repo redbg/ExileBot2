@@ -10,8 +10,8 @@
 #include <QNetworkReply>
 #include <QNetworkRequest>
 #include <QPainter>
-#include <cmath>
 #include <QRandomGenerator>
+#include <cmath>
 
 class ExileGame : public ExileSocket
 {
@@ -39,9 +39,9 @@ private:
     QString     m_WorldAreaName;
     QJsonObject m_RadarInfo;
 
+    quint32             m_PlayerId;
     QList<ItemObject *> m_ItemList;
     QList<GameObject *> m_EntityList;
-    quint32             m_PlayerId;
 
     quint16 m_SendSkillCount;
 
@@ -56,6 +56,7 @@ public:
 
 public slots:
     void connectToHost(quint32 Address, quint16 Port, quint32 Ticket, quint32 WorldAreaHASH16, quint32 WorldInstance, QByteArray Key);
+    void clear();
 
     void on_game_connected();
     void on_game_disconnected();
@@ -79,7 +80,7 @@ public slots:
 public slots:
     GameObject *FindEntity(int id);
     void        Tick();
-    void        Pathfinding(int x, int y);
+    void        MoveTo(int x, int y);
 
 signals:
     void signal_BackendError(int result);
