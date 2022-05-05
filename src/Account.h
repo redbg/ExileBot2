@@ -12,6 +12,7 @@ class Account : public QThread
     Q_PROPERTY(QString Password MEMBER m_Password)
     Q_PROPERTY(QString AccountName MEMBER m_AccountName)
     Q_PROPERTY(QString POESESSID MEMBER m_POESESSID)
+    Q_PROPERTY(QString JSPath MEMBER m_JSPath)
     Q_PROPERTY(QString BackendError MEMBER m_BackendError)
 
 public:
@@ -25,6 +26,7 @@ public:
     ExileClient *m_ExileClient;
     ExileGame   *m_ExileGame;
 
+    QString    m_JSPath;
     QJSEngine *m_JSEngine;
     QTimer    *m_Tick;
 

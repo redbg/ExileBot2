@@ -87,7 +87,3 @@ include("D:/vcpkg/scripts/buildsystems/vcpkg.cmake")
 # CryptoPP
 find_package(cryptopp CONFIG REQUIRED)
 target_link_libraries(ExileBot2 PRIVATE cryptopp-static)
-
-file(COPY scripts DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
-file(COPY scripts DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Debug)
-file(COPY scripts DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Release)

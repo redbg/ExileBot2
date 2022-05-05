@@ -29,7 +29,7 @@ void Account::run()
 
     // Init QJSEngine
     m_JSEngine->installExtensions(QJSEngine::AllExtensions);
-    m_JSEngine->evaluate(Helper::File::ReadAll("scripts/script.js"), "scripts/script.js");
+    m_JSEngine->evaluate(Helper::File::ReadAll(m_JSPath), m_JSPath);
     m_JSEngine->globalObject().setProperty("Client", m_JSEngine->newQObject(m_ExileClient));
     m_JSEngine->globalObject().setProperty("Game", m_JSEngine->newQObject(m_ExileGame));
 
