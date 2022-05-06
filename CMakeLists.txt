@@ -13,7 +13,6 @@ set(CMAKE_AUTORCC ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 find_package(Qt6 REQUIRED COMPONENTS Network)
-find_package(Qt6 REQUIRED COMPONENTS WebEngineWidgets)
 find_package(Qt6 REQUIRED COMPONENTS Qml)
 
 add_executable(ExileBot2
@@ -78,7 +77,6 @@ add_executable(ExileBot2
 
 target_link_libraries(ExileBot2 PRIVATE Qt6::Widgets)
 target_link_libraries(ExileBot2 PRIVATE Qt6::Network)
-target_link_libraries(ExileBot2 PRIVATE Qt6::WebEngineWidgets)
 target_link_libraries(ExileBot2 PRIVATE Qt6::Qml)
 
 # vcpkg
