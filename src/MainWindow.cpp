@@ -101,8 +101,13 @@ void MainWindow::on_actionRender_triggered()
         if (account->isRunning())
         {
             static QLabel *w = new QLabel();
-            w->setPixmap(QPixmap::fromImage(account->m_ExileGame->Render()));
-            w->show();
+
+            QImage image = account->m_ExileGame->Render();
+            if (!image.isNull())
+            {
+                w->setPixmap(QPixmap::fromImage(image));
+                w->show();
+            }
         }
     }
 }

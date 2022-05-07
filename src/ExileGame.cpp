@@ -52,6 +52,7 @@ QImage ExileGame::Render()
             painter.setPen(Qt::red);
         }
 
+        painter.drawText(obj->m_Pos, obj->objectName());
         painter.drawEllipse(obj->m_Pos.x() - 3, obj->m_Pos.y() - 3, 6, 6);
 
         if (!obj->m_TargetPos.isNull())
@@ -74,9 +75,9 @@ QImage ExileGame::Render()
     }
 
     // Render Path
-    for (int i = 0; i < m_Path.size(); i++)
+    for (int i = 0; i < m_PathList.size(); i++)
     {
-        image.setPixelColor(m_Path[i], Qt::green);
+        image.setPixelColor(m_PathList[i], Qt::green);
     }
 
     return image;
@@ -123,8 +124,10 @@ void ExileGame::clear()
     qDeleteAll(m_ItemList);
     qDeleteAll(m_EntityList);
 
-    m_SendSkillCount = 0;
-    m_Path.clear();
+    m_SendSkillCount  = 0;
+    m_SendUseGemCount = 0;
+
+    m_PathList.clear();
 }
 
 void ExileGame::on_game_connected()
@@ -494,45 +497,30 @@ void ExileGame::on_game_readyRead()
         }
         case 0x84:
         {
-            this->read<quint8>();
-            quint32 inventoryId = this->read<quint32>();
-
-            {
-                this->read<quint32>();
-                quint32 size = this->read<quint32>();
-
-                for (quint32 i = 0; i < size; i++)
-                {
-                    this->read<quint32>();
-                }
-
-                quint32 itemSize = this->read<quint32>();
-
-                for (quint32 i = 0; i < itemSize; i++)
-                {
-                    this->read<quint32>();
-                    this->read<quint8>(); // x
-                    this->read<quint8>(); // y
-
-                    // item info
-                    this->read(this->read<quint16>());
-                }
-
-                quint8 v35 = this->read<quint8>();
-                if (v35 != 0)
-                {
-                    this->read<quint32>();
-                    this->read<quint32>();
-                    this->read<quint32>();
-                    this->read<quint32>();
-                }
-            }
+            this->RecvInventory1();
             break;
         }
         case 0x85:
         {
             // 库存信息
             this->RecvInventory();
+            break;
+        }
+        case 0x88:
+        {
+            this->read<quint32>();
+            break;
+        }
+        case 0x89:
+        {
+            quint8 size = read<quint8>();
+
+            for (quint8 i = 0; i < size; i++)
+            {
+                read<quint8>();
+                read<quint16>();
+            }
+
             break;
         }
         case 0xd5:
@@ -631,9 +619,7 @@ void ExileGame::on_game_readyRead()
         case 0x147:
         {
             // 游戏对象消失
-            quint32 id = this->read<quint32>(); // GameObjectId
-            this->read<quint32>();
-            this->read<quint16>();
+            this->RecvRemoveGameObject();
             break;
         }
         case 0x148:
@@ -704,17 +690,7 @@ void ExileGame::on_game_readyRead()
         }
         case 0x14e:
         {
-            {
-                read<quint32>();
-                read<quint32>();
-                read<quint16>();
-            }
-
-            read<quint32>(); // Val
-            read<quint32>();
-            read<quint8>();
-            read<quint16>(); // ValType: 0 = 血量(Life) 1 = 蓝量(Mana) 2 = 护盾(Shield)
-            read<quint8>();
+            this->RecvUpdateLife();
             break;
         }
         case 0x150:
@@ -1134,6 +1110,30 @@ void ExileGame::SendSkill(qint32 x, qint32 y, quint16 skill, quint16 u)
     this->write<quint16>(u);
 }
 
+void ExileGame::SendSkillById(int id, quint16 skill, quint16 u)
+{
+    m_SendSkillCount++;
+
+    this->writeId(0x17);
+
+    this->write<int>(id);
+
+    this->write<quint16>(skill);
+    this->write<quint16>(m_SendSkillCount);
+    this->write<quint16>(u);
+}
+
+void ExileGame::SendUseGem(int inventoryId, int index)
+{
+    m_SendUseGemCount += 2;
+
+    this->writeId(0x22);
+
+    this->write<qint32>(inventoryId);
+    this->write<qint32>(m_SendUseGemCount);
+    this->write<qint32>(index);
+}
+
 // ====================================================================================================
 
 void ExileGame::RecvInitWorld()
@@ -1236,13 +1236,54 @@ void ExileGame::RecvInventory()
                 QByteArray Data = this->read(this->read<quint16>());
 
                 // new ItemObject
-                m_ItemList.append(new ItemObject(index, QPoint(x, y), Data, this));
+                m_ItemList.append(new ItemObject(inventoryId, index, QPoint(x, y), Data, this));
             }
         }
     }
 
     this->read<quint8>();
     this->read<quint8>();
+}
+
+void ExileGame::RecvInventory1()
+{
+    this->read<quint8>();
+    quint32 inventoryId = this->read<quint32>();
+
+    {
+        this->read<quint32>();
+        quint32 size = this->read<quint32>();
+
+        for (quint32 i = 0; i < size; i++)
+        {
+            this->read<quint32>();
+        }
+
+        // 物品数量
+        quint32 itemSize = this->read<quint32>();
+
+        for (quint32 i = 0; i < itemSize; i++)
+        {
+            quint32 index = this->read<quint32>();
+            quint8  y     = this->read<quint8>();
+            quint8  x     = this->read<quint8>();
+
+            // item info
+            QByteArray Data = this->read(this->read<quint16>());
+
+            // new ItemObject
+            m_ItemList.append(new ItemObject(inventoryId, index, QPoint(x, y), Data, this));
+        }
+
+        quint8 v35 = this->read<quint8>();
+        if (v35 != 0)
+        {
+            this->read<quint32>();
+            this->read<quint32>();
+            this->read<quint32>();
+            this->read<quint32>();
+        }
+    }
 }
 
 void ExileGame::RecvGameObject()
@@ -1256,6 +1297,21 @@ void ExileGame::RecvGameObject()
 
     // new GameObject
     m_EntityList.append(new GameObject(id, Hash, Data, this));
+}
+
+void ExileGame::RecvRemoveGameObject()
+{
+    quint32 id = this->read<quint32>(); // GameObjectId
+    this->read<quint32>();
+    this->read<quint16>();
+
+    for (int i = 0; i < m_EntityList.size(); i++)
+    {
+        if (m_EntityList.at(i)->m_Id == id)
+        {
+            m_EntityList.removeOne(m_EntityList.at(i));
+        }
+    }
 }
 
 void ExileGame::RecvPlayerId()
@@ -1295,6 +1351,43 @@ void ExileGame::RecvSkill()
     }
 }
 
+void ExileGame::RecvUpdateLife()
+{
+    qDebug() << "RecvUpdateLife";
+
+    quint32 id = this->read<quint32>(); // GameObjectId
+    this->read<quint32>();
+    this->read<quint16>();
+
+    qint32 val = this->read<qint32>();
+    this->read<quint32>();
+    quint8 valType = this->read<quint8>();
+    this->read<quint16>();
+    this->read<quint8>();
+
+    // 更新血量
+    GameObject *obj = FindEntity(id);
+    if (obj != nullptr)
+    {
+        QJsonObject life = obj->m_Components.value("Life").toObject();
+
+        switch (valType)
+        {
+        case 0:
+            life.insert("Life", val);
+            break;
+        case 1:
+            life.insert("Mana", val);
+            break;
+        case 2:
+            life.insert("Shield", val);
+            break;
+        }
+
+        obj->m_Components.insert("Life", life);
+    }
+}
+
 // ====================================================================================================
 
 GameObject *ExileGame::FindEntity(int id)
@@ -1310,41 +1403,52 @@ GameObject *ExileGame::FindEntity(int id)
     return nullptr;
 }
 
+GameObject *ExileGame::FindEntityByObjectName(QString objectName)
+{
+    for (int i = 0; i < m_EntityList.size(); i++)
+    {
+        if (m_EntityList.at(i)->objectName() == objectName)
+        {
+            return m_EntityList.at(i);
+        }
+    }
+
+    return nullptr;
+}
+
 void ExileGame::Tick()
 {
     GameObject *obj = FindEntity(m_PlayerId);
 
-    // MoveTo
-    if (m_Path.isEmpty() && !m_RadarInfo.isEmpty())
-    {
-        QJsonObject pos = m_RadarInfo.begin().value().toObject();
-        this->MoveTo(pos.value("x").toInt(), pos.value("y").toInt());
-    }
-
     // 更新路径
-    if (m_Path.size() && obj != nullptr)
+    if (m_PathList.size() && obj != nullptr)
     {
-        if (obj->size(m_Path.first()) > 100)
+        if (obj->size(m_PathList.first()) > 100)
         {
-            m_Path.clear();
+            m_PathList.clear();
         }
 
-        if (obj->size(m_Path.first()) < 30)
+        if (obj->size(m_PathList.first()) < 30)
         {
-            m_Path.remove(0, m_Path.size() >= 5 ? 5 : m_Path.size());
+            m_PathList.remove(0, m_PathList.size() >= 5 ? 5 : m_PathList.size());
         }
     }
 
     // 移动
-    if (!m_Path.isEmpty())
+    if (!m_PathList.isEmpty())
     {
         int Random = QRandomGenerator::global()->bounded(-3, 3);
-        this->SendSkill(m_Path.first().x() + Random, m_Path.first().y() + Random, 0x2909, 0x408);
+        this->SendSkill(m_PathList.first().x() + Random, m_PathList.first().y() + Random, 0x2909, 0x408);
     }
 }
 
 void ExileGame::MoveTo(int x, int y)
 {
+    if (!m_PathList.isEmpty() && m_PathList.last() == QPoint(x, y))
+    {
+        return;
+    }
+
     GameObject *obj = FindEntity(m_PlayerId);
 
     if (obj != nullptr)
@@ -1367,12 +1471,33 @@ void ExileGame::MoveTo(int x, int y)
         BlockAllocator allocator;
         AStar          algorithm(&allocator);
 
-        m_Path.clear();
+        m_PathList.clear();
         auto path = algorithm.find(param);
 
         for (auto i = path.begin(); i != path.end(); i++)
         {
-            m_Path.append(QPoint(i->x, i->y));
+            m_PathList.append(QPoint(i->x, i->y));
         }
     }
+}
+
+void ExileGame::Click(int id)
+{
+    this->SendSkillById(id, 0x266, 0x408);
+    m_PathList.clear();
+}
+
+void ExileGame::ClickByObjectName(QString objectName)
+{
+    GameObject *obj = FindEntityByObjectName(objectName);
+    if (obj != nullptr)
+    {
+        this->Click(obj->m_Id);
+    }
+}
+
+void ExileGame::Attack(int id, quint16 skillId)
+{
+    this->SendSkillById(id, skillId, 0x408);
+    m_PathList.clear();
 }

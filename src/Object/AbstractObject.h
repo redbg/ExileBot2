@@ -8,11 +8,11 @@ class AbstractObject : public QObject
     Q_OBJECT
     Q_PROPERTY(QJsonObject Components MEMBER m_Components)
 
-protected:
+public:
     // Debug Info
     int Index;
 
-protected:
+public:
     QByteArray   m_Data;
     QDataStream *m_DataStream;
     QJsonObject  m_Components;

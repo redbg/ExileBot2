@@ -23,7 +23,7 @@ public:
     explicit GameObject(quint32 id, quint32 hash, QByteArray &data, QObject *parent = nullptr);
     virtual ~GameObject();
 
-    int size(QPoint target)
+    Q_INVOKABLE int size(QPoint target)
     {
         QPoint pos = m_Pos - target;
         return std::sqrt(QPoint::dotProduct(pos, pos));
