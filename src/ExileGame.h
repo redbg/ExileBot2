@@ -72,7 +72,9 @@ public slots:
     void SendTileHash(quint32 tileHash, quint32 doodadHash);
     void SendSkill(qint32 x, qint32 y, quint16 skill, quint16 u);
     void SendSkillById(int id, quint16 skill, quint16 u);
-    void SendUseGem(int inventoryId, int index);
+    void SendUseGem(int inventoryId, int index); // 暂未测试
+    void SendSkipAllTutorials();
+    void SendResurrect(quint8 arg1);
 
 public slots:
     void RecvInitWorld();
@@ -94,6 +96,7 @@ public slots:
     void        Click(int id);
     void        ClickByObjectName(QString objectName);
     void        Attack(int id, quint16 skillId);
+    void        Resurrect();
 
 signals:
     void signal_BackendError(int result);

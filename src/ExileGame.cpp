@@ -52,7 +52,7 @@ QImage ExileGame::Render()
             painter.setPen(Qt::red);
         }
 
-        painter.drawText(obj->m_Pos, obj->objectName());
+        // painter.drawText(obj->m_Pos, obj->objectName());
         painter.drawEllipse(obj->m_Pos.x() - 3, obj->m_Pos.y() - 3, 6, 6);
 
         if (!obj->m_TargetPos.isNull())
@@ -122,7 +122,9 @@ void ExileGame::clear()
 
     m_PlayerId = 0;
     qDeleteAll(m_ItemList);
+    m_ItemList.clear();
     qDeleteAll(m_EntityList);
+    m_EntityList.clear();
 
     m_SendSkillCount  = 0;
     m_SendUseGemCount = 0;
@@ -1134,6 +1136,20 @@ void ExileGame::SendUseGem(int inventoryId, int index)
     this->write<qint32>(index);
 }
 
+void ExileGame::SendSkipAllTutorials()
+{
+    this->writeId(0x188);
+
+    this->write<quint8>(0x11);
+}
+
+void ExileGame::SendResurrect(quint8 arg1)
+{
+    this->writeId(0x3f);
+
+    this->write<quint8>(arg1);
+}
+
 // ====================================================================================================
 
 void ExileGame::RecvInitWorld()
@@ -1465,7 +1481,7 @@ void ExileGame::MoveTo(int x, int y)
         param.end      = AStar::Vec2((uint16_t)x, (uint16_t)y);
         param.can_pass = [this](const AStar::Vec2 &pos) -> bool
         {
-            return m_TerrainData.at((pos.y * m_TerrainWidth) + pos.x) > '3';
+            return m_TerrainData.at((pos.y * m_TerrainWidth) + pos.x) > '1';
         };
 
         BlockAllocator allocator;
@@ -1500,4 +1516,9 @@ void ExileGame::Attack(int id, quint16 skillId)
 {
     this->SendSkillById(id, skillId, 0x408);
     m_PathList.clear();
+}
+
+void ExileGame::Resurrect()
+{
+    this->disconnectFromHost();
 }
