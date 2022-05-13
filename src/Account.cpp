@@ -17,15 +17,10 @@ void Account::run()
 {
     m_BackendError.clear();
 
-    m_JSEngine    = new QJSEngine;
     m_Tick        = new QTimer;
     m_ExileClient = new ExileClient(m_Email, m_Password);
     m_ExileGame   = new ExileGame(m_ExileClient);
-
-    connect(this, &Account::finished, m_JSEngine, &QJSEngine::deleteLater);
-    connect(this, &Account::finished, m_Tick, &QTimer::deleteLater);
-    connect(this, &Account::finished, m_ExileClient, &ExileClient::deleteLater);
-    connect(this, &Account::finished, m_ExileGame, &ExileGame::deleteLater);
+    m_JSEngine    = new QJSEngine;
 
     // Init QJSEngine
     m_JSEngine->installExtensions(QJSEngine::AllExtensions);
@@ -56,7 +51,17 @@ void Account::run()
 
     // Start
     m_Tick->start(100);
+
     this->exec();
+
+    m_Tick->stop();
+    m_ExileClient->disconnectFromHost();
+    m_ExileGame->disconnectFromHost();
+
+    delete m_Tick;
+    delete m_ExileClient;
+    delete m_ExileGame;
+    delete m_JSEngine;
 }
 
 QJSValue Account::CallFunction(const QString &name)
