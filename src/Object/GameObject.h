@@ -58,6 +58,7 @@ public slots:
     void InteractionAction(){/*空*/};
     void NPC();
     void MinimapIcon();
+    void Chest();
 
     //
     bool fs_componentPlayerUnknown(unsigned char *buffer, int len, unsigned __int64 a2);

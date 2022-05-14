@@ -462,6 +462,13 @@ void GameObject::MinimapIcon()
     readData<quint8>();
 }
 
+void GameObject::Chest()
+{
+    readData<quint8>();
+    readData<quint8>();
+    readData<quint8>();
+}
+
 /**
  * @brief 2022年5月4日 此函数未完成,等待完成
  *
