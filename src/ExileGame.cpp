@@ -433,6 +433,13 @@ void ExileGame::on_game_readyRead()
             }
             break;
         }
+        case 0xe4:
+        {
+            read<quint16>();
+            read<quint8>();
+            read<quint8>();
+            break;
+        }
         case 0x145:
         {
             this->read<quint8>();
