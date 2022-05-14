@@ -13,7 +13,7 @@ GameObject::GameObject(quint32 id, quint32 hash, QByteArray &data, QObject *pare
             {
                 qDebug() << "==================================================";
 
-                qDebug() << m_Data.size() << m_Data.toHex(' ');
+                // qDebug() << m_Data.size() << m_Data.toHex(' ');
 
                 if (reply->error() == QNetworkReply::NoError)
                 {
@@ -325,9 +325,10 @@ void GameObject::Player()
     readData<quint16>();
     readData<quint8>();
 
-    readData(readData<quint8>() * 9); //任务相关
+    readData(readData<quint8>() * 9); // 任务相关
     QByteArray data = readData(readData<quint8>() * 9);
-    readData<quint32>();
+
+    readData(5);
     readData<quint16>();
     readData<quint16>();
 
@@ -440,6 +441,25 @@ void GameObject::Actor()
 void GameObject::Transitionable()
 {
     m_Components.insert("Transitionable", readData<quint8>());
+}
+
+void GameObject::TriggerableBlockage()
+{
+    if (readData<quint8>())
+    {
+        readData<quint8>();
+    }
+}
+
+void GameObject::NPC()
+{
+    readData<quint8>();
+    readData<quint8>();
+}
+
+void GameObject::MinimapIcon()
+{
+    readData<quint8>();
 }
 
 /**

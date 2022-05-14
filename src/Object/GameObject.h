@@ -51,6 +51,13 @@ public slots:
     void Targetable(){/*空*/};
     void Monster(){/*空*/};
     void Transitionable();
+    void TriggerableBlockage();
+    void Counter(){/*空*/};
+    void Timer(){/*空*/};
+    void ProximityTrigger(){/*空*/};
+    void InteractionAction(){/*空*/};
+    void NPC();
+    void MinimapIcon();
 
     //
     bool fs_componentPlayerUnknown(unsigned char *buffer, int len, unsigned __int64 a2);

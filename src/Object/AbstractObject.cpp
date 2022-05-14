@@ -30,7 +30,7 @@ void AbstractObject::ProcessDataStream(QJsonArray componentNames)
     for (int i = 0; i < componentNames.size(); i++)
     {
         QString name = componentNames.at(i).toString();
-        qDebug() << "----" << name << "[" << Index << "]";
+        qDebug() << "----" << name << QString("[ %1 ]").arg(QString::number(Index, 16));
 
         if (this->metaObject()->invokeMethod(this, name.toLatin1().data()) == false)
         {

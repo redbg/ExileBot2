@@ -340,6 +340,17 @@ void ExileGame::on_game_readyRead()
             this->read<quint16>();
             break;
         }
+        case 0x5a:
+        {
+            quint32 id = this->read<quint32>(); // GameObjectId
+            this->read<quint32>();
+            this->read<quint16>();
+
+            this->read<quint8>();
+
+            this->SendContinue();
+            break;
+        }
         case 0x6e:
         {
             readString();
@@ -905,7 +916,7 @@ void ExileGame::SendUseGem(int inventoryId, int index)
 
 void ExileGame::SendSkipAllTutorials()
 {
-    this->writeId(0x188);
+    this->writeId(0x1a8);
 
     this->write<quint8>(0x11);
 }
@@ -915,6 +926,11 @@ void ExileGame::SendResurrect(quint8 arg1)
     this->writeId(0x3f);
 
     this->write<quint8>(arg1);
+}
+
+void ExileGame::SendContinue()
+{
+    this->writeId(0x5b);
 }
 
 // ====================================================================================================
