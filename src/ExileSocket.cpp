@@ -23,6 +23,46 @@ void ExileSocket::SetKeyWithIV(QByteArray hash)
 
     this->m_Decryption.SetKeyWithIV((CryptoPP::byte *)hash.data(), 0x20,
                                     (CryptoPP::byte *)&hash.data()[0x30], 8);
+
+    // ==================================================
+
+    QByteArray v4(hash);
+    char       v6;
+    char       v7;
+    char       v8;
+    char       v9;
+    char       v10;
+    char       v11;
+
+    for (int i = 0; i < 0x40; i++)
+    {
+        v4[i] ^= Global::HeartbeatKey[i];
+    }
+
+    v6       = v4[0];
+    v4[0]    = v4[0x15];
+    v4[0x15] = v6;
+    v7       = v4[4];
+    v4[4]    = v4[2];
+    v4[2]    = v7;
+    v8       = v4[0xD];
+    v4[0xD]  = v4[0x2A];
+    v4[0x2A] = v8;
+    v9       = v4[0x30];
+    v4[0x30] = v4[1];
+    v4[1]    = v9;
+    v10      = v4[0x1D];
+    v4[0x1D] = v4[0x1E];
+    v4[0x1E] = v10;
+    v11      = v4[0x32];
+    v4[0x32] = v4[0x13];
+    v4[0x13] = v11;
+
+    this->m_Encryption2.SetKeyWithIV((CryptoPP::byte *)v4.data(), 0x20,
+                                     (CryptoPP::byte *)&v4.data()[0x20], 8);
+
+    this->m_Decryption2.SetKeyWithIV((CryptoPP::byte *)v4.data(), 0x20,
+                                     (CryptoPP::byte *)&v4.data()[0x30], 8);
 }
 
 QByteArray ExileSocket::readData(qint64 maxlen)

@@ -1,4 +1,5 @@
 #pragma once
+#include "Global.h"
 #include <QTcpSocket>
 #include <QtEndian>
 #include <cryptopp/salsa.h>
@@ -12,7 +13,11 @@ private:
     CryptoPP::Salsa20::Encryption m_Encryption;
     CryptoPP::Salsa20::Decryption m_Decryption;
 
+public:
     bool isCrypto;
+
+    CryptoPP::Salsa20::Encryption m_Encryption2;
+    CryptoPP::Salsa20::Decryption m_Decryption2;
 
 public:
     explicit ExileSocket(QObject *parent = nullptr);
