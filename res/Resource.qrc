@@ -13,5 +13,6 @@
         <file>Data/GrantedEffects.json</file>
         <file>Data/GrantedEffectsPerLevel.json</file>
         <file>Data/BuffDefinitions.json</file>
+        <file>Data/Inventories.json</file>
     </qresource>
 </RCC>

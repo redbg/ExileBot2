@@ -388,7 +388,7 @@ void ExileGame::on_game_readyRead()
         }
         case 0x84:
         {
-            this->RecvInventory1();
+            this->RecvUpdateInventory();
             break;
         }
         case 0x85:
@@ -1143,7 +1143,7 @@ void ExileGame::RecvInventory()
     this->read<quint8>();
 }
 
-void ExileGame::RecvInventory1()
+void ExileGame::RecvUpdateInventory()
 {
     this->read<quint8>();
     quint32 inventoryId = this->read<quint32>();
@@ -1152,9 +1152,21 @@ void ExileGame::RecvInventory1()
         this->read<quint32>();
         quint32 size = this->read<quint32>();
 
+        // 删除物品
         for (quint32 i = 0; i < size; i++)
         {
-            this->read<quint32>();
+            quint32 index = this->read<quint32>();
+
+            for (int i = 0; i < m_ItemList.size(); i++)
+            {
+                if (m_ItemList.at(i)->m_InventoryId == inventoryId)
+                {
+                    if (m_ItemList.at(i)->m_Index == index)
+                    {
+                        m_ItemList.removeAt(i);
+                    }
+                }
+            }
         }
 
         // 物品数量
@@ -1207,7 +1219,7 @@ void ExileGame::RecvRemoveGameObject()
     {
         if (m_EntityList.at(i)->m_Id == id)
         {
-            m_EntityList.removeOne(m_EntityList.at(i));
+            m_EntityList.removeAt(i);
         }
     }
 }

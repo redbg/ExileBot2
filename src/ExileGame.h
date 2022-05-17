@@ -86,7 +86,7 @@ public slots:
     void RecvChat();
     void RecvBackendError();
     void RecvInventory();
-    void RecvInventory1();
+    void RecvUpdateInventory();
     void RecvGameObject();
     void RecvRemoveGameObject();
     void RecvPlayerId();

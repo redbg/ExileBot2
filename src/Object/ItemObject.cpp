@@ -8,6 +8,7 @@ ItemObject::ItemObject(quint32 inventoryId, quint32 index, QPoint pos, QByteArra
     , m_Pos(pos)
     , AbstractObject(data, parent)
 {
+    m_InventoryName = Helper::Data::GetInventories(inventoryId - 1).value("Id").toString();
     Init();
 }
 

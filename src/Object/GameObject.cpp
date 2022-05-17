@@ -150,8 +150,8 @@ void GameObject::Positioned()
 
     if ((v81 & 0x2) != 0)
     {
-        readData<quint32>();
-        readData<quint32>();
+        readData<quint8>();
+        readData<quint8>();
     }
 
     if ((v81 & 0x8) != 0)
@@ -333,7 +333,7 @@ void GameObject::Player()
     readData(readData<quint8>() * 9); // 任务相关
     QByteArray data = readData(readData<quint8>() * 9);
 
-  readData<quint32>();
+    readData<quint32>();
     readData<quint8>();
     readData<quint16>();
     readData<quint16>();
@@ -363,8 +363,8 @@ bool __fastcall fs_componentPlayerUnknown1(unsigned __int8 *a1, unsigned __int8 
 }
 bool GameObject::fs_componentPlayerUnknown(unsigned char *buffer, int len, unsigned __int64 a2)
 {
-    unsigned char *  end;   // r8
-    unsigned char *  begin; // rsi
+    unsigned char   *end;   // r8
+    unsigned char   *begin; // rsi
     char             v4;    // r14
     unsigned __int64 v5;    // r15
     unsigned __int64 v7;    // rbx
@@ -671,7 +671,7 @@ void GameObject::fs_ActiveSkills_0(QJsonObject &json)
 QJsonObject GameObject::fs_GrantedEffectsPerLevel()
 {
     QJsonObject GrantedEffectsPerLevelJson;
-    qDebug() << "fs_GrantedEffectsPerLevel:";
+    // qDebug() << "fs_GrantedEffectsPerLevel:";
 
     quint8 v8 = readData<quint8>();
     if (v8 > 0)

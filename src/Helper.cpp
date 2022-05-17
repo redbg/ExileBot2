@@ -155,8 +155,6 @@ namespace Helper
             return QJsonObject();
         }
 
-
-
         QJsonObject GetComponentAttributeRequirements(QString BaseItemTypesKey)
         {
             static QJsonArray JsonArray = GetDataArray(":/Data/ComponentAttributeRequirements.json");
@@ -207,7 +205,8 @@ namespace Helper
             }
             return QJsonObject();
         }
-      QJsonObject GetBuffDefinitions(quint16 _rid)
+
+        QJsonObject GetBuffDefinitions(quint16 _rid)
         {
             static QJsonArray JsonArray = GetDataArray(":/Data/BuffDefinitions.json");
             for (int i = 0; i < JsonArray.size(); i++)
@@ -219,7 +218,19 @@ namespace Helper
             }
             return QJsonObject();
         }
-        
+
+        QJsonObject GetInventories(quint16 _rid)
+        {
+            static QJsonArray JsonArray = GetDataArray(":/Data/Inventories.json");
+            for (int i = 0; i < JsonArray.size(); i++)
+            {
+                if (JsonArray.at(i).toObject().value("_rid").toInt() == _rid)
+                {
+                    return JsonArray.at(i).toObject();
+                }
+            }
+            return QJsonObject();
+        }
 
     } // namespace Data
 
