@@ -333,7 +333,8 @@ void GameObject::Player()
     readData(readData<quint8>() * 9); // 任务相关
     QByteArray data = readData(readData<quint8>() * 9);
 
-    readData(5);
+  readData<quint32>();
+    readData<quint8>();
     readData<quint16>();
     readData<quint16>();
 
