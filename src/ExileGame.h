@@ -51,6 +51,9 @@ private:
 
     QList<QPoint> m_PathList;
 
+    unsigned char m_50;
+    unsigned char m_5b;
+
 public:
     explicit ExileGame(ExileClient *client);
     virtual ~ExileGame();
@@ -76,6 +79,7 @@ public slots:
     void SendSkipAllTutorials();                 // 不建议使用
     void SendResurrect(quint8 arg1);
     void SendContinue();
+    void SendUpItem(int inventoryId, int id);
 
 public slots:
     void RecvInitWorld();

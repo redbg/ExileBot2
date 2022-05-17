@@ -52,7 +52,7 @@ QImage ExileGame::Render()
             painter.setPen(Qt::red);
         }
 
-        // painter.drawText(obj->m_Pos, obj->objectName());
+        painter.drawText(obj->m_Pos, obj->objectName());
         painter.drawEllipse(obj->m_Pos.x() - 3, obj->m_Pos.y() - 3, 6, 6);
 
         if (!obj->m_TargetPos.isNull())
@@ -130,6 +130,9 @@ void ExileGame::clear()
     m_SendUseGemCount = 0;
 
     m_PathList.clear();
+
+    m_50 = 0;
+    m_5b = 0;
 }
 
 void ExileGame::on_game_connected()
@@ -167,6 +170,8 @@ void ExileGame::on_game_readyRead()
         {
             // 开启加密
             this->EnableCrypto();
+            m_5b = m_Encryption2.ProcessByte(0);
+            m_50 = 8;
             break;
         }
         case 0xa:
@@ -228,12 +233,13 @@ void ExileGame::on_game_readyRead()
                 this->read<quint32>();
                 this->read<quint32>();
                 this->readString();
-                this->read<quint16>();
 
+                this->read<quint16>();
                 quint8 v5_1 = this->read<quint8>();
                 quint8 v5_2 = this->read<quint8>();
-
                 this->read<quint16>();
+
+                this->read<quint8>();
                 this->read<quint8>();
                 this->read<quint8>();
                 this->read<quint8>();
@@ -753,6 +759,16 @@ void ExileGame::on_game_readyRead()
             this->read<quint8>();
             break;
         }
+        case 0x1e0:
+        {
+            read<quint32>();
+            read<quint32>();
+            read<quint16>();
+            read<quint32>();
+            read<quint32>();
+            read<quint8>();
+            break;
+        }
         case 0x1e2:
         {
             read<quint32>();
@@ -931,6 +947,89 @@ void ExileGame::SendResurrect(quint8 arg1)
 void ExileGame::SendContinue()
 {
     this->writeId(0x5b);
+}
+
+void ExileGame::SendUpItem(int inventoryId, int id)
+{
+    this->writeId(0x1b);
+
+    int local_2  = 2;
+    int local_15 = 0x15;
+
+    int v7  = inventoryId;
+    int v10 = 0;
+
+    int local_5b = 0;
+    int local_50 = m_50;
+
+    while (1)
+    {
+        local_5b = m_5b;
+
+        v10 = 0x1e - local_15;
+
+        if (local_50 > (0x1e - local_15))
+        {
+            break;
+        }
+
+        int v11 = local_15;
+        local_15 += local_50;
+        v7 |= (local_5b << v11);
+
+        m_5b = m_Encryption2.ProcessByte(0);
+
+        m_50     = 8;
+        local_50 = 8;
+
+        if (local_15 == 0x1e)
+        {
+            goto LABEL_9;
+        }
+    }
+
+    m_50 = local_50 - v10;
+    v7 |= (local_5b & ((1 << v10) - 1)) << local_15;
+    m_5b = (unsigned char)local_5b >> v10;
+LABEL_9:
+
+    this->write<quint32>(v7);
+    this->write<quint32>(id);
+
+    char v16 = 0;
+    local_50 = m_50;
+
+    while (1)
+    {
+        local_5b = m_5b;
+
+        v10 = 8 - local_2;
+
+        if (local_50 > (8 - local_2))
+        {
+            break;
+        }
+
+        int v20 = local_2;
+        local_2 += local_50;
+        v16 |= (local_5b << v20);
+
+        m_5b = m_Encryption2.ProcessByte(0);
+
+        local_50 = 8;
+        m_50     = 8;
+
+        if (local_2 == 8)
+        {
+            goto LABEL_17;
+        }
+    }
+    m_50 = local_50 - v10;
+    v16 |= (local_5b & (unsigned char)((1 << v10) - 1)) << local_2;
+    m_5b = (unsigned char)local_5b >> v10;
+
+LABEL_17:
+    this->write<quint8>(v16);
 }
 
 // ====================================================================================================
