@@ -121,6 +121,9 @@ void GameObject::Positioned()
     if ((v18 & 0x4) != 0)
     {
         readData<quint32>();
+        readData<quint32>();
+        readData<quint32>();
+        readData<quint32>();
     }
 
     if ((v16 & 0x4) != 0)
@@ -147,8 +150,8 @@ void GameObject::Positioned()
 
     if ((v81 & 0x2) != 0)
     {
-        readData<quint8>();
-        readData<quint8>();
+        readData<quint32>();
+        readData<quint32>();
     }
 
     if ((v81 & 0x8) != 0)
@@ -284,12 +287,14 @@ void GameObject::Animated()
     if ((v8 & 4) != 0)
     {
         readData<quint32>();
-        readData(readData<quint32>() * 2);
+        readData(readData<quint32>());
         readData<quint8>();
         readData<quint8>();
         readData<quint32>();
         readData<quint32>();
         readData<quint32>();
+        readData<quint8>();
+        readData<quint8>();
     }
 
     if ((v8 & 8) != 0)
@@ -328,7 +333,8 @@ void GameObject::Player()
     readData(readData<quint8>() * 9); // 任务相关
     QByteArray data = readData(readData<quint8>() * 9);
 
-    readData(5);
+  readData<quint32>();
+    readData<quint8>();
     readData<quint16>();
     readData<quint16>();
 
@@ -357,8 +363,8 @@ bool __fastcall fs_componentPlayerUnknown1(unsigned __int8 *a1, unsigned __int8 
 }
 bool GameObject::fs_componentPlayerUnknown(unsigned char *buffer, int len, unsigned __int64 a2)
 {
-    unsigned char   *end;   // r8
-    unsigned char   *begin; // rsi
+    unsigned char *  end;   // r8
+    unsigned char *  begin; // rsi
     char             v4;    // r14
     unsigned __int64 v5;    // r15
     unsigned __int64 v7;    // rbx
@@ -410,6 +416,10 @@ void GameObject::Inventories()
                 readData<quint16>();
                 readData<quint8>(); // ItemStances_Id
                 readData<quint8>();
+                readData<quint8>();
+                readData<quint8>();
+                readData<quint8>();
+                readData<quint8>();
             }
         }
     }
@@ -424,7 +434,7 @@ void GameObject::Actor()
     readData<quint16>();
     readData<quint8>();
 
-    if (m_Components.value("Life").toObject().value("m_Life").toInt() <= 0) // 这个判断可能有错误
+    if (m_Components.value("Life").toObject().value("Life").toInt() <= 0) // 这个判断可能有错误
     {
         readData<quint8>();
         readData<quint8>();
@@ -477,18 +487,110 @@ void GameObject::Chest()
 void GameObject::fs_ActorA0(QJsonObject &json)
 {
     quint16 v6 = readData<quint16>();
-    if ((v6 & 0x40) != 0)
+    if (((v6 & 0x40) != 0))
     {
 
         fs_ActiveSkills(json);
     }
     else
     {
-        if ((v6 & 0x20) != 0)
+        if (((v6 & 0x20) != 0))
         {
             fs_ActiveSkills_0(json);
         }
     }
+
+    if ((v6 & 1) != 0)
+    {
+        readData<quint16>();
+        fs_ActorA0_0();
+    }
+
+    if ((v6 & 4) != 0)
+    {
+        readData<quint16>();
+        fs_ActorA0_0();
+        readData<quint8>();
+        //(*(void(__fastcall**)(_QWORD, SComponent*))(**(_QWORD**)(v3 + 0x1A8) + 0x200i64))(*(_QWORD*)(v3 + 0x1A8), buf);// ******************
+    }
+
+    if (((v6 & 8) != 0))
+    {
+        quint16 size = readData<quint16>();
+
+        for (quint16 i = 0; i < size; i++)
+        {
+            readData<quint16>();
+            fs_ActorA0_0();
+            readData<quint8>();
+            readData<quint8>();
+            //(*(void(__fastcall**)(__int16*, SComponent*))(*(_QWORD*)v44 + 0x200i64))(v44, buf);// *************
+        }
+    }
+    quint16 v54 = 0;
+    if (((v6 & 0x10) != 0))
+    {
+        readData<quint16>();
+    }
+    for (quint16 i = 0; i < v54; i++)
+    {
+        fs_ActorA0_1();
+    }
+
+    quint16 size = 0;
+    if (((v6 & 0x100) != 0))
+    {
+        readData<quint16>();
+    }
+
+    for (quint16 i = 0; i < size; i++)
+    {
+        readData<quint32>();
+        readData<quint16>();
+        readData<quint16>();
+    }
+}
+
+void GameObject::fs_ActorA0_0()
+{
+    readData<quint16>();
+    readData<quint8>();
+    readData<quint8>();
+    readData<quint32>();
+
+    quint16 v17 = readData<quint16>();
+    quint8  ret = readData<quint8>();
+
+    if (((ret & 2) != 0))
+    {
+        if (((v17 & 0x400) != 0))
+        {
+            readData<quint16>();
+        }
+        if (((v17 & 0x4000) != 0))
+        {
+            readData<quint8>();
+        }
+        readData<quint8>();
+        if (((ret & 4) != 0))
+        {
+            readData<quint16>();
+        }
+
+        if (((ret & 8) != 0))
+        {
+            readData<quint16>();
+        }
+    }
+}
+
+void GameObject::fs_ActorA0_1()
+{
+    readData<quint16>();
+    readData<quint32>();
+    readData<quint32>();
+    readData<quint32>();
+    readData<quint16>();
 }
 
 // 主动技能相关

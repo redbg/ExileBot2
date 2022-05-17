@@ -63,6 +63,8 @@ public slots:
     //
     bool fs_componentPlayerUnknown(unsigned char *buffer, int len, unsigned __int64 a2);
     void fs_ActorA0(QJsonObject &json);
+    void fs_ActorA0_0();
+    void fs_ActorA0_1();
     void fs_ActiveSkills(QJsonObject &json);
     void fs_ActiveSkills1(quint8 size, QJsonArray &json);
     void fs_ActiveSkills3(QJsonArray &json);
