@@ -126,8 +126,7 @@ void ExileGame::clear()
     qDeleteAll(m_EntityList);
     m_EntityList.clear();
 
-    m_SendSkillCount  = 0;
-    m_SendUseGemCount = 0;
+    m_SendSkillCount = 0;
 
     m_PathList.clear();
 
@@ -496,6 +495,14 @@ void ExileGame::on_game_readyRead()
 
             break;
         }
+        case 0x146:
+        {
+            this->read<quint16>();
+            this->read<quint8>();
+            this->read<quint8>();
+            this->read<quint8>();
+            break;
+        }
         case 0x149:
         {
             // 游戏对象消失
@@ -619,6 +626,11 @@ void ExileGame::on_game_readyRead()
             this->read<quint32>();
             break;
         }
+        case 0x15b:
+        {
+            this->RecvUpdateChest();
+            break;
+        }
         case 0x15C:
         {
             {
@@ -724,6 +736,21 @@ void ExileGame::on_game_readyRead()
             read<quint32>();
             read<quint8>();
             read<quint8>();
+            break;
+        }
+        case 0x164:
+        {
+            {
+                read<quint32>();
+                read<quint32>();
+                read<quint16>();
+            }
+
+            if (read<quint8>())
+            {
+                read<quint8>();
+            }
+
             break;
         }
         case 0x17e:
@@ -919,14 +946,14 @@ void ExileGame::SendSkillById(int id, quint16 skill, quint16 u)
     this->write<quint16>(u);
 }
 
-void ExileGame::SendUseGem(int inventoryId, int index)
+void ExileGame::SendUseGem(int inventoryId, int id, int index)
 {
-    m_SendUseGemCount += 2;
+    qDebug() << "SendUseGem" << inventoryId << id << index;
 
     this->writeId(0x22);
 
     this->write<qint32>(inventoryId);
-    this->write<qint32>(m_SendUseGemCount);
+    this->write<qint32>(id);
     this->write<qint32>(index);
 }
 
@@ -1126,15 +1153,15 @@ void ExileGame::RecvInventory()
 
             for (quint32 i = 0; i < size; i++)
             {
-                quint32 index = this->read<quint32>();
-                quint8  y     = this->read<quint8>();
-                quint8  x     = this->read<quint8>();
+                quint32 id = this->read<quint32>();
+                quint8  y  = this->read<quint8>();
+                quint8  x  = this->read<quint8>();
 
                 // item info
                 QByteArray Data = this->read(this->read<quint16>());
 
                 // new ItemObject
-                m_ItemList.append(new ItemObject(inventoryId, index, QPoint(x, y), Data, this));
+                m_ItemList.append(new ItemObject(inventoryId, id, QPoint(x, y), Data, this));
             }
         }
     }
@@ -1155,13 +1182,13 @@ void ExileGame::RecvUpdateInventory()
         // 删除物品
         for (quint32 i = 0; i < size; i++)
         {
-            quint32 index = this->read<quint32>();
+            quint32 id = this->read<quint32>();
 
             for (int i = 0; i < m_ItemList.size(); i++)
             {
                 if (m_ItemList.at(i)->m_InventoryId == inventoryId)
                 {
-                    if (m_ItemList.at(i)->m_Index == index)
+                    if (m_ItemList.at(i)->m_Id == id)
                     {
                         m_ItemList.removeAt(i);
                     }
@@ -1174,15 +1201,15 @@ void ExileGame::RecvUpdateInventory()
 
         for (quint32 i = 0; i < itemSize; i++)
         {
-            quint32 index = this->read<quint32>();
-            quint8  y     = this->read<quint8>();
-            quint8  x     = this->read<quint8>();
+            quint32 id = this->read<quint32>();
+            quint8  y  = this->read<quint8>();
+            quint8  x  = this->read<quint8>();
 
             // item info
             QByteArray Data = this->read(this->read<quint16>());
 
             // new ItemObject
-            m_ItemList.append(new ItemObject(inventoryId, index, QPoint(x, y), Data, this));
+            m_ItemList.append(new ItemObject(inventoryId, id, QPoint(x, y), Data, this));
         }
 
         quint8 v35 = this->read<quint8>();
@@ -1215,12 +1242,11 @@ void ExileGame::RecvRemoveGameObject()
     this->read<quint32>();
     this->read<quint16>();
 
-    for (int i = 0; i < m_EntityList.size(); i++)
+    GameObject *obj = FindEntity(id);
+
+    if (obj != nullptr)
     {
-        if (m_EntityList.at(i)->m_Id == id)
-        {
-            m_EntityList.removeAt(i);
-        }
+        m_EntityList.removeOne(obj);
     }
 }
 
@@ -1295,6 +1321,38 @@ void ExileGame::RecvUpdateLife()
         }
 
         obj->m_Components.insert("Life", life);
+    }
+}
+
+void ExileGame::RecvUpdateChest()
+{
+    quint32 id = this->read<quint32>();
+    this->read<quint32>();
+    this->read<quint16>();
+
+    quint8 v1 = read<quint8>();
+    quint8 v2 = read<quint8>();
+    quint8 v3 = read<quint8>();
+    qint32 v4 = read<qint32>();
+
+    GameObject *obj = FindEntity(id);
+
+    if (obj != nullptr)
+    {
+        QJsonObject Chest;
+
+        Chest.insert("v1", v1);
+        Chest.insert("v2", v2);
+        Chest.insert("v3", v3);
+        Chest.insert("v4", v4);
+
+        obj->m_Components.insert("Chest", Chest);
+
+        // 箱子被打开
+        if (v1 == 1)
+        {
+            m_EntityList.removeOne(obj);
+        }
     }
 }
 

@@ -4,7 +4,7 @@
 
 ItemObject::ItemObject(quint32 inventoryId, quint32 index, QPoint pos, QByteArray &data, QObject *parent)
     : m_InventoryId(inventoryId)
-    , m_Index(index)
+    , m_Id(index)
     , m_Pos(pos)
     , AbstractObject(data, parent)
 {
@@ -375,43 +375,40 @@ void ItemObject::Sockets()
 {
     quint8 v31 = readData<quint8>();
 
-    QJsonObject Sockets;
+    QJsonArray Sockets;
 
     if ((v31 & 1) == 0 && (v31 & 2) == 0)
     {
+        QJsonObject socket;
+
         //  插槽数量
         quint8 socketSize     = (v31 >> 2) & 7;
         quint8 socketLinkSize = v31 >> 5;
 
-        QJsonArray SocketsArray;
-        QJsonArray socketsGroup;
-
         for (size_t i = 0; i < socketSize; i++)
         {
             quint8 socketInfo = readData<quint8>();
-            quint8 isItem     = socketInfo & 1;  // 插槽里是否有宝石
             quint8 color      = socketInfo >> 1; // 1 = 红色, 2 = 绿色, 3 = 蓝色, 4 = 白色
+            bool   isItem     = socketInfo & 1;  // 插槽里是否有宝石
 
-            QJsonObject socket;
             socket.insert("color", color);
+            socket.insert("isItem", isItem);
 
             if (isItem)
             {
                 ItemObject item = ItemObject(this->m_DataStream);
-                Index += item.Index;
                 socket.insert("item", item.toJsonObject());
+                Index += item.Index; // 调试信息,不要动
             }
 
-            SocketsArray.append(socket);
+            Sockets.append(socket);
         }
 
         for (size_t i = 0; i < socketLinkSize; i++)
         {
-            socketsGroup.append(readData<quint8>());
+            quint8 group = readData<quint8>();
         }
 
-        Sockets.insert("SocketsArray", SocketsArray);
-        Sockets.insert("socketsGroup", socketsGroup);
         m_Components.insert("Sockets", Sockets);
     }
 }

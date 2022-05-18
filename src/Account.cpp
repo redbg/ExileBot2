@@ -58,10 +58,10 @@ void Account::run()
     m_ExileClient->disconnectFromHost();
     m_ExileGame->disconnectFromHost();
 
-    delete m_Tick;
-    delete m_ExileClient;
-    delete m_ExileGame;
-    delete m_JSEngine;
+    m_Tick->deleteLater();
+    m_ExileClient->deleteLater();
+    m_ExileGame->deleteLater();
+    m_JSEngine->deleteLater();
 }
 
 QJSValue Account::CallFunction(const QString &name)

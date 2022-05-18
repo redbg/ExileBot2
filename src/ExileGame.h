@@ -47,7 +47,6 @@ private:
     QList<GameObject *> m_EntityList;
 
     quint16 m_SendSkillCount;
-    quint32 m_SendUseGemCount;
 
     QList<QPoint> m_PathList;
 
@@ -71,17 +70,6 @@ public slots:
     void on_game_readyRead();
 
 public slots:
-    void SendTicket();
-    void SendTileHash(quint32 tileHash, quint32 doodadHash);
-    void SendSkill(qint32 x, qint32 y, quint16 skill, quint16 u);
-    void SendSkillById(int id, quint16 skill, quint16 u);
-    void SendUseGem(int inventoryId, int index); // 暂未测试
-    void SendSkipAllTutorials();                 // 不建议使用
-    void SendResurrect(quint8 arg1);
-    void SendContinue();
-    void SendUpItem(int inventoryId, int id);
-
-public slots:
     void RecvInitWorld();
     void RecvChat();
     void RecvBackendError();
@@ -92,6 +80,18 @@ public slots:
     void RecvPlayerId();
     void RecvSkill();
     void RecvUpdateLife();
+    void RecvUpdateChest();
+
+public slots:
+    void SendTicket();
+    void SendTileHash(quint32 tileHash, quint32 doodadHash);
+    void SendSkill(qint32 x, qint32 y, quint16 skill, quint16 u);
+    void SendSkillById(int id, quint16 skill, quint16 u);
+    void SendUseGem(int inventoryId, int id, int index);
+    void SendSkipAllTutorials(); // 不建议使用
+    void SendResurrect(quint8 arg1);
+    void SendContinue();
+    void SendUpItem(int inventoryId, int id);
 
 public slots:
     GameObject *FindEntity(int id);

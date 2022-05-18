@@ -474,9 +474,13 @@ void GameObject::MinimapIcon()
 
 void GameObject::Chest()
 {
-    readData<quint8>();
-    readData<quint8>();
-    readData<quint8>();
+    QJsonObject Chest;
+
+    Chest.insert("v1", readData<quint8>());
+    Chest.insert("v2", readData<quint8>());
+    Chest.insert("v3", readData<quint8>());
+
+    m_Components.insert("Chest", Chest);
 }
 
 /**

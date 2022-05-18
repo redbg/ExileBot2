@@ -7,14 +7,14 @@ class ItemObject : public AbstractObject
     Q_OBJECT
     Q_PROPERTY(quint32 InventoryId MEMBER m_InventoryId)
     Q_PROPERTY(QString InventoryName MEMBER m_InventoryName)
-    Q_PROPERTY(quint32 Index MEMBER m_Index)
+    Q_PROPERTY(quint32 Id MEMBER m_Id)
     Q_PROPERTY(QPoint Pos MEMBER m_Pos)
     Q_PROPERTY(QJsonObject BaseItemType MEMBER m_BaseItemType)
 
 public:
     quint32     m_InventoryId;
     QString     m_InventoryName;
-    quint32     m_Index;
+    quint32     m_Id;
     QPoint      m_Pos;
     QJsonObject m_BaseItemType;
 
