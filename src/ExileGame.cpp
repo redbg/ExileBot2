@@ -45,6 +45,8 @@ QImage ExileGame::Render()
             // 设置玩家颜色
             painter.setBrush(Qt::green);
             painter.setPen(Qt::green);
+
+            painter.drawText(obj->m_Pos, QString("Global:[%1]").arg(m_ChatChannel));
         }
         else
         {
@@ -52,7 +54,7 @@ QImage ExileGame::Render()
             painter.setPen(Qt::red);
         }
 
-        painter.drawText(obj->m_Pos, obj->objectName());
+        // painter.drawText(obj->m_Pos, obj->objectName());
         painter.drawEllipse(obj->m_Pos.x() - 3, obj->m_Pos.y() - 3, 6, 6);
 
         if (!obj->m_TargetPos.isNull())
@@ -282,40 +284,52 @@ void ExileGame::on_game_readyRead()
         }
         case 0x1a:
         {
-            read<quint32>(); // Ticket1
-            read<quint32>();
-            read<quint16>(); // WorldAreaId
-            read<quint32>(); // Ticket2
-            read<quint8>();
+            quint32 Ticket = this->read<quint32>();
+            this->read<quint32>();
+            quint16 WorldAreaHASH16 = this->read<quint16>();
+            quint32 WorldInstance   = this->read<quint32>();
+            this->read<quint8>();
 
-            quint8 size = read<quint8>(); // AddressCount
+            quint8 size = this->read<quint8>();
+
+            quint16 Port    = 0;
+            quint32 Address = 0;
 
             for (quint8 i = 0; i < size; i++)
             {
-                read<quint16>();
-                read<quint16>(); // Port
-                read<quint32>(); // Address
-                read(0x14);
+                this->read<quint16>();
+                Port    = this->read<quint16>();
+                Address = this->read<quint32>();
+                this->read(0x14);
             }
 
-            read(0x40);
+            QByteArray Key = this->read(0x40);
+
+            // this->connectToHost(Address, Port, Ticket, WorldAreaHASH16, WorldInstance, Key);
+            this->disconnectFromHost();
             break;
         }
         case 0x24:
         {
-            this->read<quint16>();
+            // 天赋
+
+            this->read<quint16>(); // 后悔点
             this->read<quint16>();
             this->read<quint16>();
 
-            this->read<quint8>();
+            quint8 总天赋点 = this->read<quint8>();
             this->read<quint8>();
 
             if ((this->read<quint8>() & 2) == 0)
             {
+                quint16 已经分配的天赋点 = this->read<quint16>();
+                this->read(已经分配的天赋点 * 2);
+
+                m_SkillPoint = 总天赋点 - 已经分配的天赋点;
+
                 this->read(this->read<quint16>() * 2);
                 this->read(this->read<quint16>() * 2);
-                this->read(this->read<quint16>() * 2);
-                this->read(this->read<quint16>() * 2);
+                this->read(this->read<quint16>() * 4);
             }
 
             break;
@@ -449,11 +463,31 @@ void ExileGame::on_game_readyRead()
             }
             break;
         }
+        case 0xd9:
+        {
+            quint8 size = read<quint8>();
+
+            for (int i = 0; i < size; i++)
+            {
+                read<quint32>();
+                read<quint32>();
+                read<quint32>();
+            }
+
+            break;
+        }
         case 0xe4:
         {
-            read<quint16>();
-            read<quint8>();
-            read<quint8>();
+            quint16 v1 = read<quint16>();
+            quint8  v2 = read<quint8>();
+            quint8  v3 = read<quint8>();
+
+            if (v2 == 0)
+            {
+                // Global
+                m_ChatChannel = v1;
+            }
+
             break;
         }
         case 0x145:
@@ -586,12 +620,12 @@ void ExileGame::on_game_readyRead()
             this->read<quint32>();
             this->read<quint16>();
 
-            quint32 size = this->ReadVarint();
+            quint32 size = this->ReadVaruint();
 
             for (quint32 i = 0; i < size; i++)
             {
+                this->ReadVaruint();
                 this->ReadVarint();
-                this->ReadVarint1();
             }
 
             break;
@@ -604,14 +638,23 @@ void ExileGame::on_game_readyRead()
 
             this->read<quint16>();
 
-            quint32 size = this->ReadVarint();
+            quint32 size = this->ReadVaruint();
 
             for (quint32 i = 0; i < size; i++)
             {
+                this->ReadVaruint();
                 this->ReadVarint();
-                this->ReadVarint1();
             }
 
+            break;
+        }
+        case 0x154:
+        {
+            quint32 id = this->read<quint32>(); // GameObjectId
+            this->read<quint32>();
+            this->read<quint16>();
+
+            this->read<quint8>();
             break;
         }
         case 0x155:
@@ -751,6 +794,11 @@ void ExileGame::on_game_readyRead()
                 read<quint8>();
             }
 
+            break;
+        }
+        case 0x171:
+        {
+            read<quint8>();
             break;
         }
         case 0x17e:
@@ -959,7 +1007,8 @@ void ExileGame::SendUseGem(int inventoryId, int id, int index)
 
 void ExileGame::SendSkipAllTutorials()
 {
-    this->writeId(0x1a8);
+
+    this->writeId(0x18A);
 
     this->write<quint8>(0x11);
 }
@@ -1057,6 +1106,13 @@ LABEL_9:
 
 LABEL_17:
     this->write<quint8>(v16);
+}
+
+void ExileGame::SendChat(QString msg)
+{
+    this->writeId(0x8);
+    this->writeString(msg);
+    this->write<quint8>(0);
 }
 
 // ====================================================================================================
@@ -1267,10 +1323,10 @@ void ExileGame::RecvSkill()
         this->read<quint32>();
     }
 
-    qint32 currentX = this->ReadVarint1();
-    qint32 currentY = this->ReadVarint1();
-    qint32 targetX  = this->ReadVarint1();
-    qint32 targetY  = this->ReadVarint1();
+    qint32 currentX = this->ReadVarint();
+    qint32 currentY = this->ReadVarint();
+    qint32 targetX  = this->ReadVarint();
+    qint32 targetY  = this->ReadVarint();
 
     this->read<quint16>();
     this->read<quint16>();
@@ -1347,12 +1403,6 @@ void ExileGame::RecvUpdateChest()
         Chest.insert("v4", v4);
 
         obj->m_Components.insert("Chest", Chest);
-
-        // 箱子被打开
-        if (v1 == 1)
-        {
-            m_EntityList.removeOne(obj);
-        }
     }
 }
 

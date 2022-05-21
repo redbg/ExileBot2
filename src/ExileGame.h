@@ -22,6 +22,8 @@ class ExileGame : public ExileSocket
     Q_PROPERTY(QString WorldAreaId MEMBER m_WorldAreaId)
     Q_PROPERTY(QJsonObject RadarInfo MEMBER m_RadarInfo)
     Q_PROPERTY(QList<QPoint> PathList MEMBER m_PathList)
+    Q_PROPERTY(quint16 ChatChannel MEMBER m_ChatChannel)
+    Q_PROPERTY(quint16 SkillPoint MEMBER m_SkillPoint)
 
 private:
     ExileClient *m_ExileClient;
@@ -52,6 +54,10 @@ private:
 
     unsigned char m_50;
     unsigned char m_5b;
+
+    quint16 m_ChatChannel; // 聊天线路
+
+    quint16 m_SkillPoint; // 剩余天赋点
 
 public:
     explicit ExileGame(ExileClient *client);
@@ -92,6 +98,7 @@ public slots:
     void SendResurrect(quint8 arg1);
     void SendContinue();
     void SendUpItem(int inventoryId, int id);
+    void SendChat(QString msg);
 
 public slots:
     GameObject *FindEntity(int id);

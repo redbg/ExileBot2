@@ -16,6 +16,7 @@ private:
 public:
     bool isCrypto;
 
+    // 心跳
     CryptoPP::Salsa20::Encryption m_Encryption2;
     CryptoPP::Salsa20::Decryption m_Decryption2;
 
@@ -41,12 +42,12 @@ public:
         return swap ? qbswap(data) : data;
     }
 
+    quint16    readId() { return this->read<quint16>(); };
     QByteArray read(qint64 maxlen);
     QByteArray readAll();
     QString    readString();
-    quint16    readId();
-    quint32    ReadVarint();
-    qint32     ReadVarint1();
+    quint32    ReadVaruint();
+    qint32     ReadVarint();
 
     // write
     template <typename T>
@@ -55,8 +56,9 @@ public:
         data = qbswap(data);
         return this->writeData(QByteArray((char *)&data, sizeof(data)));
     }
+
+    qint64 writeId(quint16 id) { return this->write<quint16>(id); };
     qint64 write(QByteArray data);
     qint64 write(const char *data, qint64 len);
     qint64 writeString(QString data);
-    qint64 writeId(quint16 id);
 };

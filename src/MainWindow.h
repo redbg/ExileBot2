@@ -19,6 +19,8 @@ public:
     virtual ~MainWindow();
 
 public:
+    void InitAccountView();
+
     void saveSettings();
     void readSettings();
 

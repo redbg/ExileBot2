@@ -155,13 +155,8 @@ QString ExileSocket::readString()
     return data;
 }
 
-quint16 ExileSocket::readId()
-{
-    return this->read<quint16>();
-}
-
 // 读取无符号
-quint32 ExileSocket::ReadVarint()
+quint32 ExileSocket::ReadVaruint()
 {
     quint8 v = this->read<quint8>();
 
@@ -199,7 +194,7 @@ quint32 ExileSocket::ReadVarint()
 }
 
 // 读取有符号
-qint32 ExileSocket::ReadVarint1()
+qint32 ExileSocket::ReadVarint()
 {
     quint8 v = this->read<quint8>();
 
@@ -262,9 +257,4 @@ qint64 ExileSocket::writeString(QString data)
     size += this->writeData(data.toLatin1());
 
     return size;
-}
-
-qint64 ExileSocket::writeId(quint16 id)
-{
-    return this->write<quint16>(id);
 }

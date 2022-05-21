@@ -23,7 +23,7 @@ namespace Helper
         {
             QJsonObject JsonObject;
 
-            for (int i = 1; i < obj->metaObject()->propertyCount(); i++)
+            for (int i = 0; i < obj->metaObject()->propertyCount(); i++)
             {
                 const char *key = obj->metaObject()->property(i).name();
                 JsonObject.insert(key, QJsonValue::fromVariant(obj->property(key)));
@@ -48,17 +48,29 @@ namespace Helper
         QByteArray ReadAll(QString fileName)
         {
             QFile file(fileName);
-            bool  isOpen = file.open(QFile::ReadOnly);
-            // Q_ASSERT_X(isOpen, "Helper::File::ReadAll", fileName.toLatin1().data());
-            return file.readAll();
+            if (file.open(QFile::ReadOnly))
+            {
+                return file.readAll();
+            }
+            else
+            {
+                qWarning() << "Helper::File::ReadAll" << fileName;
+                return QByteArray();
+            }
         }
 
         qint64 Write(QString fileName, const QByteArray &data)
         {
             QFile file(fileName);
-            bool  isOpen = file.open(QFile::WriteOnly);
-            // Q_ASSERT_X(isOpen, "Helper::File::Write", fileName.toLatin1().data());
-            return file.write(data);
+            if (file.open(QFile::WriteOnly))
+            {
+                return file.write(data);
+            }
+            else
+            {
+                qWarning() << "Helper::File::Write" << fileName;
+                return 0;
+            }
         }
 
     } // namespace File
@@ -79,19 +91,19 @@ namespace Helper
             return JsonDocument.object();
         }
 
-        QJsonObject GetBackendError(int index)
+        QJsonObject GetBackendErrors(int _rid)
         {
             static QJsonArray JsonArray = GetDataArray(":/Data/BackendErrors.json");
-            return JsonArray.at(index).toObject();
+            return JsonArray.at(_rid).toObject();
         }
 
-        QJsonObject GetBaseItemType(int hash)
+        QJsonObject GetBaseItemTypes(int HASH)
         {
             static QJsonArray JsonArray = GetDataArray(":/Data/BaseItemTypes.json");
 
             for (int i = 0; i < JsonArray.size(); i++)
             {
-                if (JsonArray.at(i).toObject().value("HASH").toInt() == hash)
+                if (JsonArray.at(i).toObject().value("HASH").toInt() == HASH)
                 {
                     return JsonArray.at(i).toObject();
                 }
@@ -100,13 +112,13 @@ namespace Helper
             return QJsonObject();
         }
 
-        QJsonObject GetMods(int hash16)
+        QJsonObject GetMods(int HASH16)
         {
             static QJsonArray JsonArray = GetDataArray(":/Data/Mods.json");
 
             for (int i = 0; i < JsonArray.size(); i++)
             {
-                if (JsonArray.at(i).toObject().value("HASH16").toInt() == hash16)
+                if (JsonArray.at(i).toObject().value("HASH16").toInt() == HASH16)
                 {
                     return JsonArray.at(i).toObject();
                 }
@@ -118,20 +130,13 @@ namespace Helper
         QJsonObject GetStats(int _rid)
         {
             static QJsonArray JsonArray = GetDataArray(":/Data/Stats.json");
-
             return JsonArray.at(_rid).toObject();
         }
 
-        QJsonArray GetItemComponentNames(QString name)
-        {
-            static QJsonObject JsonArray = GetDataObject(":/Data/ItemCompenentNames.json");
-
-            return JsonArray.value(name).toArray();
-        }
-
-        QJsonObject GetArmourType(quint64 BaseItemTypesKey)
+        QJsonObject GetArmourTypes(int BaseItemTypesKey)
         {
             static QJsonArray JsonArray = GetDataArray(":/Data/ArmourTypes.json");
+
             for (int i = 0; i < JsonArray.size(); i++)
             {
                 if (JsonArray.at(i).toObject().value("BaseItemTypesKey").toInt() == BaseItemTypesKey)
@@ -139,12 +144,14 @@ namespace Helper
                     return JsonArray.at(i).toObject();
                 }
             }
+
             return QJsonObject();
         }
 
-        QJsonObject GetWeaponType(quint64 BaseItemTypesKey)
+        QJsonObject GetWeaponTypes(int BaseItemTypesKey)
         {
             static QJsonArray JsonArray = GetDataArray(":/Data/WeaponTypes.json");
+
             for (int i = 0; i < JsonArray.size(); i++)
             {
                 if (JsonArray.at(i).toObject().value("BaseItemTypesKey").toInt() == BaseItemTypesKey)
@@ -152,12 +159,14 @@ namespace Helper
                     return JsonArray.at(i).toObject();
                 }
             }
+
             return QJsonObject();
         }
 
         QJsonObject GetComponentAttributeRequirements(QString BaseItemTypesKey)
         {
             static QJsonArray JsonArray = GetDataArray(":/Data/ComponentAttributeRequirements.json");
+
             for (int i = 0; i < JsonArray.size(); i++)
             {
                 if (JsonArray.at(i).toObject().value("BaseItemTypesKey").toString() == BaseItemTypesKey)
@@ -165,71 +174,44 @@ namespace Helper
                     return JsonArray.at(i).toObject();
                 }
             }
+
             return QJsonObject();
         }
 
-        QJsonObject GetGrantedEffectsPerLevel(quint16 _rid)
+        QJsonObject GetGrantedEffectsPerLevel(int _rid)
         {
             static QJsonArray JsonArray = GetDataArray(":/Data/GrantedEffectsPerLevel.json");
-            for (int i = 0; i < JsonArray.size(); i++)
-            {
-                if (JsonArray.at(i).toObject().value("_rid").toInt() == _rid)
-                {
-                    return JsonArray.at(i).toObject();
-                }
-            }
-            return QJsonObject();
+            return JsonArray.at(_rid).toObject();
         }
 
-        QJsonObject GetGrantedEffects(quint16 _rid)
+        QJsonObject GetGrantedEffects(int _rid)
         {
             static QJsonArray JsonArray = GetDataArray(":/Data/GrantedEffects.json");
-            for (int i = 0; i < JsonArray.size(); i++)
-            {
-                if (JsonArray.at(i).toObject().value("_rid").toInt() == _rid)
-                {
-                    return JsonArray.at(i).toObject();
-                }
-            }
-            return QJsonObject();
+            return JsonArray.at(_rid).toObject();
         }
-        QJsonObject GetActiveSkill(quint16 _rid)
+
+        QJsonObject GetActiveSkill(int _rid)
         {
             static QJsonArray JsonArray = GetDataArray(":/Data/ActiveSkills.json");
-            for (int i = 0; i < JsonArray.size(); i++)
-            {
-                if (JsonArray.at(i).toObject().value("_rid").toInt() == _rid)
-                {
-                    return JsonArray.at(i).toObject();
-                }
-            }
-            return QJsonObject();
+            return JsonArray.at(_rid).toObject();
         }
 
-        QJsonObject GetBuffDefinitions(quint16 _rid)
+        QJsonObject GetBuffDefinitions(int _rid)
         {
             static QJsonArray JsonArray = GetDataArray(":/Data/BuffDefinitions.json");
-            for (int i = 0; i < JsonArray.size(); i++)
-            {
-                if (JsonArray.at(i).toObject().value("_rid").toInt() == _rid)
-                {
-                    return JsonArray.at(i).toObject();
-                }
-            }
-            return QJsonObject();
+            return JsonArray.at(_rid).toObject();
         }
 
-        QJsonObject GetInventories(quint16 _rid)
+        QJsonObject GetInventories(int _rid)
         {
             static QJsonArray JsonArray = GetDataArray(":/Data/Inventories.json");
-            for (int i = 0; i < JsonArray.size(); i++)
-            {
-                if (JsonArray.at(i).toObject().value("_rid").toInt() == _rid)
-                {
-                    return JsonArray.at(i).toObject();
-                }
-            }
-            return QJsonObject();
+            return JsonArray.at(_rid).toObject();
+        }
+
+        QJsonArray GetItemComponentNames(QString name)
+        {
+            static QJsonObject JsonArray = GetDataObject(":/Data/ItemCompenentNames.json");
+            return JsonArray.value(name).toArray();
         }
 
     } // namespace Data

@@ -29,3 +29,10 @@ BreakConstructorInitializers: BeforeComma
 
 # Lambda
 AllowShortLambdasOnASingleLine: Empty
+
+# 关闭指针对齐自动分析
+DerivePointerAlignment: false
+# 指针对齐
+PointerAlignment: Right
+# 引用对齐
+ReferenceAlignment: Right

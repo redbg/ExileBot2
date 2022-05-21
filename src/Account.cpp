@@ -1,10 +1,12 @@
 #include "Account.h"
 
-Account::Account(QObject *parent)
-    : QThread(parent)
-    , m_ExileClient(nullptr)
-    , m_Tick(nullptr)
+Account::Account()
+    : m_ExileClient(nullptr)
+    , m_ExileGame(nullptr)
+    , m_JSEngine(nullptr)
+    , m_Timer(nullptr)
 {
+    this->moveToThread(this);
 }
 
 Account::~Account()
@@ -17,30 +19,30 @@ void Account::run()
 {
     m_BackendError.clear();
 
-    m_Tick        = new QTimer;
+    m_JSEngine    = new QJSEngine;
+    m_Timer       = new QTimer;
     m_ExileClient = new ExileClient(m_Email, m_Password);
     m_ExileGame   = new ExileGame(m_ExileClient);
-    m_JSEngine    = new QJSEngine;
 
-    // Init QJSEngine
-    m_JSEngine->installExtensions(QJSEngine::AllExtensions);
-    m_JSEngine->evaluate(Helper::File::ReadAll(m_JSPath), m_JSPath);
-    m_JSEngine->globalObject().setProperty("Client", m_JSEngine->newQObject(m_ExileClient));
-    m_JSEngine->globalObject().setProperty("Game", m_JSEngine->newQObject(m_ExileGame));
+    // Init m_JSEngine
+    m_JSEngine->installExtensions(QJSEngine::AllExtensions);                                 // 安装所有扩展
+    m_JSEngine->evaluate(Helper::File::ReadAll(m_ScriptPath), m_ScriptPath);                 // 执行脚本文件
+    m_JSEngine->globalObject().setProperty("Client", m_JSEngine->newQObject(m_ExileClient)); // 注册 Client 类对象
+    m_JSEngine->globalObject().setProperty("Game", m_JSEngine->newQObject(m_ExileGame));     // 注册  Game  类对象
 
-    // Init m_Tick
-    connect(m_Tick, &QTimer::timeout, this, &Account::Tick, Qt::DirectConnection);
+    // Init m_Timer
+    connect(m_Timer, &QTimer::timeout, this, &Account::Tick, Qt::DirectConnection);
 
     // Init m_ExileClient
     connect(m_ExileClient, &ExileClient::signal_BackendError, this, &Account::on_BackendError, Qt::DirectConnection);
     connect(m_ExileClient, &ExileClient::signal_LoginSuccess, [this]()
             {
                 this->m_AccountName = m_ExileClient->m_AccountName;
-                this->CallFunction("OnClientLoginSuccess");
+                this->Invoke("OnClientLoginSuccess");
             });
     connect(m_ExileClient, &ExileClient::signal_CharacterList, [this]()
             {
-                this->CallFunction("OnClientCharacterList");
+                this->Invoke("OnClientCharacterList");
             });
 
     // EnterGame
@@ -50,21 +52,22 @@ void Account::run()
     connect(m_ExileGame, &ExileGame::signal_BackendError, this, &Account::on_BackendError, Qt::DirectConnection);
 
     // Start
-    m_Tick->start(100);
+    m_Timer->start(100);
 
     this->exec();
 
-    m_Tick->stop();
+    m_Timer->stop();
     m_ExileClient->disconnectFromHost();
     m_ExileGame->disconnectFromHost();
 
-    m_Tick->deleteLater();
-    m_ExileClient->deleteLater();
-    m_ExileGame->deleteLater();
-    m_JSEngine->deleteLater();
+    // delete 会有Bug,待修复
+    // m_Tick->deleteLater();
+    // m_ExileClient->deleteLater();
+    // m_ExileGame->deleteLater();
+    // m_JSEngine->deleteLater();
 }
 
-QJSValue Account::CallFunction(const QString &name)
+QJSValue Account::Invoke(const QString &name)
 {
     QJSValue result = m_JSEngine->globalObject().property(name).call();
 
@@ -83,13 +86,13 @@ QJSValue Account::Tick()
         m_ExileGame->Tick();
     }
 
-    return CallFunction("Tick");
+    return Invoke("Tick");
 }
 
 void Account::on_BackendError(int result)
 {
     quint16     BackendErrorIndex  = result - 1;
-    QJsonObject BackendErrorObject = Helper::Data::GetBackendError(BackendErrorIndex);
+    QJsonObject BackendErrorObject = Helper::Data::GetBackendErrors(BackendErrorIndex);
     this->m_BackendError           = BackendErrorObject.value("Id").toString();
 
     qWarning() << "BackendError:" << m_BackendError;

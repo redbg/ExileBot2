@@ -325,7 +325,7 @@ void GameObject::Player()
     PlayerJson.insert("Name", QString::fromUtf16((const char16_t *)name.data(), size));
 
     readData<quint8>();
-    readData<quint32>();
+    readData<quint32>(); // 经验
     readData<quint32>();
     readData<quint16>();
     readData<quint8>();
@@ -455,10 +455,18 @@ void GameObject::Transitionable()
 
 void GameObject::TriggerableBlockage()
 {
-    if (readData<quint8>())
+    QJsonObject TriggerableBlockage;
+
+    quint8 v1 = readData<quint8>();
+    TriggerableBlockage.insert("v1", v1);
+
+    if (v1)
     {
-        readData<quint8>();
+        quint8 v2 = readData<quint8>();
+        TriggerableBlockage.insert("v2", v2);
     }
+
+    m_Components.insert("TriggerableBlockage", TriggerableBlockage);
 }
 
 void GameObject::NPC()
@@ -687,12 +695,16 @@ QJsonObject GameObject::fs_GrantedEffectsPerLevel()
     QJsonObject GrantedEffectsPerLevel = Helper::Data::GetGrantedEffectsPerLevel(readData<quint32>());
     QJsonObject GrantedEffects         = Helper::Data::GetGrantedEffects(GrantedEffectsPerLevel.value("GrantedEffectsKey").toInt());
     QJsonObject ActiveSkills           = Helper::Data::GetActiveSkill(GrantedEffects.value("ActiveSkill").toInt());
+
     GrantedEffectsPerLevelJson.insert("Level", GrantedEffectsPerLevel.value("Level").toInt());
-    GrantedEffectsPerLevelJson.insert("CastTime", GrantedEffects.value("CastTime").toInt());
-    GrantedEffectsPerLevelJson.insert("DisplayedName", ActiveSkills.value("DisplayedName").toString());
     GrantedEffectsPerLevelJson.insert("LevelRequirement", GrantedEffectsPerLevel.value("LevelRequirement").toInt());
     GrantedEffectsPerLevelJson.insert("CriticalStrikeChance", GrantedEffectsPerLevel.value("CriticalStrikeChance").toInt());
     GrantedEffectsPerLevelJson.insert("GrantedEffectsKey", GrantedEffectsPerLevel.value("GrantedEffectsKey").toInt());
+
+    GrantedEffectsPerLevelJson.insert("CastTime", GrantedEffects.value("CastTime").toInt());
+
+    GrantedEffectsPerLevelJson.insert("DisplayedName", ActiveSkills.value("DisplayedName").toString());
+    GrantedEffectsPerLevelJson.insert("Id", ActiveSkills.value("Id").toString());
 
     return GrantedEffectsPerLevelJson;
 }

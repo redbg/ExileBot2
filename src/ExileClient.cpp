@@ -51,6 +51,7 @@ void ExileClient::on_client_readyRead()
         case RECV::LoginResult:
             if (this->RecvLoginResult())
             {
+                // SendGetLeagueList();
                 emit this->signal_LoginSuccess();
             }
             break;

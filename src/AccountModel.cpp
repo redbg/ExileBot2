@@ -71,7 +71,7 @@ bool AccountModel::insertRows(int row, int count, const QModelIndex &parent)
 
     for (int i = 0; i < count; i++)
     {
-        m_Data.insert(row, new Account(this));
+        m_Data.insert(row, new Account());
     }
 
     endInsertRows();
@@ -105,7 +105,7 @@ void AccountModel::fromJsonArray(QJsonArray JsonArray)
 {
     for (int i = 0; i < JsonArray.size(); i++)
     {
-        Account *newAccount = new Account(this);
+        Account *newAccount = new Account();
         Helper::Json::fromJsonObject(newAccount, JsonArray.at(i).toObject());
         m_Data.append(newAccount);
     }

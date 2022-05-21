@@ -27,7 +27,7 @@ void ItemObject::Init()
     int hash = readData<int>();
     readData<quint8>();
 
-    m_BaseItemType = Helper::Data::GetBaseItemType(hash);
+    m_BaseItemType = Helper::Data::GetBaseItemTypes(hash);
 
     QString InheritsFrom = m_BaseItemType.value("InheritsFrom").toString();
 
@@ -348,7 +348,7 @@ void ItemObject::Quality()
 
 void ItemObject::Armour()
 {
-    QJsonObject JsonObject = Helper::Data::GetArmourType(m_BaseItemType["_rid"].toInt());
+    QJsonObject JsonObject = Helper::Data::GetArmourTypes(m_BaseItemType["_rid"].toInt());
 
     // 防具品质
     JsonObject.insert("Quality", readData<quint8>());
@@ -358,7 +358,7 @@ void ItemObject::Armour()
 
 void ItemObject::Weapon()
 {
-    m_Components.insert("Weapon", Helper::Data::GetWeaponType(m_BaseItemType["_rid"].toInt()));
+    m_Components.insert("Weapon", Helper::Data::GetWeaponTypes(m_BaseItemType["_rid"].toInt()));
 }
 
 void ItemObject::AttributeRequirements()

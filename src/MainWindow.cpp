@@ -6,13 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , m_AccountModel(new AccountModel(this))
 {
     ui->setupUi(this);
-
-    // Init Account
-    ui->AccountView->setModel(m_AccountModel);
-    ui->AccountView->setContextMenuPolicy(Qt::ActionsContextMenu);
-    ui->AccountView->addActions(ui->menuAccount->actions());
-    ui->AccountView->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
-
+    this->InitAccountView();
     this->readSettings();
 }
 
@@ -20,6 +14,14 @@ MainWindow::~MainWindow()
 {
     this->saveSettings();
     delete ui;
+}
+
+void MainWindow::InitAccountView()
+{
+    ui->AccountView->setModel(m_AccountModel);
+    ui->AccountView->setContextMenuPolicy(Qt::ActionsContextMenu);
+    ui->AccountView->addActions(ui->menuAccount->actions());
+    ui->AccountView->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
 }
 
 void MainWindow::saveSettings()
