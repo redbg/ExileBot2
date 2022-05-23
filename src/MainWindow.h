@@ -2,6 +2,7 @@
 #include "Account.h"
 #include "AccountModel.h"
 #include "ui_MainWindow.h"
+#include <QFileDialog>
 #include <QLabel>
 #include <QMainWindow>
 #include <QSettings>
@@ -30,4 +31,5 @@ private slots:
     void on_actionInsert_triggered();
     void on_actionRemove_triggered();
     void on_actionRender_triggered();
+    void on_actionImport_triggered();
 };

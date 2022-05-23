@@ -31,10 +31,10 @@ void Account::run()
     m_JSEngine->globalObject().setProperty("Game", m_JSEngine->newQObject(m_ExileGame));     // 注册  Game  类对象
 
     // Init m_Timer
-    connect(m_Timer, &QTimer::timeout, this, &Account::Tick, Qt::DirectConnection);
+    connect(m_Timer, &QTimer::timeout, this, &Account::Tick);
 
     // Init m_ExileClient
-    connect(m_ExileClient, &ExileClient::signal_BackendError, this, &Account::on_BackendError, Qt::DirectConnection);
+    connect(m_ExileClient, &ExileClient::signal_BackendError, this, &Account::on_BackendError);
     connect(m_ExileClient, &ExileClient::signal_LoginSuccess, [this]()
             {
                 this->m_AccountName = m_ExileClient->m_AccountName;
@@ -45,14 +45,14 @@ void Account::run()
                 this->Invoke("OnClientCharacterList");
             });
 
-    // EnterGame
-    connect(m_ExileClient, &ExileClient::signal_EnterGame, m_ExileGame, &ExileGame::connectToHost, Qt::DirectConnection);
-
     // Init m_ExileGame
-    connect(m_ExileGame, &ExileGame::signal_BackendError, this, &Account::on_BackendError, Qt::DirectConnection);
+    connect(m_ExileGame, &ExileGame::signal_BackendError, this, &Account::on_BackendError);
+
+    // EnterGame
+    connect(m_ExileClient, &ExileClient::signal_EnterGame, m_ExileGame, &ExileGame::connectToHost);
 
     // Start
-    m_Timer->start(100);
+    m_Timer->start(200);
 
     this->exec();
 
@@ -60,11 +60,10 @@ void Account::run()
     m_ExileClient->disconnectFromHost();
     m_ExileGame->disconnectFromHost();
 
-    // delete 会有Bug,待修复
-    // m_Tick->deleteLater();
-    // m_ExileClient->deleteLater();
-    // m_ExileGame->deleteLater();
-    // m_JSEngine->deleteLater();
+    delete m_Timer;
+    delete m_ExileClient;
+    delete m_ExileGame;
+    delete m_JSEngine;
 }
 
 QJSValue Account::Invoke(const QString &name)

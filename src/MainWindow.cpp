@@ -107,9 +107,48 @@ void MainWindow::on_actionRender_triggered()
             QImage image = account->m_ExileGame->Render();
             if (!image.isNull())
             {
+                w->resize(image.size());
                 w->setPixmap(QPixmap::fromImage(image));
                 w->show();
             }
+        }
+    }
+}
+
+void MainWindow::on_actionImport_triggered()
+{
+    QString fileName = QFileDialog::getOpenFileName(this);
+    QFile   file(fileName);
+
+    if (file.open(QFile::ReadOnly | QFile::Text))
+    {
+        while (!file.atEnd())
+        {
+            QString     line = file.readLine();
+            QStringList list = line.trimmed().split("----");
+
+            Account *account = new Account;
+
+            for (int i = 0; i < list.size(); i++)
+            {
+                switch (i)
+                {
+                case 0:
+                    account->m_Email = list.at(i);
+                    break;
+                case 1:
+                    account->m_EmailPassword = list.at(i);
+                    break;
+                case 2:
+                    account->m_AccountName = list.at(i);
+                    break;
+                case 3:
+                    account->m_Password = list.at(i);
+                    break;
+                }
+            }
+
+            m_AccountModel->m_Data.append(account);
         }
     }
 }

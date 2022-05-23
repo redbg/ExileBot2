@@ -38,6 +38,7 @@
     <addaction name="actionInsert"/>
     <addaction name="actionRemove"/>
     <addaction name="actionRender"/>
+    <addaction name="actionImport"/>
    </widget>
    <addaction name="menuAccount"/>
   </widget>
@@ -74,6 +75,11 @@
    </property>
    <property name="shortcut">
     <string>Space</string>
+   </property>
+  </action>
+  <action name="actionImport">
+   <property name="text">
+    <string>Import</string>
    </property>
   </action>
  </widget>

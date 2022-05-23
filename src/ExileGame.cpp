@@ -12,6 +12,7 @@ ExileGame::ExileGame(ExileClient *client)
 
 ExileGame::~ExileGame()
 {
+    qDebug() << "~ExileGame";
 }
 
 QImage ExileGame::Render()
@@ -1119,10 +1120,121 @@ void ExileGame::SendChat(QString msg)
 
 void ExileGame::RecvInitWorld()
 {
+    int size = 0;
+
     m_WorldAreaHASH16 = this->read<quint16>();
     m_League          = this->readString();
     m_Seed            = this->read<quint32>();
-    this->readAll();
+
+    this->read<quint8>();
+    this->read<quint8>();
+    this->read<quint8>();
+    this->read<quint8>();
+
+    quint8 a1_1d = this->read<quint8>();
+    quint8 a_1e  = this->read<quint8>();
+    this->read<quint8>();
+
+    this->read<quint8>();
+    this->read<quint8>();
+    this->read<quint8>();
+
+    if ((a1_1d & 8) != 0)
+    {
+        this->read<quint16>();
+    }
+
+    size = this->read<quint16>();
+
+    for (int i = 0; i < size; i++)
+    {
+        this->read<quint32>();
+    }
+
+    size = this->read<quint16>();
+
+    for (int i = 0; i < size; i++)
+    {
+        this->read<quint8>();
+    }
+
+    size = this->read<quint8>();
+
+    for (int i = 0; i < size; i++)
+    {
+        this->read<quint8>();
+    }
+
+    size = this->read<quint16>();
+
+    for (int i = 0; i < size; i++)
+    {
+        this->read<quint16>();
+    }
+
+    if ((a_1e & 1) != 0)
+    {
+        size = this->read<quint8>();
+
+        for (int i = 0; i < size; i++)
+        {
+            this->read<quint8>();
+        }
+    }
+
+    if ((a_1e & 2) != 0)
+    {
+        size = this->read<quint8>();
+
+        for (int i = 0; i < size; i++)
+        {
+            this->read<quint8>();
+        }
+    }
+
+    if ((a_1e & 4) != 0)
+    {
+        size = this->read<quint8>();
+
+        for (int i = 0; i < size; i++)
+        {
+            this->read<quint16>();
+            this->read<quint8>();
+            this->read<quint32>();
+        }
+    }
+
+    if ((a1_1d & 0x80) != 0)
+    {
+        size = this->ReadVaruint();
+
+        for (int i = 0; i < size; i++)
+        {
+            this->ReadVaruint();
+            this->ReadVarint();
+        }
+
+        size = this->ReadVaruint();
+
+        for (int i = 0; i < size; i++)
+        {
+            this->ReadVaruint();
+            this->ReadVarint();
+        }
+
+        size = this->read<quint8>();
+
+        for (int i = 0; i < size; i++)
+        {
+            int size1 = this->ReadVaruint();
+
+            for (int i = 0; i < size1; i++)
+            {
+                this->ReadVaruint();
+                this->ReadVarint();
+            }
+        }
+    }
 
     QNetworkAccessManager *mgr = new QNetworkAccessManager;
     QNetworkRequest        req(QUrl(QString("http://127.0.0.1:6112/world?hash16=%1&seed=%2").arg(m_WorldAreaHASH16).arg(m_Seed)));
