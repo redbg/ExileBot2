@@ -208,9 +208,9 @@ namespace Helper
             return JsonArray.at(_rid).toObject();
         }
 
-        QJsonArray GetItemComponentNames(QString name)
+        QJsonArray GetItemComponents(QString name)
         {
-            static QJsonObject JsonArray = GetDataObject(":/Data/ItemCompenentNames.json");
+            static QJsonObject JsonArray = GetDataObject(":/Data/ItemComponents.json");
             return JsonArray.value(name).toArray();
         }
 

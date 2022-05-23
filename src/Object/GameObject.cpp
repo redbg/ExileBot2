@@ -5,6 +5,8 @@ GameObject::GameObject(quint32 id, quint32 hash, QByteArray &data, QObject *pare
     , m_Hash(hash)
     , AbstractObject(data, parent)
 {
+    readHead();
+
     QNetworkAccessManager *mgr = new QNetworkAccessManager;
     QNetworkRequest        req(QUrl(QString("http://127.0.0.1:6112/ot?hash=%1").arg(hash)));
     mgr->get(req);
@@ -25,17 +27,6 @@ GameObject::GameObject(quint32 id, quint32 hash, QByteArray &data, QObject *pare
 
                         qDebug() << this->objectName();
 
-                        // Head
-                        {
-                            readData<quint8>();
-                            readHead();
-                            quint8 v17 = readData<quint8>();
-                            for (quint8 i = 0; i < v17; i++)
-                            {
-                                readData<quint16>();
-                            }
-                        }
-
                         // ProcessDataStream
                         this->ProcessDataStream(JsonObject.begin().value().toArray());
                     }
@@ -50,53 +41,62 @@ GameObject::~GameObject() {}
 
 void GameObject::readHead()
 {
+    readData<quint8>();
+
     // Head
-
-    quint8 size = this->readData<quint8>();
-
-    for (size_t i = 0; i < size; i++)
     {
-        this->readData<quint32>();
-        quint8 v17 = this->readData<quint8>();
-        this->readData<quint8>();
-        if (v17 > 0)
-        {
-            quint8 v21 = this->readData<quint8>();
+        quint8 size = this->readData<quint8>();
 
-            switch (v21)
+        for (size_t i = 0; i < size; i++)
+        {
+            this->readData<quint32>();
+            quint8 v17 = this->readData<quint8>();
+            this->readData<quint8>();
+            if (v17 > 0)
             {
-            case 1:
-            case 4:
-            case 5:
-                for (quint8 i = 0; i < v17; i++)
+                quint8 v21 = this->readData<quint8>();
+
+                switch (v21)
                 {
-                    this->readData<quint32>();
+                case 1:
+                case 4:
+                case 5:
+                    for (quint8 i = 0; i < v17; i++)
+                    {
+                        this->readData<quint32>();
+                    }
+                    break;
+                case 3:
+                    for (quint8 i = 0; i < v17; i++)
+                    {
+                        this->readData<quint32>();
+                        this->readData<quint32>();
+                    }
+                    break;
+                case 6:
+                    for (quint8 i = 0; i < v17; i++)
+                    {
+                        this->readData<quint8>();
+                    }
+                    break;
+                case 7:
+                    for (quint8 i = 0; i < v17; i++)
+                    {
+                        quint32 size = this->readData<quint32>();
+                        this->readData(size * 2);
+                    }
+                    break;
+                default:
+                    break;
                 }
-                break;
-            case 3:
-                for (quint8 i = 0; i < v17; i++)
-                {
-                    this->readData<quint32>();
-                    this->readData<quint32>();
-                }
-                break;
-            case 6:
-                for (quint8 i = 0; i < v17; i++)
-                {
-                    this->readData<quint8>();
-                }
-                break;
-            case 7:
-                for (quint8 i = 0; i < v17; i++)
-                {
-                    quint32 size = this->readData<quint32>();
-                    this->readData(size * 2);
-                }
-                break;
-            default:
-                break;
             }
         }
+    }
+
+    quint8 v17 = readData<quint8>();
+    for (quint8 i = 0; i < v17; i++)
+    {
+        readData<quint16>();
     }
 }
 

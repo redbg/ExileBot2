@@ -35,7 +35,7 @@ void ItemObject::Init()
 
     qDebug() << m_BaseItemType.value("Name").toString() << "<-" << this->objectName() << "<-" << InheritsFrom;
 
-    this->ProcessDataStream(Helper::Data::GetItemComponentNames(InheritsFrom));
+    this->ProcessDataStream(Helper::Data::GetItemComponents(InheritsFrom));
 }
 
 QJsonObject ItemObject::toJsonObject()

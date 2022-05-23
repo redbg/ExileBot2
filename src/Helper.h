@@ -41,7 +41,7 @@ namespace Helper
         QJsonObject GetActiveSkill(int _rid);
         QJsonObject GetBuffDefinitions(int _rid);
         QJsonObject GetInventories(int _rid);
-        QJsonArray  GetItemComponentNames(QString name);
+        QJsonArray  GetItemComponents(QString name);
     } // namespace Data
 
 } // namespace Helper

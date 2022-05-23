@@ -2,7 +2,6 @@
     <qresource prefix="/">
         <file>Data/BackendErrors.json</file>
         <file>Data/BaseItemTypes.json</file>
-        <file>Data/ItemCompenentNames.json</file>
         <file>Data/Mods.json</file>
         <file>Data/Stats.json</file>
         <file>Data/ArmourTypes.json</file>
@@ -14,5 +13,6 @@
         <file>Data/GrantedEffectsPerLevel.json</file>
         <file>Data/BuffDefinitions.json</file>
         <file>Data/Inventories.json</file>
+        <file>Data/ItemComponents.json</file>
     </qresource>
 </RCC>

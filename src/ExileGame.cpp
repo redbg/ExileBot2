@@ -135,6 +135,8 @@ void ExileGame::clear()
 
     m_50 = 0;
     m_5b = 0;
+
+    m_Preload.clear();
 }
 
 void ExileGame::on_game_connected()
@@ -1148,7 +1150,8 @@ void ExileGame::RecvInitWorld()
 
     for (int i = 0; i < size; i++)
     {
-        this->read<quint32>();
+        int hash = this->read<int>();
+        m_Preload.append(hash);
     }
 
     size = this->read<quint16>();

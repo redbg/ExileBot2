@@ -52,12 +52,15 @@ private:
 
     QList<QPoint> m_PathList;
 
+    // 心跳加密相关
     unsigned char m_50;
     unsigned char m_5b;
 
     quint16 m_ChatChannel; // 聊天线路
 
     quint16 m_SkillPoint; // 剩余天赋点
+
+    QList<int> m_Preload;
 
 public:
     explicit ExileGame(ExileClient *client);
