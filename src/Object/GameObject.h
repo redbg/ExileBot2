@@ -19,9 +19,12 @@ public:
     QPoint  m_Pos;
     QPoint  m_TargetPos;
 
+    static QJsonObject GameComponents;
+
 public:
     explicit GameObject(quint32 id, quint32 hash, QByteArray &data, QObject *parent = nullptr);
     virtual ~GameObject();
+    bool Init();
 
     Q_INVOKABLE int size(QPoint target)
     {

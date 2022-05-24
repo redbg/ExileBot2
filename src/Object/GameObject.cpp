@@ -1,43 +1,62 @@
 #include "GameObject.h"
 
+// 静态成员初始化
+QJsonObject GameObject::GameComponents = QJsonObject();
+
 GameObject::GameObject(quint32 id, quint32 hash, QByteArray &data, QObject *parent)
     : m_Id(id)
     , m_Hash(hash)
     , AbstractObject(data, parent)
 {
     readHead();
+    if (Init() == false)
+    {
+        QNetworkAccessManager *mgr = new QNetworkAccessManager(this);
+        QNetworkRequest        req(QUrl(QString("http://127.0.0.1:6112/ot?hash=%1").arg(hash)));
+        mgr->get(req);
 
-    QNetworkAccessManager *mgr = new QNetworkAccessManager;
-    QNetworkRequest        req(QUrl(QString("http://127.0.0.1:6112/ot?hash=%1").arg(hash)));
-    mgr->get(req);
-
-    connect(mgr, &QNetworkAccessManager::finished, [=](QNetworkReply *reply)
-            {
-                qDebug() << "==================================================";
-
-                // qDebug() << m_Data.size() << m_Data.toHex(' ');
-
-                if (reply->error() == QNetworkReply::NoError)
+        connect(mgr, &QNetworkAccessManager::finished, [=](QNetworkReply *reply)
                 {
-                    QJsonObject JsonObject = QJsonDocument::fromJson(reply->readAll()).object();
+                    qDebug() << "==================================================";
 
-                    if (!JsonObject.isEmpty())
+                    // qDebug() << m_Data.size() << m_Data.toHex(' ');
+
+                    if (reply->error() == QNetworkReply::NoError)
                     {
-                        this->setObjectName(JsonObject.begin().key());
+                        QJsonObject JsonObject = QJsonDocument::fromJson(reply->readAll()).object();
 
-                        qDebug() << this->objectName();
-
-                        // ProcessDataStream
-                        this->ProcessDataStream(JsonObject.begin().value().toArray());
+                        if (!JsonObject.isEmpty())
+                        {
+                            GameComponents.insert(QString::number(hash), JsonObject);
+                            Init();
+                        }
                     }
-                }
 
-                reply->deleteLater();
-                mgr->deleteLater();
-            });
+                    reply->deleteLater();
+                    mgr->deleteLater();
+                });
+    }
 }
 
 GameObject::~GameObject() {}
+
+bool GameObject::Init()
+{
+    if (GameComponents.value(QString::number(m_Hash)).isObject())
+    {
+        QJsonObject JsonObject = GameComponents.value(QString::number(m_Hash)).toObject();
+
+        if (JsonObject.size())
+        {
+            this->setObjectName(JsonObject.begin().key());
+            qDebug() << this->objectName();
+            // ProcessDataStream
+            this->ProcessDataStream(JsonObject.begin().value().toArray());
+            return true;
+        }
+    }
+    return false;
+}
 
 void GameObject::readHead()
 {
