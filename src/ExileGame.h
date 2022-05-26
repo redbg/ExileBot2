@@ -60,7 +60,7 @@ private:
 
     quint16 m_SkillPoint; // 剩余天赋点
 
-    QList<int> m_Preload;
+    QList<quint32> m_Preload;
 
 public:
     explicit ExileGame(ExileClient *client);

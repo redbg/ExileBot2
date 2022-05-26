@@ -38,7 +38,7 @@ public slots:
     void Positioned();
     void Stats();
     void Pathfinding(){/*空*/};
-    void WorldItem(){/*空*/};
+    void WorldItem();
     void Buffs();
     void Life();
     void Animated();
@@ -76,4 +76,5 @@ public slots:
     QJsonObject fs_GrantedEffectsPerLevel();
     void        fs_AlternateQualityTypes();
     void        fs_Data_Mods();
+    QJsonObject fs_ItemTypeRegister_Mods();
 };

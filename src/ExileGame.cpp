@@ -312,7 +312,7 @@ void ExileGame::on_game_readyRead()
             this->disconnectFromHost();
             break;
         }
-        case 0x24:
+        case 0x25:
         {
             // 天赋
 
@@ -337,7 +337,7 @@ void ExileGame::on_game_readyRead()
 
             break;
         }
-        case 0x2b:
+        case 0x2c:
         {
             this->read<quint16>();
             this->read<quint16>();
@@ -349,20 +349,20 @@ void ExileGame::on_game_readyRead()
             }
             break;
         }
-        case 0x39:
+        case 0x3a:
         {
             this->read<quint32>();
             this->read(0x13);
             break;
         }
-        case 0x3e:
+        case 0x3f:
         {
             this->read(0x1a);
             this->read<quint16>();
             this->read<quint16>();
             break;
         }
-        case 0x5a:
+        case 0x5b:
         {
             quint32 id = this->read<quint32>(); // GameObjectId
             this->read<quint32>();
@@ -373,7 +373,7 @@ void ExileGame::on_game_readyRead()
             this->SendContinue();
             break;
         }
-        case 0x6e:
+        case 0x6f:
         {
             readString();
             readString();
@@ -402,23 +402,23 @@ void ExileGame::on_game_readyRead()
             }
             break;
         }
-        case 0x84:
+        case 0x85:
         {
             this->RecvUpdateInventory();
             break;
         }
-        case 0x85:
+        case 0x86:
         {
             // 库存信息
             this->RecvInventory();
             break;
         }
-        case 0x88:
+        case 0x89:
         {
             this->read<quint32>();
             break;
         }
-        case 0x89:
+        case 0x8a:
         {
             quint8 size = read<quint8>();
 
@@ -430,32 +430,32 @@ void ExileGame::on_game_readyRead()
 
             break;
         }
-        case 0x8b:
+        case 0x8c:
         {
             read<quint32>();
             read<quint32>();
             break;
         }
-        case 0x8d:
+        case 0x8e:
         {
             read<quint16>();
             read<quint32>();
             read<quint8>();
             break;
         }
-        case 0x8e:
+        case 0x8f:
         {
             read<quint8>();
             readString();
             readString();
-            break;
-        }
-        case 0xa2:
-        {
-            read<quint8>();
             break;
         }
         case 0xa3:
+        {
+            read<quint8>();
+            break;
+        }
+        case 0xa4:
         {
             quint8 size = read<quint8>();
             for (quint8 i = 0; i < size; i++)
@@ -466,7 +466,7 @@ void ExileGame::on_game_readyRead()
             }
             break;
         }
-        case 0xd9:
+        case 0xda:
         {
             quint8 size = read<quint8>();
 
@@ -479,7 +479,7 @@ void ExileGame::on_game_readyRead()
 
             break;
         }
-        case 0xe4:
+        case 0xe5:
         {
             quint16 v1 = read<quint16>();
             quint8  v2 = read<quint8>();
@@ -493,7 +493,7 @@ void ExileGame::on_game_readyRead()
 
             break;
         }
-        case 0x145:
+        case 0x146:
         {
             this->read<quint8>();
             this->read<quint8>();
@@ -532,7 +532,7 @@ void ExileGame::on_game_readyRead()
 
             break;
         }
-        case 0x146:
+        case 0x147:
         {
             this->read<quint16>();
             this->read<quint8>();
@@ -540,26 +540,26 @@ void ExileGame::on_game_readyRead()
             this->read<quint8>();
             break;
         }
-        case 0x149:
+        case 0x14a:
         {
             // 游戏对象消失
             this->RecvRemoveGameObject();
             break;
         }
-        case 0x14a:
+        case 0x14b:
         {
             // 释放技能
             this->RecvSkill();
             break;
         }
-        case 0x14b:
+        case 0x14c:
         {
             quint32 id = this->read<quint32>(); // GameObjectId
             this->read<quint32>();
             this->read<quint16>();
             break;
         }
-        case 0x14e:
+        case 0x14f:
         {
             read<quint32>();
             read<quint32>();
@@ -596,7 +596,7 @@ void ExileGame::on_game_readyRead()
             }
             break;
         }
-        case 0x14F:
+        case 0x150:
         {
             {
                 read<quint32>();
@@ -612,33 +612,15 @@ void ExileGame::on_game_readyRead()
             read<quint8>();
             break;
         }
-        case 0x150:
+        case 0x151:
         {
             this->RecvUpdateLife();
-            break;
-        }
-        case 0x152:
-        {
-            quint32 id = this->read<quint32>(); // GameObjectId
-            this->read<quint32>();
-            this->read<quint16>();
-
-            quint32 size = this->ReadVaruint();
-
-            for (quint32 i = 0; i < size; i++)
-            {
-                this->ReadVaruint();
-                this->ReadVarint();
-            }
-
             break;
         }
         case 0x153:
         {
             quint32 id = this->read<quint32>(); // GameObjectId
             this->read<quint32>();
-            this->read<quint16>();
-
             this->read<quint16>();
 
             quint32 size = this->ReadVaruint();
@@ -657,10 +639,28 @@ void ExileGame::on_game_readyRead()
             this->read<quint32>();
             this->read<quint16>();
 
-            this->read<quint8>();
+            this->read<quint16>();
+
+            quint32 size = this->ReadVaruint();
+
+            for (quint32 i = 0; i < size; i++)
+            {
+                this->ReadVaruint();
+                this->ReadVarint();
+            }
+
             break;
         }
         case 0x155:
+        {
+            quint32 id = this->read<quint32>(); // GameObjectId
+            this->read<quint32>();
+            this->read<quint16>();
+
+            this->read<quint8>();
+            break;
+        }
+        case 0x156:
         {
             quint32 id = this->read<quint32>(); // GameObjectId
             this->read<quint32>();
@@ -672,12 +672,12 @@ void ExileGame::on_game_readyRead()
             this->read<quint32>();
             break;
         }
-        case 0x15b:
+        case 0x15c:
         {
             this->RecvUpdateChest();
             break;
         }
-        case 0x15C:
+        case 0x15d:
         {
             {
                 this->read<quint32>();
@@ -687,7 +687,7 @@ void ExileGame::on_game_readyRead()
             read<quint8>();
             break;
         }
-        case 0x15F:
+        case 0x160:
         {
             {
                 read<quint32>();
@@ -759,7 +759,7 @@ void ExileGame::on_game_readyRead()
             }
             break;
         }
-        case 0x160:
+        case 0x161:
         {
             quint32 id = this->read<quint32>(); // GameObjectId
             this->read<quint32>();
@@ -769,7 +769,7 @@ void ExileGame::on_game_readyRead()
 
             break;
         }
-        case 0x161:
+        case 0x162:
         {
             {
                 read<quint32>();
@@ -784,7 +784,7 @@ void ExileGame::on_game_readyRead()
             read<quint8>();
             break;
         }
-        case 0x164:
+        case 0x165:
         {
             {
                 read<quint32>();
@@ -799,12 +799,12 @@ void ExileGame::on_game_readyRead()
 
             break;
         }
-        case 0x171:
+        case 0x172:
         {
             read<quint8>();
             break;
         }
-        case 0x17e:
+        case 0x17f:
         {
             quint8 size = this->read<quint8>();
 
@@ -818,7 +818,7 @@ void ExileGame::on_game_readyRead()
             this->read<quint8>();
             break;
         }
-        case 0x186:
+        case 0x187:
         {
             this->read<quint32>();
             this->read<quint32>();
@@ -830,24 +830,25 @@ void ExileGame::on_game_readyRead()
             this->read<quint32>();
             break;
         }
-        case 0x1ab:
+        case 0x1ac:
         {
             this->read<quint8>();
             this->read<quint8>();
             this->read<quint8>();
             break;
         }
-        case 0x1e0:
+        case 0x1e1:
         {
             read<quint32>();
             read<quint32>();
             read<quint16>();
+
             read<quint32>();
             read<quint32>();
             read<quint8>();
             break;
         }
-        case 0x1e2:
+        case 0x1e3:
         {
             read<quint32>();
             read<quint32>();
@@ -855,7 +856,7 @@ void ExileGame::on_game_readyRead()
             read<quint32>();
             break;
         }
-        case 0x1f7:
+        case 0x1f8:
         {
             this->read<quint8>();
             quint8 size = this->read<quint8>();
@@ -868,7 +869,7 @@ void ExileGame::on_game_readyRead()
 
             break;
         }
-        case 0x204:
+        case 0x205:
         {
             this->read<quint8>();
 
@@ -886,7 +887,7 @@ void ExileGame::on_game_readyRead()
 
             break;
         }
-        case 0x214:
+        case 0x215:
         {
             // Data/ArchnemesisMods.dat
             for (int i = 0; i < (0x610 / 0x18); i++)
@@ -900,24 +901,40 @@ void ExileGame::on_game_readyRead()
 
             break;
         }
-        case 0x219:
+        case 0x21a:
         {
             this->read(0x10);
             break;
         }
-        case 0x220:
+        case 0x21c:
+        {
+            this->read<quint32>();
+            this->read<quint32>();
+            this->read<quint16>();
+
+            this->read<quint8>();
+            this->read<quint8>();
+            break;
+        }
+        case 0x21e:
+        {
+            this->read<quint16>();
+            break;
+        }
+        case 0x221:
         {
             // 服务器心跳
             break;
         }
-        case 0x224:
+        case 0x225:
         {
             // 游戏实体对象
             this->RecvGameObject();
             break;
         }
-        case 0x225:
+        case 0x226:
         {
+            // 更新游戏对象组件
             quint32 id = this->read<quint32>(); // GameObjectId
             this->read<quint32>();
             this->read<quint16>();
@@ -926,7 +943,7 @@ void ExileGame::on_game_readyRead()
             QByteArray data = this->read(size);
             break;
         }
-        case 0x226:
+        case 0x227:
         {
             quint32 id = this->read<quint32>(); // GameObjectId
             this->read<quint32>();
@@ -965,7 +982,7 @@ void ExileGame::SendTicket()
 void ExileGame::SendTileHash(quint32 tileHash, quint32 doodadHash)
 {
     qDebug() << QString("SendTileHash(%1, %2)").arg(tileHash).arg(doodadHash);
-    this->writeId(0x53);
+    this->writeId(0x54);
     this->write(tileHash);
     this->write(doodadHash);
 }
@@ -1150,7 +1167,7 @@ void ExileGame::RecvInitWorld()
 
     for (int i = 0; i < size; i++)
     {
-        int hash = this->read<int>();
+        quint32 hash = this->read<quint32>();
         m_Preload.append(hash);
     }
 
