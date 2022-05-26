@@ -584,7 +584,7 @@ void GameObject::fs_ActorA0(QJsonObject &json)
     quint16 size = 0;
     if (((v6 & 0x100) != 0))
     {
-        readData<quint16>();
+        size = readData<quint16>();
     }
 
     for (quint16 i = 0; i < size; i++)
