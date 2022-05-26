@@ -1018,7 +1018,7 @@ void ExileGame::SendUseGem(int inventoryId, int id, int index)
 {
     qDebug() << "SendUseGem" << inventoryId << id << index;
 
-    this->writeId(0x22);
+    this->writeId(0x23);
 
     this->write<qint32>(inventoryId);
     this->write<qint32>(id);
@@ -1027,22 +1027,21 @@ void ExileGame::SendUseGem(int inventoryId, int id, int index)
 
 void ExileGame::SendSkipAllTutorials()
 {
-
-    this->writeId(0x18A);
+    this->writeId(0x18b);
 
     this->write<quint8>(0x11);
 }
 
 void ExileGame::SendResurrect(quint8 arg1)
 {
-    this->writeId(0x3f);
+    this->writeId(0x40);
 
     this->write<quint8>(arg1);
 }
 
 void ExileGame::SendContinue()
 {
-    this->writeId(0x5b);
+    this->writeId(0x5c);
 }
 
 void ExileGame::SendUpItem(int inventoryId, int id)
