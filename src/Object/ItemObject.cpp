@@ -396,7 +396,7 @@ void ItemObject::Sockets()
 
             if (isItem)
             {
-                ItemObject item = ItemObject(this->m_DataStream);
+                ItemObject item(this->m_DataStream);
                 socket.insert("item", item.toJsonObject());
                 Index += item.Index; // 调试信息,不要动
             }

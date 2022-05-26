@@ -1,5 +1,6 @@
 #pragma once
 #include "AbstractObject.h"
+#include "ItemObject.h"
 #include "src/Helper.h"
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
@@ -76,5 +77,4 @@ public slots:
     QJsonObject fs_GrantedEffectsPerLevel();
     void        fs_AlternateQualityTypes();
     void        fs_Data_Mods();
-    QJsonObject fs_ItemTypeRegister_Mods();
 };

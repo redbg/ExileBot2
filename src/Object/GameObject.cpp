@@ -209,10 +209,11 @@ void GameObject::WorldItem()
     {
         readData<quint32>();
     }
-    readData<quint32>();
     readData<quint8>();
 
-    fs_ItemTypeRegister_Mods();
+    ItemObject item(this->m_DataStream);
+    m_Components.insert("WorldItem", item.toJsonObject());
+    Index += item.Index; // 调试信息,不要动
 }
 
 void GameObject::Buffs()
@@ -863,58 +864,4 @@ void GameObject::fs_Data_Mods()
     {
         ReadVarint();
     }
-}
-
-QJsonObject GameObject::fs_ItemTypeRegister_Mods()
-{
-    quint16     hash16 = readData<quint16>();
-    QJsonObject mod    = Helper::Data::GetMods(hash16);
-
-    QJsonObject MyMod;
-    QJsonObject stats;
-
-    if (!mod["StatsKey1"].isNull())
-    {
-        QJsonObject stat = Helper::Data::GetStats(mod.value("StatsKey1").toInt());
-        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
-    }
-    if (!mod["StatsKey2"].isNull())
-    {
-        QJsonObject stat = Helper::Data::GetStats(mod.value("StatsKey2").toInt());
-        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
-    }
-    if (!mod["StatsKey3"].isNull())
-    {
-        QJsonObject stat = Helper::Data::GetStats(mod.value("StatsKey3").toInt());
-        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
-    }
-    if (!mod["StatsKey4"].isNull())
-    {
-        QJsonObject stat = Helper::Data::GetStats(mod.value("StatsKey4").toInt());
-        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
-    }
-    if (!mod["StatsKey5"].isNull())
-    {
-        QJsonObject stat = Helper::Data::GetStats(mod.value("StatsKey5").toInt());
-        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
-    }
-    if (!mod["StatsKey6"].isNull())
-    {
-        QJsonObject stat = Helper::Data::GetStats(mod.value("StatsKey6").toInt());
-        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
-    }
-    if (!mod["Heist_StatsKey0"].isNull())
-    {
-        QJsonObject stat = Helper::Data::GetStats(mod.value("Heist_StatsKey0").toInt());
-        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
-    }
-    if (!mod["Heist_StatsKey1"].isNull())
-    {
-        QJsonObject stat = Helper::Data::GetStats(mod.value("Heist_StatsKey1").toInt());
-        stats.insert(stat.value("Text").toString(), this->ReadVarint1());
-    }
-
-    MyMod.insert(mod.value("CorrectGroup").toString(), stats);
-
-    return MyMod;
 }

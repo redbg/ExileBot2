@@ -8,7 +8,7 @@ class AbstractObject : public QObject
     Q_OBJECT
     Q_PROPERTY(QJsonObject Components MEMBER m_Components)
 
-protected:
+public:
     // Debug Info
     int Index;
 
