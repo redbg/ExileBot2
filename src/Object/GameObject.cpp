@@ -8,7 +8,6 @@ GameObject::GameObject(quint32 id, quint32 hash, QByteArray &data, QObject *pare
     , m_Hash(hash)
     , AbstractObject(data, parent)
 {
-    readHead();
     if (Init() == false)
     {
         QNetworkAccessManager *mgr = new QNetworkAccessManager(this);
@@ -49,8 +48,9 @@ bool GameObject::Init()
         if (JsonObject.size())
         {
             this->setObjectName(JsonObject.begin().key());
-            qDebug() << this->objectName();
+            qDebug() << this->objectName() << QString("[ %1 ]").arg(QString::number(m_Data.size(),16));
             // ProcessDataStream
+            readHead();
             this->ProcessDataStream(JsonObject.begin().value().toArray());
             return true;
         }
