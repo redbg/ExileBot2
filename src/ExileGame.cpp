@@ -362,6 +362,17 @@ void ExileGame::on_game_readyRead()
             this->read<quint16>();
             break;
         }
+        case 0x41:
+        {
+            if ((this->read<quint8>() & 2) == 0)
+            {
+                if (this->read<quint32>() > 0)
+                {
+                    this->read<quint8>();
+                }
+            }
+            break;
+        }
         case 0x5b:
         {
             quint32 id = this->read<quint32>(); // GameObjectId
@@ -835,6 +846,38 @@ void ExileGame::on_game_readyRead()
             this->read<quint8>();
             this->read<quint8>();
             this->read<quint8>();
+            break;
+        }
+        case 0x1ae:
+        {
+            quint8 size = this->read<quint8>();
+            for (int i = 0; i < size; i++)
+            {
+                this->read(0xc);
+
+                quint8 size1 = this->read<quint8>();
+                for (int j = 0; j < size1; j++)
+                {
+                    quint16 size3 = this->read<quint16>();
+                    for (int k = 0; k < size3; k++)
+                    {
+                        this->ReadVarint();
+                    }
+                }
+            }
+
+            size = this->read<quint8>();
+            for (int i = 0; i < size; i++)
+            {
+                this->read<quint32>();
+            }
+
+            size = this->read<quint8>();
+            for (int i = 0; i < size; i++)
+            {
+                this->read<quint32>();
+            }
+
             break;
         }
         case 0x1e1:
