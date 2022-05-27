@@ -97,7 +97,7 @@ public slots:
     void SendSkill(qint32 x, qint32 y, quint16 skill, quint16 u);
     void SendSkillById(int id, quint16 skill, quint16 u);
     void SendUseGem(int inventoryId, int id, int index);
-    void SendSkipAllTutorials(); // 不建议使用
+    void SendSkipAllTutorials();
     void SendResurrect(quint8 arg1);
     void SendContinue();
     void SendUpItem(int inventoryId, int id);

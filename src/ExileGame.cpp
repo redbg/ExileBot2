@@ -1298,7 +1298,7 @@ void ExileGame::RecvInitWorld()
         }
     }
 
-    QNetworkAccessManager *mgr = new QNetworkAccessManager;
+    QNetworkAccessManager *mgr = new QNetworkAccessManager(this);
     QNetworkRequest        req(QUrl(QString("http://127.0.0.1:6112/world?hash16=%1&seed=%2").arg(m_WorldAreaHASH16).arg(m_Seed)));
     mgr->get(req);
 
