@@ -574,7 +574,7 @@ void GameObject::fs_ActorA0(QJsonObject &json)
     quint16 v54 = 0;
     if (((v6 & 0x10) != 0))
     {
-        readData<quint16>();
+        v54 = readData<quint16>();
     }
     for (quint16 i = 0; i < v54; i++)
     {
@@ -598,34 +598,10 @@ void GameObject::fs_ActorA0(QJsonObject &json)
 void GameObject::fs_ActorA0_0()
 {
     readData<quint16>();
-    readData<quint8>();
-    readData<quint8>();
     readData<quint32>();
-
-    quint16 v17 = readData<quint16>();
-    quint8  ret = readData<quint8>();
-
-    if (((ret & 2) != 0))
-    {
-        if (((v17 & 0x400) != 0))
-        {
-            readData<quint16>();
-        }
-        if (((v17 & 0x4000) != 0))
-        {
-            readData<quint8>();
-        }
-        readData<quint8>();
-        if (((ret & 4) != 0))
-        {
-            readData<quint16>();
-        }
-
-        if (((ret & 8) != 0))
-        {
-            readData<quint16>();
-        }
-    }
+    readData<quint32>();
+    readData<quint32>();
+    readData<quint16>();
 }
 
 void GameObject::fs_ActorA0_1()
