@@ -25,8 +25,12 @@ void Account::run()
     m_ExileGame   = new ExileGame(m_ExileClient);
 
     // Init m_JSEngine
-    m_JSEngine->installExtensions(QJSEngine::AllExtensions);                                 // 安装所有扩展
-    m_JSEngine->evaluate(Helper::File::ReadAll(m_ScriptPath), m_ScriptPath);                 // 执行脚本文件
+    m_JSEngine->installExtensions(QJSEngine::AllExtensions);                                   // 安装所有扩展
+    QJSValue result = m_JSEngine->evaluate(Helper::File::ReadAll(m_ScriptPath), m_ScriptPath); // 执行脚本文件
+    if (result.isError())
+    {
+        qWarning() << result.toString();
+    }
     m_JSEngine->globalObject().setProperty("Client", m_JSEngine->newQObject(m_ExileClient)); // 注册 Client 类对象
     m_JSEngine->globalObject().setProperty("Game", m_JSEngine->newQObject(m_ExileGame));     // 注册  Game  类对象
 
@@ -72,7 +76,7 @@ QJSValue Account::Invoke(const QString &name)
 
     if (result.isError())
     {
-        qDebug() << result.toString();
+        qWarning() << result.toString();
     }
 
     return result;

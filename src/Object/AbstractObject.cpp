@@ -65,7 +65,7 @@ QByteArray AbstractObject::readData(int size)
 
     Index += readSize;
 
-    qDebug() << "--------" << data.toHex(' ');
+    // qDebug() << "--------" << data.toHex(' ');
     return data;
 }
 

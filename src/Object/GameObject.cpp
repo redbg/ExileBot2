@@ -48,7 +48,7 @@ bool GameObject::Init()
         if (JsonObject.size())
         {
             this->setObjectName(JsonObject.begin().key());
-            qDebug() << this->objectName() << QString("[ %1 ]").arg(QString::number(m_Data.size(),16));
+            qDebug() << this->objectName() << QString("[ %1 ]").arg(QString::number(m_Data.size(), 16));
             // ProcessDataStream
             readHead();
             this->ProcessDataStream(JsonObject.begin().value().toArray());
