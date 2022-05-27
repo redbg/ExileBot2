@@ -19,7 +19,7 @@ public:
     QJsonObject m_BaseItemType;
 
 public:
-    explicit ItemObject(quint32 inventoryId, quint32 index, QPoint pos, QByteArray &data, QObject *parent = nullptr);
+    explicit ItemObject(quint32 inventoryId, quint32 id, QPoint pos, QByteArray &data, QObject *parent = nullptr);
     explicit ItemObject(QDataStream *dataStream, QObject *parent = nullptr);
     virtual ~ItemObject();
 

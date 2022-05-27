@@ -1358,12 +1358,13 @@ void ExileGame::RecvInventory()
     quint32 inventoryId = this->read<quint32>();
 
     {
-        // sub_15F00C0
         this->read<quint8>();
         this->read<quint8>();
-        this->read<quint8>(); // Width
-        this->read<quint8>(); // Height
+        this->read<quint8>();
+        this->read<quint8>();
+
         quint8 v16 = this->read<quint8>();
+
         if ((v16 & 0x8) != 0)
         {
             this->read<quint64>();
@@ -1407,9 +1408,10 @@ void ExileGame::RecvUpdateInventory()
 
     {
         this->read<quint32>();
-        quint32 size = this->read<quint32>();
 
         // 删除物品
+        quint32 size = this->read<quint32>();
+
         for (quint32 i = 0; i < size; i++)
         {
             quint32 id = this->read<quint32>();
@@ -1426,7 +1428,7 @@ void ExileGame::RecvUpdateInventory()
             }
         }
 
-        // 物品数量
+        // 添加物品
         quint32 itemSize = this->read<quint32>();
 
         for (quint32 i = 0; i < itemSize; i++)

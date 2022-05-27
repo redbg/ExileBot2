@@ -2,9 +2,9 @@
 
 #define HIBYTE(v) (v >> 8) & 0xff
 
-ItemObject::ItemObject(quint32 inventoryId, quint32 index, QPoint pos, QByteArray &data, QObject *parent)
+ItemObject::ItemObject(quint32 inventoryId, quint32 id, QPoint pos, QByteArray &data, QObject *parent)
     : m_InventoryId(inventoryId)
-    , m_Id(index)
+    , m_Id(id)
     , m_Pos(pos)
     , AbstractObject(data, parent)
 {
