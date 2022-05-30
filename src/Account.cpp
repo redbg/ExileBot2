@@ -76,7 +76,9 @@ QJSValue Account::Invoke(const QString &name)
 
     if (result.isError())
     {
-        qWarning() << result.toString();
+        qWarning() << result.property("fileName").toString()
+                   << result.property("lineNumber").toInt()
+                   << result.toString();
     }
 
     return result;

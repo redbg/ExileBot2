@@ -254,7 +254,21 @@ qint64 ExileSocket::write(const char *data, qint64 len)
 qint64 ExileSocket::writeString(QString data)
 {
     qint64 size = this->write<quint16>(data.size());
-    size += this->writeData(data.toLatin1());
+
+    for (int i = 0; i < data.size(); i++)
+    {
+        char16_t c = data.at(i).unicode();
+
+        if (c > 0x7f)
+        {
+            this->write<quint8>(0x80);
+            this->write<char16_t>(qbswap(c));
+        }
+        else
+        {
+            this->write<char>(c);
+        }
+    }
 
     return size;
 }
